@@ -1,0 +1,144 @@
+@charset "utf-8";
+/*------------- 添加联系人相关样式 -----------------*/
+html {
+  background: url('/Public/static/icons/bg-png.png') no-repeat 50% 7%, url('/Public/static/icons/bg.png') no-repeat;
+  background-size: 100%;
+}
+#add-contact {
+  width: 9.06644rem;
+  height: 6.586502rem;
+  background-color: #f9fffe;
+  position: absolute;
+  top: 5.3332rem;
+  left: 50%;
+  border-radius: 0.13333rem;
+  padding: 0.479988rem 0.53332rem 0;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+#add-contact > .s-title {
+  text-align: center;
+  font-size: 0.479988rem;
+  color: #01bfb3;
+}
+#add-contact > form > input {
+  background: url('/Public/static/icons/input.png') no-repeat;
+  background-size: 100%;
+  display: block;
+  width: 7.9998rem;
+  height: 1.173304rem;
+  font-size: 0.39999rem;
+  text-indent: 0.39999rem;
+}
+#add-contact > form > #tel {
+  margin: 0.39999rem 0 0.26666rem;
+}
+#add-contact > form > #codename {
+  margin-bottom: 0.39999rem;
+}
+#add-contact > .btn-confirm {
+  display: inline-block;
+  width: 7.9998rem;
+  height: 1.173304rem;
+  line-height: 1.173304rem;
+  background-color: #bfc3c3;
+  color: #fff;
+  font-size: 0.426656rem;
+  text-align: center;
+  border-radius: 0.13333rem;
+  border: 0;
+}
+#tip-success {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+#tip-success > .box {
+  width: 6.773164rem;
+  height: 4.026566rem;
+  background-color: #fff;
+  border-radius: 0.13333rem;
+  position: absolute;
+  top: 6.26651rem;
+  left: 50%;
+  font-size: 0.426656rem;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+}
+#tip-success > .box > img {
+  position: absolute;
+  top: -0.733315rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 1.46663rem;
+  height: 1.46663rem;
+}
+#tip-success > .box > .top {
+  height: 2.719932rem;
+  line-height: 2.719932rem;
+  border-bottom: 1px solid #dcd9df;
+}
+#tip-success > .box > .bottom > a {
+  width: 3.386582rem;
+  height: 1.306634rem;
+  line-height: 1.306634rem;
+}
+#tip-success > .box > .bottom > .btn-continue {
+  background-color: #01bfb3;
+  color: #fff;
+  border-bottom-right-radius: 0.13333rem;
+}
+#loading {
+  width: 3.9999rem;
+  height: 1.06664rem;
+  font-size: 0.373324rem;
+  color: #fff;
+  line-height: 1.06664rem;
+  border-radius: 0.66665rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: none;
+}
+#post-success {
+  width: 3.9999rem;
+  height: 1.06664rem;
+  font-size: 0.373324rem;
+  color: #fff;
+  line-height: 1.06664rem;
+  border-radius: 0.66665rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: none;
+}
+#validate {
+  width: 5.99985rem;
+  height: 1.06664rem;
+  font-size: 0.373324rem;
+  color: #fff;
+  line-height: 1.06664rem;
+  border-radius: 0.66665rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: none;
+}

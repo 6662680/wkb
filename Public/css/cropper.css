@@ -1,0 +1,75 @@
+@charset "utf-8";
+/*------------- 头部 -----------------*/
+html {
+  background-color: #000;
+}
+#header {
+  position: absolute;
+  top: 0.826646rem;
+  left: 0;
+  font-size: 0.453322rem;
+  color: #fff;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+#header > img {
+  vertical-align: middle;
+  padding: 0.199995rem 0.66665rem 0.199995rem 0;
+  width: 1.253302rem;
+  height: 0.986642rem;
+  position: absolute;
+  top: -0.13333rem;
+  left: 0.13333rem;
+}
+/*------------- 图片预览及裁剪区域 -----------------*/
+#cropper {
+  text-align: center;
+  position: absolute;
+  width: 8.53312rem;
+  top: 1.99995rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+#cropper > img {
+  width: 8.53312rem;
+}
+#cropper > .pre-box {
+  width: 8.53312rem;
+  position: absolute;
+  top: 2.6666rem;
+  left: 0;
+}
+#cropper > .txt {
+  font-size: 0.479988rem;
+  color: #fff;
+  margin-bottom: 0.26666rem;
+}
+/*------------- 完成按钮 -----------------*/
+#complete {
+  text-align: center;
+  font-size: 0.39999rem;
+  position: absolute;
+  top: 15.012958rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  display: none;
+}
+#complete > #btn-complete {
+  display: inline-block;
+  border-radius: 0.13333rem;
+  width: 7.9998rem;
+  height: 1.06664rem;
+  line-height: 1.06664rem;
+  color: #fff;
+  background-color: #01bfb3;
+}

@@ -1,0 +1,114 @@
+@themes: "."; // 路径提取
+@import "@{themes}/px2rem";     // 导入换算 less
+@import "@{themes}/variable";   // 导入变量 less
+
+@charset "utf-8";
+
+/*------------- 添加联系人相关样式 -----------------*/
+
+// 背景图
+html {
+  background: url('../../assests/icons/bg-png.png') no-repeat,
+              url('../../assests/icons/bg.png') no-repeat;
+  background-size: 100%;
+}
+
+// 添加联系人
+#add-contact {
+  width: 680*@rem;
+  height: 494*@rem;
+  background-color: #f9fffe;
+  position: absolute;
+  top: 470*@rem;
+  left: 50%;
+  border-radius: 10*@rem;
+  padding: 36*@rem 40*@rem 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  // 标题
+  > .s-title {
+    text-align: center;
+    font-size: 36*@rem;
+    color: @main-color;
+  }
+  // 表单
+  > form {
+    > input {
+      background: url('../../assests/icons/input.png') no-repeat;
+      background-size: 100%;
+      display: block;
+      width: 600*@rem;
+      height: 88*@rem;
+      font-size: 30*@rem;
+      text-indent: 30*@rem;
+    }
+    > #tel {
+      margin: 30*@rem 0 20*@rem;
+    }
+    > #codename {
+      margin-bottom: 30*@rem;
+    }
+  }
+  // 确定按钮
+  > .btn-confirm {
+    display: inline-block;
+    width: 600*@rem;
+    height: 88*@rem;
+    line-height: 88*@rem;
+    background-color: #bfc3c3;
+    color: #fff;
+    font-size: 32*@rem;
+    text-align: center;
+    border-radius: 10*@rem;
+  }
+}
+
+// 提交成功提示
+#tip-success {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  > .box {
+    width: 508*@rem;
+    height: 302*@rem;
+    background-color: #fff;
+    border-radius: 10*@rem;
+    position: absolute;
+    top: 470*@rem;
+    left: 50%;
+    font-size: 32*@rem;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    text-align: center;
+    > img {
+      position: absolute;
+      top: -55*@rem;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      width: 110*@rem;
+      height: 110*@rem;
+    }
+    > .top {
+      height: 204*@rem;
+      line-height: 204*@rem;
+      border-bottom: 1px solid #dcd9df;
+    }
+    > .bottom {
+      > a {
+        width: 254*@rem;
+        height: 98*@rem;
+        line-height: 98*@rem;
+      }
+      > .btn-continue {
+        background-color: @main-color;
+        color: #fff;
+        border-bottom-right-radius: 10*@rem;
+      }
+    }
+  }
+}

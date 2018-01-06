@@ -1,0 +1,174 @@
+[ 2017-11-16T21:32:26+08:00 ] 127.0.0.1 /index.php/mobile/amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '15757946019' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: value D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 35 行.
+
+[ 2017-11-16T21:42:49+08:00 ] 127.0.0.1 /index.php/mobile/amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '15757946019' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: value D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 35 行.
+
+[ 2017-11-16T21:46:53+08:00 ] 127.0.0.1 /index.php/mobile/amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '15757946019' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: value D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 35 行.
+
+[ 2017-11-16T21:46:53+08:00 ] 127.0.0.1 /index.php/mobile/amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '15757946019' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: value D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 35 行.
+
+[ 2017-11-16T21:46:53+08:00 ] 127.0.0.1 /index.php/mobile/amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0040s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '15757946019' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: value D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 35 行.
+
+[ 2017-11-16T21:46:53+08:00 ] 127.0.0.1 /index.php/mobile/amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '15757946019' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: value D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 35 行.
+
+[ 2017-11-16T21:46:54+08:00 ] 127.0.0.1 /index.php/mobile/amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '15757946019' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: value D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 35 行.
+
+[ 2017-11-16T21:46:54+08:00 ] 127.0.0.1 /index.php/mobile/amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '15757946019' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: value D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 35 行.
+
+[ 2017-11-16T21:47:48+08:00 ] 127.0.0.1 /index.php/mobile/amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, `user`.head_portrait, `user`.name as user_name, relation.name, relation.mobile, relation.id AS relation_id, count(*) as count FROM `user`
+                LEFT JOIN `relation` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 143 and relation.display = 1 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0000s ]
+
+[ 2017-11-16T21:48:21+08:00 ] 127.0.0.1 /index.php/mobile/amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, `user`.head_portrait, `user`.name as user_name, relation.name, relation.mobile, relation.id AS relation_id, count(*) as count FROM `user`
+                LEFT JOIN `relation` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 143 and relation.display = 1 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0040s ]
+
+[ 2017-11-16T21:48:21+08:00 ] 127.0.0.1 /index.php/mobile/amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, `user`.head_portrait, `user`.name as user_name, relation.name, relation.mobile, relation.id AS relation_id, count(*) as count FROM `user`
+                LEFT JOIN `relation` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 143 and relation.display = 1 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0000s ]
+
+[ 2017-11-16T21:48:21+08:00 ] 127.0.0.1 /index.php/mobile/amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, `user`.head_portrait, `user`.name as user_name, relation.name, relation.mobile, relation.id AS relation_id, count(*) as count FROM `user`
+                LEFT JOIN `relation` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 143 and relation.display = 1 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0000s ]
+
+[ 2017-11-16T21:48:22+08:00 ] 127.0.0.1 /index.php/mobile/amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, `user`.head_portrait, `user`.name as user_name, relation.name, relation.mobile, relation.id AS relation_id, count(*) as count FROM `user`
+                LEFT JOIN `relation` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 143 and relation.display = 1 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0000s ]
+
+[ 2017-11-16T21:49:22+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, `user`.head_portrait, `user`.name as user_name, relation.name, relation.mobile, relation.id AS relation_id, count(*) as count FROM `user`
+                LEFT JOIN `relation` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 143 and relation.display = 1 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0010s ]
+

@@ -1,0 +1,270 @@
+[ 2017-11-10T11:03:35+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id,  `user`.head_portrait, relation.name, last_call_time as call_time, last_hours_length as hours_length, 
+                last_answer as answer, last_receive as receive,relation.mobile, relation.id AS relation_id, count(*) as count FROM `relation`
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+               /* LEFT JOIN `call_log` ON relation_id = relation.id*/
+                WHERE `user_id` = 110 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0000s ]
+
+[ 2017-11-10T11:03:52+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id,  `user`.head_portrait, relation.name, last_call_time as call_time, last_hours_length as hours_length, 
+                last_answer as answer, last_receive as receive,relation.mobile, relation.id AS relation_id, count(*) as count FROM `relation`
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+               /* LEFT JOIN `call_log` ON relation_id = relation.id*/
+                WHERE `user_id` = 110 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0000s ]
+
+[ 2017-11-10T11:06:23+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T11:06:23+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T11:06:23+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T11:06:23+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T11:06:23+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T11:06:24+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T11:06:24+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T11:06:42+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id,  `user`.head_portrait, relation.name, last_call_time as call_time, last_hours_length as hours_length, 
+                last_answer as answer, last_receive as receive,relation.mobile, relation.id AS relation_id, count(*) as count FROM `relation`
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+               /* LEFT JOIN `call_log` ON relation_id = relation.id*/
+                WHERE `user_id` = 110 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0030s ]
+
+[ 2017-11-10T11:06:42+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id,  `user`.head_portrait, relation.name, last_call_time as call_time, last_hours_length as hours_length, 
+                last_answer as answer, last_receive as receive,relation.mobile, relation.id AS relation_id, count(*) as count FROM `relation`
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+               /* LEFT JOIN `call_log` ON relation_id = relation.id*/
+                WHERE `user_id` = 110 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0000s ]
+
+[ 2017-11-10T11:07:22+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T11:07:57+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T11:08:01+08:00 ] 127.0.0.1 /index.php/home/amigos/lists?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 298 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T13:49:58+08:00 ] 127.0.0.1 /index.php/home/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 305 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T13:50:23+08:00 ] 127.0.0.1 /index.php/home/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 305 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T13:50:23+08:00 ] 127.0.0.1 /index.php/home/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 305 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T13:50:23+08:00 ] 127.0.0.1 /index.php/home/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 305 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T13:50:23+08:00 ] 127.0.0.1 /index.php/home/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 305 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T13:50:24+08:00 ] 127.0.0.1 /index.php/home/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 305 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T13:50:24+08:00 ] 127.0.0.1 /index.php/home/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 305 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-10T13:50:49+08:00 ] 127.0.0.1 /index.php/home/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 305 行.
+
+[ 2017-11-10T13:51:10+08:00 ] 127.0.0.1 /index.php/home/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\AmigosController.class.php 第 305 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` WHERE `id` = 109 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '18679354419' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 109 AND `mobile` = '18679354419' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `relation` (`user_id`,`mobile`,`display`,`name`) VALUES ('115','15757946019','2','') [ RunTime:0.0000s ]
+SQL: INSERT INTO `relation` (`user_id`,`mobile`,`name`,`display`) VALUES ('109','18679354419','','1') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `user` WHERE `id` = 109 LIMIT 1   [ RunTime:0.0000s ]
+

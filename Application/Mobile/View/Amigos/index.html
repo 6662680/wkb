@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title><?php echo $title?></title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        html {
+            width: 100%;
+            height: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        body {
+            width: 100%;
+            height: 100%;
+            max-width: 980px;
+            background-color: #fff;
+            font-family: "微软雅黑";
+        }
+        .cont {
+            width: 82%;
+            height: 60%;
+            margin: 0 auto;
+            padding-top: 10%;
+            min-height: 570px;
+        }
+        .cont-txt {
+            width: 100%;
+            height: 60%;
+            margin-bottom: 13%;
+        }
+        .cont-txt input{
+            width: 100%;
+            height: 20%;
+            border: none;
+            background: #EEEEEE;
+            border-radius: 50px;
+            margin-bottom: 3%;
+            padding-left: 5%;
+            outline: none;
+            font-size: 14px;
+            color: #999999;
+            letter-spacing: 0.53px;
+        }
+        .cont .sub {
+            display: inline-block;
+            width: 100%;
+            height: 13%;
+            border: none;
+            background-image: linear-gradient(90deg, #8753EC 0%, #5D5BED 100%);
+            border-radius: 50px;
+            background-color: #8753EC;
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 0.53px;
+        }
+        .again {
+            position: fixed;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            background-color: rgba(0,0,0,.5);
+        }
+        .again .a-cont {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            width: 92%;
+            height: 160px;
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 10px 0;
+        }
+        .again .a-cont h3 {
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            line-height: 45px;
+            margin-top: 30px;
+        }
+        .again .a-cont i {
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            background: url("__PUBLIC__/static/headportrait/icon-success.png") no-repeat center / 100% 100%;
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            -webkit-transform: translate(-50%,0);
+            -moz-transform: translate(-50%,0);
+            -ms-transform: translate(-50%,0);
+            -o-transform: translate(-50%,0);
+            transform: translate(-50%,0);
+        }
+        .again .a-cont p {
+            line-height: 45px;
+            font-size: 14px;
+            color: #333;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45px;
+            border-top: 1px solid #ccc;
+        }
+        .again .a-cont p span {
+            width: 50%;
+            display: inline-block;
+            text-align: center;
+            height: 100%;
+        }
+        .again .a-cont p span.active {
+            background-image: linear-gradient(90deg, #8753EC 0%, #5D5BED 100%);
+            color: #fff;
+        }
+
+        .bd-img {
+            position: absolute;
+            left: 50%;
+            bottom: 5%;
+            width: 50%;
+            -webkit-transform: translate(-50%,0);
+            -moz-transform: translate(-50%,0);
+            -ms-transform: translate(-50%,0);
+            -o-transform: translate(-50%,0);
+            transform: translate(-50%,0);
+        }
+        .bd-img img{
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+<body>
+        <div class="cont">
+                <div class="cont-txt">
+                    <input type="tel" id="mobile" value="<?php echo $mobile?>" placeholder="请输入手机号码">
+                    <input type="text" id="name" value="<?php echo $name?>" placeholder="请输入昵称">
+                </div>
+                <button  id="queding" class="sub" >确定</button>
+        </div>
+        <div class="bd-img">
+            <img src="__PUBLIC__/static/headportrait/logo.png" alt="">
+        </div>
+    <!--重新选择-->
+    <div class="again">
+        <div class="a-cont">
+            <i></i>
+            <h3>提交成功！</h3>
+            <p><span style="border-right: 1px solid #ccc" id="againBtn">继续编辑</span><span class="active" id="outBtn">退出</span></p>
+        </div>
+    </div>
+</body>
+</html>
+<script src="__PUBLIC__/js/jquery-3.1.0.min.js"></script>
+<script>
+
+    $(function () {
+
+        $("#againBtn").on("click",function () {
+            $(".again").hide();
+            $('#mobile').val('')
+            $('#name').val('')
+
+        });
+        $("#outBtn").on("click",function () {
+            $(".again").hide();
+            window.opener=null;
+            window.open('','_self');
+            window.close();
+        });
+
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+
+        //照片正反面
+        var imgSrc;
+
+        $("#subBtn,.img").on("click",function () {
+           imgSrc = "";
+           $(".bac").show();
+        });
+//        选择头像
+        $(".bac-cont li").on("click",function () {
+           $(this).addClass("active").siblings().removeClass("active");
+           imgSrc = $(this).find("img").attr("src");
+        });
+        $("#sureBtn").on("click",function () {
+            $(".peo-pic img").attr("src",imgSrc);
+            $(".filepath").attr("value",imgSrc);
+            $(".bac").hide();
+        })
+
+        $('#queding').on("click",function () {
+            $('#queding').html('提交中...')
+            $('#queding').attr("disabled",true);
+            var url = 'add'
+            if (GetQueryString("relation_id")) {
+                var url = 'edit';
+                $('title').html('编辑联系人');
+            }
+
+            $.post(url,
+                {
+                    mobile:$('#mobile').val(),
+                    name:$('#name').val(),
+                    user_id:GetQueryString("user_id"),
+                    relation_id:GetQueryString("relation_id"),
+                },
+                function(data,status){
+                    data = $.parseJSON(data);
+
+                    if (data.status) {
+                        $('.again').css('display', 'block');
+                    } else {
+                        alert(data.msg)
+                    }
+                    $('#queding').html('确定')
+                    $('#queding').attr("disabled", false);
+                });
+            return false;
+        });
+    });
+
+
+</script>
+

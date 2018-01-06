@@ -1,0 +1,1584 @@
+[ 2017-11-08T13:14:52+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:16:58+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.user_id' in 'where clause'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user`.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.user_id' in 'where clause'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user`.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:17:06+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user`.id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:17:57+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:18:21+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'relation.user_id' in 'where clause'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `relation.user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'relation.user_id' in 'where clause'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `relation.user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:18:29+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE relation.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+
+[ 2017-11-08T13:44:20+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1066:Not unique table/alias: 'relation'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` ON call_log.mobile = relation.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1066:Not unique table/alias: 'relation'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` ON call_log.mobile = relation.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:44:38+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+          
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+          
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:45:07+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:45:27+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:45:28+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:45:28+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:45:28+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:45:28+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:45:28+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:46:27+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.head_portrait' in 'field list'
+ [ SQL语句 ] : SELECT  call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.head_portrait' in 'field list'
+ [ SQL语句 ] : SELECT  call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:46:28+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.head_portrait' in 'field list'
+ [ SQL语句 ] : SELECT  call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.head_portrait' in 'field list'
+ [ SQL语句 ] : SELECT  call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:46:28+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.head_portrait' in 'field list'
+ [ SQL语句 ] : SELECT  call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.head_portrait' in 'field list'
+ [ SQL语句 ] : SELECT  call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:46:28+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'user.head_portrait' in 'field list'
+ [ SQL语句 ] : SELECT  call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'user.head_portrait' in 'field list'
+ [ SQL语句 ] : SELECT  call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                /*LEFT JOIN `user` ON relation.mobile = `user` .mobile*/
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:47:27+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:47:38+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 're.mobile' in 'on clause'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 're.mobile' in 'on clause'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:47:48+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+
+[ 2017-11-08T13:48:08+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'log_id' in 'order clause'
+ [ SQL语句 ] : SELECT  relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+               /* LEFT JOIN `user` ON relation.mobile = `user`.mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'log_id' in 'order clause'
+ [ SQL语句 ] : SELECT  relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+               /* LEFT JOIN `user` ON relation.mobile = `user`.mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:48:46+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT  call_log.id as log_id,  relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+               /* LEFT JOIN `user` ON relation.mobile = `user`.mobile*/
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+
+[ 2017-11-08T13:49:15+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-08T13:49:22+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT  call_log.id as log_id,  relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+               /* LEFT JOIN `user` ON relation.mobile = `user`.mobile*/
+                WHERE call_log.user_id = 54  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: head_portrait D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\CallController.class.php 第 215 行.
+
+[ 2017-11-08T13:50:02+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+
+[ 2017-11-08T13:50:19+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:50:19+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+
+[ 2017-11-08T13:50:19+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:53:59+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT *
+
+                FROM `call_log`
+             /*   LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile*/
+                WHERE call_log.user_id = 54 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:54:00+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT *
+
+                FROM `call_log`
+             /*   LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile*/
+                WHERE call_log.user_id = 54 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:54:00+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT *
+
+                FROM `call_log`
+             /*   LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile*/
+                WHERE call_log.user_id = 54 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:54:00+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT *
+
+                FROM `call_log`
+             /*   LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile*/
+                WHERE call_log.user_id = 54 [ RunTime:0.0010s ]
+
+[ 2017-11-08T13:54:00+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT *
+
+                FROM `call_log`
+             /*   LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile*/
+                WHERE call_log.user_id = 54 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:54:01+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT *
+
+                FROM `call_log`
+             /*   LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile*/
+                WHERE call_log.user_id = 54 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:54:22+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT *
+
+                FROM `call_log`
+             /*   LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile*/
+                WHERE call_log.user_id = 54 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:54:29+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT *
+
+                FROM `call_log`
+            
+                WHERE call_log.user_id = 54 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:54:50+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT * FROM `call_log` WHERE call_log.user_id = 54 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:55:13+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:56:59+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:57:00+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:57:00+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:57:00+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1052:Column 'user_id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:57:02+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT * FROM `call_log` WHERE call_log.user_id = 54 [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: count D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\CallController.class.php 第 204 行.
+NOTIC: [8] Undefined index: log_id D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\CallController.class.php 第 207 行.
+NOTIC: [8] Undefined index: head_portrait D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\CallController.class.php 第 208 行.
+
+[ 2017-11-08T13:57:18+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 're.mobile' in 'on clause'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 're.mobile' in 'on clause'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-08T13:57:26+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+
+[ 2017-11-08T13:58:32+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:58:32+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+
+[ 2017-11-08T13:58:32+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+
+[ 2017-11-08T13:58:32+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:58:33+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:58:34+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+
+[ 2017-11-08T13:58:34+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:58:34+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:58:35+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+
+[ 2017-11-08T13:59:11+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+
+[ 2017-11-08T13:59:11+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:59:11+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:59:11+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T13:59:55+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: count D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\CallController.class.php 第 211 行.
+
+[ 2017-11-08T14:00:28+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(call_log.id) as count
+                FROM `call_log`
+                LEFT JOIN `relation` ON call_log.user_id = relation.user_id
+                LEFT JOIN `relation` as re1 ON call_log.mobile = re1.mobile
+                LEFT JOIN `user` ON relation.mobile = `user`.mobile
+                WHERE call_log.user_id = 54 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T14:32:09+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: select *  FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50 [ RunTime:0.0010s ]
+
+[ 2017-11-08T14:32:15+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: select *  FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50 [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: count D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\CallController.class.php 第 217 行.
+NOTIC: [8] Undefined index: log_id D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\CallController.class.php 第 220 行.
+NOTIC: [8] Undefined index: count D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\CallController.class.php 第 217 行.
+NOTIC: [8] Undefined index: log_id D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\CallController.class.php 第 220 行.
+
+[ 2017-11-08T14:33:59+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '//                b.last_hours_length as hours_length, b.last_answer as answer, ' at line 2
+ [ SQL语句 ] : select c.id, a.id as log_id, c.head_portrait, b.name, b.mobile, b.last_call_time as call_time,
+//                b.last_hours_length as hours_length, b.last_answer as answer, b.last_receive as receive,
+//                b.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '//                b.last_hours_length as hours_length, b.last_answer as answer, ' at line 2
+ [ SQL语句 ] : select c.id, a.id as log_id, c.head_portrait, b.name, b.mobile, b.last_call_time as call_time,
+//                b.last_hours_length as hours_length, b.last_answer as answer, b.last_receive as receive,
+//                b.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50
+
+[ 2017-11-08T14:34:54+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1054:Unknown column 'call_log.id' in 'field list'
+ [ SQL语句 ] : select c.id, a.id as log_id, c.head_portrait, b.name, b.mobile, b.last_call_time as call_time,
+                b.last_hours_length as hours_length, b.last_answer as answer, b.last_receive as receive,
+                b.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50
+ERR: 1054:Unknown column 'call_log.id' in 'field list'
+ [ SQL语句 ] : select c.id, a.id as log_id, c.head_portrait, b.name, b.mobile, b.last_call_time as call_time,
+                b.last_hours_length as hours_length, b.last_answer as answer, b.last_receive as receive,
+                b.id AS relation_id, count(call_log.id) as count 
+                FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50
+
+[ 2017-11-08T14:35:20+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '//                b.last_hours_length as hours_length, b.last_answer as answer, ' at line 2
+ [ SQL语句 ] : select c.id, a.id as log_id, c.head_portrait, b.name, b.mobile, b.last_call_time as call_time,
+//                b.last_hours_length as hours_length, b.last_answer as answer, b.last_receive as receive,
+                b.id AS relation_id, count(a.id) as count 
+                FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '//                b.last_hours_length as hours_length, b.last_answer as answer, ' at line 2
+ [ SQL语句 ] : select c.id, a.id as log_id, c.head_portrait, b.name, b.mobile, b.last_call_time as call_time,
+//                b.last_hours_length as hours_length, b.last_answer as answer, b.last_receive as receive,
+                b.id AS relation_id, count(a.id) as count 
+                FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50
+
+[ 2017-11-08T14:35:21+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '//                b.last_hours_length as hours_length, b.last_answer as answer, ' at line 2
+ [ SQL语句 ] : select c.id, a.id as log_id, c.head_portrait, b.name, b.mobile, b.last_call_time as call_time,
+//                b.last_hours_length as hours_length, b.last_answer as answer, b.last_receive as receive,
+                b.id AS relation_id, count(a.id) as count 
+                FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '//                b.last_hours_length as hours_length, b.last_answer as answer, ' at line 2
+ [ SQL语句 ] : select c.id, a.id as log_id, c.head_portrait, b.name, b.mobile, b.last_call_time as call_time,
+//                b.last_hours_length as hours_length, b.last_answer as answer, b.last_receive as receive,
+                b.id AS relation_id, count(a.id) as count 
+                FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50
+
+[ 2017-11-08T14:35:21+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '//                b.last_hours_length as hours_length, b.last_answer as answer, ' at line 2
+ [ SQL语句 ] : select c.id, a.id as log_id, c.head_portrait, b.name, b.mobile, b.last_call_time as call_time,
+//                b.last_hours_length as hours_length, b.last_answer as answer, b.last_receive as receive,
+                b.id AS relation_id, count(a.id) as count 
+                FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '//                b.last_hours_length as hours_length, b.last_answer as answer, ' at line 2
+ [ SQL语句 ] : select c.id, a.id as log_id, c.head_portrait, b.name, b.mobile, b.last_call_time as call_time,
+//                b.last_hours_length as hours_length, b.last_answer as answer, b.last_receive as receive,
+                b.id AS relation_id, count(a.id) as count 
+                FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50
+
+[ 2017-11-08T14:35:32+08:00 ] 127.0.0.1 /index.php/mobile/call/lognew
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: select c.id, a.id as log_id, c.head_portrait, b.name, b.mobile, b.last_call_time as call_time,
+                b.last_hours_length as hours_length, b.last_answer as answer, b.last_receive as receive,
+                b.id AS relation_id, count(a.id) as count 
+                FROM `call_log` a
+                right JOIN `relation` b ON a.user_id = b.user_id
+                right join `user` c ON b.mobile = c.mobile
+				right JOIN `relation` as re1 ON a.mobile = re1.mobile and a.friends_id=re1.user_id
+                WHERE a.user_id = 54  ORDER BY a.id limit 0, 50 [ RunTime:0.0000s ]
+
+[ 2017-11-08T15:34:39+08:00 ] 127.0.0.1 /index.php/mobile/amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, `user`.head_portrait, `user`.name as user_name, relation.name, relation.mobile, relation.id AS relation_id, count(*) as count FROM `user`
+                LEFT JOIN `relation` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 123 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0010s ]
+
+[ 2017-11-08T15:35:52+08:00 ] 127.0.0.1 /index.php/mobile/amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, `user`.head_portrait, `user`.name as user_name, relation.name, relation.mobile, relation.id AS relation_id, count(*) as count FROM `user`
+                LEFT JOIN `relation` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 123 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0010s ]
+
+[ 2017-11-08T15:35:52+08:00 ] 127.0.0.1 /index.php/mobile/amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, `user`.head_portrait, `user`.name as user_name, relation.name, relation.mobile, relation.id AS relation_id, count(*) as count FROM `user`
+                LEFT JOIN `relation` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 123 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0000s ]
+
+[ 2017-11-08T15:35:52+08:00 ] 127.0.0.1 /index.php/mobile/amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, `user`.head_portrait, `user`.name as user_name, relation.name, relation.mobile, relation.id AS relation_id, count(*) as count FROM `user`
+                LEFT JOIN `relation` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 123 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0000s ]
+
+[ 2017-11-08T15:35:52+08:00 ] 127.0.0.1 /index.php/mobile/amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT `user`.id, `user`.head_portrait, `user`.name as user_name, relation.name, relation.mobile, relation.id AS relation_id, count(*) as count FROM `user`
+                LEFT JOIN `relation` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 123 GROUP BY relation.id ORDER BY count DESC [ RunTime:0.0000s ]
+

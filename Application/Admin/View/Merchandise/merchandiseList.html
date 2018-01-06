@@ -1,0 +1,74 @@
+<extend name="Public/base"/>
+<block name="title">商品列表</block>
+<block name="body">
+  <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l">
+        <a class="btn btn-primary radius" data-title="添加菜单" href="{:U('Merchandise/add')}"><i class="Hui-iconfont">
+            </i>
+            添加商品</a></span></div>
+	<br>
+    <form action="{:U('merchandise/lists')}" method="get">
+	<div class="text-c"> 创建时间：
+		<input type="text" onClick="laydate()" placeholder="开始时间" name="start_time" class="input-text Wdate" style="width:150px;">
+		-
+		<input type="text" onClick="laydate()" placeholder="结束时间" name="end_time" class="input-text Wdate" style="width:150px;">
+		<input type="text" class="input-text" style="width:250px" placeholder="输入商品ID、名称、型号" id="" name="user">
+		<button type="submit" class="btn btn-success radius"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+	</div>
+        </form>
+	<div class="mt-20">
+	<table class="table table-border table-bordered table-hover table-bg table-sort">
+		<thead>
+			<tr class="text-c">
+				<th width="25"><input type="checkbox" name="" value=""></th>
+				<th width="20">id</th>
+				<th width="130">商品名称</th>
+				<th width="130">商品型号</th>
+				<th width="100">价格</th>
+				<th width="100">市场价</th>
+				<th width="40">剩余数量</th>
+				<th width="70">类型</th>
+				<th width="50">状态</th>
+				<th width="130">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="merchandise" id="vo">
+			<tr class="text-c">
+				<td><input type="checkbox" value="" name=""></td>
+				<td>{$vo.id}</td>
+
+				<td><u style="cursor:pointer" class="text-primary" onclick="member_show('商品详情','{:U('merchandise/merchandiseShow',array('id'=>$vo['id']))}','{$vo.id}','360','600')">{$vo.name}</u></td>
+				<td>{$vo.model}</td>
+				<td >{$vo.price}</td>
+				<td >{$vo.orig}</td>
+				<td >{$vo.num}</td>
+				<td ><?php echo C('MERCHANDISE_TYPE')[$vo['type']]?></td>
+				<td ><if condition="$vo.putaway == 1 ">
+						上架
+					<else />
+						下架
+					</if>
+				</td>
+				<td>
+					<a href="{:U('merchandise/edit',array('id' => $vo['id']))}">编辑</a>
+					<a href="{:U('merchandise/putaway',array('id' => $vo['id']))}" onclick="return confirm('您确定要修改此商品的状态吗?')">上下架</a>
+				</td>
+			</tr>
+                    </volist>                               
+		</tbody>
+	</table>
+            <div class="pager">{$page}</div>
+	</div>
+</div>
+</block>
+<block name="javascript">
+
+<script type="text/javascript">
+/*用户-查看*/
+function member_show(title,url,id,w,h){
+	layer_show(title,url,w,h);
+}
+</script> 
+</block>

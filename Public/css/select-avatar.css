@@ -1,0 +1,92 @@
+@charset "utf-8";
+/*------------- 编辑个人信息相关样式 -----------------*/
+html {
+  background: url('/Public/static/icons/bg.png') no-repeat;
+  background-size: 100%;
+}
+#select-avatar {
+  width: 9.19977rem;
+  height: 8.79978rem;
+  padding: 0 0.466655rem;
+  background-color: #fff;
+  border-radius: 0.13333rem;
+  text-align: center;
+  position: absolute;
+  top: 2.893261rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+#select-avatar > img {
+  width: 2.026616rem;
+  height: 2.026616rem;
+  border-radius: 50%;
+  border: 0.053332rem solid #ffffff;
+  position: absolute;
+  top: -0.506654rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+#select-avatar > .txt {
+  text-align: center;
+  font-size: 0.426656rem;
+  margin-top: 1.73329rem;
+  letter-spacing: 0.00813313rem;
+}
+#select-avatar > .txt > .line {
+  display: inline-block;
+  width: 0.159996rem;
+  height: 0.053332rem;
+  vertical-align: middle;
+  margin: 0 0.066665rem;
+  background: -webkit-gradient(linear, left top, right top, from(#00c0d1), to(#01bfb3));
+  background: linear-gradient(to right, #00c0d1, #01bfb3);
+}
+#select-avatar > .a-list {
+  margin-top: 0.66665rem;
+}
+#select-avatar > .a-list > li {
+  float: left;
+  margin-bottom: 0.53332rem;
+  position: relative;
+}
+#select-avatar > .a-list > li > img {
+  width: 1.3333rem;
+  height: 1.3333rem;
+  border-radius: 50%;
+}
+#select-avatar > .a-list > li:nth-child(2) {
+  margin: 0 0.39999rem 0.53332rem;
+}
+#select-avatar > .a-list > li:nth-child(4) {
+  margin: 0 0.39999rem 0.53332rem;
+}
+#select-avatar > .a-list > li:nth-child(7) {
+  margin: 0 0.39999rem 0.53332rem;
+}
+#select-avatar > .a-list > li:nth-child(9) {
+  margin: 0 0.39999rem 0.53332rem;
+}
+#select-avatar .avatar-selected::before {
+  content: '';
+  width: 0.39999rem;
+  height: 0.39999rem;
+  background: url('/Public/static/icons/icon-select.png') no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#select-avatar > .btn-confirm {
+  display: inline-block;
+  width: 7.9998rem;
+  height: 1.173304rem;
+  line-height: 1.173304rem;
+  margin-top: 0.26666rem;
+  background-color: #bfc3c3;
+  color: #fff;
+  font-size: 0.426656rem;
+  text-align: center;
+  border-radius: 0.13333rem;
+}

@@ -1,0 +1,130 @@
+@themes: "."; // 路径提取
+@import "@{themes}/px2rem";     // 导入换算 less
+@import "@{themes}/variable";   // 导入变量 less
+
+@charset "utf-8";
+
+/*------------- 编辑个人信息相关样式 -----------------*/
+
+// 背景图
+html {
+  background: url('../../assests/icons/bg-png.png') no-repeat,
+              url('../../assests/icons/bg.png') no-repeat;
+  background-size: 100%;
+}
+
+// 编辑个人信息
+#edit-info {
+  width: 680*@rem;
+  height: 464*@rem;
+  background-color: #f9fffe;
+  position: absolute;
+  top: 470*@rem;
+  left: 50%;
+  border-radius: 10*@rem;
+  padding: 0 40*@rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  // 编辑头像
+  > .avatar {
+    text-align: center;
+    position: absolute;
+    top: -38*@rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    > .a-box {
+      display: inline-block;
+      width: 160*@rem;
+      height: 160*@rem;
+      border-radius: 50%;
+      background-color: #fff;
+        > img {
+        border-radius: 50%;
+        width: 152*@rem;
+        height: 152*@rem;
+        margin-top: 4*@rem;
+      }
+    }
+    > .txt {
+      color: @main-color;
+      font-size: 24*@rem;
+    }
+  }
+  // 表单
+  > form {
+    position: relative;
+    > input {
+      background: url('../../assests/icons/input.png') no-repeat;
+      background-size: 100%;
+      display: block;
+      width: 600*@rem;
+      height: 88*@rem;
+      font-size: 30*@rem;
+      text-indent: 30*@rem;
+    }
+    > #codename {
+      margin-top: 190*@rem;
+      margin-bottom: 40*@rem;
+    }
+    // 删除图标
+    > #btn-clear {
+      width: 80*@rem;
+      height: 80*@rem;
+      position: absolute;
+      top: 4*@rem;
+      right: 4*@rem;
+      padding: 25*@rem;
+    }
+  }
+  // 确定按钮
+  > .btn-confirm {
+    display: inline-block;
+    width: 600*@rem;
+    height: 88*@rem;
+    line-height: 88*@rem;
+    background-color: #bfc3c3;
+    color: #fff;
+    font-size: 32*@rem;
+    text-align: center;
+    border-radius: 10*@rem;
+  }
+}
+
+// 遮罩层-头像选项
+#avatar-tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  > .box {
+    width: 100%;
+    text-align: center;
+    font-size: 32*@rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    > div {
+      background-color: #fff;
+      height: 100*@rem;
+      line-height: 100*@rem;
+    }
+    > .a-album{
+      border-top: 1px solid #ccc;
+      margin-bottom: 8*@rem;
+      position: relative;
+      // 获取手机相册的图片
+      > input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 750*@rem;
+        height: 100%;
+      }
+    }
+  }
+}

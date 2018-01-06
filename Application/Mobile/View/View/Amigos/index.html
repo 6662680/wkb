@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><?php echo $title?></title>
+  <script src="__PUBLIC__/lib/flexible/flexible_css.js"></script>
+  <script src="__PUBLIC__/lib/flexible/flexible.js"></script>
+  <link rel="stylesheet" href="__PUBLIC__/css/base.css">
+  <link rel="stylesheet" href="__PUBLIC__/css/common.css">
+  <link rel="stylesheet" href="__PUBLIC__/css/add-contact.css">
+  <script src="__PUBLIC__/js/jquery-3.1.0.min.js"></script>
+  <script src="__PUBLIC__/lib/fastclick/fastclick.min.js"></script>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <header id="header">
+    <a class="h-back">
+      <img id="btn-back" src="__PUBLIC__/static/icons/icon-back.png" alt="返回"> 返回
+    </a>
+    <span class="h-title">当贝通话</span>
+  </header>
+  <!-- 添加联系人 -->
+  <section id="add-contact">
+    <!-- 标题 -->
+    <h3 class="s-title">添加联系人</h3>
+    <!-- 表单 -->
+    <form action="" method="post">
+      <?php if ($title == '添加联系人') {
+        echo '<input type="tel" id="tel" placeholder="请输入对方手机号" maxlength="11">';
+      }?>
+      <input type="text" id="codename" placeholder="请输入对方备注" value="<?php echo $name?>" maxlength="14">
+    </form>
+    <!-- 确定按钮 -->
+    <a class="btn-confirm css" href="javascript:void(0);">确定</a>
+  </section>
+  <!-- 提交成功提示 -->
+  <section id="tip-success">
+    <div class="box">
+      <img src="__PUBLIC__/static/icons/icon-success.png" alt="提交成功">
+      <div class="top">提交成功！</div>
+      <div class="bottom clearfix">
+        <a class="btn-quit f-left" href="javascript:void(0);">退出</a>
+        <a class="btn-continue f-left" href="javascript:void(0);">继续添加</a>
+      </div>
+    </div>
+  </section>
+</body>
+
+<!-- 引入js文件 -->
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/add-contact.js"></script>
+
+</html>

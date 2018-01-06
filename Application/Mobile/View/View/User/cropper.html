@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>裁剪</title>
+  <script src="__PUBLIC__/lib/flexible/flexible_css.js"></script>
+  <script src="__PUBLIC__/lib/flexible/flexible.js"></script>
+  <link rel="stylesheet" href="__PUBLIC__/css/base.css">
+  <link rel="stylesheet" href="__PUBLIC__/css/cropper.css">
+  <script src="__PUBLIC__/js/jquery-3.1.0.min.js"></script>
+  <script src="__PUBLIC__/lib/fastclick/fastclick.min.js"></script>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <header id="header">
+    <img id="btn-back" src="__PUBLIC__/static/icons/icon-back.png" alt="返回">
+    <span class="txt">移动和缩放</span>
+  </header>
+  <!-- 裁剪图片区域 -->
+  <section id="cropper">
+    <p class="txt">请点击图片进行裁剪</p>
+    <img src="" alt="">
+    <div class="pre-box"></div>
+  </section>
+  <!-- 确定按钮 -->
+  <section id="complete">
+    <a id="btn-complete" href="javascript:void(0);">完成</a>
+  </section>
+</body>
+
+<!-- 引入js文件 -->
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/lib/alloycrop/transform.js"></script>
+<script src="__PUBLIC__/lib/alloycrop/alloy-finger.js"></script>
+<script src="__PUBLIC__/lib/alloycrop/alloy-crop.js"></script>
+<script src="__PUBLIC__/js/cropper.js"></script>
+
+</html>

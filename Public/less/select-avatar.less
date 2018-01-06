@@ -1,0 +1,108 @@
+@themes: "."; // 路径提取
+@import "@{themes}/px2rem";     // 导入换算 less
+@import "@{themes}/variable";   // 导入变量 less
+
+@charset "utf-8";
+
+/*------------- 编辑个人信息相关样式 -----------------*/
+
+// 背景图
+html {
+  background: url('../../assests/icons/bg.png') no-repeat;
+  background-size: 100%;
+}
+
+// 系统头像选择
+#select-avatar {
+  width: 690*@rem;
+  height: 660*@rem;
+  padding: 0 35*@rem;
+  background-color: #fff;
+  border-radius: 10*@rem;
+  text-align: center;
+  position: absolute;
+  top: 217*@rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  // 预览头像
+  > img {
+    width: 152*@rem;
+    height: 152*@rem;
+    border-radius: 50%;
+    border: 4*@rem solid #fff;
+    position: absolute;
+    top: -38*@rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  // 文字
+  > .txt {
+    text-align: center;
+    font-size: 32*@rem;
+    margin-top: 130*@rem;
+    letter-spacing: 0.61*@rem;
+    > .line {
+      display: inline-block;
+      width: 12*@rem;
+      height: 4*@rem;
+      vertical-align: middle;
+      margin: 0 5*@rem;
+      background: -webkit-gradient(linear,left top, right top,from(#00c0d1), to(#01bfb3));
+      background: linear-gradient(to right,#00c0d1, #01bfb3);
+    }
+  }
+  // 头像列表
+  > .a-list {
+    margin-top: 50*@rem;
+    > li {
+      float: left;
+      margin-bottom: 40*@rem;
+      position: relative;
+      > img {
+        width: 100*@rem;
+        height: 100*@rem;
+        border-radius: 50%;
+      }
+    }
+    > li:nth-child(2) {
+      margin: 0 30*@rem 40*@rem;
+    }
+    > li:nth-child(4) {
+      margin: 0 30*@rem 40*@rem;
+    }
+    > li:nth-child(7) {
+      margin: 0 30*@rem 40*@rem;
+    }
+    > li:nth-child(9) {
+      margin: 0 30*@rem 40*@rem;
+    }
+  }
+
+  // 选中的勾号
+  .avatar-selected::before {
+    content: '';
+    width: 30*@rem;
+    height: 30*@rem;
+    background: url('../../assests/icons/icon-select.png') no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  // 确定按钮
+  > .btn-confirm {
+    display: inline-block;
+    width: 600*@rem;
+    height: 88*@rem;
+    line-height: 88*@rem;
+    margin-top: 20*@rem;
+    background-color: #bfc3c3;
+    color: #fff;
+    font-size: 32*@rem;
+    text-align: center;
+    border-radius: 10*@rem;
+  }
+}

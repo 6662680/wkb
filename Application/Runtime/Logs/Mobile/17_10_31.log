@@ -1,0 +1,270 @@
+[ 2017-10-31T16:58:34+08:00 ] 127.0.0.1 /index.php/Mobile/Amigos/head_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 278 行.
+ERR: 非法操作:head_list
+
+[ 2017-10-31T16:58:41+08:00 ] 127.0.0.1 /index.php/Mobile/Amigos/head_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 278 行.
+ERR: 非法操作:head_list
+
+[ 2017-10-31T17:54:24+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: post D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\CallController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE `deadline` < 1509465600 AND `user_mobile` = null LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-10-31T17:54:34+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: post D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\CallController.class.php 第 71 行.
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE `deadline` < 1509465600 AND `user_mobile` = null LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-10-31T17:54:50+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE `deadline` < 1509465600 AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-31T17:55:05+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE `deadline` < 1509465600 AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-10-31T18:01:08+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` > 1509379200 AND `deadline` < 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-31T20:46:05+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` > 1509379200 AND `deadline` < 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-31T20:47:02+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509379200 AND `deadline` <= 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-31T20:47:14+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509379200 AND `deadline` <= 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-10-31T20:47:25+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509379200 AND `deadline` <= 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-10-31T20:47:29+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509379200 AND `deadline` <= 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-10-31T20:47:39+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509379200 AND `deadline` <= 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-10-31T20:47:47+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509379200 AND `deadline` <= 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-10-31T20:49:17+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509292800 AND `deadline` <= 1509379200  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-31T20:49:41+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509292800 AND `deadline` <= 1509379200  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-10-31T20:49:59+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509292800 AND `deadline` <= 1509379200  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-31T20:51:08+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509292800 AND `deadline` <= 1509379200  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-31T20:51:10+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509292800 AND `deadline` <= 1509379200  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-31T20:52:50+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509379200 AND `deadline` <= 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-31T20:53:10+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509379200 AND `deadline` <= 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-31T20:53:26+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `deadline` >= 1509379200 AND `deadline` <= 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-10-31T20:55:34+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `time` >= 1509379200 AND `time` <= 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-31T20:55:49+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `time` >= 1509379200 AND `time` <= 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-31T20:57:21+08:00 ] 127.0.0.1 /index.php/mobile/call/send
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `send_log` WHERE ( `time` >= 1509379200 AND `time` <= 1509465600  ) AND `user_mobile` = 18679354419 LIMIT 1   [ RunTime:0.0000s ]
+

@@ -1,0 +1,32 @@
+//设计图 750px 使用flexible,插件系统认为整个屏幕就是 10 rem,所以 1rem 就对应75px;
+//px = >rem 要除以 75
+//基准值 设计图 / 10 
+@remBase:75;
+//举个小例子
+// 高度量出来 80px = > height: 80*@rem;
+
+//这里 round 是一个函数可以对小数进行保留，这里就是保留6位小数的意思
+@rem:round(1/ @remBase, 6) * 1rem;
+
+// 为了方便，我们也会使用less 写一个mixin
+// 例如：.font-size(12);一倍尺寸多少像素就写多少；
+//在实际开发中我们一般使用的字体大小为：12px,14px,16px,18px.....尽量使用偶数字体
+// .font-size(@px) {
+//     font-size : round(@px) *1px;
+//     [data-dpr='2'] & {
+//         font-size: @px * 2px;
+//     }
+//     [data-dpr = '3'] & {
+//         font-size: round(@px * 3) * 1px
+//     }
+// }
+
+.font-size(@px) {
+    font-size: round(@px) * 1px;
+    [data-dpr='2'] & {
+        font-size:round(@px) * 2px;
+    }
+    [data-dpr="3"] & {
+        font-size: round(@px * 3) * 1px;
+    }
+}

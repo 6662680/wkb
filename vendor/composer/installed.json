@@ -1,0 +1,50 @@
+[
+    {
+        "name": "jpush/jpush",
+        "version": "v3.x-dev",
+        "version_normalized": "3.9999999.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jpush/jpush-api-php-client.git",
+            "reference": "b16520e84cdd117a0fc262a4a8e6569104e1cda5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jpush/jpush-api-php-client/zipball/b16520e84cdd117a0fc262a4a8e6569104e1cda5",
+            "reference": "b16520e84cdd117a0fc262a4a8e6569104e1cda5",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.1"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "*"
+        },
+        "time": "2017-01-24T03:12:40+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "jpush": "src/"
+            },
+            "files": [
+                "src/JPush/JPush.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache"
+        ],
+        "authors": [
+            {
+                "name": "JPush",
+                "email": "support@jpush.cn",
+                "homepage": "https://www.jpush.cn/",
+                "role": "Developer"
+            }
+        ],
+        "description": "JPush API PHP Client",
+        "homepage": "http://docs.jpush.cn/display/dev/Push-API-v3"
+    }
+]

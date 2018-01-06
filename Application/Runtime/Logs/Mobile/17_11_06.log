@@ -1,0 +1,2317 @@
+[ 2017-11-06T09:44:23+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select call_time, receive, relation_id, id from comments order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select call_time, receive, relation_id, id from comments order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:46:41+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select call_time, receive, relation_id, id from call_log order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select call_time, receive, relation_id, id from call_log order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:46:41+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select call_time, receive, relation_id, id from call_log order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select call_time, receive, relation_id, id from call_log order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:46:41+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select call_time, receive, relation_id, id from call_log order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select call_time, receive, relation_id, id from call_log order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:46:42+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select call_time, receive, relation_id, id from call_log order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select call_time, receive, relation_id, id from call_log order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:47:14+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, creceive, c.relation_id, c.id from call_log as c order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, creceive, c.relation_id, c.id from call_log as c order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:47:15+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, creceive, c.relation_id, c.id from call_log as c order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, creceive, c.relation_id, c.id from call_log as c order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:47:15+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, creceive, c.relation_id, c.id from call_log as c order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, creceive, c.relation_id, c.id from call_log as c order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:47:15+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, creceive, c.relation_id, c.id from call_log as c order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1248:Every derived table must have its own alias
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, creceive, c.relation_id, c.id from call_log as c order by id desc)
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:50:16+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1054:Unknown column 'creceive' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, creceive, c.relation_id, c.id from call_log as c order by id desc) as log
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'creceive' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, creceive, c.relation_id, c.id from call_log as c order by id desc) as log
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:50:44+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1054:Unknown column 'call_log.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, c.receive, c.relation_id, c.id from call_log as c order by id desc) as log
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'call_log.id' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, c.receive, c.relation_id, c.id from call_log as c order by id desc) as log
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:51:28+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1054:Unknown column 'hours_length' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, c.receive, c.relation_id, c.id from call_log as c order by id desc) as c
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'hours_length' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, c.receive, c.relation_id, c.id from call_log as c order by id desc) as c
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:51:44+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+            ' at line 1
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, c.hours_length, .ccall_time, .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, c.receive, c.relation_id, c.id from call_log as c order by id desc) as c
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+            ' at line 1
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, c.hours_length, .ccall_time, .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, c.receive, c.relation_id, c.id from call_log as c order by id desc) as c
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T09:58:22+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+            ' at line 1
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, c.hours_length, .ccall_time, .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, c.receive, c.relation_id, c.id from call_log as c order by id desc) as c
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+            ' at line 1
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, c.hours_length, .ccall_time, .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+                FROM ( select c.call_time, c.receive, c.relation_id, c.id from call_log as c order by id desc) as c
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T12:34:51+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+            ' at line 1
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, c.hours_length, .ccall_time, .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+                FROM call_log as c
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+            ' at line 1
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, c.hours_length, .ccall_time, .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+                FROM call_log as c
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T12:34:51+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+            ' at line 1
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, c.hours_length, .ccall_time, .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+                FROM call_log as c
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+            ' at line 1
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, c.hours_length, .ccall_time, .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+                FROM call_log as c
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T12:34:52+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+            ' at line 1
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, c.hours_length, .ccall_time, .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+                FROM call_log as c
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+            ' at line 1
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, c.hours_length, .ccall_time, .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+                FROM call_log as c
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T12:35:03+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+            ' at line 1
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, c.hours_length, .ccall_time, .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+                FROM call_log as c
+                LEFT JOIN `relation` ON relation.id = c.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+            ' at line 1
+ [ SQL语句 ] : SELECT `user`.id, c.id as log_id, `user`.head_portrait, relation.name, relation.mobile, c.hours_length, .ccall_time, .creceive, c.answer,relation.id AS relation_id, count(*) as count 
+                FROM call_log as c
+                LEFT JOIN `relation` ON relation.id = c.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T12:35:22+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, hours_length, call_time, receive, answer,relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0160s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 159 行.
+
+[ 2017-11-06T13:06:00+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as call_time
+                relation.last_hours_length as hours_length, relatio' at line 1
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time, as call_time
+                relation.last_hours_length as hours_length, relation.last_answer, relation.last_receive,hours_length, call_time, receive, 
+                answer,relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as call_time
+                relation.last_hours_length as hours_length, relatio' at line 1
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time, as call_time
+                relation.last_hours_length as hours_length, relation.last_answer, relation.last_receive,hours_length, call_time, receive, 
+                answer,relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T13:06:27+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as call_time
+                relation.last_hours_length as hours_length, relatio' at line 1
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time, as call_time
+                relation.last_hours_length as hours_length, relation.last_answer, relation.last_receive,hours_length, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as call_time
+                relation.last_hours_length as hours_length, relatio' at line 1
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time, as call_time
+                relation.last_hours_length as hours_length, relation.last_answer, relation.last_receive,hours_length, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T13:07:13+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.last_hours_length as hours_length, relation.last_answer as answer, rela' at line 2
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.last_hours_length as hours_length, relation.last_answer as answer, rela' at line 2
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T13:07:40+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1054:Unknown column 'relation.last_call_time' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'relation.last_call_time' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T13:07:41+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1054:Unknown column 'relation.last_call_time' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'relation.last_call_time' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T13:07:41+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1054:Unknown column 'relation.last_call_time' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'relation.last_call_time' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T13:07:56+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+ERR: 1054:Unknown column 'relation.last_call_time' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+ERR: 1054:Unknown column 'relation.last_call_time' in 'field list'
+ [ SQL语句 ] : SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50
+
+[ 2017-11-06T13:14:22+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 159 行.
+
+[ 2017-11-06T13:16:37+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0030s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 159 行.
+
+[ 2017-11-06T13:16:38+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 159 行.
+
+[ 2017-11-06T13:16:45+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 159 行.
+
+[ 2017-11-06T13:17:02+08:00 ] 127.0.0.1 /index.php/mobile/call/log
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+SQL: SELECT `user`.id, call_log.id as log_id, `user`.head_portrait, relation.name, relation.mobile, relation.last_call_time as call_time,
+                relation.last_hours_length as hours_length, relation.last_answer as answer, relation.last_receive as receive, 
+                relation.id AS relation_id, count(*) as count 
+                FROM `call_log`
+                LEFT JOIN `relation` ON relation.id = call_log.relation_id
+                LEFT JOIN `user` ON relation.mobile = `user` .mobile
+                WHERE `user_id` = 81 GROUP BY relation.id ORDER BY log_id limit 0, 50 [ RunTime:0.0010s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 159 行.
+
+[ 2017-11-06T13:34:51+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0020s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0010s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 159 行.
+
+[ 2017-11-06T13:35:16+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 177 行.
+
+[ 2017-11-06T13:35:30+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0020s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:35:39+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0010s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:35:39+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:35:39+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0010s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:35:39+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0020s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:35:43+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:35:43+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:35:51+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 179 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 179 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0020s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 161 行.
+
+[ 2017-11-06T13:35:51+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 179 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 179 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0020s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 161 行.
+
+[ 2017-11-06T13:35:51+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 179 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 179 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0040s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 161 行.
+
+[ 2017-11-06T13:35:58+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 179 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 179 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0030s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 161 行.
+
+[ 2017-11-06T13:36:20+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0020s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:36:20+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0020s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:36:20+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:36:21+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0020s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:36:28+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:36:28+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0020s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:36:48+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:36:48+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0020s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 160 行.
+
+[ 2017-11-06T13:37:02+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+
+[ 2017-11-06T13:37:06+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0010s ]
+
+[ 2017-11-06T13:37:06+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0020s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0000s ]
+
+[ 2017-11-06T13:37:07+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0020s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0020s ]
+
+[ 2017-11-06T13:37:07+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0010s ]
+
+[ 2017-11-06T13:37:41+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 81 LIMIT 1  [ RunTime:0.0010s ]
+
+[ 2017-11-06T13:41:51+08:00 ] 127.0.0.1 /index.php/mobile/call/delLog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `call_log` [ RunTime:0.0010s ]
+SQL: DELETE FROM `call_log` WHERE `relation_id` = 77 [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: user_id D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\CallController.class.php 第 178 行.
+NOTIC: [2] unlink(./Application/Runtime/Temp/dc1d71bbb5c4d2a5e936db79ef10c19f.php): No such file or directory D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+
+[ 2017-11-06T14:41:15+08:00 ] 127.0.0.1 /index.php/mobile/amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 346 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `relation` WHERE `mobile` = '18516993406' AND `user_id` = 81 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T14:44:11+08:00 ] 127.0.0.1 /index.php/mobile/amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 346 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `relation` WHERE `mobile` = '18516993406' AND `user_id` = 81 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T14:47:00+08:00 ] 127.0.0.1 /index.php/mobile/amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 346 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '18516993406' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `relation` WHERE `mobile` = '18516993406' AND `user_id` = 81 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T14:50:23+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0010s ]
+
+[ 2017-11-06T14:50:34+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0010s ]
+
+[ 2017-11-06T14:52:56+08:00 ] 127.0.0.1 /index.php/mobile/amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 346 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '18516993406' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `relation` WHERE `mobile` = '18516993406' AND `user_id` = 81 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:03:04+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 346 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0040s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0010s ]
+
+[ 2017-11-06T15:16:51+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 347 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0050s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+ERR: 表达式错误:15068859103
+
+[ 2017-11-06T15:17:12+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 347 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0040s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `relation` WHERE `mobile` IN ('15068859103','18679354419') AND `user_id` = 82  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:43:34+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 345 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0030s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 309 行.
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = null AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:44:01+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 342 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 309 行.
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = null AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:44:02+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 342 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 309 行.
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = null AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:44:02+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 342 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 309 行.
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = null AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+
+[ 2017-11-06T15:44:02+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 342 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 309 行.
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = null AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+
+[ 2017-11-06T15:45:10+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 342 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:47:23+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:47:24+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0030s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:47:41+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0010s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:47:47+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:48:00+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:49:29+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0030s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+
+[ 2017-11-06T15:49:30+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:49:50+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:50:04+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0060s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:50:27+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+
+[ 2017-11-06T15:50:35+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:50:43+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:51:32+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+
+[ 2017-11-06T15:51:41+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0010s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:52:24+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:52:29+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','18679354419')  [ RunTime:0.0010s ]
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = '15157518309' AND `user_mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+
+[ 2017-11-06T15:53:05+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 344 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `relation` WHERE `mobile` IN ('13588835122') AND `user_id` = 82  [ RunTime:0.0000s ]
+
+[ 2017-11-06T15:54:11+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 352 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `relation` WHERE `mobile` IN ('13588835122') AND `user_id` = 82  [ RunTime:0.0020s ]
+
+[ 2017-11-06T15:55:06+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Mobile\Controller\AmigosController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 352 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `relation` WHERE `mobile` IN ('13588835122') AND `user_id` = 82  [ RunTime:0.0000s ]
+
+[ 2017-11-06T16:06:39+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '135888835122' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T16:31:57+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '135888835122' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-11-06T16:31:58+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '135888835122' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T16:31:58+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '135888835122' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-11-06T16:31:58+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '135888835122' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-11-06T16:31:58+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '135888835122' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T16:49:27+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-06T16:50:12+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 81 AND `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-11-06T16:50:13+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 81 AND `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-11-06T16:50:13+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 81 AND `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T16:50:13+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 81 AND `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T16:51:12+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 81 AND `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `relation` (`user_id`,`mobile`) VALUES ('81','13588835122') [ RunTime:0.0000s ]
+
+[ 2017-11-06T16:51:45+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 81 AND `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `relation` (`user_id`,`mobile`) VALUES ('81','13588835122') [ RunTime:0.0000s ]
+
+[ 2017-11-06T17:02:32+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 81 AND `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T17:02:41+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 81 AND `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T17:02:43+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 81 AND `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T17:03:11+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 81 AND `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `relation` (`user_id`,`mobile`,`name`) VALUES ('81','13588835122','') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` WHERE `id` = 81 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: name D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 91 行.
+NOTIC: [8] Undefined index: deviceid D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 98 行.
+ERR: Invalid alias[0], alias[0] must be a string
+
+[ 2017-11-06T17:05:20+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 81 AND `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-11-06T17:05:35+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `relation` WHERE `user_id` = 81 AND `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `relation` (`user_id`,`mobile`,`name`) VALUES ('81','13588835122','') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `user` WHERE `id` = 81 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: name D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 91 行.
+NOTIC: [2] unlink(./Application/Runtime/Temp/aa8cdd86bda1d8ce78edbe279e79d78a.php): No such file or directory D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+
+[ 2017-11-06T17:11:57+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `relation` WHERE `mobile` = '13588835122' AND `user_id` = 81 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T17:13:05+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `relation` WHERE `mobile` = '13588835122' AND `user_id` = 81 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T17:13:37+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `relation` WHERE `mobile` = '13588835122' AND `user_id` = 81 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T17:14:21+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `relation` WHERE `mobile` = '13588835122' AND `user_id` = 81 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-11-06T17:14:40+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `relation` WHERE `mobile` = '13588835122' AND `user_id` = 81 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-11-06T17:16:55+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/find
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT user.name,user.mobile,user.id,user.head_portrait FROM `user` WHERE `mobile` = '13588835122' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `relation` WHERE `mobile` = '13588835122' AND `user_id` = 81 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-11-06T20:46:26+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 287 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:46:35+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 287 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:46:35+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 287 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:46:35+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 287 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:46:36+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 287 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:46:47+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-06T20:46:57+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-06T20:47:06+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+
+[ 2017-11-06T20:47:14+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:47:39+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:47:39+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:47:40+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:47:51+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:47:51+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:47:52+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:48:09+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:49:48+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:49:48+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:49:48+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:49:48+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:49:48+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:55:32+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:55:32+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:55:32+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:55:32+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:55:32+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+
+[ 2017-11-06T20:55:48+08:00 ] 127.0.0.1 /index.php/mobile/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 283 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lists D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mobile\Controller\AmigosController.class.php 第 288 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT `mobile`,`id` FROM `relation` WHERE `user_id` = 82 AND `mobile` IN () 
+

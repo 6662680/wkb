@@ -1,0 +1,51 @@
+@themes: "."; // 路径提取
+@import "@{themes}/px2rem";     // 导入换算 less
+@import "@{themes}/variable";   // 导入变量 less
+
+@charset "utf-8";
+
+/*------------- 头部公用样式 -----------------*/
+
+#header {
+  width: 100%;
+  height: 87*@rem;
+  line-height: 87*@rem;
+  font-size: 36*@rem;
+  background-color: #3b3b3b;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  // 返回按钮
+  > .h-back {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 10*@rem;
+    margin-top: 3*@rem;
+    font-size: 32*@rem;
+    > img {
+      width: 44*@rem;
+      height: 44*@rem;
+      vertical-align: middle;
+      margin-bottom: 3*@rem;
+    }
+  }
+  // 标题
+  > .h-title {
+    font-family: 'PingFangSC-Medium';
+  }
+}
+
+// 强制开启硬件加速
+.css {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}

@@ -1,0 +1,312 @@
+[ 2017-12-13T13:48:16+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001761s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002100s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002566s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0483s ]
+SQL: SELECT * FROM `config` WHERE `key` = 'price' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `config` SET `value`='{\"time\":1513144096,\"price\":\"16700\"}' WHERE `key` = 'price' [ RunTime:0.0538s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.018899s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.019236s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.084668s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084854s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.012186s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012331s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.013580s ]
+INFO: [ app_end ] --END-- [ RunTime:0.013815s ]
+
+[ 2017-12-13T13:48:17+08:00 ] 127.0.0.1 /index.php/Home/Index/vcode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000972s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003059s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003632s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001100s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001393s ]
+
+[ 2017-12-13T13:48:46+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000970s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001453s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `config` WHERE `key` = 'price' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000253s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000487s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019406s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019611s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000819s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000640s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000766s ]
+
+[ 2017-12-13T13:48:46+08:00 ] 127.0.0.1 /index.php/Home/Index/vcode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000675s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001157s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001168s ]
+
+[ 2017-12-13T13:49:47+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000992s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000874s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001081s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `config` WHERE `key` = 'price' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-12-13T13:51:04+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001004s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001234s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `config` WHERE `key` = 'price' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `config` SET `value`='{\"time\":1513144264,\"price\":\"16700.01\"}' WHERE `key` = 'price' [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000167s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000297s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016130s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016445s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001172s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001421s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001229s ]
+
+[ 2017-12-13T13:51:04+08:00 ] 127.0.0.1 /index.php/Home/Index/vcode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001077s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001004s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001288s ]
+
+[ 2017-12-13T13:52:02+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001013s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000954s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `config` WHERE `key` = 'price' LIMIT 1   [ RunTime:0.0006s ]
+SQL: UPDATE `config` SET `value`='{\"time\":1513144322,\"price\":\"16700\"}' WHERE `key` = 'price' [ RunTime:0.0005s ]
+
+[ 2017-12-13T13:52:22+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000119s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003020s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001015s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `config` WHERE `key` = 'price' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000334s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019400s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019711s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002846s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003141s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001106s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001336s ]
+
+[ 2017-12-13T13:52:22+08:00 ] 127.0.0.1 /index.php/Home/Index/vcode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000830s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001150s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001683s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001940s ]
+
+[ 2017-12-13T13:52:50+08:00 ] 127.0.0.1 /index.php/Home/Index/check.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001107s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001247s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+NOTIC: [8] Undefined index: receive_address F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\IndexController.class.php 第 57 行.
+
+[ 2017-12-13T13:53:03+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001032s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001091s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001377s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM `config` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `config` WHERE `key` = 'price' LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000288s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000522s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022375s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022615s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002629s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003728s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001155s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001490s ]
+
+[ 2017-12-13T13:53:04+08:00 ] 127.0.0.1 /index.php/Home/Index/vcode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001142s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000917s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001148s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001637s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008972s ]
+
+[ 2017-12-13T13:53:36+08:00 ] 127.0.0.1 /index.php/Home/Index/check.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000738s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000856s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001117s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+NOTIC: [8] Undefined index: receive_address F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\IndexController.class.php 第 57 行.
+
+[ 2017-12-13T13:54:35+08:00 ] 127.0.0.1 /index.php/Home/Index/check.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000910s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001622s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+NOTIC: [8] Undefined index: card_number F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\IndexController.class.php 第 57 行.
+
+[ 2017-12-13T13:55:42+08:00 ] 127.0.0.1 /index.php/Home/Index/check.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000996s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001121s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001368s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+
+[ 2017-12-13T13:56:59+08:00 ] 127.0.0.1 /index.php/Home/Index/check.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000851s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001073s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001363s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+NOTIC: [8] Undefined index: yhk_bank F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\IndexController.class.php 第 65 行.
+NOTIC: [8] Undefined index: zfb_card F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\IndexController.class.php 第 70 行.
+NOTIC: [8] Undefined index: wxzf_card F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\IndexController.class.php 第 75 行.
+NOTIC: [8] Undefined index: bank F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\IndexController.class.php 第 120 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.012068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.012289s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.086583s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.086736s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000612s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000752s ]
+
+[ 2017-12-13T13:56:59+08:00 ] 127.0.0.1 /index.php/Home/Index/vcode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000873s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000915s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001173s ]
+NOTIC: [2048] Declaration of Home\Controller\BaseController::error() should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Home\Controller\BaseController.class.php 第 38 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001146s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001433s ]
+

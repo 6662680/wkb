@@ -1,0 +1,248 @@
+[ 2017-11-16T21:49:46+08:00 ] 127.0.0.1 /index.php/mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Amigos
+
+[ 2017-11-16T21:51:21+08:00 ] 127.0.0.1 /index.php/mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Amigos
+
+[ 2017-11-16T21:51:21+08:00 ] 127.0.0.1 /index.php/mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Amigos
+
+[ 2017-11-16T21:51:21+08:00 ] 127.0.0.1 /index.php/mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Amigos
+
+[ 2017-11-16T21:51:21+08:00 ] 127.0.0.1 /index.php/mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Amigos
+
+[ 2017-11-16T21:51:26+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Amigos
+
+[ 2017-11-16T21:51:27+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Amigos
+
+[ 2017-11-16T21:51:27+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Amigos
+
+[ 2017-11-16T21:51:52+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+' at line 1
+ [ SQL语句 ] : SELECT friends_id, head_portrait, user_name, ,relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+                WHERE `user_id` = 143 and relation.display = 1 ORDER BY num DESC
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+' at line 1
+ [ SQL语句 ] : SELECT friends_id, head_portrait, user_name, ,relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+                WHERE `user_id` = 143 and relation.display = 1 ORDER BY num DESC
+
+[ 2017-11-16T21:51:52+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+' at line 1
+ [ SQL语句 ] : SELECT friends_id, head_portrait, user_name, ,relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+                WHERE `user_id` = 143 and relation.display = 1 ORDER BY num DESC
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+' at line 1
+ [ SQL语句 ] : SELECT friends_id, head_portrait, user_name, ,relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+                WHERE `user_id` = 143 and relation.display = 1 ORDER BY num DESC
+
+[ 2017-11-16T21:51:52+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+' at line 1
+ [ SQL语句 ] : SELECT friends_id, head_portrait, user_name, ,relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+                WHERE `user_id` = 143 and relation.display = 1 ORDER BY num DESC
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+' at line 1
+ [ SQL语句 ] : SELECT friends_id, head_portrait, user_name, ,relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+                WHERE `user_id` = 143 and relation.display = 1 ORDER BY num DESC
+
+[ 2017-11-16T21:51:53+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+' at line 1
+ [ SQL语句 ] : SELECT friends_id, head_portrait, user_name, ,relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+                WHERE `user_id` = 143 and relation.display = 1 ORDER BY num DESC
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+' at line 1
+ [ SQL语句 ] : SELECT friends_id, head_portrait, user_name, ,relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+                WHERE `user_id` = 143 and relation.display = 1 ORDER BY num DESC
+
+[ 2017-11-16T21:51:53+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+' at line 1
+ [ SQL语句 ] : SELECT friends_id, head_portrait, user_name, ,relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+                WHERE `user_id` = 143 and relation.display = 1 ORDER BY num DESC
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+' at line 1
+ [ SQL语句 ] : SELECT friends_id, head_portrait, user_name, ,relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation`
+                WHERE `user_id` = 143 and relation.display = 1 ORDER BY num DESC
+
+[ 2017-11-16T21:52:22+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation` ' at line 1
+ [ SQL语句 ] : SELECT friends_id, head_portrait, user_name, ,relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation` 
+                WHERE `user_id` = 143 and relation.display = 1 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation` ' at line 1
+ [ SQL语句 ] : SELECT friends_id, head_portrait, user_name, ,relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation` 
+                WHERE `user_id` = 143 and relation.display = 1 
+
+[ 2017-11-16T21:52:31+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SELECT friends_id, head_portrait, user_name, relation.name, relation.mobile, relation.id AS relation_id, num FROM `relation` 
+                WHERE `user_id` = 143 and relation.display = 1 ORDER BY num DESC [ RunTime:0.0010s ]
+
+[ 2017-11-16T22:06:35+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0010s ]
+NOTIC: [2] explode() expects parameter 2 to be string, array given D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mv2\Controller\AmigosController.class.php 第 331 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mv2\Controller\AmigosController.class.php 第 381 行.
+SQL: SHOW COLUMNS FROM `relation` [ RunTime:0.0030s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND `user_id` = 82 AND `display` = 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `relation` WHERE `mobile` IN () AND `user_id` = 82 AND `display` = 1 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND `user_id` = 82 AND `display` = 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `relation` WHERE `mobile` IN () AND `user_id` = 82 AND `display` = 1 
+
+[ 2017-11-16T22:08:41+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+NOTIC: [2] explode() expects parameter 2 to be string, array given D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mv2\Controller\AmigosController.class.php 第 331 行.
+NOTIC: [2] array_diff(): Argument #1 is not an array D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mv2\Controller\AmigosController.class.php 第 335 行.
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = null AND `user_mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = null AND `user_mobile` IN () 
+
+[ 2017-11-16T22:08:41+08:00 ] 127.0.0.1 /index.php/Mv2/Amigos/matching
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] Function mcrypt_cbc() is deprecated D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Common\Common\function.php 第 178 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT `mobile`,`id` FROM `user` WHERE `mobile` IN ('15068859103','13588835122','18679354419')  [ RunTime:0.0000s ]
+NOTIC: [2] explode() expects parameter 2 to be string, array given D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mv2\Controller\AmigosController.class.php 第 331 行.
+NOTIC: [2] array_diff(): Argument #1 is not an array D:\phpStudy\WWW\dbspapi.dbkan.com\Application\Mv2\Controller\AmigosController.class.php 第 335 行.
+SQL: SELECT `mobile` FROM `user` WHERE `id` = 82 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `send_log` [ RunTime:0.0040s ]
+NOTIC: [2] implode(): Invalid arguments passed D:\phpStudy\WWW\dbspapi.dbkan.com\ThinkPHP\Library\Think\Db\Driver.class.php 第 578 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = null AND `user_mobile` IN () 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `send_log` WHERE `type` = 2 AND `mobile` = null AND `user_mobile` IN () 
+

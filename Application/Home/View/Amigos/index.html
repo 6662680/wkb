@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    <?php echo $title?>
+  </title>
+  <script src="__PUBLIC__/lib/flexible/flexible_css.js"></script>
+  <script src="__PUBLIC__/lib/flexible/flexible.js"></script>
+  <link rel="stylesheet" href="__PUBLIC__/css/base.css">
+  <link rel="stylesheet" href="__PUBLIC__/css/common.css">
+  <link rel="stylesheet" href="__PUBLIC__/css/add-contact.css">
+  <script src="__PUBLIC__/js/jquery-3.1.0.min.js"></script>
+  <script src="__PUBLIC__/lib/fastclick/fastclick.min.js"></script>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <!-- <header id="header">
+    <a class="h-back">
+      <img id="btn-back" src="__PUBLIC__/static/icons/icon-back.png" alt="返回"> 返回
+    </a>
+    <span class="h-title">当贝通话</span>
+  </header> -->
+  <!-- 添加联系人 -->
+  <section id="add-contact">
+    <!-- 标题 -->
+    <h3 class="s-title">
+      <?php echo $title;?>
+    </h3>
+    <!-- 表单 -->
+    <form action="" method="post">
+      <?php if ($title == '添加联系人') {
+        echo '<input type="tel" id="tel" placeholder="请输入对方手机号" data-value="1" maxlength="11">';
+      }?>
+      <input type="text" id="codename" placeholder="请输入对方备注" value="<?php echo $name?>" maxlength="11">
+    </form>
+    <!-- 确定按钮 -->
+    <button class="btn-confirm" href="javascript:void(0);">确定</button>
+  </section>
+  <!-- 提交成功提示 -->
+  <section id="tip-success" class="css">
+    <div class="box">
+      <img src="__PUBLIC__/static/icons/icon-success.png" alt="提交成功">
+      <div class="top">提交成功！</div>
+      <div class="bottom clearfix">
+        <a class="btn-quit f-left" href="javascript:void(0);">退出</a>
+        <a class="btn-continue f-left" href="javascript:void(0);">继续添加</a>
+      </div>
+    </div>
+  </section>
+  <section id="loading">
+    上传中，请稍后
+  </section>
+  <section id="post-success">
+    修改成功
+  </section>
+  <section id="validate">
+    请检查手机号码是否填写正确
+  </section>
+</body>
+
+<!-- 引入js文件 -->
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/add-contact.js"></script>
+
+<script>
+  function GetQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+  }
+  var relation_id = GetQueryString('relation_id');
+  var user_id = GetQueryString('user_id');
+
+  // 提交表单
+  $('.btn-confirm').on('click', function (e) {
+    e.preventDefault();
+
+    if ($('#tel').attr('data-value')) {
+      var url = 'add';
+
+      // 验证手机号格式
+      var regExp = /^1\d{10}$/;
+      if (regExp.test($('#tel').val()) == false) {
+        $('#validate').fadeIn();
+        var timer2 = setTimeout(function () {
+          $('#validate').fadeOut();
+          clearTimeout(timer2);
+        }, 1000);
+        return;
+      }
+    } else {
+      var url = 'edit';
+    }
+    var name = $('#codename').val();
+    var mobile = $('#tel').val();
+
+    // 显示上传中
+    $('#loading').fadeIn();
+
+    // 禁用确定按钮
+    $('.btn-confirm').css('background-color', '#bfc3c3').attr('disabled', 'disabled');
+
+    // ajax提交
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      type: 'post',
+      data: {
+        name: name,
+        mobile: mobile,
+        relation_id: GetQueryString('relation_id'),
+        user_id: GetQueryString('user_id'),
+      },
+      success: function (data) {
+        // 提交成功，清空填写的本地信息
+        if (data.status == true) {
+          // 取消禁用
+          $('.btn-confirm').css('background-color', '#01bfb3').removeAttr('disabled');
+          $('#loading').fadeOut();
+
+          // 添加界面时
+          if ($('#tel').attr('data-value')) {
+            // 提交成功弹出提示窗口
+            $('#tip-success').fadeIn();
+            // 修改界面时
+          } else {
+            $('#post-success').fadeIn();
+            var timer = setTimeout(function () {
+              $('#post-success').fadeOut();
+              clearTimeout(timer);
+            }, 1800);
+          }
+        } else {
+          $('#loading').fadeOut();
+          $('.btn-confirm').css('background-color', '#01bfb3').removeAttr('disabled');
+          alert(data.msg);
+        }
+      },
+      error: function () {
+        $('#loading').fadeOut();
+      }
+    })
+
+    // 退出
+    $('#tip-success .btn-quit').on('click', function () {
+      $('#tip-success').fadeOut();
+      $('#tel').val('');
+      $('#codename').val('');
+    })
+
+    // 继续添加
+    $('#tip-success .btn-continue').on('click', function () {
+      $('#tip-success').fadeOut();
+      $('#tel').val('');
+      $('#codename').val('');
+    })
+  })
+</script>
+
+</html>

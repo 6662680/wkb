@@ -1,0 +1,9 @@
+[0106/150313:ERROR:block_files.cc(477)] Failed to open C:\Users\Administrator\AppData\Local\Youdao\YNote\GPUCache\data_0
+[0106/150324:FATAL:CefClientHandler.cpp(161)] Check failed: CefCurrentlyOn(TID_UI). 
+
+Backtrace:
+	cef_time_to_timet [0x0415E0F7+789303]
+	cef_time_to_timet [0x04129B11+574801]
+	cef_log [0x0406CB47+55]
+	(No symbol) [0x00526717]
+

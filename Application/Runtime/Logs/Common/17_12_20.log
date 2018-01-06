@@ -1,0 +1,16 @@
+[ 2017-12-20T14:05:01+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+ERR: 无法加载模块:Favicon
+
+[ 2017-12-20T14:05:41+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+NOTIC: [8] Constant NOFILE_CD already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 31 行.
+NOTIC: [8] Constant NOFILE_MSG already defined F:\tool\phpstudy\WWW\dbspapi.dbkan.com\Application\Common\Conf\messagecd.php 第 32 行.
+ERR: 无法加载模块:Favicon
+
