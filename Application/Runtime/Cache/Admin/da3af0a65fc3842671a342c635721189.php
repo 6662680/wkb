@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <title>
-        角色管理
+        后台人员管理
     </title>
     <link rel="stylesheet" type="text/css" href="/Public/static/h-ui/css/H-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="/Public/static/h-ui.admin/css/H-ui.admin.css" />
@@ -33,20 +33,38 @@
 
 
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 角色管理 <span class="c-gray en">&gt;</span> 菜单管理<span class="c-gray en">&gt;</span> <?php echo ($actionName); ?>
+    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 道具管理<span class="c-gray en">&gt;</span> <?php echo ($actionName); ?>
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	   </nav>
     <div class="page-container">
         <form action="" method="post" class="form form-horizontal" id="form-member-add" novalidate="novalidate">
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>角色名称:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>道具名称:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="text" class="input-text" value="<?php echo ($roleInfo['rname']); ?>" name="rname">
+                    <input type="text" class="input-text" value="<?php echo ($equipmentInfo['equipment_name']); ?>" name="equipment_name" >
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>挖掘效率:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="<?php echo ($equipmentInfo['equipment_endurance']); ?>" name="equipment_endurance" >
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否防坍塌致血量归零:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="<?php echo ($equipmentInfo['equipment_protect']); ?>" name="equipment_protect" >
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图片样式:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="file" name="equipment_img" id="" value="/Public/images/mediche/<?php echo ($equipmentInfo['equipment_img']); ?>" />
                 </div>
             </div>
             <div class="row cl">
                 <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-                    <input type="hidden" name="role_id" value="<?php echo ($roleInfo["role_id"]); ?>">
+                    <input type="hidden" name="id" value="<?php echo ($equipmentInfo["id"]); ?>">
                     <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
                 </div>
             </div>

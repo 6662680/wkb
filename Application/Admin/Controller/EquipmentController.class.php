@@ -6,7 +6,7 @@ use Think\Controller;
  * @author jlb <[<email address>]>
  * @since 2016年12月7日09:57:37 
  */
-class MedicheController extends PrivilegeController
+class EquipmentController extends PrivilegeController
 {
 	/**
 	 * 后台用户列表
@@ -17,9 +17,9 @@ class MedicheController extends PrivilegeController
     {
     	$pageSize = 10;
         $p = I('request.p', 1, 'intval');
-        $page = getpage(M('Mediche')->count(), $pageSize, array());
-    	$medicheList = M('Mediche')->limit($page->firstRow, $page->listRows)->select();
-    	$this->assign('medicheList',$medicheList);
+        $page = getpage(M('Equipment')->count(), $pageSize, array());
+    	$equipmentList = M('Equipment')->limit($page->firstRow, $page->listRows)->select();
+    	$this->assign('equipmentList',$equipmentList);
     	$this->assign('page',$page->show());
         $this->display();
     }
@@ -34,7 +34,7 @@ class MedicheController extends PrivilegeController
     	{
     		$this->requestSubmit();
     	}
-    	$this->assign('actionName','食物类型添加');
+    	$this->assign('actionName','道具添加');
     	$this->assign('roleList',M('Role')->where("role_id <> " . ($this->role_id == 1 ? 0 : 1))->select());
         $this->display('form');
     }
@@ -49,8 +49,8 @@ class MedicheController extends PrivilegeController
     	{
     		$this->requestSubmit();
     	}
-    	$this->assign('actionName','食物编辑');
-    	$this->assign('adminInfo',M('Mediche')->find(I('get.id')));
+    	$this->assign('actionName','道具编辑');
+    	$this->assign('equipmentInfo',M('Equipment')->find(I('get.id')));
         $this->display('form');
     }
 
@@ -63,47 +63,51 @@ class MedicheController extends PrivilegeController
     {
     	$id = I('post.id');
     	
-    	$mediche_name = I('post.mediche_name');
-    	$mediche_treat = I('post.mediche_treat');
-		$mediche_img = I('post.mediche_img');
+    	$equipment_name = I('post.equipment_name');
+    	$equipment_endurance = I('post.equipment_endurance');
+    	$equipment_protect = I('post.equipment_protect');
+		$equipment_img = I('post.equipment_img');
+		
     	//$admin_id存在就是修改,不存在就是添加
-    	if ( !$id && !$mediche_name )
+    	if ( !$id && !$equipment_name )
     	{
-    		$this->error('请填写食物名称');
+    		$this->error('请填写道具名称');
     	}
-    	if ( !$id && !$mediche_treat )
+    	if ( !$id && !$equipment_endurance )
     	{
-    		$this->error('请填写回血值');
+    		$this->error('请填写挖掘效率');
     	}
-		if ( !$id && !$mediche_img )
+		if ( !$id && !$equipment_protect )
+    	{
+    		$this->error('请填写是否防坍塌');
+    	}
+		if ( !$id && !$equipment_img )
     	{
     		$this->error('请上传图片样式');
     	}
 
-    	if ( !$id && M('Mediche')->where("mediche_name = '{$mediche_name}'")->count() )
+    	if ( !$id && M('Equipment')->where("equipment_name = '{$equipment_name}'")->count() )
     	{
-    		$this->error('食物已经存在,请换一个!');
+    		$this->error('道具已经存在,请换一个!');
     	}
 
     	$data = [
-    		'mediche_name' => $mediche_name,
-    		'mediche_treat' => $mediche_treat,
-    		'mediche_img' => $mediche_img,
+    		'equipment_name' => $equipment_name,
+    		'equipment_endurance' => $equipment_endurance,
+    		'equipment_protect' => $equipment_protect,
+    		'equipment_img' => $equipment_img,
     	];
 
     	if ( $id )
     	{
-    		
-    		
-    		M('Mediche')->where("id = $id")->save($data);
+    		M('Equipment')->where("id = $id")->save($data);
     	}
     	else 
     	{
-			
-    		M('Mediche')->add($data);
+    		M('Equipment')->add($data);
     	}
 
-		$this->success('操作成功!',U('Mediche/index'),2);
+		$this->success('操作成功!',U('Equipment/index'),2);
 		exit;
     }
     /**
@@ -119,7 +123,7 @@ class MedicheController extends PrivilegeController
 			$this->error('非法请求');
 		}
 		
-		M('Mediche')->delete($id);
+		M('Equipment')->delete($id);
 		$this->success('删除成功');
 	}
 }

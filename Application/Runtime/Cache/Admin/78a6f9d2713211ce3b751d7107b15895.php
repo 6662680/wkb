@@ -33,35 +33,39 @@
 
 
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 角色管理
+    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 道具管理
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	</nav>
     <div class="page-container">
         <form class="form-inline definewidth m20" id="searchForm" action="">
         </form>
         <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l">
-        <a class="btn btn-primary radius" data-title="添加菜单" href="<?php echo U('Admin/add');?>"><i class="Hui-iconfont">
+        <a class="btn btn-primary radius" data-title="添加菜单" href="<?php echo U('Equipment/add');?>"><i class="Hui-iconfont">
             </i>
-            添加后台用户</a></span></div>
+            添加道具</a></span></div>
             <br>
         <table class="table table-border table-bordered table-bg table-sort">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>账号</th>
-                <th>所属角色</th>
+                <th>道具名称</th>
+                <th>挖掘效率</th>
+                <th>是否防塌陷致血量归零</th>
+                <th>图片样式</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
-            <?php if(is_array($adminList)): foreach($adminList as $key=>$vo): ?><tr >
-                   <td><?php echo ($vo["admin_id"]); ?></td>
-                   <td><?php echo ($vo["uname"]); ?> </td>
-                   <td><?php echo D('Role')->getRole($vo['role_id'],'rname');?></td>
+            <?php if(is_array($equipmentList)): foreach($equipmentList as $key=>$vo): ?><tr >
+                   <td><?php echo ($vo["id"]); ?></td>
+                   <td><?php echo ($vo["equipment_name"]); ?></td>
+                   <td><?php echo ($vo["equipment_endurance"]); ?></td>
+                   <td><?php echo ($vo["equipment_protect"]); ?></td>
+                   <td><img style="width: 40px;height: 40px;" src="/Public/images/equipment/<?php echo ($vo["equipment_img"]); ?>"/></td>
                    <td>
                        <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->
-                       <a href="<?php echo U('Admin/edit',array('admin_id' => $vo['admin_id']));?>">编辑</a>
-                       <a href="<?php echo U('Admin/del',array('admin_id' => $vo['admin_id']));?>" onclick="return confirm('您确定要删除此用户吗?')">删除角色</a>
+                       <a href="<?php echo U('Equipment/edit',array('id' => $vo['id']));?>">编辑</a>
+                       <a href="<?php echo U('Equipment/del',array('id' => $vo['id']));?>" onclick="return confirm('您确定要删除此道具吗?')">删除</a>
                    </td>
                 </tr><?php endforeach; endif; ?>
             </tbody>
