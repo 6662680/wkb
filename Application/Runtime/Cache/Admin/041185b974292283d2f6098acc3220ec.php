@@ -38,12 +38,12 @@
         <div class="formControls col-xs-8 col-xs-offset-3">
           <input type="submit" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
           <input type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
-        </div>c
+        </div>
       </div>
     </form>
   </div>
 </div>
-<div class="footer">Copyright 你的公司名称 by Gison and Double li</div>
+<div class="footer">Copyright 你的公司名称</div>
 <script type="text/javascript" src="/Public/lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="/Public/static/h-ui/js/H-ui.js"></script> 
 </body>

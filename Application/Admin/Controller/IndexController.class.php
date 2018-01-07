@@ -31,7 +31,7 @@ class IndexController extends CommonController
 
 	public function welcome()
 	{
-	    echo '愿你走出半生，归来任似少年!';
+	    echo '牛奶面包都会有的，少年!';
 	}
 
 	/**
