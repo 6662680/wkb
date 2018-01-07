@@ -96,59 +96,36 @@ function pr($content) {
  * 返回ajax
  * @return json
  */
-function returnajax($Bool, $data, $msg = NULL, $code = 0) {
-
-    if (empty($data)) {
-        $json = json_encode(['status' => $Bool, 'msg' => $msg, 'code' => $code], true);
-    } else {
-        $json = json_encode(['status' => $Bool, 'data' => $data, 'msg' => $msg, 'code' => $code], true);
-    }
-
-    if (session('api')) {
-        exit(encode($json));
-    } else {
-        exit($json);
-    }
-
-
-
+function returnajax($Bool, $data = NULL, $msg = NULL, $code = 0) {
+    $json = json_encode(['status' => $Bool, 'msg' => $msg, 'code' => $code, 'data' => $data], true);
+    exit($json);
 }
 
-////获取解密参数
-//function getParam($method='get'){
+//
+///**
+// * 接值解密,只接key 为value的json数组
+// * @return array
+// */
+//function getRequest($method='post', $debug = APP_DEBUG) {
 //
 //    if($method == 'get'){
 //        $param = I('get.value');
 //    }else{
 //        $param = I('post.value');
 //    }
-//    return json_decode(decode($param),true);
+//
+//    $rst =  json_decode(decode($param),true);
+//
+//    if (is_array($rst)) {
+//        session('api', true);
+//        return $rst;
+//    }
+//
+//    if ($debug) {
+//        session('debug', true);
+//        return I('post.');
+//    }
 //}
-
-/**
- * 接值解密,只接key 为value的json数组
- * @return array
- */
-function getRequest($method='post', $debug = APP_DEBUG) {
-
-    if($method == 'get'){
-        $param = I('get.value');
-    }else{
-        $param = I('post.value');
-    }
-
-    $rst =  json_decode(decode($param),true);
-
-    if (is_array($rst)) {
-        session('api', true);
-        return $rst;
-    }
-
-    if ($debug) {
-        session('debug', true);
-        return I('post.');
-    }
-}
 
 /**
  * 创建验证码
@@ -160,49 +137,49 @@ function generate_code($length = 4) {
     $max = pow(10, $length) - 1;
     return rand($min, $max);
 }
-
-/**
- * 加密
- * @param string $str 要处理的字符串
- * @param string $key 加密Key，为8个字节长度
- * @return string
- */
-function encode($str, $key = 'dbsp2017') {
-    $size = mcrypt_get_block_size(MCRYPT_DES, MCRYPT_MODE_CBC);
-    $str = pkcs5Pad($str, $size);
-    $aaa = mcrypt_cbc(MCRYPT_DES, $key, $str, MCRYPT_ENCRYPT, $key);
-    $ret = base64_encode($aaa);
-    return $ret;
-}
-
-function pkcs5Pad($text, $blocksize) {
-    $pad = $blocksize - (strlen($text) % $blocksize);
-    return $text . str_repeat(chr($pad), $pad);
-}
-
-/**
- * 解密
- * @param string $str 要处理的字符串
- * @param string $key 解密Key，为8个字节长度
- * @return string
- */
-function decode($str, $key = 'dbsp2017') {
-    $strBin = base64_decode($str);
-    $str = mcrypt_cbc(MCRYPT_DES, $key, $strBin, MCRYPT_DECRYPT, $key);
-    $str = pkcs5Unpad($str);
-    return $str;
-}
-
-function pkcs5Unpad($text) {
-    $pad = ord($text {strlen($text) - 1});
-    if ($pad > strlen($text))
-        return false;
-
-    if (strspn($text, chr($pad), strlen($text) - $pad) != $pad)
-        return false;
-
-    return substr($text, 0, - 1 * $pad);
-}
+//
+///**
+// * 加密
+// * @param string $str 要处理的字符串
+// * @param string $key 加密Key，为8个字节长度
+// * @return string
+// */
+//function encode($str, $key = 'dbsp2017') {
+//    $size = mcrypt_get_block_size(MCRYPT_DES, MCRYPT_MODE_CBC);
+//    $str = pkcs5Pad($str, $size);
+//    $aaa = mcrypt_cbc(MCRYPT_DES, $key, $str, MCRYPT_ENCRYPT, $key);
+//    $ret = base64_encode($aaa);
+//    return $ret;
+//}
+//
+//function pkcs5Pad($text, $blocksize) {
+//    $pad = $blocksize - (strlen($text) % $blocksize);
+//    return $text . str_repeat(chr($pad), $pad);
+//}
+//
+///**
+// * 解密
+// * @param string $str 要处理的字符串
+// * @param string $key 解密Key，为8个字节长度
+// * @return string
+// */
+//function decode($str, $key = 'dbsp2017') {
+//    $strBin = base64_decode($str);
+//    $str = mcrypt_cbc(MCRYPT_DES, $key, $strBin, MCRYPT_DECRYPT, $key);
+//    $str = pkcs5Unpad($str);
+//    return $str;
+//}
+//
+//function pkcs5Unpad($text) {
+//    $pad = ord($text {strlen($text) - 1});
+//    if ($pad > strlen($text))
+//        return false;
+//
+//    if (strspn($text, chr($pad), strlen($text) - $pad) != $pad)
+//        return false;
+//
+//    return substr($text, 0, - 1 * $pad);
+//}
 
 /*
   * 判断某个数组的某个下标存在且不为false
@@ -406,42 +383,79 @@ function sms($mobile, $nubmer, $data) {
     return $result;
 }
 
-/*删除关系缓存*/
-function delrelcache($map) {
-    $dbnum = USERINFO_DBNUM;
-    $redisOpt = new \Common\Controller\RedisoptController('server1',$dbnum);
-    $redisOpt->delKeyCache(USERREL_KEY.md5($map));
+///*删除关系缓存*/
+//function delrelcache($map) {
+//    $dbnum = USERINFO_DBNUM;
+//    $redisOpt = new \Common\Controller\RedisoptController('server1',$dbnum);
+//    $redisOpt->delKeyCache(USERREL_KEY.md5($map));
+//}
+//
+///*删除列表缓存*/
+//function dellistcache($id) {
+//    $dbnum = USERINFO_DBNUM;
+//    $redisOpt = new \Common\Controller\RedisoptController('server1',$dbnum);
+//    $redisOpt->delKeyCache(USERREL_list_M_KEY.$id);
+//    $redisOpt->delKeyCache(USERREL_list_T_KEY.$id);
+//}
+//
+///*删除用户缓存*/
+//function delinfocache($map) {
+//    $dbnum = USERINFO_DBNUM;
+//    $redisOpt = new \Common\Controller\RedisoptController('server1',$dbnum);
+//    $redisOpt->delKeyCache(USERINFO_KEY.md5($map));
+//}
+//
+//function dellogcache($id) {
+//    $dbnum = USERLOG_DBNUM;
+//    $userlog_key = USERREL_LOG_KEY.md5($id);
+//    $redisOpt = new \Common\Controller\RedisoptController('server1',$dbnum);
+//    $redisOpt->delKeyCache($userlog_key);
+//}
+//
+//function delloglistcache($id) {
+//    $dbnum = USERLOG_LIST_DBNUM;
+//    $userlog_key = USERREL_LOG_LIST_KEY.md5($id);
+//    $redisOpt = new \Common\Controller\RedisoptController('server1',$dbnum);
+//    $redisOpt->delKeyCache($userlog_key);
+//}
+
+
+function createSalt() {
+    $chars = [
+        "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+        "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
+        "W", "X", "Y", "Z", "*", "%", "#", "@", "1", "2", "3",
+        "4", "5", "6", "7", "8", "9", "?", "a", "b", "c", "d",
+        "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",
+        "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+    ];
+    shuffle($chars);
+    $salt = "";
+    for ($i = 0; $i < 25; $i++) {
+        $salt .= $chars[$i];
+    }
+    return $salt;
 }
 
-/*删除列表缓存*/
-function dellistcache($id) {
-    $dbnum = USERINFO_DBNUM;
-    $redisOpt = new \Common\Controller\RedisoptController('server1',$dbnum);
-    $redisOpt->delKeyCache(USERREL_list_M_KEY.$id);
-    $redisOpt->delKeyCache(USERREL_list_T_KEY.$id);
+function encryption($pwd, $salt) {
+    $options = [
+        'cost' => 12,
+        'salt' => $salt
+    ];
+    $password_hash = password_hash($pwd, PASSWORD_BCRYPT, $options);
+    $md5 = '';
+    $salt_arr = str_split($salt);
+    for ($i = 1; $i < 25; $i++) {
+        if ($i % 5 == 0) {
+            $md5.=$salt_arr[$i];
+        }
+    }
+    return md5($password_hash . $md5);
 }
+function forgetPassword($email,$salt){
 
-/*删除用户缓存*/
-function delinfocache($map) {
-    $dbnum = USERINFO_DBNUM;
-    $redisOpt = new \Common\Controller\RedisoptController('server1',$dbnum);
-    $redisOpt->delKeyCache(USERINFO_KEY.md5($map));
+    return md5($email.$salt);
 }
-
-function dellogcache($id) {
-    $dbnum = USERLOG_DBNUM;
-    $userlog_key = USERREL_LOG_KEY.md5($id);
-    $redisOpt = new \Common\Controller\RedisoptController('server1',$dbnum);
-    $redisOpt->delKeyCache($userlog_key);
-}
-
-function delloglistcache($id) {
-    $dbnum = USERLOG_LIST_DBNUM;
-    $userlog_key = USERREL_LOG_LIST_KEY.md5($id);
-    $redisOpt = new \Common\Controller\RedisoptController('server1',$dbnum);
-    $redisOpt->delKeyCache($userlog_key);
-}
-
 
 /**
  * 系统邮件发送函数
@@ -554,12 +568,21 @@ function vcode() {
     $Verify->useNoise = false;
     return $Verify->entry();
 }
-//记录点击次数
-function clickNum() {
-    if (!session('clickNum')) {
-        session('clickNum', 1);
-    } else {
-        session('clickNum',session('clickNum') +1 );
-    }
 
+function getIp() {
+    if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP"), "unknown"))
+        $ip = getenv("HTTP_CLIENT_IP");
+    else
+        if (getenv("HTTP_X_FORWARDED_FOR") && strcasecmp(getenv("HTTP_X_FORWARDED_FOR"), "unknown"))
+            $ip = getenv("HTTP_X_FORWARDED_FOR");
+        else
+            if (getenv("REMOTE_ADDR") && strcasecmp(getenv("REMOTE_ADDR"), "unknown"))
+                $ip = getenv("REMOTE_ADDR");
+            else
+                if (isset ($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], "unknown"))
+                    $ip = $_SERVER['REMOTE_ADDR'];
+                else
+                    $ip = "unknown";
+    return ($ip);
 }
+

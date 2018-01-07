@@ -7,7 +7,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title></title>
     <!-- Bootstrap -->
-    <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/wkb/Public/css/bootstrap.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -16,7 +16,7 @@
 
     <![endif]-->
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/Public/css/main.css" rel="stylesheet">
+    <link href="/wkb/Public/css/main.css" rel="stylesheet">
 
     <style type="text/css">
       .mblack
@@ -43,7 +43,7 @@
           <span class="icon-bar"></span>
           </button>
           <a href="../" class="navbar-brand">
-            <img src="/Public/images/logo.png" height="48" width="135" >
+            <img src="/wkb/Public/images/logo.png" height="48" width="135" >
           </a>
         </div>
         <nav id="bs-navbar" class="collapse navbar-collapse">
@@ -54,7 +54,7 @@
         </nav>
       </div>
     </header>
-    <div class="jumbotron masthead" style="background: url(/Public/images/toppic.png) bottom;" >
+    <div class="jumbotron masthead" style="background: url(/wkb/Public/images/toppic.png) bottom;" >
       <div class="container">
         <h1 class="text-center " style="margin-top: 100px">Top up prepaid mobile phones with bitcoin in <br> China and around the world</h1>
       </div>
@@ -128,21 +128,21 @@
                           <li class="amount-item">
                             <input type="radio" name="amount" id="unpay" value="unpay" class="pricelist_item">
                             <label for="unpay" class="amount-item-label">
-                              <img src="/Public/images/unpay.png" alt="">
+                              <img src="/wkb/Public/images/unpay.png" alt="">
                               <var class="amount-btc">银行卡支付</var>
                             </label>
                           </li>
                           <li class="amount-item">
                             <input type="radio" name="amount" id="alipay" value="alipay" class="pricelist_item">
                             <label for="alipay" class="amount-item-label">
-                              <img src="/Public/images/alpay.png" alt="">
+                              <img src="/wkb/Public/images/alpay.png" alt="">
                               <var class="amount-btc">支付宝支付</var>
                             </label>
                           </li>
                           <li class="amount-item">
                             <input type="radio" name="amount" id="wxpay" value="wxpay" class="pricelist_item">
                             <label for="wxpay" class="amount-item-label">
-                              <img src="/Public/images/wxpay.png" alt="">
+                              <img src="/wkb/Public/images/wxpay.png" alt="">
                               <var class="amount-btc">微信支付</var>
                             </label>
                           </li>
@@ -239,21 +239,21 @@
                           <li class="amount-item">
                             <input type="radio" name="amount" id="unpays" value="unpays" class="pricelist_item" data-way="yhk">
                             <label for="unpays" class="amount-item-label">
-                              <img src="/Public/images/unpay.png" alt="">
+                              <img src="/wkb/Public/images/unpay.png" alt="">
                               <var class="amount-btc">银行卡支付</var>
                             </label>
                           </li>
                           <li class="amount-item">
                             <input type="radio" name="amount" id="alipays" value="alipays" class="pricelist_item" data-way="zfb">
                             <label for="alipays" class="amount-item-label">
-                              <img src="/Public/images/alpay.png" alt="">
+                              <img src="/wkb/Public/images/alpay.png" alt="">
                               <var class="amount-btc">支付宝支付</var>
                             </label>
                           </li>
                           <li class="amount-item">
                             <input type="radio" name="amount" id="wxpays" value="wxpays" class="pricelist_item" data-way="wxzf">
                             <label for="wxpays" class="amount-item-label">
-                              <img src="/Public/images/wxpay.png" alt="">
+                              <img src="/wkb/Public/images/wxpay.png" alt="">
                               <var class="amount-btc">微信支付</var>
                             </label>
                           </li>
@@ -301,7 +301,7 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid pt60  pb60 border-bottom cd-fixed-bg" id="log" style="background-image: url(/Public/images/bgsesson.jpg); padding-bottom: 188px;">
+    <div class="container-fluid pt60  pb60 border-bottom cd-fixed-bg" id="log" style="background-image: url(/wkb/Public/images/bgsesson.jpg); padding-bottom: 188px;">
       <div class="container colorw">
         <h2 class="text-center colorw">交易查询</h2>
         <div class="row">
@@ -370,21 +370,21 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid paysupport pt50 mt100 cd-fixed-bg" style="background-image: url(/Public/images/bgsection.jpg);">
+    <div class="container-fluid paysupport pt50 mt100 cd-fixed-bg" style="background-image: url(/wkb/Public/images/bgsection.jpg);">
       <div class="container">
         <p class="small-title">支付支持</p>
         <div class="row">
           <div class="row">
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <img src="/Public/images/unpay.png" alt="">
+              <img src="/wkb/Public/images/unpay.png" alt="">
               <p class="colorw">银行卡支付</p>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <img src="/Public/images/alpay.png" alt="">
+              <img src="/wkb/Public/images/alpay.png" alt="">
               <p class="colorw">支付宝支付</p>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <img src="/Public/images/wxpay.png" alt="">
+              <img src="/wkb/Public/images/wxpay.png" alt="">
               <p class="colorw">微信支付</p>
             </div>
           </div>
@@ -428,12 +428,12 @@
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/Public/js/jquery.min.js"></script>
+    <script src="/wkb/Public/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/Public/js/bootstrap.min.js"></script>
-    <script src="/Public/js/bootstrap.min.js"></script>
-    <script src="/Public/js/jquery.validate.min.js"></script>
-    <script src="/Public/js/messages_zh.js"></script>
+    <script src="/wkb/Public/js/bootstrap.min.js"></script>
+    <script src="/wkb/Public/js/bootstrap.min.js"></script>
+    <script src="/wkb/Public/js/jquery.validate.min.js"></script>
+    <script src="/wkb/Public/js/messages_zh.js"></script>
     <script type="text/javascript">
     $(function(){
 

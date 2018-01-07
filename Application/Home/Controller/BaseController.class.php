@@ -6,33 +6,15 @@ class BaseController extends Controller
     public function __construct()
 	{
         parent::__construct();
+        //$this->check_login();
 	}
 
-    public function validationToken()
-    {
-        if (session('token') != I('post.token')) {
-            $this-> error('当前链接已过期，请返回首页重新提交');
-        };
-        session('token', '');
-    }
 
-    public function check_verify($reset = '', $id = '')
+    public function check_login()
     {
-        $code = I('post.code');
-        $verify = new \Think\Verify();
-
-        if ($reset == 'reset') {
-            $verify->reset = false;
-        }else {
-            $verify->reset = true;
+        if (empty(session('id'))) {
+            returnajax('false', '', '等待超时，请重新登陆', 1);
         }
-
-        return $verify->check($code, $id);
     }
 
-    public function error($msg)
-    {
-        $this->assign('msg', $msg);
-        $this->display('alert');
-    }
 }
