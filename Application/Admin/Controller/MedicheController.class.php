@@ -65,6 +65,7 @@ class MedicheController extends PrivilegeController
     	
     	$mediche_name = I('post.mediche_name');
     	$mediche_treat = I('post.mediche_treat');
+    	$mediche_price = I('post.mediche_price');
 		$mediche_img = I('post.mediche_img');
     	//$id存在就是修改,不存在就是添加
     	if ( !$id && !$mediche_name )
@@ -74,6 +75,10 @@ class MedicheController extends PrivilegeController
     	if ( !$id && !$mediche_treat )
     	{
     		$this->error('请填写回血值');
+    	}
+    	if ( !$id && !$mediche_price )
+    	{
+    		$this->error('请填写食物价格');
     	}
 		if ( !$id && !$mediche_img )
     	{
@@ -88,6 +93,7 @@ class MedicheController extends PrivilegeController
     	$data = [
     		'mediche_name' => $mediche_name,
     		'mediche_treat' => $mediche_treat,
+    		'mediche_price' => $mediche_price,
     		'mediche_img' => $mediche_img,
     	];
 

@@ -51,6 +51,12 @@
                 </div>
             </div>
             <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>食物价格:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="<?php echo ($adminInfo['mediche_price']); ?>" name="mediche_price" >
+                </div>
+            </div>
+            <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图片样式:</label>
                 <div class="formControls col-xs-8 col-sm-3">
                     <input type="file" name="mediche_img" id="" value="/Public/images/mediche/<?php echo ($adminInfo['mediche_img']); ?>" />
