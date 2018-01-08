@@ -33,39 +33,46 @@
 
 
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 食物管理
+    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 人物管理
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	</nav>
     <div class="page-container">
         <form class="form-inline definewidth m20" id="searchForm" action="">
         </form>
         <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l">
-        <a class="btn btn-primary radius" data-title="添加菜单" href="<?php echo U('Mediche/add');?>"><i class="Hui-iconfont">
+        <a class="btn btn-primary radius" data-title="添加菜单" href="<?php echo U('Person/add');?>"><i class="Hui-iconfont">
             </i>
-            添加食物类型</a></span></div>
+            添加人物</a></span></div>
             <br>
         <table class="table table-border table-bordered table-bg table-sort">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>食物名称</th>
-                <th>回血值</th>
-                <th>食物价格</th>
+                <th>人物名称</th>
+                <th>挖矿能力</th>
+                <th>人物初始血量</th>
+                <th>人物价格</th>
+                <th>人物成长</th>
+                <th>是否为隐藏人物</th>
                 <th>图片样式</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
-            <?php if(is_array($medicheList)): foreach($medicheList as $key=>$vo): ?><tr >
+            <?php if(is_array($PersonList)): foreach($PersonList as $key=>$vo): ?><tr >
                    <td><?php echo ($vo["id"]); ?></td>
-                   <td><?php echo ($vo["mediche_name"]); ?></td>
-                   <td><?php echo ($vo["mediche_treat"]); ?></td>
-                   <td><?php echo ($vo["mediche_price"]); ?></td>
-                   <td><img style="width: 40px;height: 40px;" src="/Public/images/mediche/<?php echo ($vo["mediche_img"]); ?>"/></td>
+                   <td><?php echo ($vo["person_name"]); ?></td>
+                   <td><?php echo ($vo["person_capacity"]); ?></td>
+                   <td><?php echo ($vo["person_blood"]); ?></td>
+                   <td><?php echo ($vo["person_price"]); ?></td>
+                   <td><?php echo ($vo["person_property"]); ?></td>
+                   <td><?php  if ($vo['status']==1) { echo '是'; } else { echo '否'; } ?>
+                   </td>
+                   <td><img style="width: 40px;height: 40px;" src="/Public/images/person/<?php echo ($vo["person_img"]); ?>"/></td>
                    <td>
                        <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->
-                       <a href="<?php echo U('Mediche/edit',array('id' => $vo['id']));?>">编辑</a>
-                       <a href="<?php echo U('Mediche/del',array('id' => $vo['id']));?>" onclick="return confirm('您确定要删除此食物类型吗?')">删除</a>
+                       <a href="<?php echo U('Person/edit',array('id' => $vo['id']));?>">编辑</a>
+                       <a href="<?php echo U('Person/del',array('id' => $vo['id']));?>" onclick="return confirm('您确定要删除此人物吗?')">删除</a>
                    </td>
                 </tr><?php endforeach; endif; ?>
             </tbody>

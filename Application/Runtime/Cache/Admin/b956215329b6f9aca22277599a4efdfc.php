@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <title>
-        后台人员管理
+        权限管理
     </title>
     <link rel="stylesheet" type="text/css" href="/Public/static/h-ui/css/H-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="/Public/static/h-ui.admin/css/H-ui.admin.css" />
@@ -33,39 +33,44 @@
 
 
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 食物管理
+    <i class="Hui-iconfont">&#xe67f;</i> 权限管理 <span class="c-gray en">&gt;</span> 菜单管理
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	</nav>
     <div class="page-container">
         <form class="form-inline definewidth m20" id="searchForm" action="">
         </form>
         <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l">
-        <a class="btn btn-primary radius" data-title="添加菜单" href="<?php echo U('Mediche/add');?>"><i class="Hui-iconfont">
+        <a class="btn btn-primary radius" data-title="添加菜单" href="<?php echo U('Menu/add');?>"><i class="Hui-iconfont">
             </i>
-            添加食物类型</a></span></div>
+            添加菜单</a></span></div>
             <br>
         <table class="table table-border table-bordered table-bg table-sort">
             <thead>
             <tr>
-                <th>ID</th>
-                <th>食物名称</th>
-                <th>回血值</th>
-                <th>食物价格</th>
-                <th>图片样式</th>
+                <th>菜单ID</th>
+                <th>菜单名称</th>
+                <th>控制器</th>
+                <th>方法</th>
+                <th>是否启用</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
-            <?php if(is_array($medicheList)): foreach($medicheList as $key=>$vo): ?><tr >
-                   <td><?php echo ($vo["id"]); ?></td>
-                   <td><?php echo ($vo["mediche_name"]); ?></td>
-                   <td><?php echo ($vo["mediche_treat"]); ?></td>
-                   <td><?php echo ($vo["mediche_price"]); ?></td>
-                   <td><img style="width: 40px;height: 40px;" src="/Public/images/mediche/<?php echo ($vo["mediche_img"]); ?>"/></td>
+            
+            <?php if(is_array($menuList)): foreach($menuList as $key=>$vo): ?><tr >
+                   <td><?php echo ($vo["menu_id"]); ?></td>
+                   <td><?php echo ($vo["name"]); ?></td>
+                   <td><?php echo ($vo["controller"]); ?></td>
+                   <td><?php echo ($vo["action"]); ?></td>
                    <td>
-                       <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->
-                       <a href="<?php echo U('Mediche/edit',array('id' => $vo['id']));?>">编辑</a>
-                       <a href="<?php echo U('Mediche/del',array('id' => $vo['id']));?>" onclick="return confirm('您确定要删除此食物类型吗?')">删除</a>
+                   <?php if($vo["power"] == 1): ?>启用
+                       <?php else: ?>
+                       关闭<?php endif; ?>
+                   </td>
+                   <td>
+                       <a href="<?php echo U('Menu/edit',array('menu_id' => $vo['menu_id']));?>">编辑</a>
+                       <a href="<?php echo U('Menu/addChild',array('menu_pid' => $vo['menu_id']));?>">添加子菜单</a>
+                       <a href="<?php echo U('Menu/del',array('menu_id' => $vo['menu_id']));?>" onclick="return confirm('您确定要删除此菜单吗?')">删除菜单</a>
                    </td>
                 </tr><?php endforeach; endif; ?>
             </tbody>

@@ -33,48 +33,37 @@
 
 
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 食物管理
+    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 人物管理<span class="c-gray en">&gt;</span> <?php echo ($actionName); ?>
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
-	</nav>
+	   </nav>
     <div class="page-container">
-        <form class="form-inline definewidth m20" id="searchForm" action="">
+        <form action="" method="post" class="form form-horizontal" id="form-member-add" novalidate="novalidate">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>等级阶段:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="<?php echo ($config[level]); ?>"  disabled>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>实际等级跨度:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="<?php echo ($config[tlevel]); ?>~<?php echo ($config[tlevel2]); ?>级"  disabled>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>难度时间:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="<?php echo ($config[value]); ?>" name="nvalue" >
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <input type="hidden" name="level" value="<?php echo ($config[level]); ?>">
+                    <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                </div>
+            </div>
         </form>
-        <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l">
-        <a class="btn btn-primary radius" data-title="添加菜单" href="<?php echo U('Mediche/add');?>"><i class="Hui-iconfont">
-            </i>
-            添加食物类型</a></span></div>
-            <br>
-        <table class="table table-border table-bordered table-bg table-sort">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>食物名称</th>
-                <th>回血值</th>
-                <th>食物价格</th>
-                <th>图片样式</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php if(is_array($medicheList)): foreach($medicheList as $key=>$vo): ?><tr >
-                   <td><?php echo ($vo["id"]); ?></td>
-                   <td><?php echo ($vo["mediche_name"]); ?></td>
-                   <td><?php echo ($vo["mediche_treat"]); ?></td>
-                   <td><?php echo ($vo["mediche_price"]); ?></td>
-                   <td><img style="width: 40px;height: 40px;" src="/Public/images/mediche/<?php echo ($vo["mediche_img"]); ?>"/></td>
-                   <td>
-                       <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->
-                       <a href="<?php echo U('Mediche/edit',array('id' => $vo['id']));?>">编辑</a>
-                       <a href="<?php echo U('Mediche/del',array('id' => $vo['id']));?>" onclick="return confirm('您确定要删除此食物类型吗?')">删除</a>
-                   </td>
-                </tr><?php endforeach; endif; ?>
-            </tbody>
-        </table>
-        <div class="pager">
-            <?php echo ($page); ?>
-        </div>
     </div>
-
 
 
 </html>

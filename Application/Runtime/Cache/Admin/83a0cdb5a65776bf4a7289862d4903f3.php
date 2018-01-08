@@ -48,20 +48,18 @@
             <thead>
             <tr>
                 <th>ID</th>
-                <th>食物名称</th>
-                <th>回血值</th>
-                <th>食物价格</th>
-                <th>图片样式</th>
+                <th>所属会员</th>
+                <th>食物ID</th>
+                <th>食物数量</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
-            <?php if(is_array($medicheList)): foreach($medicheList as $key=>$vo): ?><tr >
+            <?php if(is_array($mediche_bagList)): foreach($mediche_bagList as $key=>$vo): ?><tr >
                    <td><?php echo ($vo["id"]); ?></td>
-                   <td><?php echo ($vo["mediche_name"]); ?></td>
-                   <td><?php echo ($vo["mediche_treat"]); ?></td>
-                   <td><?php echo ($vo["mediche_price"]); ?></td>
-                   <td><img style="width: 40px;height: 40px;" src="/Public/images/mediche/<?php echo ($vo["mediche_img"]); ?>"/></td>
+                   <td><?php echo ($vo["user_id"]); ?></td>
+                   <td><?php echo ($vo["mediche_id"]); ?></td>
+                   <td><?php echo ($vo["mediche_num"]); ?></td>
                    <td>
                        <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->
                        <a href="<?php echo U('Mediche/edit',array('id' => $vo['id']));?>">编辑</a>

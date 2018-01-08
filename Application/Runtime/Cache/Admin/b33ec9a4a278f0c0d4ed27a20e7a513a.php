@@ -33,38 +33,57 @@
 
 
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 菜单管理<span class="c-gray en">&gt;</span> <?php echo ($actionName); ?>
+    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 人物管理<span class="c-gray en">&gt;</span> <?php echo ($actionName); ?>
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	   </nav>
     <div class="page-container">
         <form action="" method="post" class="form form-horizontal" id="form-member-add" novalidate="novalidate">
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>食物名称:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>人物名称:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="text" class="input-text" value="<?php echo ($adminInfo['mediche_name']); ?>" name="mediche_name" >
+                    <input type="text" class="input-text" value="<?php echo ($PersonInfo['person_name']); ?>" name="person_name" >
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>回&nbsp;&nbsp;血&nbsp;值:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>挖矿能力:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="text" class="input-text" value="<?php echo ($adminInfo['mediche_treat']); ?>" name="mediche_treat" >
+                    <input type="text" class="input-text" value="<?php echo ($PersonInfo['person_capacity']); ?>" name="person_capacity" >
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>食物价格:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>人物初始血量:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="text" class="input-text" value="<?php echo ($adminInfo['mediche_price']); ?>" name="mediche_price" >
+                    <input type="text" class="input-text" value="<?php echo ($PersonInfo['person_blood']); ?>" name="person_blood" >
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>人物价格:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="<?php echo ($PersonInfo['person_price']); ?>" name="person_price" >
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>人物成长:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="<?php echo ($PersonInfo['person_property']); ?>" name="person_property" >
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否为隐藏人物:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <label><input name="status" type="radio" value="1" <?php if($PersonInfo['status'] == '1'): ?>checked<?php endif; ?>/>是 </label> 
+					<label><input name="status" type="radio" value="0" <?php if($PersonInfo['status'] == '0'): ?>checked<?php endif; ?> />否 </label>
                 </div>
             </div>
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图片样式:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="file" name="mediche_img" id="" value="/Public/images/mediche/<?php echo ($adminInfo['mediche_img']); ?>" />
+                    <input type="file" name="person_img" id="" value="/Public/images/person/<?php echo ($PersonInfo['person_img']); ?>" />
                 </div>
             </div>
             <div class="row cl">
                 <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-                    <input type="hidden" name="id" value="<?php echo ($adminInfo["id"]); ?>">
+                    <input type="hidden" name="id" value="<?php echo ($PersonInfo["id"]); ?>">
                     <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
                 </div>
             </div>

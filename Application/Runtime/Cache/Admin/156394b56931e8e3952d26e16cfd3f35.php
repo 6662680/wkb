@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <title>
-        后台人员管理
+        权限管理
     </title>
     <link rel="stylesheet" type="text/css" href="/Public/static/h-ui/css/H-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="/Public/static/h-ui.admin/css/H-ui.admin.css" />
@@ -33,51 +33,69 @@
 
 
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 道具管理<span class="c-gray en">&gt;</span> <?php echo ($actionName); ?>
+    <i class="Hui-iconfont">&#xe67f;</i> 权限管理 <span class="c-gray en">&gt;</span> 菜单管理<span class="c-gray en">&gt;</span> <?php echo ($actionName); ?>
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	   </nav>
     <div class="page-container">
         <form action="" method="post" class="form form-horizontal" id="form-member-add" novalidate="novalidate">
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>道具名称:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>上级菜单:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="text" class="input-text" value="<?php echo ($equipmentInfo['equipment_name']); ?>" name="equipment_name" >
+                    <select class="select" size="1" name="pid">
+                        <option value="0">顶级菜单</option>
+                        <?php if(is_array($menuList)): foreach($menuList as $key=>$menu): if($menu['menu_id'] == $_GET['menu_pid']): ?><option value="<?php echo ($menu["menu_id"]); ?>" selected><?php echo ($menu["name"]); ?></option>
+                                <?php elseif($menu['menu_id'] == $menuInfo['pid']): ?>
+                                <option value="<?php echo ($menu["menu_id"]); ?>" selected><?php echo ($menu["name"]); ?></option>
+                                <?php else: ?>
+                                <option value="<?php echo ($menu["menu_id"]); ?>"><?php echo ($menu["name"]); ?></option><?php endif; endforeach; endif; ?>
+                    </select>
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>基础耐久度:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>菜单名称:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="text" class="input-text" value="<?php echo ($equipmentInfo['equipment_endurance']); ?>" name="equipment_endurance" >
+                    <input type="text" class="input-text" value="<?php echo ($menuInfo['name']); ?>" name="name">
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否防坍塌致血量归零:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>控制器:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <label><input name="equipment_protect" type="radio" value="1" <?php if($equipmentInfo['equipment_protect'] == '1'): ?>checked<?php endif; ?>/>是 </label> 
-					<label><input name="equipment_protect" type="radio" value="0" <?php if($equipmentInfo['equipment_protect'] == '0'): ?>checked<?php endif; ?> />否 </label> 
+                    <input type="text" class="input-text" name="controller" value="<?php echo ($menuInfo['controller']); ?>">
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>道具价格:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>方法:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="text" class="input-text" value="<?php echo ($equipmentInfo['equipment_price']); ?>" name="equipment_price" >
+                    <input type="text" class="input-text" name="action" value="<?php echo ($menuInfo['action']); ?>">
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>挖矿效率:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>排序权重:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="text" class="input-text" value="<?php echo ($equipmentInfo['equipment_multiple']); ?>" name="equipment_multiple" >
+                    <input type="text" class="input-text" min="0" max="255" name="step" value="<?php echo ($menuInfo['step']); ?>" placeholder="0-255,越小菜单越靠前">
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图片样式:</label>
-                <div class="formControls col-xs-8 col-sm-3">
-                    <input type="file" name="equipment_img" id="" value="/Public/images/mediche/<?php echo ($equipmentInfo['equipment_img']); ?>" />
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否启用:</label>
+                <div class="col-xs-8 col-sm-3 ">
+                    <select class="select" size="1" name="power">
+                        <option value="1" <?php if(($menuInfo["power"]) == "1"): ?>selected<?php endif; ?>>启用</option>
+                        <option value="0"  <?php if(($menuInfo["power"]) == "0"): ?>selected<?php endif; ?>>关闭</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否作为菜单显示:</label>
+                <div class="col-xs-8 col-sm-3">
+                    <select name="status" class="select">
+                      <option value="1" <?php if(($menuInfo["status"]) == "1"): ?>selected<?php endif; ?>>显示</option>
+                      <option value="0" <?php if(($menuInfo["status"]) == "0"): ?>selected<?php endif; ?>>关闭</option>
+                    </select>
                 </div>
             </div>
             <div class="row cl">
                 <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-                    <input type="hidden" name="id" value="<?php echo ($equipmentInfo["id"]); ?>">
+                    <input type="hidden" name="menu_id" value="<?php echo ($menuInfo["menu_id"]); ?>">
                     <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
                 </div>
             </div>
