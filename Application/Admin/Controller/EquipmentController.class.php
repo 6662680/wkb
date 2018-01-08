@@ -66,6 +66,8 @@ class EquipmentController extends PrivilegeController
     	$equipment_name = I('post.equipment_name');
     	$equipment_endurance = I('post.equipment_endurance');
     	$equipment_protect = I('post.equipment_protect');
+		$equipment_price = I('post.equipment_price');
+		$equipment_multiple = I('post.equipment_multiple');
 		$equipment_img = I('post.equipment_img');
 		
     	//$id存在就是修改,不存在就是添加
@@ -75,7 +77,15 @@ class EquipmentController extends PrivilegeController
     	}
     	if ( !$id && !$equipment_endurance )
     	{
-    		$this->error('请填写挖掘效率');
+    		$this->error('请填写基础耐久度');
+    	}
+		if ( !$id && !$equipment_price )
+    	{
+    		$this->error('请填写道具价格');
+    	}
+		if ( !$id && !$equipment_multiple )
+    	{
+    		$this->error('请填写挖矿效率');
     	}
 		if ( !$id && !($equipment_protect=='0' || $equipment_protect==1) )
     	{
@@ -95,6 +105,8 @@ class EquipmentController extends PrivilegeController
     		'equipment_name' => $equipment_name,
     		'equipment_endurance' => $equipment_endurance,
     		'equipment_protect' => $equipment_protect,
+    		'equipment_price' => $equipment_price,
+    		'equipment_multiple' => $equipment_multiple,
     		'equipment_img' => $equipment_img,
     	];
 

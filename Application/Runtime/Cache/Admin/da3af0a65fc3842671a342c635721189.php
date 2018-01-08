@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>挖掘效率:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>基础耐久度:</label>
                 <div class="formControls col-xs-8 col-sm-3">
                     <input type="text" class="input-text" value="<?php echo ($equipmentInfo['equipment_endurance']); ?>" name="equipment_endurance" >
                 </div>
@@ -55,6 +55,18 @@
                 <div class="formControls col-xs-8 col-sm-3">
                     <label><input name="equipment_protect" type="radio" value="1" <?php if($equipmentInfo['equipment_protect'] == '1'): ?>checked<?php endif; ?>/>是 </label> 
 					<label><input name="equipment_protect" type="radio" value="0" <?php if($equipmentInfo['equipment_protect'] == '0'): ?>checked<?php endif; ?> />否 </label> 
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>道具价格:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="<?php echo ($equipmentInfo['equipment_price']); ?>" name="equipment_price" >
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>挖矿效率:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="<?php echo ($equipmentInfo['equipment_multiple']); ?>" name="equipment_multiple" >
                 </div>
             </div>
             <div class="row cl">
