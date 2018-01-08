@@ -33,40 +33,37 @@
 
 
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 道具管理
+    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 食物管理
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	</nav>
     <div class="page-container">
         <form class="form-inline definewidth m20" id="searchForm" action="">
         </form>
         <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l">
-        <a class="btn btn-primary radius" data-title="添加菜单" href="<?php echo U('Equipment/add');?>"><i class="Hui-iconfont">
+        <a class="btn btn-primary radius" data-title="添加菜单" href="<?php echo U('Mediche/add');?>"><i class="Hui-iconfont">
             </i>
-            添加道具</a></span></div>
+            添加食物类型</a></span></div>
             <br>
         <table class="table table-border table-bordered table-bg table-sort">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>道具名称</th>
-                <th>挖掘效率</th>
-                <th>是否防塌陷致血量归零</th>
-                <th>图片样式</th>
+                <th>所属会员</th>
+                <th>食物ID</th>
+                <th>食物数量</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
-            <?php if(is_array($equipmentList)): foreach($equipmentList as $key=>$vo): ?><tr >
+            <?php if(is_array($mediche_bagList)): foreach($mediche_bagList as $key=>$vo): ?><tr >
                    <td><?php echo ($vo["id"]); ?></td>
-                   <td><?php echo ($vo["equipment_name"]); ?></td>
-                   <td><?php echo ($vo["equipment_endurance"]); ?></td>
-                   <td><?php  if ($vo['equipment_protect']==1) { echo '是'; } else { echo '否'; } ?>
-					</td>
-                   <td><img style="width: 40px;height: 40px;" src="/Public/images/equipment/<?php echo ($vo["equipment_img"]); ?>"/></td>
+                   <td><?php echo ($vo["user_id"]); ?></td>
+                   <td><?php echo ($vo["mediche_id"]); ?></td>
+                   <td><?php echo ($vo["mediche_num"]); ?></td>
                    <td>
                        <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->
-                       <a href="<?php echo U('Equipment/edit',array('id' => $vo['id']));?>">编辑</a>
-                       <a href="<?php echo U('Equipment/del',array('id' => $vo['id']));?>" onclick="return confirm('您确定要删除此道具吗?')">删除</a>
+                       <a href="<?php echo U('Mediche/edit',array('id' => $vo['id']));?>">编辑</a>
+                       <a href="<?php echo U('Mediche/del',array('id' => $vo['id']));?>" onclick="return confirm('您确定要删除此食物类型吗?')">删除</a>
                    </td>
                 </tr><?php endforeach; endif; ?>
             </tbody>

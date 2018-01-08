@@ -3,14 +3,14 @@ namespace Admin\Controller;
 use Think\Controller;
 
 /**
- * @author jlb <[<email address>]>
- * @since 2016年12月7日09:57:37 
+ * @author zh <[<email address>]>
+ * @since 2018.1.7 
  */
 class MedicheController extends PrivilegeController
 {
 	/**
-	 * 后台用户列表
-	 * @author jlb <[<email address>]>
+	 * 食物基础配置列表
+	 * @author zh <[<email address>]>
 	 * @return [type] [description]
 	 */
     public function index()
@@ -24,8 +24,8 @@ class MedicheController extends PrivilegeController
         $this->display();
     }
     /**
-	 * 后台用户添加
-	 * @author jlb <[<email address>]>
+	 * 食物基础配置添加
+	 * @author zh <[<email address>]>
 	 * @return [type] [description]
 	 */
     public function add()
@@ -39,8 +39,8 @@ class MedicheController extends PrivilegeController
         $this->display('form');
     }
     /**
-	 * 后台用户编辑
-	 * @author jlb <[<email address>]>
+	 * 食物基础配置编辑
+	 * @author zh <[<email address>]>
 	 * @return [type] [description]
 	 */
     public function edit()
@@ -55,8 +55,8 @@ class MedicheController extends PrivilegeController
     }
 
     /**
-     * 处理添加,编辑用户请求
-     * @author jlb 
+     * 处理添加,编辑食物配置请求
+     * @author zh 
      * @return [type] [description]
      */
     private function requestSubmit()
@@ -66,7 +66,7 @@ class MedicheController extends PrivilegeController
     	$mediche_name = I('post.mediche_name');
     	$mediche_treat = I('post.mediche_treat');
 		$mediche_img = I('post.mediche_img');
-    	//$admin_id存在就是修改,不存在就是添加
+    	//$id存在就是修改,不存在就是添加
     	if ( !$id && !$mediche_name )
     	{
     		$this->error('请填写食物名称');
@@ -107,9 +107,9 @@ class MedicheController extends PrivilegeController
 		exit;
     }
     /**
-	 * 删除后台人员
-	 * @author jlb
-	 * @since 2016年12月7日15:00:09 
+	 * 删除食物类型
+	 * @author zh
+	 * @since 2018.1.7 
 	 */
 	public function del()
 	{

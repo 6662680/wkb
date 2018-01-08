@@ -3,14 +3,14 @@ namespace Admin\Controller;
 use Think\Controller;
 
 /**
- * @author jlb <[<email address>]>
- * @since 2016年12月7日09:57:37 
+ * @author zh <[<email address>]>
+ * @since 2018.1.7
  */
 class EquipmentController extends PrivilegeController
 {
 	/**
-	 * 后台用户列表
-	 * @author jlb <[<email address>]>
+	 * 道具列表
+	 * @author zh <[<email address>]>
 	 * @return [type] [description]
 	 */
     public function index()
@@ -24,8 +24,8 @@ class EquipmentController extends PrivilegeController
         $this->display();
     }
     /**
-	 * 后台用户添加
-	 * @author jlb <[<email address>]>
+	 * 道具添加
+	 * @author zh <[<email address>]>
 	 * @return [type] [description]
 	 */
     public function add()
@@ -39,8 +39,8 @@ class EquipmentController extends PrivilegeController
         $this->display('form');
     }
     /**
-	 * 后台用户编辑
-	 * @author jlb <[<email address>]>
+	 * 道具编辑
+	 * @author zh <[<email address>]>
 	 * @return [type] [description]
 	 */
     public function edit()
@@ -55,7 +55,7 @@ class EquipmentController extends PrivilegeController
     }
 
     /**
-     * 处理添加,编辑用户请求
+     * 处理添加,编辑道具请求
      * @author jlb 
      * @return [type] [description]
      */
@@ -68,7 +68,7 @@ class EquipmentController extends PrivilegeController
     	$equipment_protect = I('post.equipment_protect');
 		$equipment_img = I('post.equipment_img');
 		
-    	//$admin_id存在就是修改,不存在就是添加
+    	//$id存在就是修改,不存在就是添加
     	if ( !$id && !$equipment_name )
     	{
     		$this->error('请填写道具名称');
@@ -77,7 +77,7 @@ class EquipmentController extends PrivilegeController
     	{
     		$this->error('请填写挖掘效率');
     	}
-		if ( !$id && !$equipment_protect )
+		if ( !$id && !($equipment_protect=='0' || $equipment_protect==1) )
     	{
     		$this->error('请填写是否防坍塌');
     	}
@@ -111,9 +111,9 @@ class EquipmentController extends PrivilegeController
 		exit;
     }
     /**
-	 * 删除后台人员
-	 * @author jlb
-	 * @since 2016年12月7日15:00:09 
+	 * 删除道具
+	 * @author zh
+	 * @since 2018.1.7
 	 */
 	public function del()
 	{

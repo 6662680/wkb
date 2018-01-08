@@ -1,0 +1,40 @@
+<extend name="Public/base"/>
+<block name="title">后台人员管理</block>
+<block name="body">
+    <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 人物管理
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+    <div class="page-container">
+        <form class="form-inline definewidth m20" id="searchForm" action="">
+        </form>
+        
+            <br>
+        <table class="table table-border table-bordered table-bg table-sort">
+            <thead>
+            <tr>
+                <th>等级阶段</th>
+                <th>实际等级跨度</th>
+                <th>难度时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="configList" item="vo">
+                <tr >
+                   <td>{$vo.level}</td>
+                   <td>{$vo.tlevel}~{$vo.tlevel2}级</td>
+                   <td>{$vo.value}</td>
+                   <td>
+                       <a href="{:U('Pconfig/edit',array('level' => $vo['level']))}">修改难度时间</a>
+                   </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        
+    </div>
+
+</block>
+<block name="javascript">
+</block>

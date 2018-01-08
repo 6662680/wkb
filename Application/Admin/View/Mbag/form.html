@@ -2,39 +2,38 @@
 <block name="title">后台人员管理</block>
 <block name="body">
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 道具管理<span class="c-gray en">&gt;</span> {$actionName}
+    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 食物管理<span class="c-gray en">&gt;</span> {$actionName}
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	   </nav>
     <div class="page-container">
         <form action="" method="post" class="form form-horizontal" id="form-member-add" novalidate="novalidate">
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>道具名称:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>食物名称:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="text" class="input-text" value="{$equipmentInfo['equipment_name']}" name="equipment_name" >
+                    <input type="text" class="input-text" value="{$adminInfo['mediche_name']}" name="mediche_name" >
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>挖掘效率:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>回&nbsp;&nbsp;血&nbsp;值:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="text" class="input-text" value="{$equipmentInfo['equipment_endurance']}" name="equipment_endurance" >
+                    <input type="text" class="input-text" value="{$adminInfo['mediche_treat']}" name="mediche_treat" >
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否防坍塌致血量归零:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>食物价格:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <label><input name="equipment_protect" type="radio" value="1" <if condition="$equipmentInfo['equipment_protect'] eq '1'">checked</if>/>是 </label> 
-					<label><input name="equipment_protect" type="radio" value="0" <if condition="$equipmentInfo['equipment_protect'] eq '0'">checked</if> />否 </label> 
+                    <input type="text" class="input-text" value="{$adminInfo['mediche_price']}" name="mediche_price" >
                 </div>
             </div>
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图片样式:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="file" name="equipment_img" id="" value="__PUBLIC__/images/mediche/{$equipmentInfo['equipment_img']}" />
+                    <input type="file" name="mediche_img" id="" value="__PUBLIC__/images/mediche/{$adminInfo['mediche_img']}" />
                 </div>
             </div>
             <div class="row cl">
                 <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-                    <input type="hidden" name="id" value="{$equipmentInfo.id}">
+                    <input type="hidden" name="id" value="{$adminInfo.id}">
                     <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
                 </div>
             </div>
