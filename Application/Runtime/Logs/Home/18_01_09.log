@@ -1,0 +1,196 @@
+[ 2018-01-09T00:18:53+08:00 ] 127.0.0.1 /index.php/home/order/buy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000802s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000847s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `person` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `person` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0047s ]
+SQL: INSERT INTO `order` (`commodity_id`,`commodity_type`,`status`,`creation_time`,`user_id`) VALUES ('1','1','1','1515428333','2') [ RunTime:0.0014s ]
+
+[ 2018-01-09T00:22:27+08:00 ] 127.0.0.1 /index.php/home/order/buy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000691s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000828s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `person` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `person` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0040s ]
+SQL: INSERT INTO `order` (`commodity_id`,`commodity_type`,`status`,`creation_time`,`user_id`,`commodity_price`) VALUES ('1','1','1','1515428547','2','1') [ RunTime:0.0014s ]
+
+[ 2018-01-09T00:22:38+08:00 ] 127.0.0.1 /index.php/home/order/buy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000901s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `equipment` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0041s ]
+SQL: INSERT INTO `order` (`commodity_id`,`commodity_type`,`status`,`creation_time`,`user_id`,`commodity_price`) VALUES ('1','2','1','1515428558','2','121.23') [ RunTime:0.0014s ]
+
+[ 2018-01-09T00:22:45+08:00 ] 127.0.0.1 /index.php/home/order/buy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `mediche` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `mediche` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0053s ]
+SQL: INSERT INTO `order` (`commodity_id`,`commodity_type`,`status`,`creation_time`,`user_id`,`commodity_price`) VALUES ('1','3','1','1515428565','2','120') [ RunTime:0.0022s ]
+
+[ 2018-01-09T00:23:52+08:00 ] 127.0.0.1 /index.php/home/order/buy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `equipment` WHERE `id` = 1 AND `status` = 0 LIMIT 1   [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0049s ]
+SQL: INSERT INTO `order` (`commodity_id`,`commodity_type`,`status`,`creation_time`,`user_id`,`commodity_price`) VALUES ('1','2','1','1515428632','2','121.23') [ RunTime:0.0020s ]
+
+[ 2018-01-09T00:26:25+08:00 ] 127.0.0.1 /index.php/home/order/accomplishBuy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `person` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `person` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `person_bag` [ RunTime:0.0074s ]
+SQL: INSERT INTO `person_bag` (`user_id`,`person_id`,`equipment_id`,`equipment_id_card`,`blood`,`level`,`yesterday_capacity`,`start_mining`) VALUES ('2','1','0','0','100','1','0','0') [ RunTime:0.0015s ]
+NOTIC: [2] Illegal string offset 'person_name' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 89 行.
+NOTIC: [2] Illegal string offset 'person_price' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0039s ]
+
+[ 2018-01-09T00:27:02+08:00 ] 127.0.0.1 /index.php/home/order/accomplishBuy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000956s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `person` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `person` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `person_bag` [ RunTime:0.0044s ]
+SQL: INSERT INTO `person_bag` (`user_id`,`person_id`,`equipment_id`,`equipment_id_card`,`blood`,`level`,`yesterday_capacity`,`start_mining`) VALUES ('2','1','0','0','100','1','0','0') [ RunTime:0.0013s ]
+NOTIC: [2] Illegal string offset 'person_name' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 89 行.
+NOTIC: [2] Illegal string offset 'person_price' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0051s ]
+
+[ 2018-01-09T00:27:03+08:00 ] 127.0.0.1 /index.php/home/order/accomplishBuy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000929s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `person` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `person` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `person_bag` [ RunTime:0.0047s ]
+SQL: INSERT INTO `person_bag` (`user_id`,`person_id`,`equipment_id`,`equipment_id_card`,`blood`,`level`,`yesterday_capacity`,`start_mining`) VALUES ('2','1','0','0','100','1','0','0') [ RunTime:0.0018s ]
+NOTIC: [2] Illegal string offset 'person_name' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 89 行.
+NOTIC: [2] Illegal string offset 'person_price' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0040s ]
+
+[ 2018-01-09T00:27:03+08:00 ] 127.0.0.1 /index.php/home/order/accomplishBuy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000766s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `person` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `person` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `person_bag` [ RunTime:0.0053s ]
+SQL: INSERT INTO `person_bag` (`user_id`,`person_id`,`equipment_id`,`equipment_id_card`,`blood`,`level`,`yesterday_capacity`,`start_mining`) VALUES ('2','1','0','0','100','1','0','0') [ RunTime:0.0015s ]
+NOTIC: [2] Illegal string offset 'person_name' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 89 行.
+NOTIC: [2] Illegal string offset 'person_price' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0055s ]
+
+[ 2018-01-09T00:27:03+08:00 ] 127.0.0.1 /index.php/home/order/accomplishBuy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `person` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `person` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `person_bag` [ RunTime:0.0054s ]
+SQL: INSERT INTO `person_bag` (`user_id`,`person_id`,`equipment_id`,`equipment_id_card`,`blood`,`level`,`yesterday_capacity`,`start_mining`) VALUES ('2','1','0','0','100','1','0','0') [ RunTime:0.0014s ]
+NOTIC: [2] Illegal string offset 'person_name' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 89 行.
+NOTIC: [2] Illegal string offset 'person_price' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0041s ]
+
+[ 2018-01-09T00:27:44+08:00 ] 127.0.0.1 /index.php/home/order/accomplishBuy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000677s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `person` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `person` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `person_bag` [ RunTime:0.0045s ]
+SQL: INSERT INTO `person_bag` (`user_id`,`person_id`,`equipment_id`,`equipment_id_card`,`blood`,`level`,`yesterday_capacity`,`start_mining`) VALUES ('2','1','0','0','100','1','0','0') [ RunTime:0.0017s ]
+NOTIC: [2] Illegal string offset 'person_name' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 89 行.
+NOTIC: [2] Illegal string offset 'person_price' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0043s ]
+
+[ 2018-01-09T00:28:17+08:00 ] 127.0.0.1 /index.php/home/order/accomplishBuy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000725s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `person` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `person` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `person_bag` [ RunTime:0.0055s ]
+SQL: INSERT INTO `person_bag` (`user_id`,`person_id`,`equipment_id`,`equipment_id_card`,`blood`,`level`,`yesterday_capacity`,`start_mining`) VALUES ('2','1','0','0','100','1','0','0') [ RunTime:0.0017s ]
+NOTIC: [2] Illegal string offset 'person_name' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 89 行.
+NOTIC: [2] Illegal string offset 'person_price' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0042s ]
+
+[ 2018-01-09T00:32:25+08:00 ] 127.0.0.1 /index.php/home/order/accomplishBuy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000753s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `person` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `person` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `person_bag` [ RunTime:0.0048s ]
+SQL: INSERT INTO `person_bag` (`user_id`,`person_id`,`equipment_id`,`equipment_id_card`,`blood`,`level`,`yesterday_capacity`,`start_mining`) VALUES ('2','1','0','0','100','1','0','0') [ RunTime:0.0019s ]
+NOTIC: [2] Illegal string offset 'person_name' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 89 行.
+NOTIC: [2] Illegal string offset 'person_price' F:\tool\phpstudy\WWW\wkb\Application\Home\Model\OrderModel.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0047s ]
+SQL: UPDATE `order` SET `status`='2',`site`='safdsfdsgdf' WHERE `user_id` = 2 AND `commodity_price` = 1 AND `status` = 1 [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `user_log` [ RunTime:0.0046s ]
+SQL: INSERT INTO `user_log` (`user_id`,`time`,`msg`) VALUES ('15','1515429145','ip127.0.0.1购买道具1, 价格为：1') [ RunTime:0.0019s ]
+

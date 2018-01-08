@@ -21,4 +21,14 @@ class PersonModel extends Model
         return $person;
     }
 
+    //获取商城人物
+    public function getStorePerson()
+    {
+        $person = M('person')
+            ->where(['status' => 0])
+            ->select();
+
+        return $person;
+    }
+
 }

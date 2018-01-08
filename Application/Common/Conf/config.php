@@ -14,6 +14,12 @@ return array(
 
     'HOST_HOME' => 'xxxx',
 
+	//商品类型
+	'COMMODITY_TYPE' => array(
+		1 => 'person',
+		2 => 'equipment',
+		3 => 'mediche',
+	),
 //    'THINK_EMAIL' => array(
 //        'SMTP_HOST'   => 'vipmail13.myhostadmin.net', //SMTP服务器
 //        'SMTP_PORT'   => '465', //SMTP服务器端口

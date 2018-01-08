@@ -501,3 +501,16 @@ SQL: SHOW COLUMNS FROM `person` [ RunTime:0.0051s ]
 SQL: SHOW COLUMNS FROM `person_bag` [ RunTime:0.0060s ]
 SQL: SELECT person_bag.*,person.person_name,person.person_img,person.person_property,person.person_capacity FROM `person_bag` left join person on person_bag.person_id = person.id  WHERE `user_id` = '2'  [ RunTime:0.0017s ]
 
+[ 2018-01-07T23:28:15+08:00 ] 127.0.0.1 /index.php/home/user/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000793s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001131s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001332s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `user` WHERE `mobile` = '18679354419' LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `user_log` [ RunTime:0.0047s ]
+SQL: INSERT INTO `user_log` (`user_id`,`time`,`msg`) VALUES ('2','1515338895','ip127.0.0.1登陆成功!') [ RunTime:0.0022s ]
+

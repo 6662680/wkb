@@ -2,7 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 use JPush\Client as JPush;
-class UserController extends Controller
+class UserController extends BaseController
 {
     public function __construct()
 	{
@@ -53,6 +53,7 @@ class UserController extends Controller
         $rst = M('user')->add($data);
 
         if ($rst) {
+            D('Log')->addLog('ip' . getIp() . '注册成功!', $rst);
             returnajax(true, '', '注册成功');
         } else {
             returnajax(false, '', '注册失败，请稍候再试');
@@ -96,6 +97,7 @@ class UserController extends Controller
         $model->last_login_time = time();
         $model->last_login_ip = getIp();
 
+        D('log')->addLog('ip' . getIp() . '登陆成功!', $rst['id']);
         session('user_id', $rst['id']);
         session('mobile', $rst['password']);
         returnajax(true, '', '成功');
