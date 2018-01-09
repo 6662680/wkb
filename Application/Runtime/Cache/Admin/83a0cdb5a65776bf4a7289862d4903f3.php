@@ -39,32 +39,29 @@
     <div class="page-container">
         <form class="form-inline definewidth m20" id="searchForm" action="">
         </form>
-        <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l">
-        <a class="btn btn-primary radius" data-title="添加菜单" href="<?php echo U('Mediche/add');?>"><i class="Hui-iconfont">
-            </i>
-            添加食物类型</a></span></div>
+        <div class="cl pd-5 bg-1 bk-gray mt-20">
+        	<span class="l"> 
+        		<aa class="btn btn-primary radius" >食物背包列表</aa>
+        	</span>
+        </div>
             <br>
         <table class="table table-border table-bordered table-bg table-sort">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>所属会员</th>
-                <th>食物ID</th>
+                <th>所属会员ID</th>
+                <th>食物名称</th>
                 <th>食物数量</th>
-                <th>操作</th>
             </tr>
             </thead>
             <tbody>
             <?php if(is_array($mediche_bagList)): foreach($mediche_bagList as $key=>$vo): ?><tr >
                    <td><?php echo ($vo["id"]); ?></td>
                    <td><?php echo ($vo["user_id"]); ?></td>
-                   <td><?php echo ($vo["mediche_id"]); ?></td>
-                   <td><?php echo ($vo["mediche_num"]); ?></td>
                    <td>
-                       <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->
-                       <a href="<?php echo U('Mediche/edit',array('id' => $vo['id']));?>">编辑</a>
-                       <a href="<?php echo U('Mediche/del',array('id' => $vo['id']));?>" onclick="return confirm('您确定要删除此食物类型吗?')">删除</a>
+                   	<?php  if ($vo['mediche_id']==1) { echo '牛奶'; } elseif($vo['mediche_id']==2) { echo '面包'; }elseif($vo['mediche_id']==3) { echo '蛋糕'; }elseif($vo['mediche_id']==4) { echo '米饭'; } ?>
                    </td>
+                   <td><?php echo ($vo["mediche_num"]); ?></td>
                 </tr><?php endforeach; endif; ?>
             </tbody>
         </table>

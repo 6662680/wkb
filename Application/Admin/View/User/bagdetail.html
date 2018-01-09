@@ -1,0 +1,169 @@
+<extend name="Public/base"/>
+<block name="title">后台人员管理</block>
+<block name="body">
+    <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 会员管理 <span class="c-gray en">&gt;</span>背包详情
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+    <div class="page-container">
+        <div class="cl pd-5 bg-1 bk-gray mt-2">
+        	<span class="l"> 
+        		<aa class="btn btn-primary radius" >{$userList.realname}的食物背包</aa>
+        	</span>
+        </div>
+        <table class="table table-border table-bordered table-bg table-sort">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>食物名称</th>
+                <th>食物数量</th>
+            </tr>
+            </thead>
+            <tbody>
+            	<?php $iid=0;  ?>
+            <foreach name="medicheList" item="vo">
+                <tr >
+                   <td><?php echo ++$iid; ?></td>
+                   <td><?php 
+                   	if ($vo['mediche_id']==1) {
+									echo '牛奶';
+								} elseif($vo['mediche_id']==2) {
+									echo '面包';
+								}elseif($vo['mediche_id']==3) {
+									echo '蛋糕';
+								}elseif($vo['mediche_id']==4) {
+									echo '米饭套餐';
+								} ?></td>
+                   <td>{$vo.mediche_num}</td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="pager">
+            {$page}
+        </div>
+        
+        <div class="cl pd-5 bg-1 bk-gray mt-40">
+        	<span class="l"> 
+        		<aa class="btn btn-primary radius" >{$userList.realname}的人物背包</aa>
+        	</span>
+        </div>
+        <table class="table table-border table-bordered table-bg table-sort">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>人物ID</th>
+                <th>人物名称</th>
+                <th>配备道具类型</th>
+                <th>是否戴安全帽</th>
+                <th>人物血量</th>
+                <th>人物等级</th>
+                <th>昨日产能</th>
+                <th>开始挖矿时间</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            	<?php $iid=0;  ?>
+            <foreach name="personList" item="vo">
+                <tr >
+                   <td><?php echo ++$iid; ?></td>
+                   <td>{$vo.id}</td>
+                   <td><?php 
+                   	if ($vo['person_id']==1) {
+									echo '老年';
+								} elseif($vo['person_id']==2) {
+									echo '青年';
+								}elseif($vo['person_id']==3) {
+									echo '壮年';
+								}elseif($vo['person_id']==4) {
+									echo '肌肉男';
+								} ?>
+                   </td>
+                   <td><?php 
+                   	if ($vo['equipment_id']==1) {
+									echo '镐';
+								} elseif($vo['equipment_id']==2) {
+									echo '电钻';
+								}elseif($vo['equipment_id']==4) {
+									echo '挖掘机';
+								}elseif($vo['equipment_id']==0) {
+									echo '未配备道具';
+								} ?>
+                   </td>
+                   <td><?php 
+                   	if ($vo['equipment_id_card']==1) {
+									echo '是';
+								}elseif($vo['equipment_id_card']==0) {
+									echo '否';
+								} ?>
+                   </td>
+                   <td>{$vo.blood}</td>
+                   <td>{$vo.level}</td>
+                   <td>{$vo.yesterday_capacity}</td>
+                   <td>{$vo.start_mining}</td>
+                   
+                   
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="pager">
+            {$page2}
+        </div>
+        
+        <div class="cl pd-5 bg-1 bk-gray mt-40">
+        	<span class="l"> 
+        		<aa class="btn btn-primary radius" >{$userList.realname}的道具背包</aa>
+        	</span>
+        </div>
+        <table class="table table-border table-bordered table-bg table-sort">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>道具名称</th>
+                <th>道具耐久度</th>
+                <th>所配备人物ID</th>
+                <th>是否使用中</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            	<?php $iid=0;  ?>
+            <foreach name="equipmentList" item="vo">
+                <tr >
+                   <td><?php echo ++$iid; ?></td>
+                   <td><?php 
+                   	if ($vo['equipment_id']==1) {
+									echo '镐';
+								} elseif($vo['equipment_id']==2) {
+									echo '电钻';
+								}elseif($vo['equipment_id']==4) {
+									echo '挖掘机';
+								}elseif($vo['equipment_id']==3) {
+									echo '安全帽';
+								} ?>
+                   </td>
+                   
+                   <td>{$vo.equipment_endurance}</td>
+                   <td>{$vo.person_id}</td>
+                   <td><?php 
+                   	if ($vo['use']==1) {
+									echo '使用中';
+								} elseif($vo['use']==0) {
+									echo '未使用';
+								} ?>
+                   </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="pager">
+            {$page3}
+        </div>
+        <br /><br /><br />
+    </div>
+
+</block>
+<block name="javascript">
+</block>
