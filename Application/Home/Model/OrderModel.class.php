@@ -40,13 +40,20 @@ class OrderModel extends Model
             return ['status' => false, 'msg' => '缺少参数'];
         }
 
+        $rst = M('user')->where(['id' => $user_id])->field('site')->find();
+
+        if ($rst['site']) {
+            return ['status' => false, 'msg' => '您没有设置您的玩客币地址，请先设置地址'];
+        }
+
         $add  = [
-          'commodity_id' => $commodity_id,
-          'commodity_type' => $commodity_type,
-          'status' => 1,
-          'creation_time' => time(),
-          'user_id' => $user_id,
-          'commodity_price' => $commodity_price,
+            'commodity_id' => $commodity_id,
+            'commodity_type' => $commodity_type,
+            'status' => 1,
+            'creation_time' => time(),
+            'user_id' => $user_id,
+            'commodity_price' => $commodity_price,
+            'site' => $rst['site'],
         ];
 
         $rst = M('order')->add($add);
@@ -104,7 +111,7 @@ class OrderModel extends Model
         }
 
         if ($commodity_type == 3) {
-            $model = M('mediche');
+            $model = M('mediche_bag');
             $model->user_id = $user_id;
             $model->equipment_id = $commodity_id;
             $model->equipment_endurance = $rst['equipment_endurance'];
@@ -122,8 +129,19 @@ class OrderModel extends Model
 
         }
 
+        $time = time() - C('ORDER_TIME');
+        $time = array('GT', $time);
+
+        $map = [
+            'user_id' => $user_id,
+            'commodity_price' => $commodity_price,
+            'status' => 1,
+            'site' => $site,
+            'creation_time' => $time]
+        ;
+
         $model = M('order');
-        $saveRst = $model->where(['user_id' => $user_id, 'commodity_price' => $commodity_price, 'status' => 1])->save(['status' => 2, 'site' => $site]);
+        $saveRst = $model->where($map)->save(['status' => 2]);
 
         if ($saveRst === false) {
             $trans->rollback();
@@ -131,7 +149,7 @@ class OrderModel extends Model
         }
         
         //添加日志
-        D('Log')->addLog('ip' . getIp() . '购买道具'. $commodity_name .', 价格为：'. $commodity_price, $rst);
+        D('Log')->addLog('购买道具'. $commodity_name .', 价格为：'. $commodity_price, $rst);
 
         $trans->commit();
         return ['status' => true];

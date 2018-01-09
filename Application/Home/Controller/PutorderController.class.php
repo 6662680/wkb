@@ -2,7 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 use JPush\Client as JPush;
-class OrderController extends BaseController
+class PutorderController extends BaseController
 
 {
     public function __construct()
@@ -13,7 +13,7 @@ class OrderController extends BaseController
 
 
     /**
-     * 购买商品: 人物，装备，药品 /下单动作
+     * 挂单
      * @author LiYang
      * @date 2018-1-7
      * @return void
@@ -22,8 +22,8 @@ class OrderController extends BaseController
     {
         $post = I('post.');
 
-        $rst = D('order')->buy(session('user_id'), $post['commodity_id'], $post['commodity_type']);
-
+        $rst = D('Putorder')->putOrder(session('user_id'), $post['commodity_id'], $post['commodity_type'], $post['commodity_price'] ,1);
+        pr($rst);die();
         if ($rst['status'] == true) {
             returnajax(true, '' ,'下单成功');
         } else {
