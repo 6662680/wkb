@@ -22,8 +22,8 @@ class PutorderController extends BaseController
     {
         $post = I('post.');
 
-        $rst = D('Putorder')->putOrder(session('user_id'), $post['commodity_id'], $post['commodity_type'], $post['commodity_price'] ,1);
-        pr($rst);die();
+        $rst = D('Putorder')->creationOrder(session('user_id'), $post['commodity_id'], $post['commodity_type'], $post['commodity_price'] ,1);
+
         if ($rst['status'] == true) {
             returnajax(true, '' ,'下单成功');
         } else {
@@ -40,7 +40,7 @@ class PutorderController extends BaseController
     public function accomplishBuy()
     {
         $id = 2;
-        $rst = D('order')->accomplishBuy($id, 1, 1 ,'121.23', 'safdsfdsgdf');
+        $rst = D('putorder')->accomplishBuy('200', '2132142342');
 
         if ($rst['status']) {
             returnajax(true, '','购买成功');

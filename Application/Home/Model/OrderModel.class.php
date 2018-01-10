@@ -29,7 +29,7 @@ class OrderModel extends Model
             returnajax('fasle', '', '不存在的商品');
         }
 
-        $this->creationOrder($user_id, $commodity_id, $commodity_type, $rst[C('COMMODITY_TYPE')[$commodity_type].'_price']);
+        return $this->creationOrder($user_id, $commodity_id, $commodity_type, $rst[C('COMMODITY_TYPE')[$commodity_type].'_price']);
     }
 
 
@@ -42,7 +42,7 @@ class OrderModel extends Model
 
         $rst = M('user')->where(['id' => $user_id])->field('site')->find();
 
-        if ($rst['site']) {
+        if (!$rst['site']) {
             return ['status' => false, 'msg' => '您没有设置您的玩客币地址，请先设置地址'];
         }
 
@@ -66,13 +66,19 @@ class OrderModel extends Model
     }
 
     // 完成购买
-    public function accomplishBuy($user_id, $commodity_id,$commodity_type, $commodity_price, $site)
+    public function accomplishBuy($commodity_price, $site)
     {
-        if (empty($user_id) || empty($commodity_id) || empty($commodity_type)) {
+        if ( empty($site) || empty($commodity_price)) {
             return ['status' => false, 'msg' => '缺少参数'];
         }
 
-        $rst = M(C('COMMODITY_TYPE')[$commodity_type])->where(['id' => $commodity_id])->find();
+        $orderRst = M('order')->where(['site' => $site])->find();
+
+        if (!$orderRst['user_id']) {
+            return ['status' => false, 'msg' => '付款成功，购买失败原因：找不到此玩客币地址'];
+        }
+
+        $rst = M(C('COMMODITY_TYPE')[$orderRst['commodity_type']])->where(['id' => $orderRst['commodity_id']])->find();
 
         if (!$rst) {
             return ['status' => false, 'msg' => '不存在的商品'];
@@ -81,49 +87,51 @@ class OrderModel extends Model
         $trans = new Model();
         $trans->startTrans();
 
-        if ($commodity_type == 1) {
+        if ($orderRst['commodity_type'] == 1) {
+
             $model = M('person_bag');
-            $model->user_id = $user_id;
-            $model->person_id = $commodity_id;
+            $model->user_id = $orderRst['user_id'];
+            $model->person_id = $orderRst['commodity_id'];
             $model->equipment_id = 0;
             $model->equipment_id_card = 0;
             $model->blood = $rst['person_blood'];
             $model->level = 1;
             $model->yesterday_capacity = 0;
             $model->start_mining = 0;
-            $rst = $model->add();
+            $addRst = $model->add();
 
             $commodity_name = $rst['person_name'];
+
             $commodity_price = $rst['person_price'];
         }
 
-        if ($commodity_type == 2) {
+        if ($orderRst['commodity_type'] == 2) {
             $model = M('equipment_bag');
-            $model->user_id = $user_id;
-            $model->equipment_id = $commodity_id;
+            $model->user_id = $orderRst['user_id'];
+            $model->equipment_id = $orderRst['commodity_id'];
             $model->equipment_endurance = $rst['equipment_endurance'];
             $model->person_id = 0;
             $model->use = 0;
-            $rst = $model->add();
+            $addRst = $model->add();
 
             $commodity_name = $rst['equipment_name'];
             $commodity_price = $rst['equipment_price'];
         }
 
-        if ($commodity_type == 3) {
+        if ($orderRst['commodity_type'] == 3) {
             $model = M('mediche_bag');
-            $model->user_id = $user_id;
-            $model->equipment_id = $commodity_id;
+            $model->user_id = $orderRst['user_id'];
+            $model->equipment_id = $orderRst['commodity_id'];
             $model->equipment_endurance = $rst['equipment_endurance'];
             $model->person_id = 0;
             $model->use = 0;
-            $rst = $model->add();
+            $addRst = $model->add();
 
             $commodity_name = $rst['mediche_name'];
             $commodity_price = $rst['mediche_price'];
         }
 
-        if (!$rst) {
+        if (!$addRst) {
             $trans->rollback();
             return ['status' => false, 'msg' => '添加失败'];
 
@@ -133,7 +141,7 @@ class OrderModel extends Model
         $time = array('GT', $time);
 
         $map = [
-            'user_id' => $user_id,
+            'user_id' => $orderRst['user_id'],
             'commodity_price' => $commodity_price,
             'status' => 1,
             'site' => $site,
@@ -147,9 +155,9 @@ class OrderModel extends Model
             $trans->rollback();
             return ['status' => false, 'msg' => '没有找到该订单'];
         }
-        
+
         //添加日志
-        D('Log')->addLog('购买道具'. $commodity_name .', 价格为：'. $commodity_price, $rst);
+        D('Log')->addLog('购买道具'. $commodity_name .', 价格为：'. $commodity_price, $orderRst['user_id']);
 
         $trans->commit();
         return ['status' => true];

@@ -39,9 +39,9 @@ class OrderController extends BaseController
      */
     public function accomplishBuy()
     {
-        $id = 2;
-        $rst = D('order')->accomplishBuy($id, 1, 1 ,'121.23', 'safdsfdsgdf');
 
+        $rst = D('order')->accomplishBuy('200', 'dsfdsfdsgdfgf');
+        pr($rst);
         if ($rst['status']) {
             returnajax(true, '','购买成功');
         } else {
