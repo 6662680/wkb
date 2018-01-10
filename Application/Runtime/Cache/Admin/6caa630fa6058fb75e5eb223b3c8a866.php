@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <title>
-        后台人员管理
+        后台管理
     </title>
     <link rel="stylesheet" type="text/css" href="/Public/static/h-ui/css/H-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="/Public/static/h-ui.admin/css/H-ui.admin.css" />
@@ -33,7 +33,7 @@
 
 
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 人物管理
+    <i class="Hui-iconfont">&#xe67f;</i> 后台管理 <span class="c-gray en">&gt;</span> 人物管理 <span class="c-gray en">&gt;</span> 人物基础配置列表
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	</nav>
     <div class="page-container">

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <title>
-        后台人员管理
+        后台管理
     </title>
     <link rel="stylesheet" type="text/css" href="/Public/static/h-ui/css/H-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="/Public/static/h-ui.admin/css/H-ui.admin.css" />
@@ -33,7 +33,7 @@
 
 
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 道具管理<span class="c-gray en">&gt;</span> <?php echo ($actionName); ?>
+    <i class="Hui-iconfont">&#xe67f;</i> 道具管理 <span class="c-gray en">&gt;</span> <a href="<?php echo U('Equipment/index');?>">道具基础配置列表</a><span class="c-gray en">&gt;</span> <?php echo ($actionName); ?>
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	   </nav>
     <div class="page-container">
@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否防坍塌致血量归零:</label>
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否防坍塌致血量归1:</label>
                 <div class="formControls col-xs-8 col-sm-3">
                     <label><input name="equipment_protect" type="radio" value="1" <?php if($equipmentInfo['equipment_protect'] == '1'): ?>checked<?php endif; ?>/>是 </label> 
 					<label><input name="equipment_protect" type="radio" value="0" <?php if($equipmentInfo['equipment_protect'] == '0'): ?>checked<?php endif; ?> />否 </label> 

@@ -33,7 +33,7 @@
 
 
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 食物管理
+    <i class="Hui-iconfont">&#xe67f;</i> 后台人员管理 <span class="c-gray en">&gt;</span> 食物管理<span class="c-gray en">&gt;</span> 食物背包列表
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	</nav>
     <div class="page-container">
@@ -59,7 +59,7 @@
                    <td><?php echo ($vo["id"]); ?></td>
                    <td><?php echo ($vo["user_id"]); ?></td>
                    <td>
-                   	<?php  if ($vo['mediche_id']==1) { echo '牛奶'; } elseif($vo['mediche_id']==2) { echo '面包'; }elseif($vo['mediche_id']==3) { echo '蛋糕'; }elseif($vo['mediche_id']==4) { echo '米饭'; } ?>
+                   	<?php  if ($vo['mediche_id']==1) { echo '牛奶'; } elseif($vo['mediche_id']==2) { echo '面包'; }elseif($vo['mediche_id']==3) { echo '蛋糕'; }elseif($vo['mediche_id']==4) { echo '米饭套餐'; } ?>
                    </td>
                    <td><?php echo ($vo["mediche_num"]); ?></td>
                 </tr><?php endforeach; endif; ?>
