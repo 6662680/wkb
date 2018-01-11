@@ -149,7 +149,7 @@ class OrderModel extends Model
         ;
 
         $model = M('order');
-        $saveRst = $model->where($map)->save(['status' => 2]);
+        $saveRst = $model->where($map)->save(['status' => 2, 'completion_time' => time()]);
 
         if ($saveRst === false) {
             $trans->rollback();

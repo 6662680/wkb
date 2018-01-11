@@ -46,4 +46,17 @@ class BagController extends BaseController
         $mediche = D('mediche')->getBagMediche();
         returnajax(true, $mediche);
     }
+
+    /**
+     * 卸下或者装备道具
+     * @author LiYang
+     * @date 2018-1-8
+     * @return void
+     */
+    public function switchover()
+    {
+        $post = I('post.');
+        $mediche = D('equipment')->switchover($post['person_id'], $post['equipment_id']);
+        returnajax(true, $mediche);
+    }
 }
