@@ -1,0 +1,165 @@
+<extend name="Public/base"/>
+<block name="body">
+    <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 会员管理 <span class="c-gray en">&gt;</span> <a href="{:U('User/index')}">会员列表</a> <span class="c-gray en">&gt;</span>订单详情
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+    <div class="page-container">
+    	<div style="text-align: center;border-style: dashed;border-width: 1px;border-color: red;font-weight: 700;">
+    		会员官方购买订单详情
+    	</div>
+    	<table class="table table-border table-bordered table-bg table-sort " >
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>订单ID</th>
+                <th>商品类型</th>
+                <th>商品类型-详细</th>
+                <th>订单状态</th>
+                <th>商品价格</th>
+                <th>{$userList.realname}的玩客币地址</th>
+                <th>订单创建时间</th>
+                <th>交易完成时间</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            	<?php $iid=0;  ?>
+            <foreach name="orderList" item="vo">
+                   <td><?php echo ++$iid; ?></td>
+                   <td>{$vo.id}</td>
+                   <td><?php 
+                   	if ($vo['commodity_type']==1) {
+									echo '人物';
+								} elseif($vo['commodity_type']==2) {
+									echo '道具';
+								} elseif($vo['commodity_type']==3) {
+									echo '食物';
+								}?>
+                   </td>
+                   <td>{$vo.commodity_id}</td>
+                   <td><?php 
+                   	if ($vo['status']==1) {
+									echo '待付款';
+								} elseif($vo['status']==2) {
+									echo '完成';
+								}elseif($vo['status']==3) {
+									echo '失败';
+								}?>
+                   </td>
+                   <td>{$vo.commodity_price}</td>
+                   <td>{$vo.site}</td>
+                   <td>{$vo.creation_time|date="Y-m-d H:i:s",###}</td>
+                   <td>{$vo.completion_time|date="Y-m-d H:i:s",###}</td>
+                   
+                   
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="pager">
+            {$page2}
+        </div>
+    	<div style="text-align: center;border-style: dashed;border-width: 1px;border-color: red;margin-top: 70px;font-weight: 700;">
+    		交易大厅订单详情
+    	</div>
+        <div class="cl pd-5 bg-1 bk-gray mt-2">
+        	<span class="l"> 
+        		<aa class="btn btn-primary radius" >{$userList.realname}的卖出订单详情</aa>
+        	</span>
+        </div>
+        <table class="table table-border table-bordered table-bg table-sort " >
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>订单ID</th>
+                <!--<th>交易类型</th>-->
+                
+                <th>商品类型</th>
+                <th>商品类型-详细</th>
+                <th>配备道具</th>
+                <th>是否配备帽子</th>
+                
+                <th>订单状态</th>
+                <th>订单是否锁定</th>
+                
+                <th>商品价格</th>
+                <th>{$userList.realname}的玩客币地址</th>
+                <th>接单会员</th>
+                
+                
+                
+                <th>订单创建时间</th>
+                <th>交易完成时间</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            	<?php $iid=0;  ?>
+            <foreach name="user_sell_orderList" item="vo">
+                   <td><?php echo ++$iid; ?></td>
+                   <td>{$vo.id}</td>
+                   <!--<td><?php 
+                   	if ($vo['type']===0) {
+									echo '卖出';
+								} elseif($vo['type']==1) {
+									echo '买入';
+								}?>
+                   </td>-->
+                   
+                   <td><?php 
+                   	if ($vo['commodity_type']==1) {
+									echo '人物';
+								} elseif($vo['commodity_type']==2) {
+									echo '道具';
+								}?>
+                   </td>
+                   <td>{$vo.commodity_name}</td>
+                   <td>{$vo.equipment_name}</td>
+                   <td><?php 
+                   	if ($vo['equipment_id_card']==1) {
+									echo '是';
+								} elseif($vo['equipment_id_card']==0) {
+									echo '否';
+								}?>
+                   </td>
+                   <td><?php 
+                   	if ($vo['status']==1) {
+									echo '待付款';
+								} elseif($vo['status']==2) {
+									echo '完成';
+								}elseif($vo['status']==3) {
+									echo '失败';
+								}?>
+                   </td>
+                   <td><?php 
+                   	if ($vo['use']==1) {
+									echo '锁定';
+								} elseif($vo['use']==0) {
+									echo '未锁定';
+								}?>
+                   </td>
+                   <td>{$vo.commodity_price}</td>
+                   <td>{$vo.site}</td>
+                   <td>{$vo.receiving_user_id}</td>
+                   
+                   
+                   <td>{$vo.creation_time|date="Y-m-d H:i:s",###}</td>
+                   <td>{$vo.completion_time|date="Y-m-d H:i:s",###}</td>
+                   
+                   
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="pager">
+            {$page}
+        </div>
+        
+        
+        <br /><br /><br />
+    </div>
+
+</block>
+<block name="javascript">
+</block>

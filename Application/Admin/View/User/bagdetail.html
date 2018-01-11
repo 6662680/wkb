@@ -10,7 +10,7 @@
         		<aa class="btn btn-primary radius" >{$userList.realname}的食物背包</aa>
         	</span>
         </div>
-        <table class="table table-border table-bordered table-bg table-sort">
+        <table class="table table-border table-bordered table-bg table-sort " >
             <thead>
             <tr>
                 <th>序号</th>
@@ -21,7 +21,7 @@
             <tbody>
             	<?php $iid=0;  ?>
             <foreach name="medicheList" item="vo">
-                <tr >
+                <tr style="height: 1px;">
                    <td><?php echo ++$iid; ?></td>
                    <td><?php 
                    	if ($vo['mediche_id']==1) {

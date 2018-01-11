@@ -35,9 +35,9 @@
                    <td>{$vo.last_login_ip}</td>
                    <td>{$vo.mobile}</td>
                    <td>
-                       <a href="{:U('user/bag',array('id' => $vo['id']))}">背包详情</a>
+                       <a href="{:U('user/bagdetail',array('id' => $vo['id']))}">背包详情</a>
                        &nbsp;&nbsp;
-                       <a href="{:U('user/edit',array('id' => $vo['id']))}">订单详情</a>
+                       <a href="{:U('user/orderdetail',array('id' => $vo['id']))}">订单详情</a>
                    </td>
                 </tr>
             </foreach>

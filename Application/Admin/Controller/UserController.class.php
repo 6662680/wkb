@@ -9,7 +9,7 @@ use Think\Controller;
 class UserController extends PrivilegeController
 {
 	/**
-	 * 食物基础配置列表
+	 * 会员列表
 	 * @author zh <[<email address>]>
 	 * @return [type] [description]
 	 */
@@ -23,35 +23,15 @@ class UserController extends PrivilegeController
     	$this->assign('page',$page->show());
         $this->display();
     }
+    
     /**
-	 * 食物基础配置添加
+	 * 背包详情查看
 	 * @author zh <[<email address>]>
 	 * @return [type] [description]
 	 */
-    public function add()
+    public function bagdetail()
     {
-    	if ( IS_POST )
-    	{
-    		$this->requestSubmit();
-    	}
-    	$this->assign('actionName','食物类型添加');
-    	$this->assign('roleList',M('Role')->where("role_id <> " . ($this->role_id == 1 ? 0 : 1))->select());
-        $this->display('form');
-    }
-    /**
-	 * 食物基础配置编辑
-	 * @author zh <[<email address>]>
-	 * @return [type] [description]
-	 */
-    public function bag()
-    {
-    	/*if ( IS_POST )
-    	{
-    		$this->requestSubmit();
-    	}
-    	$this->assign('actionName','食物编辑');
-    	$this->assign('adminInfo',M('user')->find(I('get.id')));
-        $this->display('form');*/
+    	
         $user_id=I('get.id');
         $pageSize = 5;
         $p = I('request.p', 1, 'intval');
@@ -76,77 +56,42 @@ class UserController extends PrivilegeController
     }
 
     /**
-     * 处理添加,编辑食物配置请求
-     * @author zh 
-     * @return [type] [description]
-     */
-    private function requestSubmit()
-    {
-    	$id = I('post.id');
-    	
-    	$user_name = I('post.user_name');
-    	$user_treat = I('post.user_treat');
-    	$user_price = I('post.user_price');
-		$user_img = I('post.user_img');
-    	//$id存在就是修改,不存在就是添加
-    	if ( !$id && !$user_name )
-    	{
-    		$this->error('请填写食物名称');
-    	}
-    	if ( !$id && !$user_treat )
-    	{
-    		$this->error('请填写回血值');
-    	}
-    	if ( !$id && !$user_price )
-    	{
-    		$this->error('请填写食物价格');
-    	}
-		if ( !$id && !$user_img )
-    	{
-    		$this->error('请上传图片样式');
-    	}
-
-    	if ( !$id && M('user')->where("user_name = '{$user_name}'")->count() )
-    	{
-    		$this->error('食物已经存在,请换一个!');
-    	}
-
-    	$data = [
-    		'user_name' => $user_name,
-    		'user_treat' => $user_treat,
-    		'user_price' => $user_price,
-    		'user_img' => $user_img,
-    	];
-
-    	if ( $id )
-    	{
-    		
-    		
-    		M('user')->where("id = $id")->save($data);
-    	}
-    	else 
-    	{
-			
-    		M('user')->add($data);
-    	}
-
-		$this->success('操作成功!',U('user/index'),2);
-		exit;
-    }
-    /**
-	 * 删除食物类型
-	 * @author zh
-	 * @since 2018.1.7 
+	 * 订单详情查看
+	 * @author zh <[<email address>]>
+	 * @return [type] [description]
 	 */
-	public function del()
-	{
-		$id = I('get.id',0,'intval');
-		if ( !$id ) 
-		{
-			$this->error('非法请求');
-		}
+    public function orderdetail()
+    {
+    	/*交易大厅详情*/
+        $user_id=I('get.id');
+        $pageSize = 5;
+        $p = I('request.p', 1, 'intval');
+        $page = getpage(M('user_sell_order')->where("user_id = '$user_id' ")->count(), $pageSize, array());
+    	$user_sell_orderList = M('user_sell_order')->limit($page->firstRow, $page->listRows)->where("user_id = '$user_id' ")->select();
+    	/*pr($user_sell_orderList);die;*/
+    	foreach ($user_sell_orderList as $key => $value) {
+    		$receiving_user_id=$value['receiving_user_id'];
+    		$nuserList = M('user')->where("id = '$receiving_user_id' ")->find();
+			if ($nuserList['realname']) {
+				$user_sell_orderList[$key]['receiving_user_id']=$nuserList['realname'];
+			} else {
+				$user_sell_orderList[$key]['receiving_user_id']='无';
+			}
+    	}
+		/*pr($user_sell_orderList);die;*/
 		
-		M('user')->delete($id);
-		$this->success('删除成功');
-	}
+    	$this->assign('user_sell_orderList',$user_sell_orderList);
+    	$this->assign('page',$page->show());
+    	$userList = M('user')->find(I('get.id'));
+    	$this->assign('userList',$userList);
+		
+        /*官方求购订单详情*/
+        $page2 = getpage(M('order')->where("user_id = '$user_id' ")->count(), $pageSize, array());
+    	$orderList = M('order')->limit($page->firstRow, $page->listRows)->where("user_id = '$user_id' ")->select();
+    	$this->assign('orderList',$orderList);
+    	$this->assign('page2',$page2->show());
+    	
+		
+        $this->display('orderdetail');
+    }
 }
