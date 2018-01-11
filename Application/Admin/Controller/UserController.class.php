@@ -79,7 +79,6 @@ class UserController extends PrivilegeController
 			}
     	}
 		/*pr($user_sell_orderList);die;*/
-		
     	$this->assign('user_sell_orderList',$user_sell_orderList);
     	$this->assign('page',$page->show());
     	$userList = M('user')->find(I('get.id'));
@@ -88,10 +87,24 @@ class UserController extends PrivilegeController
         /*官方求购订单详情*/
         $page2 = getpage(M('order')->where("user_id = '$user_id' ")->count(), $pageSize, array());
     	$orderList = M('order')->limit($page->firstRow, $page->listRows)->where("user_id = '$user_id' ")->select();
+    	/*pr($orderList);die;*/
+		foreach ($orderList as $key => $value) {
+    		$commodity_type=$value['commodity_type'];
+			$commodity_id=$value['commodity_id'];
+			if ($commodity_type==1) {
+    			$npersonList = M('person')->where("id = '$commodity_id' ")->find();
+				$orderList[$key]['commodity_id']=$npersonList['person_name'];
+			} elseif($commodity_type==2) {
+				$nequipmentList = M('equipment')->where("id = '$commodity_id' ")->find();
+				$orderList[$key]['commodity_id']=$nequipmentList['equipment_name'];
+			} elseif($commodity_type==3) {
+				$nmedicheList = M('mediche')->where("id = '$commodity_id' ")->find();
+				$orderList[$key]['commodity_id']=$nmedicheList['mediche_name'];
+			}
+    	}
+		
     	$this->assign('orderList',$orderList);
     	$this->assign('page2',$page2->show());
-    	
-		
         $this->display('orderdetail');
     }
 }

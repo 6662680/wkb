@@ -6,7 +6,7 @@
 	</nav>
     <div class="page-container">
     	<div style="text-align: center;border-style: dashed;border-width: 1px;border-color: red;font-weight: 700;">
-    		会员官方购买订单详情
+    		{$userList.mobile}的官方购买订单详情
     	</div>
     	<table class="table table-border table-bordered table-bg table-sort " >
             <thead>
@@ -44,15 +44,19 @@
 								} elseif($vo['status']==2) {
 									echo '完成';
 								}elseif($vo['status']==3) {
-									echo '失败';
+									echo '取消';
 								}?>
                    </td>
                    <td>{$vo.commodity_price}</td>
                    <td>{$vo.site}</td>
                    <td>{$vo.creation_time|date="Y-m-d H:i:s",###}</td>
-                   <td>{$vo.completion_time|date="Y-m-d H:i:s",###}</td>
-                   
-                   
+                   <td><?php 
+                   	if ($vo['completion_time']==0) {
+									echo '未完成';
+								} else {
+									echo date("Y-m-d H:i:s",$vo['completion_time']);
+								}?>
+                   </td>
                 </tr>
             </foreach>
             </tbody>
@@ -61,11 +65,11 @@
             {$page2}
         </div>
     	<div style="text-align: center;border-style: dashed;border-width: 1px;border-color: red;margin-top: 70px;font-weight: 700;">
-    		交易大厅订单详情
+    		{$userList.mobile}的交易大厅订单详情
     	</div>
         <div class="cl pd-5 bg-1 bk-gray mt-2">
         	<span class="l"> 
-        		<aa class="btn btn-primary radius" >{$userList.realname}的卖出订单详情</aa>
+        		<aa class="btn btn-primary radius" >卖出订单详情</aa>
         	</span>
         </div>
         <table class="table table-border table-bordered table-bg table-sort " >
@@ -79,16 +83,11 @@
                 <th>商品类型-详细</th>
                 <th>配备道具</th>
                 <th>是否配备帽子</th>
-                
                 <th>订单状态</th>
                 <th>订单是否锁定</th>
-                
                 <th>商品价格</th>
                 <th>{$userList.realname}的玩客币地址</th>
                 <th>接单会员</th>
-                
-                
-                
                 <th>订单创建时间</th>
                 <th>交易完成时间</th>
                 
@@ -129,7 +128,7 @@
 								} elseif($vo['status']==2) {
 									echo '完成';
 								}elseif($vo['status']==3) {
-									echo '失败';
+									echo '取消';
 								}?>
                    </td>
                    <td><?php 
@@ -145,9 +144,12 @@
                    
                    
                    <td>{$vo.creation_time|date="Y-m-d H:i:s",###}</td>
-                   <td>{$vo.completion_time|date="Y-m-d H:i:s",###}</td>
-                   
-                   
+                   <td><?php 
+                   	if ($vo['completion_time']==0) {
+									echo '未完成';
+								} else {
+									echo date("Y-m-d H:i:s",$vo['completion_time']);
+								}?></td>
                 </tr>
             </foreach>
             </tbody>
