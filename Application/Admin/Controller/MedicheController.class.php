@@ -66,7 +66,18 @@ class MedicheController extends PrivilegeController
     	$mediche_name = I('post.mediche_name');
     	$mediche_treat = I('post.mediche_treat');
     	$mediche_price = I('post.mediche_price');
-		$mediche_img = I('post.mediche_img');
+		/*$mediche_img = I('post.mediche_img');*/
+		
+		$upload = new \Think\Upload();// 实例化上传类
+	    $upload->maxSize   =     3145728 ;// 设置附件上传大小
+	    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+	    $upload->autoSub = FALSE;
+		$upload->saveName = '';
+	    $upload->rootPath  =      './Public/images/mediche/'; // 设置附件上传根目录
+	    // 上传单个文件 
+	    $info   =   $upload->uploadOne($_FILES['mediche_img']);
+		
+		
     	//$id存在就是修改,不存在就是添加
     	if ( !$id && !$mediche_name )
     	{
@@ -80,7 +91,7 @@ class MedicheController extends PrivilegeController
     	{
     		$this->error('请填写食物价格');
     	}
-		if ( !$id && !$mediche_img )
+		if ( !$id && $_FILES['mediche_img']['error']==4 )
     	{
     		$this->error('请上传图片样式');
     	}
@@ -89,13 +100,32 @@ class MedicheController extends PrivilegeController
     	{
     		$this->error('食物已经存在,请换一个!');
     	}
-
-    	$data = [
+		if ($_FILES['mediche_img']['error']==4) {
+			$data = [
+    		'mediche_name' => $mediche_name,
+    		'mediche_treat' => $mediche_treat,
+    		'mediche_price' => $mediche_price,
+    	];
+		} else {
+			if(!$info) {// 上传错误提示错误信息
+	        $this->error($upload->getError());
+		    }else{// 上传成功 获取上传文件信息
+		        $mediche_img=$info['savepath'].$info['savename'];
+		    }
+			$data = [
     		'mediche_name' => $mediche_name,
     		'mediche_treat' => $mediche_treat,
     		'mediche_price' => $mediche_price,
     		'mediche_img' => $mediche_img,
     	];
+		}
+
+    	/*$data = [
+    		'mediche_name' => $mediche_name,
+    		'mediche_treat' => $mediche_treat,
+    		'mediche_price' => $mediche_price,
+    		'mediche_img' => $mediche_img,
+    	];*/
 
     	if ( $id )
     	{

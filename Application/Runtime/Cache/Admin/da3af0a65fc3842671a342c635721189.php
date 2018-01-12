@@ -37,7 +37,7 @@
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	   </nav>
     <div class="page-container">
-        <form action="" method="post" class="form form-horizontal" id="form-member-add" novalidate="novalidate">
+        <form action="" method="post" class="form form-horizontal" id="form-member-add" novalidate="novalidate" enctype="multipart/form-data">
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>道具名称:</label>
                 <div class="formControls col-xs-8 col-sm-3">
@@ -72,7 +72,7 @@
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图片样式:</label>
                 <div class="formControls col-xs-8 col-sm-3">
-                    <input type="file" name="equipment_img" id="" value="/Public/images/mediche/<?php echo ($equipmentInfo['equipment_img']); ?>" />
+                    <input type="file" name="equipment_img" id="" value="" />
                 </div>
             </div>
             <div class="row cl">

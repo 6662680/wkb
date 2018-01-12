@@ -68,7 +68,15 @@ class EquipmentController extends PrivilegeController
     	$equipment_protect = I('post.equipment_protect');
 		$equipment_price = I('post.equipment_price');
 		$equipment_multiple = I('post.equipment_multiple');
-		$equipment_img = I('post.equipment_img');
+		/*$equipment_img = I('post.equipment_img');*/
+		$upload = new \Think\Upload();// 实例化上传类
+	    $upload->maxSize   =     3145728 ;// 设置附件上传大小
+	    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+	    $upload->autoSub = FALSE;
+		$upload->saveName = '';
+	    $upload->rootPath  =      './Public/images/equipment/'; // 设置附件上传根目录
+	    // 上传单个文件 
+	    $info   =   $upload->uploadOne($_FILES['equipment_img']);
 		
     	//$id存在就是修改,不存在就是添加
     	if ( !$id && !$equipment_name )
@@ -91,7 +99,7 @@ class EquipmentController extends PrivilegeController
     	{
     		$this->error('请填写是否防坍塌');
     	}
-		if ( !$id && !$equipment_img )
+		if ( !$id && $_FILES['equipment_img']['error']==4 )
     	{
     		$this->error('请上传图片样式');
     	}
@@ -100,15 +108,38 @@ class EquipmentController extends PrivilegeController
     	{
     		$this->error('道具已经存在,请换一个!');
     	}
-
-    	$data = [
+		if ($_FILES['equipment_img']['error']==4) {
+			$data = [
+    		'equipment_name' => $equipment_name,
+    		'equipment_endurance' => $equipment_endurance,
+    		'equipment_protect' => $equipment_protect,
+    		'equipment_price' => $equipment_price,
+    		'equipment_multiple' => $equipment_multiple,
+    		];
+		} else {
+			if(!$info) {// 上传错误提示错误信息
+	        $this->error($upload->getError());
+		    }else{// 上传成功 获取上传文件信息
+		        $equipment_img=$info['savepath'].$info['savename'];
+		    }
+			$data = [
     		'equipment_name' => $equipment_name,
     		'equipment_endurance' => $equipment_endurance,
     		'equipment_protect' => $equipment_protect,
     		'equipment_price' => $equipment_price,
     		'equipment_multiple' => $equipment_multiple,
     		'equipment_img' => $equipment_img,
-    	];
+    		];
+		}
+
+    	/*$data = [
+    		'equipment_name' => $equipment_name,
+    		'equipment_endurance' => $equipment_endurance,
+    		'equipment_protect' => $equipment_protect,
+    		'equipment_price' => $equipment_price,
+    		'equipment_multiple' => $equipment_multiple,
+    		'equipment_img' => $equipment_img,
+    	];*/
 
     	if ( $id )
     	{
