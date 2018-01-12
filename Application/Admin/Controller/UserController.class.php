@@ -37,6 +37,16 @@ class UserController extends PrivilegeController
         $p = I('request.p', 1, 'intval');
         $page = getpage(M('mediche_bag')->where("user_id = '$user_id' ")->count(), $pageSize, array());
     	$medicheList = M('mediche_bag')->limit($page->firstRow, $page->listRows)->where("user_id = '$user_id' ")->select();
+    	/*根据食物id查询食物名称显示到食物背包数组*/
+    	foreach ($medicheList as $key => $value) {
+    		$mediche_id=$value['mediche_id'];
+    		$nmedicheList = M('mediche')->where("id = '$mediche_id' ")->find();
+			if ($nmedicheList['mediche_name']) {
+				$medicheList[$key]['mediche_id']=$nmedicheList['mediche_name'];
+			} else {
+				$medicheList[$key]['mediche_id']='无';
+			}
+    	}
     	$this->assign('medicheList',$medicheList);
     	$this->assign('page',$page->show());
     	$userList = M('user')->find(I('get.id'));
@@ -44,11 +54,41 @@ class UserController extends PrivilegeController
 		
         $page2 = getpage(M('person_bag')->where("user_id = '$user_id' ")->count(), $pageSize, array());
     	$personList = M('person_bag')->limit($page->firstRow, $page->listRows)->where("user_id = '$user_id' ")->select();
+    	/*根据人物id查询人物名称显示到人物背包数组*/
+    	foreach ($personList as $key => $value) {
+    		$person_id=$value['person_id'];
+    		$npersonList = M('person')->where("id = '$person_id' ")->find();
+			if ($npersonList['person_name']) {
+				$personList[$key]['person_id']=$npersonList['person_name'];
+			} else {
+				$personList[$key]['person_id']='无';
+			}
+    	}
+    	/*根据道具id查询道具名称显示到人物背包数组*/
+    	foreach ($personList as $key => $value) {
+    		$equipment_id=$value['equipment_id'];
+    		$nequipmentList = M('equipment')->where("id = '$equipment_id' ")->find();
+			if ($nequipmentList['equipment_name']) {
+				$personList[$key]['equipment_id']=$nequipmentList['equipment_name'];
+			} else {
+				$personList[$key]['equipment_id']='未配备道具';
+			}
+    	}
     	$this->assign('personList',$personList);
     	$this->assign('page2',$page2->show());
 		
 		$page3 = getpage(M('equipment_bag')->where("user_id = '$user_id' ")->count(), $pageSize, array());
     	$equipmentList = M('equipment_bag')->limit($page->firstRow, $page->listRows)->where("user_id = '$user_id' ")->select();
+    	/*根据道具id查询道具名称显示到道具背包数组*/
+    	foreach ($equipmentList as $key => $value) {
+    		$equipment_id=$value['equipment_id'];
+    		$nnequipmentList = M('equipment')->where("id = '$equipment_id' ")->find();
+			if ($nnequipmentList['equipment_name']) {
+				$equipmentList[$key]['equipment_id']=$nnequipmentList['equipment_name'];
+			} else {
+				$equipmentList[$key]['equipment_id']='无';
+			}
+    	}
     	$this->assign('equipmentList',$equipmentList);
     	$this->assign('page3',$page3->show());
 		

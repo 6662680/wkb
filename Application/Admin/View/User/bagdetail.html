@@ -26,16 +26,7 @@
             <foreach name="medicheList" item="vo">
                 <tr style="height: 1px;">
                    <td><?php echo ++$iid; ?></td>
-                   <td><?php 
-                   	if ($vo['mediche_id']==1) {
-									echo '牛奶';
-								} elseif($vo['mediche_id']==2) {
-									echo '面包';
-								}elseif($vo['mediche_id']==3) {
-									echo '蛋糕';
-								}elseif($vo['mediche_id']==4) {
-									echo '米饭套餐';
-								} ?></td>
+                   <td>{$vo.mediche_id}</td>
                    <td>{$vo.mediche_num}</td>
                 </tr>
             </foreach>
@@ -71,28 +62,8 @@
                 <tr >
                    <td><?php echo ++$iid; ?></td>
                    <td>{$vo.id}</td>
-                   <td><?php 
-                   	if ($vo['person_id']==1) {
-									echo '老年';
-								} elseif($vo['person_id']==2) {
-									echo '青年';
-								}elseif($vo['person_id']==3) {
-									echo '壮年';
-								}elseif($vo['person_id']==4) {
-									echo '肌肉男';
-								} ?>
-                   </td>
-                   <td><?php 
-                   	if ($vo['equipment_id']==1) {
-									echo '镐';
-								} elseif($vo['equipment_id']==2) {
-									echo '电钻';
-								}elseif($vo['equipment_id']==4) {
-									echo '挖掘机';
-								}elseif($vo['equipment_id']==0) {
-									echo '未配备道具';
-								} ?>
-                   </td>
+                   <td>{$vo.person_id}</td>
+                   <td>{$vo.equipment_id}</td>
                    <td><?php 
                    	if ($vo['equipment_id_card']==1) {
 									echo '是';
@@ -124,6 +95,7 @@
             <thead>
             <tr>
                 <th>序号</th>
+                <th>道具ID</th>
                 <th>道具名称</th>
                 <th>道具耐久度</th>
                 <th>所配备人物ID</th>
@@ -136,18 +108,8 @@
             <foreach name="equipmentList" item="vo">
                 <tr >
                    <td><?php echo ++$iid; ?></td>
-                   <td><?php 
-                   	if ($vo['equipment_id']==1) {
-									echo '镐';
-								} elseif($vo['equipment_id']==2) {
-									echo '电钻';
-								}elseif($vo['equipment_id']==4) {
-									echo '挖掘机';
-								}elseif($vo['equipment_id']==3) {
-									echo '安全帽';
-								} ?>
-                   </td>
-                   
+                   <td>{$vo.id}</td>
+                   <td>{$vo.equipment_id}</td>
                    <td>{$vo.equipment_endurance}</td>
                    <td>{$vo.person_id}</td>
                    <td><?php 
