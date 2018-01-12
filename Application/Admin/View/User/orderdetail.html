@@ -6,13 +6,13 @@
 	</nav>
     <div class="page-container">
     	<div style="text-align: center;border-style: dashed;border-width: 1px;border-color: red;font-weight: 700;">
-    		{$userList.mobile}的官方购买订单详情
+    		{$userList.mobile}的商城求购订单详情
     	</div>
     	<table class="table table-border table-bordered table-bg table-sort " >
             <thead>
             <tr>
                 <th>序号</th>
-                <th>订单ID</th>
+                <th>订单号</th>
                 <th>商品类型</th>
                 <th>商品类型-详细</th>
                 <th>订单状态</th>
@@ -67,16 +67,104 @@
     	<div style="text-align: center;border-style: dashed;border-width: 1px;border-color: red;margin-top: 70px;font-weight: 700;">
     		{$userList.mobile}的交易大厅订单详情
     	</div>
+    	<div class="cl pd-5 bg-1 bk-gray mt-2">
+        	<span class="l"> 
+        		<div style="background-color: #6495ED;padding:0 8px 0 8px;color: white;">求购订单详情</div>
+        	</span>
+        </div>
+        <table class="table table-border table-bordered table-hover table-bg table-sort" ">
+		<thead>
+			<tr class="text-c">
+				<th>序号</th>
+				<th>订单号</th>
+
+				
+				<th>商品类型</th>
+				
+				<th width="60px">商品类型-详细</th>
+				<th width="90px">人物等级(级)/道具耐久度(点)</th>
+				<th>商品算力</th>
+				<th>订单状态</th>
+				
+				<th>商品价格</th>
+				<th>玩客币地址</th>
+				<th>接单会员</th>
+				
+				<th>订单创建时间</th>
+				<th>订单完成时间</th>
+				<th>锁定时间</th>
+				
+
+
+			</tr>
+		</thead>
+		<tbody >
+			<?php $iid=0;  ?>
+    <volist name="user_buy_orderList" id="vo">
+			<tr class="text-c">
+        <td><?php echo ++$iid; ?></td>
+				<td>{$vo.id}</td>
+
+				
+				<td>{$vo.commodity_type}</td>
+				
+				<td>{$vo.commodity_id}</td>
+				<td>
+					<?php 
+               if ($vo['person_level']) {
+									echo $vo['person_level'],'级';
+								} elseif($vo['equipment_endurance']) {
+									echo $vo['equipment_endurance'],'点';
+								}?>
+				</td>
+				<td>{$vo.capacity}</td>
+				<td><?php 
+                   	if ($vo['status']==1) {
+									echo '待付款';
+								} elseif($vo['status']==2) {
+									echo '完成';
+								}elseif($vo['status']==3) {
+									echo '取消';
+								}?>
+				</td>
+				<td>{$vo.commodity_price}</td>
+				<td>{$vo.site}</td>
+				<td>{$vo.receiving_user_id}</td>
+				
+				<td>
+					<if condition="$vo.creation_time eq (null or 0) "> 未创建
+						<else />{$vo.creation_time|date="Y-m-d H:i:s",###}
+					</if>
+				</td>
+				<td>
+					<if condition="$vo.completion_time eq 0 "> 未完成
+					<else />{$vo.completion_time|date="Y-m-d H:i:s",###}
+					</if>
+				</td>
+				<td><if condition="$vo.use_time eq 0 "> 未锁定
+					<else />{$vo.use_time|date="Y-m-d H:i:s",###}
+					</if>
+				</td>
+				
+				
+			</tr>
+  	</volist>                               
+		</tbody>
+	</table>
+	<div class="pager">
+            {$page3}
+    </div>
+	<br /><br />
         <div class="cl pd-5 bg-1 bk-gray mt-2">
         	<span class="l"> 
-        		<aa class="btn btn-primary radius" >卖出订单详情</aa>
+        		<div style="background-color: #6495ED;padding:0 8px 0 8px;color: white;">出售订单详情</div>
         	</span>
         </div>
         <table class="table table-border table-bordered table-bg table-sort " >
             <thead>
             <tr>
                 <th>序号</th>
-                <th>订单ID</th>
+                <th>订单号</th>
                 <!--<th>交易类型</th>-->
                 
                 <th>商品类型</th>
@@ -84,12 +172,13 @@
                 <th>配备道具</th>
                 <th>是否配备帽子</th>
                 <th>订单状态</th>
-                <th>订单是否锁定</th>
+
                 <th>商品价格</th>
                 <th>玩客币地址</th>
                 <th>接单会员</th>
                 <th>订单创建时间</th>
                 <th>交易完成时间</th>
+                <th>锁定时间</th>
                 
             </tr>
             </thead>
@@ -131,17 +220,10 @@
 									echo '取消';
 								}?>
                    </td>
-                   <td><?php 
-                   	if ($vo['use']==1) {
-									echo '锁定';
-								} elseif($vo['use']==0) {
-									echo '未锁定';
-								}?>
-                   </td>
+                   
                    <td>{$vo.commodity_price}</td>
                    <td>{$vo.site}</td>
                    <td>{$vo.receiving_user_id}</td>
-                   
                    
                    <td>{$vo.creation_time|date="Y-m-d H:i:s",###}</td>
                    <td><?php 
@@ -150,6 +232,10 @@
 								} else {
 									echo date("Y-m-d H:i:s",$vo['completion_time']);
 								}?></td>
+					<td><if condition="$vo.use_time eq 0 "> 未锁定
+					<else />{$vo.use_time|date="Y-m-d H:i:s",###}
+					</if>
+                   </td>
                 </tr>
             </foreach>
             </tbody>

@@ -102,7 +102,7 @@ class UserController extends PrivilegeController
 	 */
     public function orderdetail()
     {
-    	/*交易大厅详情*/
+    	/*交易大厅某会员的出售详情*/
         $user_id=I('get.id');
         $pageSize = 5;
         $p = I('request.p', 1, 'intval');
@@ -112,8 +112,8 @@ class UserController extends PrivilegeController
     	foreach ($user_sell_orderList as $key => $value) {
     		$receiving_user_id=$value['receiving_user_id'];
     		$nuserList = M('user')->where("id = '$receiving_user_id' ")->find();
-			if ($nuserList['realname']) {
-				$user_sell_orderList[$key]['receiving_user_id']=$nuserList['realname'];
+			if ($nuserList['mobile']) {
+				$user_sell_orderList[$key]['receiving_user_id']=$nuserList['mobile'];
 			} else {
 				$user_sell_orderList[$key]['receiving_user_id']='无';
 			}
@@ -121,6 +121,39 @@ class UserController extends PrivilegeController
 		/*pr($user_sell_orderList);die;*/
     	$this->assign('user_sell_orderList',$user_sell_orderList);
     	$this->assign('page',$page->show());
+    	$userList = M('user')->find(I('get.id'));
+    	$this->assign('userList',$userList);
+		
+		/*交易大厅某会员的求购详情*/
+        
+        $page3 = getpage(M('user_buy_order')->where("user_id = '$user_id' ")->count(), $pageSize, array());
+    	$user_buy_orderList = M('user_buy_order')->limit($page->firstRow, $page->listRows)->where("user_id = '$user_id' ")->select();
+    	/*pr($user_sell_orderList);die;*/
+    	foreach ($user_buy_orderList as $key => $value) {
+    		$receiving_user_id=$value['receiving_user_id'];
+    		$nuserList = M('user')->where("id = '$receiving_user_id' ")->find();
+			if ($nuserList['mobile']) {
+				$user_buy_orderList[$key]['receiving_user_id']=$nuserList['mobile'];
+			} else {
+				$user_buy_orderList[$key]['receiving_user_id']='无';
+			}
+			
+			$commodity_type=$value['commodity_type'];
+			$commodity_id=$value['commodity_id'];
+			if ($commodity_type==1) {
+    			$npersonList = M('person')->where("id = '$commodity_id' ")->find();
+    			$user_buy_orderList[$key]['commodity_type']='人物';
+				$user_buy_orderList[$key]['commodity_id']=$npersonList['person_name'];
+			} elseif($commodity_type==2) {
+				$nequipmentList = M('equipment')->where("id = '$commodity_id' ")->find();
+				$user_buy_orderList[$key]['commodity_type']='道具';
+				$user_buy_orderList[$key]['commodity_id']=$nequipmentList['equipment_name'];
+			}
+			
+    	}
+		/*pr($user_sell_orderList);die;*/
+    	$this->assign('user_buy_orderList',$user_buy_orderList);
+    	$this->assign('page3',$page3->show());
     	$userList = M('user')->find(I('get.id'));
     	$this->assign('userList',$userList);
 		

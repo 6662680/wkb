@@ -12,7 +12,7 @@ use Think\Controller;
  *
  *
  **/
-class OrderController extends PrivilegeController{
+class UsersellorderController extends PrivilegeController{
     /**
      *  订单
      *
@@ -41,42 +41,32 @@ class OrderController extends PrivilegeController{
 				$search=$oneuserList['id'];
             	$where['user_id'] = $search;
 			} else{
-				$this->error('没有该会员!',U('Order/lists'),2);
+				$this->error('没有该会员!',U('Usersellorder/lists'),2);
 				exit;
 			}
 			
         }
 
         if (!$where){$where = "";}
-        list($orderData,$show) = D('Order')->getOrderData($where);
-		/*pr($orderData);die;*/
+        list($usersellorderData,$show) = D('user_sell_order')->getusersellorderData($where);
+		/*pr($usersellorderData);die;*/
 
-        foreach ($orderData as $key => $value) {
-            /*$user_id=$value['user_id'];
-    		$nuserList = M('user')->where("id = '$user_id' ")->find();
-			$orderData[$key]['user_id']=$nuserList['mobile'];*/
+        foreach ($usersellorderData as $key => $value) {
 			
 			$commodity_type=$value['commodity_type'];
-			$commodity_id=$value['commodity_id'];
 			if ($commodity_type==1) {
-    			$npersonList = M('person')->where("id = '$commodity_id' ")->find();
-    			$orderData[$key]['commodity_type']='人物';
-				$orderData[$key]['commodity_id']=$npersonList['person_name'];
+    			$usersellorderData[$key]['commodity_type']='人物';
 			} elseif($commodity_type==2) {
-				$nequipmentList = M('equipment')->where("id = '$commodity_id' ")->find();
-				$orderData[$key]['commodity_type']='道具';
-				$orderData[$key]['commodity_id']=$nequipmentList['equipment_name'];
+				$usersellorderData[$key]['commodity_type']='道具';
 			} elseif($commodity_type==3) {
-				$nmedicheList = M('mediche')->where("id = '$commodity_id' ")->find();
-				$orderData[$key]['commodity_type']='食物';
-				$orderData[$key]['commodity_id']=$nmedicheList['mediche_name'];
+				$usersellorderData[$key]['commodity_type']='食物';
 			}
 			
         }
 
-        $this->assign("orderData",$orderData);
+        $this->assign("usersellorderData",$usersellorderData);
         $this->assign("page",$show);
-        $this->display('orderList');
+        $this->display('usersellorderList');
     }
     
 }
