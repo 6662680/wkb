@@ -71,12 +71,11 @@ class MedicheController extends PrivilegeController
 		$upload = new \Think\Upload();// 实例化上传类
 	    $upload->maxSize   =     3145728 ;// 设置附件上传大小
 	    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-	    $upload->autoSub = FALSE;
-		$upload->saveName = '';
+	    $upload->autoSub = FALSE;// 取消上传时自动生成日期形式的文件夹
+		$upload->saveName = '';// 设置成以原文件名存放
 	    $upload->rootPath  =      './Public/images/mediche/'; // 设置附件上传根目录
 	    // 上传单个文件 
 	    $info   =   $upload->uploadOne($_FILES['mediche_img']);
-		
 		
     	//$id存在就是修改,不存在就是添加
     	if ( !$id && !$mediche_name )
@@ -91,7 +90,7 @@ class MedicheController extends PrivilegeController
     	{
     		$this->error('请填写食物价格');
     	}
-		if ( !$id && $_FILES['mediche_img']['error']==4 )
+		if ( !$id && $_FILES['mediche_img']['error']==4 )// ==4说明没有上传图片
     	{
     		$this->error('请上传图片样式');
     	}
@@ -100,12 +99,12 @@ class MedicheController extends PrivilegeController
     	{
     		$this->error('食物已经存在,请换一个!');
     	}
-		if ($_FILES['mediche_img']['error']==4) {
+		if ($_FILES['mediche_img']['error']==4) {// ==4说明没有上传图片，即图片不做修改
 			$data = [
     		'mediche_name' => $mediche_name,
     		'mediche_treat' => $mediche_treat,
     		'mediche_price' => $mediche_price,
-    	];
+    		];
 		} else {
 			if(!$info) {// 上传错误提示错误信息
 	        $this->error($upload->getError());
@@ -117,7 +116,7 @@ class MedicheController extends PrivilegeController
     		'mediche_treat' => $mediche_treat,
     		'mediche_price' => $mediche_price,
     		'mediche_img' => $mediche_img,
-    	];
+    		];
 		}
 
     	/*$data = [

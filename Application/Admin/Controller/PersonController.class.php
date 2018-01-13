@@ -75,8 +75,8 @@ class PersonController extends PrivilegeController
 		$upload = new \Think\Upload();// 实例化上传类
 	    $upload->maxSize   =     3145728 ;// 设置附件上传大小
 	    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-	    $upload->autoSub = FALSE;
-		$upload->saveName = '';
+	    $upload->autoSub = FALSE;// 取消上传时自动生成日期形式的文件夹
+		$upload->saveName = '';// 设置成以原文件名存放
 	    $upload->rootPath  =      './Public/images/person/'; // 设置附件上传根目录
 	    // 上传单个文件 
 	    $info   =   $upload->uploadOne($_FILES['person_img']);

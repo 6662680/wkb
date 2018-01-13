@@ -1,0 +1,67 @@
+<extend name="Public/base"/>
+<block name="body">
+    <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 后台管理 <span class="c-gray en">&gt;</span> 提现管理 <span class="c-gray en">&gt;</span> 提现列表
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+    <div class="page-container">
+        <form class="form-inline definewidth m20" id="searchForm" action="">
+        </form>
+        <div class="cl pd-5 bg-1 bk-gray mt-20">
+        	<span class="l"> 
+        		<div style="background-color: #6495ED;padding:0 8px 0 8px;color: white;">提现列表</div>
+        	</span>
+        </div>
+        <div style="margin-top: 4px;"></div>
+        <table class="table table-border table-bordered table-bg table-sort">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>会员ID</th>
+                <th>提现积分</th>
+                
+                <th>创建时间</th>
+                <th>玩客币地址</th>
+                <th>状态</th>
+                
+                <th>审核</th>
+            </tr>
+            </thead>
+            <tbody>
+            	<?php $iid=0;  ?>
+            <foreach name="user_withdrawList" item="vo">
+                <tr >
+                   <td><?php echo ++$iid; ?></td>
+                   <td>{$vo.user_id}</td>
+                   <td>{$vo.wpoint}</td>
+                   <td>{$vo.create_time|date="Y-m-d H:i:s",###}</td>
+                   <td>{$vo.site}</td>
+                   <td>
+                   	<?php 
+                   	if ($vo['status']==1) {
+									echo '审核中';
+								}elseif($vo['status']==2) {
+									echo '已审核';
+								} elseif($vo['status']==3) {
+									echo '冻结中';
+								}?>
+                   </td>
+                   <td>
+                       <a href="{:U('Withdraw/grant',array('user_id' => $vo['user_id']))}"<?php  if ($vo['status']!=1) { echo 'style="display:none;"';}?>><span style="color: #00CD00;">发放</span></a>
+                       <?php  if ($vo['status']==1) { echo '&nbsp;&nbsp;';}?>
+                       <a href="{:U('Withdraw/freeze',array('user_id' => $vo['user_id']))}" <?php  if ($vo['status']!=1) { echo 'style="display:none;"';}?>><span style="color: red;">冻结</span></a>
+                       <?php  if ($vo['status']==1) { echo '&nbsp;&nbsp;';}?>
+                       <a href="{:U('Withdraw/defreeze',array('user_id' => $vo['user_id']))}"<?php  if ($vo['status']==1) { echo 'style="display:none;"';}?>><span style="color: #FFA500;">解冻</span></a>
+                   </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="pager">
+            {$page}
+        </div>
+    </div>
+
+</block>
+<block name="javascript">
+</block>
