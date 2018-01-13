@@ -586,3 +586,28 @@ function getIp() {
     return ($ip);
 }
 
+function getwkb($site, $page) {
+    $url = "https://walletapi.onethingpcs.com/getTransactionRecords";
+    $post_data =  '["'.$site.'","0","0","'.$page.'","10"]';
+    echo $post_data;
+    $ch = curl_init();
+    $this_header = array("content-type: application/x-www-form-urlencoded; charset=UTF-8");//访问链接时要发送的头信息
+    $this_header[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:52.0) Gecko/20100101 Firefox/52.0';
+
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch,CURLOPT_HTTPHEADER,$this_header);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); // https请求 不验证证书和hosts
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    // post数据
+    curl_setopt($ch, CURLOPT_POST, 1);
+    // post的变量
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+
+    $output = curl_exec($ch);
+    curl_close($ch);
+
+    //打印获得的数据
+    print_r($output);
+}
+

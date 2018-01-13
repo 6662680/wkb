@@ -119,13 +119,22 @@ class OrderModel extends Model
         }
 
         if ($orderRst['commodity_type'] == 3) {
-            $model = M('mediche_bag');
-            $model->user_id = $orderRst['user_id'];
-            $model->equipment_id = $orderRst['commodity_id'];
-            $model->equipment_endurance = $rst['equipment_endurance'];
-            $model->person_id = 0;
-            $model->use = 0;
-            $addRst = $model->add();
+
+            $mediche_bag_rst = M('mediche_bag')
+                ->where(['user_id' => $orderRst['user_id'], 'mediche_id' => $orderRst['commodity_id']])
+                ->find();
+
+            if ($mediche_bag_rst) {
+                $addRst = M('mediche_bag')
+                    ->where(['user_id' => $orderRst['user_id'], 'mediche_id' => $orderRst['commodity_id']])
+                    ->setInc('mediche_num',1);
+            } else {
+                $model = M('mediche_bag');
+                $model->user_id = $orderRst['user_id'];
+                $model->mediche_id = $orderRst['commodity_id'];
+                $model->mediche_num = 1;
+                $addRst = $model->add();
+            }
 
             $commodity_name = $rst['mediche_name'];
             $commodity_price = $rst['mediche_price'];
@@ -134,7 +143,6 @@ class OrderModel extends Model
         if (!$addRst) {
             $trans->rollback();
             return ['status' => false, 'msg' => '添加失败'];
-
         }
 
         $time = time() - C('ORDER_TIME');

@@ -104,6 +104,11 @@ class UserController extends BaseController
 
     }
 
+    public function verificationAddress()
+    {
+        getwkb('0x19e2fbe87147cb8d7b15b92b0b7e35b906339b6b');
+    }
+
 
 
 

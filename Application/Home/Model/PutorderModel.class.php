@@ -361,4 +361,9 @@ class PutorderModel extends Model
         }
     }
 
+    //点击购买(订单类型：买)
+    public  function buyAccomplish($receiving_user_id, $user_buy_order_id)
+    {
+
+    }
 }
