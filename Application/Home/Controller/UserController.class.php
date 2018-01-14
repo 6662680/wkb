@@ -108,8 +108,32 @@ class UserController extends BaseController
     {
         getwkb('0x19e2fbe87147cb8d7b15b92b0b7e35b906339b6b');
     }
-
-
+	/*提现申请*/
+	public function withdraw()
+    {
+    	$user_id=96;
+		$user = M('user')->where(['id' => $user_id])->find();
+		$wpoint = I('post.wpoint');
+		$data = [
+    		'user_id' => $user_id,
+    		'wpoint' => $wpoint,
+    		'wpoint' => $wpoint,
+    		'create_time' => time(),
+    		'site'=> $user['site'],
+    		];
+		$list=M('user_withdraw')->where(['user_id' => $user_id])->find();
+		if ($list&&($list['status']==1||$list['status']==3)) {
+			returnajax(FALSE, '' , '已有提现在审核中，不能重复提现!');
+		} elseif((date('w') == 5) || (date('w') == 6)){
+			returnajax(FALSE, '' , '周五、周六不允许提现!');
+		} else {
+			M('user_withdraw')->add($data);
+			/*添加日志*/
+			D('Log')->addLog('会员'. $user_id .'提交提现申请', $user_id);
+			returnajax(TRUE, '' , '提现申请提交成功!');
+		}
+        
+    }
 
 
 }

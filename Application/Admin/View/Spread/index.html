@@ -1,0 +1,35 @@
+<extend name="Public/base"/>
+<block name="body">
+    <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 后台管理 <span class="c-gray en">&gt;</span> 提现管理<span class="c-gray en">&gt;</span> 推广基础参数设置
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+    <div class="page-container">
+        <form class="form-inline definewidth m20" id="searchForm" action="">
+        </form>
+        
+            <br>
+        <table class="table table-border table-bordered table-bg table-sort">
+            <thead>
+            <tr>
+                <th>某个会员消费达一定金额值</th>
+                <th>官方返还给上线会员的推广奖励</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr >
+                   <td>{$spread.neck}</td>
+                   <td>{$spread.award}</td>
+                   <td>
+                       <a href="{:U('spread/edit',array('id' => $spread['id']))}">编辑</a>
+                   </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+</block>
+<block name="javascript">
+</block>
