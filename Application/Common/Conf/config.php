@@ -22,6 +22,8 @@ return array(
 	),
 
 	'ORDER_TIME' => 600,
+
+	'SERVER_ADDRESS' => 'shouxufeidizhi',
 //    'THINK_EMAIL' => array(
 //        'SMTP_HOST'   => 'vipmail13.myhostadmin.net', //SMTP服务器
 //        'SMTP_PORT'   => '465', //SMTP服务器端口

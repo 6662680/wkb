@@ -156,7 +156,7 @@ class PutorderModel extends Model
 
         $time = time() - C('ORDER_TIME');
         $time = array('GT', $time);
-
+        //creation_time这里有问题，之后测试再调整
         $model = M('user_sell_order');
         $rst = $model->where(['user_id' => $user_sell_order_id, 'creation_time' => $time])->find();
 
@@ -294,7 +294,7 @@ class PutorderModel extends Model
     //创建订单（订单类型：买）
     public function buyCreationOrder($user_id, $data)
     {
-        if (empty($user_id) || empty($data['commodity_id']) || empty($data['commodity_type']) || empty($data['commodity_price'])) {
+        if (empty($user_id) || empty($data['commodity_id']) || empty($data['commodity_type']) || empty($data['commodity_price']) || empty($data['residue'])) {
             return ['status' => false, 'msg' => '缺少参数'];
         }
 
@@ -309,22 +309,16 @@ class PutorderModel extends Model
         $add = array();
 
         if ($data['commodity_type'] == 1) {
-            if (empty($data['person_level']) || empty($data['capacity'])) {
+            if (empty($data['person_level'])) {
                 return ['status' => false, 'msg' => '缺少参数'];
             }
 
             $add['commodity_name'] = $commodity_rst['person_name'];
             $add['person_level'] = $data['person_level'];
-            $add['equipment_endurance'] = 0;
             $add['capacity'] = $data['capacity'];
 
         } else {
-            if (empty($data['equipment_endurance'])) {
-                return ['status' => false, 'msg' => '缺少参数'];
-            }
-
             $add['commodity_name'] = $commodity_rst['equipment_name'];
-            $add['equipment_endurance'] = $data['equipment_endurance'];
         }
 
         if (empty($commodity_rst)) {
@@ -348,6 +342,7 @@ class PutorderModel extends Model
         $add['creation_time'] = time();
         $add['user_id'] = $user_id;
         $add['commodity_price'] = $data['commodity_price'];
+        $add['residue'] = $data['residue'];
         $add['site'] = 0;
 
         $rst = M('user_sell_order')->add($add);
@@ -362,8 +357,108 @@ class PutorderModel extends Model
     }
 
     //点击购买(订单类型：买)
-    public  function buyAccomplish($receiving_user_id, $user_buy_order_id)
+    public  function buyReceiving($receiving_user_id, $user_buy_order_id)
     {
+        $order = M('user_buy_order')->where(['id' => $user_buy_order_id])->find();
+
+        if (!$order) {
+            return ['status' => false, 'msg' => '不存在的订单'];
+        }
+
+        if ($order['use'] == 1 && $order['use_time'] > time() - C('ORDER_TIME')) {
+            return ['status' => false, 'msg' => '订单正在交易'];
+        }
+
+        $map = [
+            'receiving_user_id' => $receiving_user_id,
+            'use_time' => ['GT' => time() - C('ORDER_TIME')],
+            'status' => 1,
+        ];
+
+        if (M('user_buy_order')->where($map)->find()) {
+            return ['status' => false, 'msg' => '您有正在交易的订单，请先完成交易'];
+        }
+
+        if ($order['commodity_type'] == 1) {
+            $map = [
+                'level' => ['GT', $order['person_level']],
+                'person_id' => $order['commodity_id'],
+                'blood' => ['EGT', $order['residue']],
+                'user_id' => $receiving_user_id,
+            ];
+            $find = M('person_bag')->where($map)->find();
+        }
+
+        if ($order['commodity_type'] == 2) {
+            $map = [
+                'equipment_id' => $order['commodity_id'],
+                'equipment_endurance' => ['EGT', $order['residue']],
+                'user_id' => $receiving_user_id,
+            ];
+            $find = M('equipment_bag')->where($map)->find();
+        }
+
+        if (!$find) {
+            return ['status' => false, 'msg' => '您的背包中没有对应的道具'];
+        }
+
+        $user = M('user')->where(['id' => $order['user_id']])->find();
+
+        if (empty($user['site'])) {
+            return ['status' => false, 'msg' => '该用户没有设置玩客币地址，此订单无效'];
+        }
+
+        $receiving_user = $user = M('user')->where(['id' => $receiving_user_id])->find();
+
+        $save = M('user_buy_order')
+            ->where(['id' => $user_buy_order_id])
+            ->limit(1)
+            ->save(['use' => 1, 'use_time' => time(), 'receiving_user_id' => $receiving_user_id, 'site' => $receiving_user['site']]);
+
+        if ($save !== 1) {
+            return ['status' => false, 'msg' => '购买失败，请稍候再试'];
+        } else {
+            return ['status' => true, 'data' => ['server_charge' => C('SERVER_ADDRESS'), 'put_user' => $user['site']]];
+        }
+    }
+
+    // 完成购买（订单类型：买）
+    public function buyAccomplish($receiving_user_id, $user_buy_order_id)
+    {
+        $order = M('user_buy_order')->where(['id' => $user_buy_order_id])->find();
+
+        if (!$order) {
+            return ['status' => false, 'msg' => '不存在的订单'];
+        }
+
+        $buymsg = '购买道具:'. $order['commodity_name'];
+        $selllog = '卖出道具:'. $order['commodity_name'];
+
+        if ($order['commodity_type'] == 1) {
+            $map = [
+                'level' => ['GT', $order['person_level']],
+                'person_id' => $order['commodity_id'],
+                'user_id' => $receiving_user_id,
+            ];
+            $save = M('person_bag')->where($map)->list(1)->save(['user_id' => $receiving_user_id]);
+        }
+
+        if ($order['commodity_type'] == 2) {
+            $map = [
+                'equipment_id' => $order['commodity_id'],
+                'user_id' => $receiving_user_id,
+            ];
+            $save = M('equipment_bag')->where($map)->list(1)->save(['user_id' => $receiving_user_id]);
+        }
+
+        if ($save !== 1) {
+            return ['status' => false, 'msg' => '道具交易失败，请联系客服'];
+        } else {
+            //添加日志
+            D('Log')->addLog($buymsg .', 一共价格为：'. $order['commodity_price'], $order['id']);
+            D('Log')->addLog($selllog.', 一共价格为：'. $order['commodity_price'], $receiving_user_id);
+            return ['status' => true];
+        }
 
     }
 }

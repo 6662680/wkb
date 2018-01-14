@@ -81,7 +81,7 @@ class PutorderController extends BaseController
     }
 
     /**
-     * 购买商品，异步更新(订单类型：买)
+     * 创建订单(订单类型：买)
      * @author LiYang
      * @date 2018-1-7
      * @return void
@@ -98,6 +98,26 @@ class PutorderController extends BaseController
             returnajax(false, '' , $rst['msg']);
         }
     }
+
+    /**
+     * 玩家点击购买(订单类型：买)
+     * @author LiYang
+     * @date 2018-1-13
+     * @return void
+     */
+    public function buyReceiving()
+    {
+        $order_id = I('post.order_id', '', 'int');
+        $rst = D('Putorder')->buyAccomplish(session('user_id'), 99);
+
+        if ($rst['status'] == true) {
+            returnajax(true, $rst['data']);
+        } else {
+            returnajax(false, '' , $rst['msg']);
+        }
+    }
+
+
 
 
 }
