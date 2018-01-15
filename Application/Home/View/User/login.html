@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <!-- head 中 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/main.css">
+</head>
+
+<body class="loginbg">
+    <div class="logomain text-center">
+        <div class="logo">
+            <img src="__PUBLIC__/images/icons8-git_fork.png" alt="">
+            <div class="logotitle">logo</div>
+        </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="mobile" id="mobile" placeholder="手机号">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" id="pwd" placeholder="密码">
+            </div>
+        <button type="summit" class="weui-btn weui-btn_primary">登陆</button>
+        <div class="pull-right forgetpass"><a href="{:U('user/login')}">忘记密码</a></div>
+        <div class="pull-right forgetpass"><a href="{:U('user/register')}">注册</a></div>
+    </div>
+    
+    <!-- body 最后 -->
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+    <!-- 如果使用了某些拓展插件还需要额外的JS -->
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
+</body>
+<script>
+    $('button').click(function(){
+        $.ajax({
+            url:"{:U('user/login')}",
+            type:'POST', //GET
+            async:true,    //或false,是否异步
+            data:{
+                mobile:$('#mobile').val(),
+                password:$('#pwd').val()
+            },
+            timeout:5000,    //超时时间
+            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            success:function(result){
+                if (result.status) {
+                    window.location.href="{:U('index/index')}";
+                } else {
+                    alert(result.msg);
+                }
+            }
+        })
+    });
+
+</script>
+</html>

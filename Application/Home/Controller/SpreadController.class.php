@@ -19,10 +19,12 @@ class SpreadController extends BaseController
      */
     public function getPriceOrNum()
     {
-
+        //获取价格
         $rst = D('spread')->getPriceOrNum(2);
-		pr($rst['sumprice']);
-		pr($rst['num']);
+        //处理价格
+        //
+
+        //
 
     }
 	
