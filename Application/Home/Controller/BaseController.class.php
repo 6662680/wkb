@@ -6,14 +6,14 @@ class BaseController extends Controller
     public function __construct()
 	{
         parent::__construct();
-        //$this->check_login();
+        $this->check_login();
 	}
 
 
     public function check_login()
     {
-        if (empty(session('id'))) {
-            returnajax('false', '', '等待超时，请重新登陆', 1);
+        if (empty(session('user_id'))) {
+           redirect(U('home/user/login'));
         }
     }
 

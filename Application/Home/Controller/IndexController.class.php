@@ -9,6 +9,6 @@ class IndexController extends BaseController
 	}
 
     public function index(){
-
+        echo '首页';
     }
 }

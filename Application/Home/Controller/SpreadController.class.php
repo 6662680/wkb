@@ -19,6 +19,13 @@ class SpreadController extends BaseController
      */
     public function award()
     {
+
+        //获取价格
+        $rst = D('spread')->getPriceOrNum(2);
+        //处理价格
+        //
+
+        //
     	$user_id=5;
 		/*获取某会员的总消费金额*/
         $rst = D('spread')->getSumPrice($user_id);
@@ -74,6 +81,7 @@ class SpreadController extends BaseController
 			}
 		}
 		
+
     }
 
 }

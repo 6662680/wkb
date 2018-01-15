@@ -128,8 +128,6 @@ class MedicheController extends PrivilegeController
 
     	if ( $id )
     	{
-    		
-    		
     		M('Mediche')->where("id = $id")->save($data);
     	}
     	else 
