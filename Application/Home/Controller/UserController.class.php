@@ -111,7 +111,7 @@ class UserController extends BaseController
 	/*提现申请*/
 	public function withdraw()
     {
-    	$user_id=96;
+    	$user_id=5;
 		$user = M('user')->where(['id' => $user_id])->find();
 		$wpoint = I('post.wpoint');
 		$data = [
@@ -121,16 +121,21 @@ class UserController extends BaseController
     		'create_time' => time(),
     		'site'=> $user['site'],
     		];
-		$list=M('user_withdraw')->where(['user_id' => $user_id])->find();
+		$list=M('user_withdraw')->where(['user_id' => $user_id])->order('id desc')->find();
+		/*pr($list);die;*/
 		if ($list&&($list['status']==1||$list['status']==3)) {
 			returnajax(FALSE, '' , '已有提现在审核中，不能重复提现!');
 		} elseif((date('w') == 5) || (date('w') == 6)){
 			returnajax(FALSE, '' , '周五、周六不允许提现!');
 		} else {
-			M('user_withdraw')->add($data);
-			/*添加日志*/
-			D('Log')->addLog('会员'. $user_id .'提交提现申请', $user_id);
-			returnajax(TRUE, '' , '提现申请提交成功!');
+			$urst=M('user_withdraw')->add($data);
+			if (!$urst) {
+	            returnajax(false, '', '提现申请提交失败!');
+	        }else{
+	        	/*添加日志*/
+				D('Log')->addLog('会员'. $user_id .'提交提现申请', $user_id);
+				returnajax(TRUE, '' , '提现申请提交成功!');
+	        }
 		}
         
     }

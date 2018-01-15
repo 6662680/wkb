@@ -65,9 +65,13 @@ class SpreadController extends BaseController
     		'equipment_id' => $rst2['aequipment_id'],
     		
     		];
-			M('equipment_bag')->where("id = $user_id")->add($data);
-			//添加日志
-        	D('Log')->addLog('会员'. $user_id .'首次消费，系统奖励一个'.$rst3['equipment_name'], $user_id);
+			$erst=M('equipment_bag')->where("id = $user_id")->add($data);
+			if (!$erst) {
+				returnajax(false, '', '发放奖励失败!');
+			} else {
+				//添加日志
+        		D('Log')->addLog('会员'. $user_id .'首次消费，系统奖励一个'.$rst3['equipment_name'], $user_id);
+			}
 		}
 		
     }
