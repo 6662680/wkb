@@ -82,4 +82,5 @@ class EquipmentModel extends Model
         return ['status' => true];
     }
 
+
 }

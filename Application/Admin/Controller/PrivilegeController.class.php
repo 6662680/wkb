@@ -48,4 +48,29 @@ class PrivilegeController extends CommonController
     	}
     	return true;
     }
+
+
+	public function upload()
+	{
+		$upload = new \Think\Upload();
+		$upload->maxSize = 10485760;
+		$upload->exts = explode(',', 'jpg,gif,png,jpeg');
+		$upload->rootPath = './public/images/';
+		$upload->saveName = array('uniqid','');
+		$upload->autoSub = true;
+		$upload->subName = array('date','Ymd');
+		$info = $upload->upload();
+
+		$rst = array();
+
+		if (!$info) {
+			$rst['success'] = false;
+			$rst['errorMsg'] = $upload->getError();
+		} else {
+			$rst['success'] = true;
+			$rst['info'] = $info;
+		}
+
+		return $rst;
+	}
 }

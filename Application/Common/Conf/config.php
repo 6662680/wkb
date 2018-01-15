@@ -14,7 +14,7 @@ return array(
 
     'URL_CASE_INSENSITIVE' => true,
 
-    'HOST_HOME' => 'xxxx',
+    'HOST_HOME' => 'www.wankebi.com',
 
 	//商品类型
 	'COMMODITY_TYPE' => array(

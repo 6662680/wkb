@@ -29,7 +29,11 @@ class BagController extends BaseController
         $id = I('get.id');
 
         $person = D('person')->getBagPersonDetails($id);
-        pr($person);
+
+        if ($person['equipment_id'] != 0) {
+
+        }
+
         $this->assign('person',$person);
         $this->display('main');
     }

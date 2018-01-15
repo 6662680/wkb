@@ -71,15 +71,16 @@ class PersonController extends PrivilegeController
 		$status = I('post.status');
 	
 		/*$person_img = I('post.person_img');*/
-		
-		$upload = new \Think\Upload();// 实例化上传类
-	    $upload->maxSize   =     3145728 ;// 设置附件上传大小
-	    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-	    $upload->autoSub = FALSE;// 取消上传时自动生成日期形式的文件夹
-		$upload->saveName = '';// 设置成以原文件名存放
-	    $upload->rootPath  =      './Public/images/person/'; // 设置附件上传根目录
-	    // 上传单个文件 
-	    $info   =   $upload->uploadOne($_FILES['person_img']);
+	    $upload = $this->upload();
+
+//		$upload = new \Think\Upload();// 实例化上传类
+//	    $upload->maxSize   =     3145728 ;// 设置附件上传大小
+//	    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+//	    $upload->autoSub = FALSE;// 取消上传时自动生成日期形式的文件夹
+//		$upload->saveName = '';// 设置成以原文件名存放
+//	    $upload->rootPath  =      './Public/images/person/'; // 设置附件上传根目录
+//	    // 上传单个文件
+//	    $info   =   $upload->uploadOne($_FILES['person_img']);
 		/*pr($_FILES);die();*/
 	    
     	//$id存在就是修改,不存在就是添加
@@ -127,10 +128,11 @@ class PersonController extends PrivilegeController
     		'person_property' => $person_property,
     		];
 		} else {
-			if(!$info) {// 上传错误提示错误信息
-	        $this->error($upload->getError());
+			if(!$upload['info']['person_img']) {// 上传错误提示错误信息
+
+	        $this->error($upload['errorMsg']);
 		    }else{// 上传成功 获取上传文件信息
-		        $person_img='/images/person/'.$info['savename'];
+		        $person_img='/images/'.$upload['info']['person_img']['savepath'].'/'.$upload['info']['person_img']['savename'];
 		    }
 			$data = [
     		'person_name' => $person_name,
