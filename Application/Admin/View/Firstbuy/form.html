@@ -1,0 +1,30 @@
+<extend name="Public/base"/>
+<block name="body">
+    <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 提现管理 <span class="c-gray en">&gt;</span> <a href="{:U('Firstbuy/index')}">首次消费奖励设置</a><span class="c-gray en">&gt;</span> {$actionName}
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
+	   </nav>
+    <div class="page-container">
+        <form action="" method="post" class="form form-horizontal" id="form-member-add" novalidate="novalidate" enctype="multipart/form-data">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>首次消费奖励道具:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                	<foreach name="equipmentInfo" item="vo">
+                    	<label><input name="aequipment_id" type="radio" value="{$vo.id}" <if condition="$vo['id'] eq $firstbuyInfo['aequipment_id']">checked</if>/>{$vo.equipment_name} </label><br /> 
+						<!--<label><input name="equipment_protect" type="radio" value="0" <if condition="$equipmentInfo['equipment_protect'] eq '0'">checked</if> />否 </label> -->
+					</foreach>
+                </div>
+            </div>
+            
+            
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <input type="hidden" name="id" value="{$firstbuyInfo.id}">
+                    <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </div>
+</block>
+<block name="javascript">
+</block>
