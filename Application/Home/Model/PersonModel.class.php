@@ -33,7 +33,6 @@ class PersonModel extends Model
 
         $person['capacity'] = $person['person_capacity'] + ($person['person_property'] * $person['level']);
 
-
         return $person;
     }
 
