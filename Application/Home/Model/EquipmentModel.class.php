@@ -5,20 +5,27 @@ use Think\Model;
 class EquipmentModel extends Model
 {
 
-    //获取装备
-    public function getBagEquipment()
+    //获取背包装备
+    public function getBagEquipment($id=NULL)
     {
-        $person = M('equipment_bag')
-            ->where(['user_id' => session('user_id')])
-            ->join('left join equipment on equipment_bag.equipment_id = equipment.id')
-            ->field('equipment_bag.*, equipment.equipment_name,equipment.equipment_img,equipment.equipment_endurance,equipment.equipment_protect,equipment_multiple')
-            ->select();
+        $model = M('equipment_bag');
 
-        foreach ($person as &$value) {
-            $value['capacity'] = $value['person_capacity'] + ($value['person_property'] * $value['level']);
+        if ($id) {
+            $model->where(['user_id' => session('user_id'), 'equipment_bag.id' => $id]);
+        } else {
+            $model->where(['user_id' => session('user_id')]);
         }
 
-        return $person;
+        $model->join('left join equipment on equipment_bag.equipment_id = equipment.id');
+        $model->field('equipment_bag.*, equipment.equipment_name,equipment.equipment_img,equipment.equipment_endurance,equipment.equipment_protect,equipment_multiple');
+
+        if ($id) {
+            $equipment = $model->find();
+        } else {
+            $equipment = $model->select();
+        }
+
+        return $equipment;
     }
 
     //获取商城装备

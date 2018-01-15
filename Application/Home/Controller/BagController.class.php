@@ -24,6 +24,13 @@ class BagController extends BaseController
         $this->display('index');
     }
 
+    /**
+     * 人物详情
+     * @author LiYang
+     * @date 2018-1-7
+     * @return void
+     */
+
     public function personDetails()
     {
         $id = I('get.id');
@@ -31,10 +38,17 @@ class BagController extends BaseController
         $person = D('person')->getBagPersonDetails($id);
 
         if ($person['equipment_id'] != 0) {
-
+           $person['equipment_info'] =D('equipment')->getBagEquipment($person['equipment_id']);
         }
 
+        if ($person['equipment_id_card'] != 0) {
+            $person['equipment_card_info'] =D('equipment')->getBagEquipment($person['equipment_id_card']);
+        }
+
+        $equipment_all =D('equipment')->getBagEquipment();
+        
         $this->assign('person',$person);
+        $this->assign('equipment_all',$equipment_all);
         $this->display('main');
     }
 
