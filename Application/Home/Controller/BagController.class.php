@@ -20,9 +20,18 @@ class BagController extends BaseController
     public function person()
     {
         $person = D('person')->getBagPerson();
-        pr($person);
         $this->assign('person',$person);
         $this->display('index');
+    }
+
+    public function personDetails()
+    {
+        $id = I('get.id');
+
+        $person = D('person')->getBagPersonDetails($id);
+        pr($person);
+        $this->assign('person',$person);
+        $this->display('main');
     }
 
     /**

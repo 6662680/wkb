@@ -21,6 +21,22 @@ class PersonModel extends Model
         return $person;
     }
 
+
+    //获取背包人物
+    public function getBagPersonDetails($id)
+    {
+        $person = M('person_bag')
+            ->where(['user_id' => session('user_id'), 'person_bag.id' => $id])
+            ->join('left join person on person_bag.person_id = person.id')
+            ->field('person_bag.*, person.person_name,person.person_img,person.person_property,person.person_capacity')
+            ->find();
+
+        $person['capacity'] = $person['person_capacity'] + ($person['person_property'] * $person['level']);
+
+
+        return $person;
+    }
+
     //获取商城人物
     public function getStorePerson()
     {
