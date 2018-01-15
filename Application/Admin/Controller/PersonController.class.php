@@ -130,7 +130,7 @@ class PersonController extends PrivilegeController
 			if(!$info) {// 上传错误提示错误信息
 	        $this->error($upload->getError());
 		    }else{// 上传成功 获取上传文件信息
-		        $person_img=$info['savepath'].$info['savename'];
+		        $person_img='/images/person/'.$info['savename'];
 		    }
 			$data = [
     		'person_name' => $person_name,

@@ -42,7 +42,7 @@
 									echo '否';
 								} ?>
                    </td>
-                   <td><img style="width: 40px;height: 40px;" src="__PUBLIC__/images/person/{$vo.person_img}"/></td>
+                   <td><img style="width: 40px;height: 40px;" src="__PUBLIC__{$vo.person_img}"/></td>
                    <td>
                        <!-- <a href="{:U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']))}">配置权限</a> -->
                        <a href="{:U('Person/edit',array('id' => $vo['id']))}">编辑</a>

@@ -52,7 +52,7 @@
             dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
             success:function(result){
                 if (result.status) {
-                    window.location.href="{:U('index/index')}";
+                    window.location.href="{:U('user/register')}";
                 } else {
                     alert(result.msg);
                 }
