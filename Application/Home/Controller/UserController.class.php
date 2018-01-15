@@ -149,7 +149,7 @@ class UserController extends Controller
             'site'        => $user['site'],
         ];
         $list    = M('user_withdraw')->where(['user_id' => $user_id])->find();
-        if ($list && ($list['status'] == 1 || $list['status'] == 3)) {
+        if ($list && ($list['status'] == 1 || $list['status'] == 3)) {;
             returnajax(FALSE, '', '已有提现在审核中，不能重复提现!');
         } elseif ((date('w') == 5) || (date('w') == 6)) {
             returnajax(FALSE, '', '周五、周六不允许提现!');

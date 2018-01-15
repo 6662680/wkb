@@ -17,17 +17,17 @@
     <div class="page home ">
         <div class="page__hd">
             <h1 class="page__title">
-                首页
+                背包
             </h1>
             <div class="navbar sd">
             <div class="navbar__item weui_bar__item_on">
                 <a href="index.html">人物</a>
             </div>
             <div class="navbar__item ">
-                <a href="item.html">装备</a>
+                <a href="../wanke/item.html">装备</a>
             </div>
             <div class="navbar__item ">
-                <a href="food.html">食物</a>
+                <a href="../wanke/food.html">食物</a>
             </div>
                 <div class="navbar__item pull-right">
                     <a href="">
@@ -36,8 +36,40 @@
             </div>
         </div>
         <div class="page__bd page__bd_spacing ">
+        <volist name="preson" id="vo">
+        <ul class="sd">
+            <a href="../wanke/main.html">
+                <li>
+                    <div class="mainflex js_category bgw">
+
+                        <div class="mainphoto c1">
+                            <!-- 头像 -->
+                            <img src="http://placehold.it/300x300" alt="">
+                        </div>
+                        <div class="maintext">
+                            <ul>
+                                <li>#12121
+                                </li>
+                                <li class="dark">等级:
+                                    <span>lv10</span>
+                                </li>
+                                <li class="dark">挖矿能力:
+                                    <span>999</span>
+                                </li>
+                                <li class="dark">昨日产量:
+                                    <span>1200</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="cleanfix"></div>
+                    </div>
+                </li>
+            </a>
+
+        </ul>
             <ul class="sd">
-                <a href="main.html">
+                <a href="../wanke/main.html">
                     <li>
                         <div class="mainflex js_category bgw">
 
@@ -65,28 +97,29 @@
                         </div>
                     </li>
                 </a>
+
             </ul>
-        </div>
+    </div>
         <div class="weui-tabbar">
             <a href="index.html" class="weui-tabbar__item weui-bar__item--on">
                 <div class="weui-tabbar__icon">
                     <i class="fa fa-gamepad"></i>
                 </div>
-                <p class="weui-tabbar__label">首页</p>
+                <p class="weui-tabbar__label">背包</p>
             </a>
-            <a href="sc.html" class="weui-tabbar__item">
+            <a href="../wanke/sc.html" class="weui-tabbar__item">
                 <div class="weui-tabbar__icon">
                     <i class="fa fa-shopping-bag"></i>
                 </div>
                 <p class="weui-tabbar__label">商城</p>
             </a>
-            <a href="want.html" class="weui-tabbar__item">
+            <a href="../wanke/want.html" class="weui-tabbar__item">
                 <div class="weui-tabbar__icon">
                     <i class="fa fa-gavel"></i>
                 </div>
                 <p class="weui-tabbar__label">交易</p>
             </a>
-            <a href="me.html" class="weui-tabbar__item ">
+            <a href="../wanke/me.html" class="weui-tabbar__item ">
                 <div class="weui-tabbar__icon">
                     <i class="fa fa-user"></i>
                 </div>

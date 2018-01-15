@@ -20,7 +20,9 @@ class BagController extends BaseController
     public function person()
     {
         $person = D('person')->getBagPerson();
-        returnajax(true, $person);
+        pr($person);
+        $this->assign('person',$person);
+        $this->display('index');
     }
 
     /**
