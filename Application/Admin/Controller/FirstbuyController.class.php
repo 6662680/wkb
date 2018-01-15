@@ -34,8 +34,9 @@ class FirstbuyController extends PrivilegeController
     	{
     		$this->requestSubmit();
     	}
-    	$this->assign('actionName','推广基础参数编辑');
-    	$this->assign('spreadInfo',M('spread')->find(I('get.id')));
+    	$this->assign('actionName','首次消费奖励编辑');
+		$this->assign('equipmentInfo',M('equipment')->select());
+    	$this->assign('firstbuyInfo',M('first_buy')->find());
         $this->display('form');
     }
 
@@ -46,19 +47,15 @@ class FirstbuyController extends PrivilegeController
      */
     private function requestSubmit()
     {
-    	$id = I('post.id');
-    	
-    	$neck = I('post.neck');
-    	$award = I('post.award');
+    	$aequipment_id = I('post.aequipment_id');
 		
     	$data = [
-    		'neck' => $neck,
-    		'award' => $award,
+    		'aequipment_id' => $aequipment_id,
     	];
     		
-    	M('spread')->where("id = $id")->save($data);
+    	M('first_buy')->where(' id=1 ')->save($data);
     	
-		$this->success('操作成功!',U('spread/index'),2);
+		$this->success('操作成功!',U('Firstbuy/index'),2);
 		exit;
     }
     

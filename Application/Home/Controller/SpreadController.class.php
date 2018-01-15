@@ -54,20 +54,21 @@ class SpreadController extends BaseController
     public function awardEquipment()
     {
     	$user_id=2;
-		/*获取某会员的总消费金额*/
-    	/*$rst=M('order')->where(['user_id' => $user_id, 'status' => 2])->field('COUNT(*) as num ')->find();*/
-        /*pr($rst['num']);die;*/
-		/*if ($rst['num']==1) {
+		/*获取某会员的消费次数，从而判断是否第一次消费*/
+    	$rst=M('order')->where(['user_id' => $user_id, 'status' => 2])->field('COUNT(*) as num ')->find();
+		$rst2=M('first_buy')->where(['id' => 1])->find();
+		$rst3=M('equipment')->where(['id' => $rst2['aequipment_id']])->find();
+        /*pr($rst2['aequipment_id']);die;*/
+		if ($rst['num']==1) {
 			$data = [
     		'user_id' => $user_id,
-    		'wpoint' => $wpoint,
-    		'wpoint' => $wpoint,
-    		'create_time' => time(),
-    		'site'=> $user['site'],
+    		'equipment_id' => $rst2['aequipment_id'],
+    		
     		];
-		} else {
-			
-		}*/
+			M('equipment_bag')->where("id = $user_id")->add($data);
+			//添加日志
+        	D('Log')->addLog('会员'. $user_id .'首次消费，系统奖励一个'.$rst3['equipment_name'], $user_id);
+		}
 		
     }
 
