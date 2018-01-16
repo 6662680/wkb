@@ -20,19 +20,22 @@ class OrderController extends BaseController
      */
     public function buy()
     {
-    	
         $post = I('get.');
+		/*pr($post);die;*/
 		/*pr($post['commodity_type']);die;*/
         $rst = D('order')->buy(session('user_id'), $post['commodity_id'], $post['commodity_type']);
-
+		/*pr($post['commodity_type']);die;*/
         if ($rst['status'] == true) {
-        	$this->display('order');
-            returnajax(true, '' ,'下单成功');
+        	$this->doneBuy();
+            /*returnajax(true, '' ,'下单成功');*/
         } else {
             returnajax(false, '' , $rst['msg']);
         }
     }
-
+	public function doneBuy()
+    {
+       $this->display('order');
+    }
     /**
      * 购买商品，异步更新
      * @author LiYang
