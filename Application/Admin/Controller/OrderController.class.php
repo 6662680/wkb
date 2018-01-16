@@ -74,6 +74,7 @@ class OrderController extends PrivilegeController{
 			
         }
 
+
         $this->assign("orderData",$orderData);
         $this->assign("page",$show);
         $this->display('orderList');

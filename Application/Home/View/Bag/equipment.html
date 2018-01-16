@@ -20,10 +20,10 @@
                 背包
             </h1>
             <div class="navbar sd">
-            <div class="navbar__item weui_bar__item_on">
+            <div class="navbar__item ">
                 <a href="person">人物</a>
             </div>
-            <div class="navbar__item ">
+            <div class="navbar__item weui_bar__item_on">
                 <a href="equipment">装备</a>
             </div>
             <div class="navbar__item ">
@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="page__bd page__bd_spacing ">
-        <volist name="person" id="vo">
+        <volist name="equipment" id="vo">
         <ul class="sd">
             <a href="personDetails/id/{$vo.id}">
                 <li>
@@ -44,20 +44,23 @@
 
                         <div class="mainphoto c1">
                             <!-- 头像 -->
-                            <img src={$vo.person_img} alt="">
+                            <img src={$vo.equipment_img} alt="">
                         </div>
                         <div class="maintext">
                             <ul>
-                                <li>{$vo.person_name}
+                                <li>{$vo.equipment_name}
                                 </li>
-                                <li class="dark">等级:
-                                    <span>{$vo.level}</span>
-                                </li>
-                                <li class="dark">挖矿能力:
-                                    <span>{$vo.capacity}</span>
-                                </li>
-                                <li class="dark">昨日产量:
-                                    <span>{$vo.yesterday_capacity}</span>
+                                <if condition="$vo.equipment_protect eq '1'">
+                                    <li class="dark">防坍塌
+                                    </li>
+                                    <else />
+                                    <li class="dark">耐久:
+                                        <span>{$vo.equipment_endurance}</span>
+                                    </li>
+                                </if>
+
+                                <li class="dark">挖矿倍数:
+                                    <span>{$vo.equipment_multiple}</span>
                                 </li>
                             </ul>
                         </div>
@@ -71,7 +74,7 @@
         </volist>
     </div>
         <div class="weui-tabbar">
-            <a href="{:U('bag/person')}" class="weui-tabbar__item weui-bar__item--on">
+            <a href="{:U('store/person')}" class="weui-tabbar__item weui-bar__item--on">
                 <div class="weui-tabbar__icon">
                     <i class="fa fa-gamepad"></i>
                 </div>
@@ -89,7 +92,7 @@
                 </div>
                 <p class="weui-tabbar__label">交易</p>
             </a>
-            <a href="{:U('bag/userMe')}" class="weui-tabbar__item ">
+            <a href="../wanke/me.html" class="weui-tabbar__item ">
                 <div class="weui-tabbar__icon">
                     <i class="fa fa-user"></i>
                 </div>

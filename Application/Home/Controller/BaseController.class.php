@@ -17,5 +17,9 @@ class BaseController extends Controller
         }
     }
 
+    public function error() {
+        $this->display('404');
+    }
+
 
 }

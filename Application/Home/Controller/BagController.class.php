@@ -66,6 +66,7 @@ class BagController extends BaseController
         $user = D('user')->getUser();
         $person = D('person')->getBagPerson();
 		$personNum=count($person);
+        $sumEarnings = 0;
 		foreach ($person as $key => $value) {
 			$sumEarnings+=$value['yesterday_capacity'];
 		}
@@ -87,6 +88,7 @@ class BagController extends BaseController
     {
         $this->display('help');
     }
+
     /**
      * 获取装备
      * @author LiYang
@@ -96,7 +98,9 @@ class BagController extends BaseController
     public function equipment()
     {
         $equipment = D('equipment')->getBagEquipment();
-        returnajax(true, $equipment);
+
+        $this->assign('equipment',$equipment);
+        $this->display('equipment');
     }
 
     /**
@@ -108,7 +112,9 @@ class BagController extends BaseController
     public function mediche()
     {
         $mediche = D('mediche')->getBagMediche();
-        returnajax(true, $mediche);
+
+        $this->assign('mediche',$mediche);
+        $this->display('mediche');
     }
 
     /**
