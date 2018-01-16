@@ -37,7 +37,6 @@
         <foreach name="equipment" item="vo">
         <div class="page__bd page__bd_spacing ">
             <ul class="sd">
-                <a href="buy.html">
                 <li class="bgw pzr">
                     <div class="mainflex js_category pb20">
                        
@@ -68,11 +67,13 @@
 
                         <div class="cleanfix"></div>
                     </div>
+                    <a href="{:U('order/buy','','')}/commodity_id/{$vo.id}/commodity_type/{$vo.commodity_type}">
                     <div class="pbottom ">
-                        <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_warn ">购买</a>
+                        <aa  class="weui-btn weui-btn_mini weui-btn_warn ">购买</aa>
                     </div>
+                    </a>
                 </li>
-                </a>
+                
             </ul>
         </div>
         </foreach>

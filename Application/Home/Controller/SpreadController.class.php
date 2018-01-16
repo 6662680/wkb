@@ -21,7 +21,7 @@ class SpreadController extends BaseController
     {
 
         //获取价格
-        $rst = D('spread')->getPriceOrNum(2);
+        /*$rst = D('spread')->getPriceOrNum(2);*/
         //处理价格
         //
 

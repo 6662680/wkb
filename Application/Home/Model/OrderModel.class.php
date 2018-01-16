@@ -28,8 +28,9 @@ class OrderModel extends Model
         if (empty($rst)) {
             returnajax('fasle', '', '不存在的商品');
         }
+			return $this->creationOrder($user_id, $commodity_id, $commodity_type, $rst[C('COMMODITY_TYPE')[$commodity_type].'_price']);
+		
 
-        return $this->creationOrder($user_id, $commodity_id, $commodity_type, $rst[C('COMMODITY_TYPE')[$commodity_type].'_price']);
     }
 
 
@@ -55,11 +56,10 @@ class OrderModel extends Model
             'commodity_price' => $commodity_price,
             'site' => $rst['site'],
         ];
-
         $rst = M('order')->add($add);
-
+		
         if ($rst) {
-            return ['status' => true];
+            return ['status' => true,'creation_time'=> $add['creation_time']];
         } else {
             return ['status' => false, 'msg' => '创建订单失败，请稍候再购买'];
         }
@@ -169,5 +169,30 @@ class OrderModel extends Model
 
         $trans->commit();
         return ['status' => true];
+    }
+	
+	/**
+     * 取消订单
+     * @author zh
+     * @date 2018-1-16
+     * @return void
+     */
+    public function unBuy($user_id, $commodity_id, $commodity_type)
+    {
+        
+		$order = D('order')->where(['user_id' =>  $user_id,'status' =>  1,'commodity_type' =>  $commodity_type,'commodity_id' =>  $commodity_id])->find();
+		if ($order) {
+			$id=$order['id'];
+			$data    = [
+            'status'     => 3,
+        	];
+			$rst=D('order')->where(['id' =>  $id])->save($data);
+			return ['status' => true];
+		} else {
+			return ['status' => false, 'msg' => '没有找到该订单'];
+		}
+		
+		
+
     }
 }

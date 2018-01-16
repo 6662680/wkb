@@ -161,12 +161,15 @@ class UserController extends Controller
             'site'        => $user['site'],
         ];
         $list    = M('user_withdraw')->where(['user_id' => $user_id])->find();
-        if ($list && ($list['status'] == 1 || $list['status'] == 3)) {;
+        if ($list && ($list['status'] == 1 || $list['status'] == 3)) {
             returnajax(FALSE, '', '已有提现在审核中，不能重复提现!');
         } elseif ((date('w') == 5) || (date('w') == 6)) {
             returnajax(FALSE, '', '周五、周六不允许提现!');
+		} elseif (!$wpoint||!regexp('int',$wpoint)) {
+        	returnajax(FALSE, '', '请输入提现数额!');
         } elseif ($wpoint>$user['point']) {
         	returnajax(FALSE, '', '提现积分大于总积分!');
+        
         } else {
             M('user_withdraw')->add($data);
             /*添加日志*/
