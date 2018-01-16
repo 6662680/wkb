@@ -141,7 +141,6 @@ a {
 .omreitem {
     width: 80px;
     height: 80px;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -186,8 +185,11 @@ a {
     color: rgb(167, 195, 255)
 }
 
-.weui-grid i{font-size: 30px}
- .maintext {
+.weui-grid i {
+    font-size: 30px
+}
+
+.maintext {
     float: left
 }
 
@@ -401,7 +403,7 @@ a {
 }
 
 .loginbg {
-    background: url(/public/images/bg.jpeg) no-repeat center center fixed;
+    background: url(/images/bg.jpeg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -769,4 +771,10 @@ hr {
 
 .weui-grids {
     text-align: center
+}
+
+.itemname {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

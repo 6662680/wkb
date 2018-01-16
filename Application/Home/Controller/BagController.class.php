@@ -35,6 +35,10 @@ class BagController extends BaseController
     {
         $id = I('get.id');
 
+        if (!$id) {
+           echo '非法访问';
+        }
+
         $person = D('person')->getBagPersonDetails($id);
 
         if ($person['equipment_id'] != 0) {
@@ -45,10 +49,14 @@ class BagController extends BaseController
             $person['equipment_card_info'] =D('equipment')->getBagEquipment($person['equipment_id_card']);
         }
 
-        $equipment_all =D('equipment')->getBagEquipment();
-        
+        $equipment_all = D('equipment')->getBagEquipment();
+        $mediche_all = D('mediche')->getBagMediche();
+        $log = D('log')->findLog(session('user_id'), $id, 2);
+
         $this->assign('person',$person);
         $this->assign('equipment_all',$equipment_all);
+        $this->assign('mediche_all',$mediche_all);
+        $this->assign('log',$log);
         $this->display('main');
     }
 

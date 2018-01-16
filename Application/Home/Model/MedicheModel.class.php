@@ -6,19 +6,25 @@ class MedicheModel extends Model
 {
 
     //获取背包药水
-    public function getBagMediche()
+    public function getBagMediche($id)
     {
-        $mediche = M('mediche_bag')
-            ->where(['user_id' => session('user_id'), 'mediche_num' => ['GT', 0]])
-            ->join('left join mediche on mediche_bag.mediche_id = mediche.id')
-            ->field('mediche_bag.*, mediche.mediche_name, mediche.mediche_img,mediche.mediche_treat')
-            ->select();
+        $model = M('mediche_bag');
 
-        if ($mediche) {
-            return ['status' => true, 'data' => $mediche];
+        if ($id) {
+            $model->where(['user_id' => session('user_id'), 'mediche_num' => ['GT', 0], 'mediche_bag.id' => $id]);
         } else {
-            return ['status' => false, 'msg' => '背包中没有药水'];
+            $model->where(['user_id' => session('user_id'), 'mediche_num' => ['GT', 0]]);
         }
+        $model->join('left join mediche on mediche_bag.mediche_id = mediche.id');
+        $model->field('mediche_bag.*, mediche.mediche_name, mediche.mediche_img,mediche.mediche_treat');
+
+        if ($id) {
+            $mediche = $model->find();
+        } else {
+            $mediche = $model->select();
+        }
+
+        return $mediche;
 
     }
 
@@ -66,7 +72,7 @@ class MedicheModel extends Model
                 $trans->rollback();
                 return ['status' => false, 'msg' => '使用失败'];
             } else {
-                D('Log')->addLog('使用道具:'. $rst['mediche_name'] . '一个，回复人物血量'.$rst['mediche_treat'], session('user_id'));
+                D('Log')->addLog('使用道具:'. $rst['mediche_name'] . '一个，回复人物血量'.$rst['mediche_treat'], session('user_id'), $person_bag_id, 2);
                 $trans->commit();
                 return ['status' => true];
             }
