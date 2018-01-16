@@ -52,6 +52,33 @@ class BagController extends BaseController
         $this->display('main');
     }
 
+	/*个人中心*/
+	public function userMe()
+    {
+        $user = D('user')->getUser();
+        $person = D('person')->getBagPerson();
+		$personNum=count($person);
+		foreach ($person as $key => $value) {
+			$sumEarnings+=$value['yesterday_capacity'];
+		}
+		
+		$this->assign('user',$user);
+        $this->assign('person',$person);
+        $this->assign('personNum',$personNum);
+        $this->assign('sumEarnings',$sumEarnings);
+		
+        $this->display('me');
+    }
+	/*系统公告*/
+	public function newspage()
+    {
+        $this->display('newspage');
+    }
+	/*帮助中心*/
+	public function help()
+    {
+        $this->display('help');
+    }
     /**
      * 获取装备
      * @author LiYang

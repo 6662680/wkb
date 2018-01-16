@@ -19,15 +19,13 @@
             <img src="__PUBLIC__/images/icons8-git_fork.png" alt="">
             <div class="logotitle">logo</div>
         </div>
-        <form>
             <div class="form-group">
-                <input type="text" class="form-control"  name="mobile" placeholder="手机号">
+                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="手机号">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control"  name="password" placeholder="密码">
+                <input type="text" class="form-control" id="password" name="password" placeholder="密码">
             </div>
         <button type="summit" class="weui-btn weui-btn_primary">注册并登录</button>
-        </form>
         <div class="pull-right forgetpass"><a href="{:U('user/login')}">已有密码</a></div>
     </div>
     
@@ -41,18 +39,18 @@
 <script>
     $('button').click(function(){
         $.ajax({
-            url:"{:U('user/login')}",
+            url:"{:U('user/register')}",
             type:'POST', //GET
             async:true,    //或false,是否异步
             data:{
                 mobile:$('#mobile').val(),
-                password:$('#pwd').val()
+                password:$('#password').val()
             },
             timeout:5000,    //超时时间
             dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
             success:function(result){
                 if (result.status) {
-                    window.location.href="{:U('user/register')}";
+                    window.location.href="{:U('bag/userMe')}";
                 } else {
                     alert(result.msg);
                 }

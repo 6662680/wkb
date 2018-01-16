@@ -56,6 +56,7 @@ class UserController extends Controller
             $rst = M('user')->add($data);
 
             if ($rst) {
+            	$this->login();
                 D('Log')->addLog('ip' . getIp() . '注册成功!', $rst);
                 returnajax(true, '', '注册成功');
             } else {
@@ -113,6 +114,15 @@ class UserController extends Controller
 
 
     }
+	/*退出登录*/
+	public function logout()
+    {
+		 session(null);
+		 $this->success('退出成功！', U('User/login'));
+
+    }
+
+
 
     public function verificationAddress()
     {
@@ -138,9 +148,11 @@ class UserController extends Controller
 
 	/*提现申请*/
 	public function withdraw() {
-        $user_id = 96;
+        $user_id = session('user_id');
         $user    = M('user')->where(['id' => $user_id])->find();
-        $wpoint  = I('post.wpoint');
+		/*pr($user);die();*/
+        $wpoint  = I('get.wpoint');
+		/*pr($wpoint);die();*/
         $data    = [
             'user_id'     => $user_id,
             'wpoint'      => $wpoint,
@@ -153,6 +165,8 @@ class UserController extends Controller
             returnajax(FALSE, '', '已有提现在审核中，不能重复提现!');
         } elseif ((date('w') == 5) || (date('w') == 6)) {
             returnajax(FALSE, '', '周五、周六不允许提现!');
+        } elseif ($wpoint>$user['point']) {
+        	returnajax(FALSE, '', '提现积分大于总积分!');
         } else {
             M('user_withdraw')->add($data);
             /*添加日志*/

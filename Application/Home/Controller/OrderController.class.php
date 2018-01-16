@@ -20,11 +20,13 @@ class OrderController extends BaseController
      */
     public function buy()
     {
-        $post = I('post.');
-
+    	
+        $post = I('get.');
+		/*pr($post['commodity_type']);die;*/
         $rst = D('order')->buy(session('user_id'), $post['commodity_id'], $post['commodity_type']);
 
         if ($rst['status'] == true) {
+        	$this->display('order');
             returnajax(true, '' ,'下单成功');
         } else {
             returnajax(false, '' , $rst['msg']);

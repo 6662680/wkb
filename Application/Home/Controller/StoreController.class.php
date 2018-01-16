@@ -20,7 +20,8 @@ class StoreController extends BaseController
     public function person()
     {
         $person = D('person')->getStorePerson();
-        returnajax(true, $person);
+		$this->assign('person',$person);
+        $this->display('sc');
     }
 
     /**
@@ -32,7 +33,9 @@ class StoreController extends BaseController
     public function equipment()
     {
         $equipment = D('equipment')->getStoreEquipment();
-        returnajax(true, $equipment);
+		
+        $this->assign('equipment',$equipment);
+        $this->display('sc_item');
     }
 
     /**
@@ -43,8 +46,11 @@ class StoreController extends BaseController
      */
     public function mediche()
     {
-        $mediche = D('mediche')->getStoreMediche();
-        returnajax(true, $mediche);
+        $medicheList = D('mediche')->getStoreMediche();
+		$mediche=$medicheList['data'];
+		/*pr($mediche['data']);die;*/
+        $this->assign('mediche',$mediche);
+        $this->display('sc_food');
     }
 
 }
