@@ -11,7 +11,6 @@ class OrderController extends BaseController
 
 	}
 
-
     /**
      * 购买商品: 人物，装备，药品 /下单动作
      * @author LiYang
