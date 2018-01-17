@@ -21,6 +21,7 @@ class UserController extends Controller
     {
         if (!IS_POST) {
             $this->display('register');
+			
         } else {
             $data = [];
             $post = I('post.');
@@ -43,15 +44,36 @@ class UserController extends Controller
 
             $salt = createSalt();
             $password = encryption($post['password'], $salt);
-
-            $data = [
+			/*pr(I('post.'));die;*/
+			if (I('post.upuser')) {
+				$data = [
+                'mobile' => $post['mobile'],
+                'up_user' => I('post.upuser'),
+                'salt' => $salt,
+                'password' => $password,
+                'create_time' => time(),
+                'last_login_time' => time(),
+                'last_login_ip' => getIp(),
+            	];
+			} else {
+				$data = [
                 'mobile' => $post['mobile'],
                 'salt' => $salt,
                 'password' => $password,
                 'create_time' => time(),
                 'last_login_time' => time(),
                 'last_login_ip' => getIp(),
-            ];
+            	];
+			}
+			
+            /*$data = [
+                'mobile' => $post['mobile'],
+                'salt' => $salt,
+                'password' => $password,
+                'create_time' => time(),
+                'last_login_time' => time(),
+                'last_login_ip' => getIp(),
+            ];*/
 
             $rst = M('user')->add($data);
 
@@ -145,7 +167,12 @@ class UserController extends Controller
     }
 
     
-
+	/**
+     * 个人中心地址与提现
+     * @author zh
+     * @date 2018-1-17
+     * @return void
+     */
 	/*提现申请*/
 	public function withdraw() {
         $user_id = session('user_id');
@@ -175,6 +202,31 @@ class UserController extends Controller
             /*添加日志*/
             D('Log')->addLog('会员' . $user_id . '提交提现申请', $user_id);
             returnajax(TRUE, '', '提现申请提交成功!');
+        }
+    }
+	
+	/*填写wkc临时地址*/
+	public function wSiteTemp() {
+        $user_id = session('user_id');
+        $user    = M('user')->where(['id' => $user_id])->find();
+		/*pr($user);die();*/
+        $sitetemp  = I('get.sitetemp');
+		/*pr($wpoint);die();*/
+        $data    = [
+            'sitetemp'     => $sitetemp,
+        	];
+        
+        if (!$sitetemp) {
+            returnajax(FALSE, '', '请输入您的玩客币地址!');
+        } elseif (!regexp('sitetemp',$sitetemp)) {
+        	returnajax(FALSE, '', '请输入正确格式的地址!');
+        } else {
+            M('user')->where(['id' => $user_id])->save($data);
+			
+            /*添加日志*/
+            D('Log')->addLog('会员' . $user_id . '成功填写临时玩客币地址', $user_id);
+			
+            returnajax(TRUE, '', '玩客币临时地址填写成功!');
         }
     }
 

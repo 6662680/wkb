@@ -31,7 +31,28 @@
                         <div class="usename">{$user.data.mobile}</div>
                         <div class="usewkc">推广积分 {$user.data.point} wkc </div>
                         
-                        <div class="uselink">{$user.data.site}</div>
+                        <div class="uselink">
+                        	<?php 
+						        if ($user['data']['site']) {
+										echo $user['data']['site'];
+									} elseif(!$user['data']['sitetemp']) {
+										echo '<a href="javascript:;" id="sitetemp">
+									                <div class="sd bgw mt1 p2 text-center">
+									                    <div class="lineb">
+									                        请填写您的wkc地址
+									                    </div>
+									                </div>
+									           </a>';
+								} elseif($user['data']['sitetemp']) {
+										echo  $user['data']['sitetemp'] .'<a href='.U("bag/zhifu").' >
+                    							<div class="sd bgw mt1 p2 text-center">
+									                    <div class="lineb">
+									                        请支付注册费开始挖矿
+									                    </div>
+									            </div>
+                    														</a>';
+								}	?>
+                        </div>
                     </div>
                     <div class="meicon pull-right">
                         <i class="fa fa-angle-right"></i>
@@ -66,9 +87,9 @@
                     <!-- <div class="weui-flex__item text-center">
                         
                     </div> -->
-                    <div class="weui-flex__item text-center" id="copyurl" data-clipboard-text="jhjahsdhaksdkhs">
+                    <div class="weui-flex__item text-center" id="copyurl" data-clipboard-text="http://www.wkb.com/home/user/register?upuser={$user.data.id}">
                         <div class="alert alert-success" role="alert">
-                            https://v3.bootcss.com/components/#badges
+                            http://www.wkb.com/
                         </div>
 
                     </div>
@@ -105,11 +126,11 @@
         </div>
         <div class="footheight"></div>
         <div class="weui-tabbar">
-            <a href="{:U('store/person')}" class="weui-tabbar__item">
+            <a href="{:U('bag/person')}" class="weui-tabbar__item">
                 <div class="weui-tabbar__icon">
                     <i class="fa fa-gamepad"></i>
                 </div>
-                <p class="weui-tabbar__label">首页</p>
+                <p class="weui-tabbar__label">背包</p>
             </a>
             <a href="{:U('store/person')}" class="weui-tabbar__item">
                 <div class="weui-tabbar__icon">
@@ -117,7 +138,7 @@
                 </div>
                 <p class="weui-tabbar__label">商城</p>
             </a>
-            <a href="" class="weui-tabbar__item">
+            <a href="{:U('putorder/orderList','','')}/type/1" class="weui-tabbar__item">
                 <div class="weui-tabbar__icon">
                     <i class="fa fa-gavel"></i>
                 </div>
@@ -174,6 +195,39 @@
                   }
               });
             });
+            //填写玩客币地址
+          $(document).on("click", "#sitetemp", function () {
+
+              //如果参数过多，建议通过 object 方式传入
+              $.prompt({
+                  title: '您的玩客币钱包地址',
+                  input: '输入地址',
+                  empty: false, // 是否允许为空
+                  onOK: function (input) {
+			                  	$.ajax({
+							            url:"{:U('user/wSiteTemp','','')}"+'/sitetemp/'+input,
+							            type:'GET', //GET
+							            async:true,    //或false,是否异步
+							            
+							            timeout:5000,    //超时时间
+							            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+							            success:function(result){
+							                alert(result.msg);
+							                location.reload();
+							            }
+							        });
+                      
+                  },
+                  onCancel: function () {
+                      //点击取消
+                  }
+              });
+            });
+             
+
+            
+            
+            
         // 弹出菜单
         $(document).on("click", "#show-actions", function () {
             $.actions({

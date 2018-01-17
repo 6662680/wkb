@@ -258,6 +258,8 @@ function  regexp($rule,$key){
             return preg_match ( "/^[\x{4e00}-\x{9fa5}A-Za-z0-9]{2,8}$/u", $key);
         case "address" : // 用户居住地址
             return preg_match ( "/^[\x{4e00}-\x{9fa5}A-Za-z0-9]{10,50}$/u", $key);
+		case "sitetemp" : // 数字与字母
+            return preg_match ( "/^[A-Za-z0-9]+$/", $key );
     }
     return false;
 }

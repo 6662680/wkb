@@ -21,6 +21,7 @@ class BagController extends BaseController
     {
         $person = D('person')->getBagPerson();
         $this->assign('person',$person);
+		
         $this->display('index');
     }
 
@@ -82,6 +83,20 @@ class BagController extends BaseController
 		
         $this->display('me');
     }
+	/*支付注册费*/
+	public function zhifu()
+    {
+        $this->display('zhifu');
+    }
+	/*取消支付*/
+	public function unZhifu()
+    {
+    	
+		$this->redirect(U('bag/userMe','',''));
+           
+    }
+
+
 	/*系统公告*/
 	public function newspage()
     {

@@ -38,19 +38,26 @@
 </body>
 <script>
     $('button').click(function(){
+    	function getQueryString(upuser) {  //获取推广链接地址中的上线id
+		    var reg = new RegExp("(^|&)" + upuser + "=([^&]*)(&|$)", "i");  
+		    var r = window.location.search.substr(1).match(reg);  
+		    if (r != null) return unescape(r[2]); return null;  
+		};  
+		
         $.ajax({
             url:"{:U('user/register')}",
             type:'POST', //GET
             async:true,    //或false,是否异步
             data:{
                 mobile:$('#mobile').val(),
-                password:$('#password').val()
+                password:$('#password').val(),
+                upuser:getQueryString("upuser")//post传参 推广链接地址中的上线id
             },
             timeout:5000,    //超时时间
             dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
             success:function(result){
                 if (result.status) {
-                    window.location.href="{:U('bag/userMe')}";
+                    window.location.href="{:U('bag/person')}";
                 } else {
                     alert(result.msg);
                 }
