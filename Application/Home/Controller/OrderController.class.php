@@ -25,9 +25,28 @@ class OrderController extends BaseController
 		$time=$order['creation_time']+C('ORDER_TIME');
 	
 		if ($order && $time > time()) {
+			/*pr('95959');die;*/
+			returnajax(true, '' ,'10分钟内的相同订单');
+	        
+		}else{
+			/*echo '454';*/
+			$rst = D('order')->buy(session('user_id'), $get['commodity_id'], $get['commodity_type']);
+			if ($rst['status'] == true) {
+	            returnajax(true, '' ,'下单成功');
+	        } else {
+	            returnajax(false, '' , $rst['msg']);
+	        }
+		}
+		
+        
+    }
+	/*下单成功展示函数*/
+	public function dodoBuy()
+    {
+    		$get = I('get.');
 			
-			$user = D('user')->where(['id' =>  session('user_id')])->find();
-			
+    		$user = D('user')->where(['id' =>  session('user_id')])->find();
+			$order = D('order')->where(['user_id' =>  session('user_id'),'status' =>  1,'commodity_type' =>  $get['commodity_type'],'commodity_id' =>  $get['commodity_id']])->find();
 			if ($get['commodity_type']==1) {
 				$rst2 = D('person')->where(['id' =>  $get['commodity_id']])->find();
 				$typeImg='person_img';
@@ -58,53 +77,13 @@ class OrderController extends BaseController
 				$this->assign('commodity_type',$commodity_type);
 				
 	        	$this->display('order');
-	        
-		}else{
-			
-			$rst = D('order')->buy(session('user_id'), $get['commodity_id'], $get['commodity_type']);
-			$user = D('user')->where(['id' =>  session('user_id')])->find();
-			
-			if ($get['commodity_type']==1) {
-				$rst2 = D('person')->where(['id' =>  $get['commodity_id']])->find();
-				$typeImg='person_img';
-				$typeName='person_name';
-				$typePrice='person_price';
-			} elseif($get['commodity_type']==2) {
-				$rst2 = D('equipment')->where(['id' =>  $get['commodity_id']])->find();
-				$typeImg='equipment_img';
-				$typeName='equipment_name';
-				$typePrice='equipment_price';
-			}elseif($get['commodity_type']==3) {
-				$rst2 = D('mediche')->where(['id' =>  $get['commodity_id']])->find();
-				$typeImg='mediche_img';
-				$typeName='mediche_name';
-				$typePrice='mediche_price';
-			}
-			
-	        if ($rst['status'] == true) {
-	        	/*pr($rst['creation_time']);die;*/
-	        	$time=$rst['creation_time']+C('ORDER_TIME');
-				$commodity_id=$get['commodity_id'];
-				$commodity_type=$get['commodity_type'];
-				
-	        	$this->assign('rst2',$rst2);
-				$this->assign('typeImg',$typeImg);
-				$this->assign('typeName',$typeName);
-				$this->assign('typePrice',$typePrice);
-				$this->assign('time',$time);
-				$this->assign('user',$user);
-				$this->assign('commodity_id',$commodity_id);
-				$this->assign('commodity_type',$commodity_type);
-				
-	        	$this->display('order');
-	            /*returnajax(true, '' ,'下单成功');*/
-	        } else {
-	            returnajax(false, '' , $rst['msg']);
-	        }
-		}
-		
-        
+    	
     }
+	
+	
+	
+	
+	
 	
     /**
      * 购买商品，异步更新
@@ -142,7 +121,6 @@ class OrderController extends BaseController
         } else {
             returnajax(false, '', $rst['msg']);
         }
-
 
     }
 
