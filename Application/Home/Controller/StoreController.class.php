@@ -20,7 +20,13 @@ class StoreController extends BaseController
     public function person()
     {
         $person = D('person')->getStorePerson();
+		foreach ($person as $key => $value) {
+			$capacity=$value['person_capacity']*24;
+		}
+		
+		/*pr($person);die;*/
 		$this->assign('person',$person);
+		$this->assign('capacity',$capacity);
         $this->display('sc');
     }
 

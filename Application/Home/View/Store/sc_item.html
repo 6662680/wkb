@@ -29,9 +29,9 @@
                 <div class="navbar__item ">
                     <a href="{:U('store/mediche')}">食物</a>
                 </div>
-                <div class="navbar__item pull-right">
+                <!--<div class="navbar__item pull-right">
                     <a href=""><i class="fa fa-filter mr5" aria-hidden="true"></i>等级</a>
-                </div>
+                </div>-->
             </div>
         </div>
         <foreach name="equipment" item="vo">
@@ -48,14 +48,21 @@
                             <ul>
                                 <li>{$vo.equipment_name}
                                 </li>
-                                <li class="dark">等级:
-                                    <span>lv10</span>
-                                </li>
+                                
                                 <li class="dark">挖矿效率:
                                     <span>{$vo.equipment_multiple}</span>
                                 </li>
-                                <li class="dark">昨日产量:
-                                    <span>1200</span>
+                                <li class="dark">基础耐久度:
+                                    <span>{$vo.equipment_endurance}</span>
+                                </li>
+                                <li class="dark">是否防坍塌:
+                                    <span><?php 
+						                   	if ($vo['equipment_protect']==1) {
+															echo '是';
+														} else {
+															echo '否';
+														} ?>
+                                    </span>
                                 </li>
                             </ul>
                         </div>

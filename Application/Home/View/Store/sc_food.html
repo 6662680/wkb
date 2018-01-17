@@ -29,9 +29,9 @@
                 <div class="navbar__item weui_bar__item_on">
                     <a href="{:U('store/mediche')}">食物</a>
                 </div>
-                <div class="navbar__item pull-right">
+                <!--<div class="navbar__item pull-right">
                     <a href=""><i class="fa fa-filter mr5" aria-hidden="true"></i>等级</a>
-                </div>
+                </div>-->
             </div>
         </div>
         <foreach name="mediche" item="vo">
@@ -48,15 +48,16 @@
                             <ul>
                                 <li>{$vo.mediche_name}
                                 </li>
-                                <li class="dark">等级:
+                                
+                                <!--<li class="dark">等级:
                                     <span>lv10</span>
-                                </li>
+                                </li>-->
                                 <li class="dark">恢复血量:
                                     <span>{$vo.mediche_treat}</span>
                                 </li>
-                                <li class="dark">昨日产量:
+                                <!--<li class="dark">昨日产量:
                                     <span>1200</span>
-                                </li>
+                                </li>-->
                             </ul>
                         </div>
                         

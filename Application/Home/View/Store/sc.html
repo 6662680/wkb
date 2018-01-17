@@ -29,14 +29,14 @@
                 <div class="navbar__item">
                     <a href="{:U('store/mediche')}">食物</a>
                 </div>
-                <div class="navbar__item pull-right">
+                <!--<div class="navbar__item pull-right">
                     <a href=""><i class="fa fa-filter mr5" aria-hidden="true"></i>等级</a>
-                </div>
+                </div>-->
             </div>
         </div>
         <foreach name="person" item="vo">
         <div class="page__bd page__bd_spacing ">
-            <ul class="sd">
+            <ul class="sd" >
                 <li class="bgw pzr">
                     <div class="mainflex js_category pb20">
                        
@@ -48,14 +48,17 @@
                             <ul>
                                 <li>{$vo.person_name}
                                 </li>
-                                <li class="dark">等级:
-                                    <span>lv10</span>
+                                <li class="dark">血量:
+                                    <span>{$vo.person_blood}</span>
                                 </li>
+                                 <!--<li class="dark">初始等级:
+                                    <span>lv0</span>
+                                </li>-->
                                 <li class="dark">挖矿能力:
                                     <span>{$vo.person_capacity}</span>
                                 </li>
-                                <li class="dark">昨日产量:
-                                    <span>1200</span>
+                                <li class="dark">初始等级:
+                                    <span>lv0</span>
                                 </li>
                             </ul>
                         </div>
