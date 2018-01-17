@@ -11,15 +11,30 @@ class PutorderController extends BaseController
 
 	}
 
+
     //订单列表
     public function orderList()
     {
-        $rst = D('Putorder')->orderList(I('post.type'));
-        if ($rst) {
-            returnajax(true, $rst ,'');
+        $type = I('post.type',1);
+        $commodity_type = I('post.commodity_type',1);
+        $rst = D('Putorder')->orderList($type, $commodity_type);
+        $this->assign('rst',$rst);
+        echo $type; echo $commodity_type;
+        if ($type == 1) {
+            if ($commodity_type == 1) {
+                $this->display('person');
+            } else {
+                $this->display('equipment');
+            }
         } else {
-            returnajax(true, '' , '目前没有订单正在交易');
+            if ($commodity_type == 1) {
+                $this->display('person');
+            } else {
+                $this->display('equipment');
+            }
+
         }
+
     }
 
     /**

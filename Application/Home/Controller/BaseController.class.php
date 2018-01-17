@@ -18,7 +18,8 @@ class BaseController extends Controller
     }
 
     public function error() {
-        $this->display('404');
+        $this->display('base/404');
+        die();
     }
 
 

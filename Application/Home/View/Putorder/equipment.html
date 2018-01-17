@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <!-- head 中 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../Public/css/main.css">
+</head>
+
+<body>
+    <div class="page home ">
+        <div class="page__hd">
+            <h1 class="page__title">
+                商城
+            </h1>
+            <div class="navbar sd">
+
+                <!--<div class="navbar__item weui_bar__item_on">-->
+                    <!--<a href="{:U('putorder/orderList','','')}/type/1">我要买</a>-->
+                <!--</div>-->
+                <!--<div class="navbar__item">-->
+                    <!--<a href="{:U('putorder/orderList')}/type/0">我要卖</a>-->
+                <!--</div>-->
+                <!--<div class="navbar__item">-->
+                    <!--<a href="{:U('putorder/mediche')}">我的订单</a>-->
+                <!--</div>-->
+                <div class="navbar__item pull-right">
+                    <a href="javascript:;" class=" open-popup" data-target="#sx"><i class="fa fa-filter mr5" aria-hidden="true"></i>筛选</a>
+                 
+                </div>
+            </div>
+        </div>
+                    
+
+        <foreach name="rst" item="vo">
+        <div class="page__bd page__bd_spacing ">
+            <ul class="sd">
+                <a href="{:U('putorder/buyReceiving','','')}/commodity_id/{$vo.id}/commodity_type/{$vo.commodity_type}">
+                <li class="bgw pzr">
+                    <div class="mainflex js_category pb20">
+                       
+                        <div class="mainphoto c1">
+                            <!-- 头像 -->
+                            <img src="{$vo.person_img}" alt="">
+                        </div>
+                        <div class="maintext">
+                            <ul>
+                                <li>{$vo.person_name}
+                                </li>
+                                <li class="dark">等级:
+                                    <span>{$vo.level}</span>
+                                </li>
+                                <li class="dark">挖矿能力:
+                                    <span>{$vo.person_capacity}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="buy dark f14 text-right">
+                            售价
+                            <p class="red">{$vo.person_price}</p>
+                        </div>
+
+                        <div class="cleanfix"></div>
+                    </div>
+                    <div class="pbottom ">
+                        <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_warn ">购买</a>
+                    </div>
+                </li>
+                </a>
+            </ul>
+        </div>
+        </foreach>
+    <div class="weui-tabbar">
+        <a href="{:U('bag/person')}" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <i class="fa fa-gamepad"></i>
+            </div>
+            <p class="weui-tabbar__label">背包</p>
+        </a>
+        <a href="{:U('store/person')}" class="weui-tabbar__item ">
+            <div class="weui-tabbar__icon">
+                <i class="fa fa-shopping-bag"></i>
+            </div>
+            <p class="weui-tabbar__label">商城</p>
+        </a>
+        <a href="{:U('putorder/orderList')}" class="weui-tabbar__item weui-bar__item--on">
+            <div class="weui-tabbar__icon">
+                <i class="fa fa-gavel"></i>
+            </div>
+            <p class="weui-tabbar__label">交易</p>
+        </a>
+        <a href="{:U('bag/userMe')}" class="weui-tabbar__item ">
+            <div class="weui-tabbar__icon">
+                <i class="fa fa-user"></i>
+            </div>
+            <p class="weui-tabbar__label">我的</p>
+        </a>
+    </div>
+    </div>
+     <!-- 筛选 -->
+    <div id="sx" class="weui-popup__container">
+        <div class="weui-popup__overlay"></div>
+        <div class="weui-popup__modal">
+                <form action="{:U('putorder/orderList','','')}/type" method="post">
+             
+            <div class="bgw m20 p20 maxvh">
+                <div class="modal-header" style="height: 50px;">
+                    <a href="javascript:;" class="close close-popup" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </a>
+                </div>
+
+
+                  <!--  <br /><br />
+                    <label><input name="type" type="radio" value="1" />我要买 </label>
+                    <label><input name="type" type="radio" value="0" />我要卖 </label>
+                    </br>
+                    <label><input name="commodity_type" type="radio" value="1" />人物 </label>
+                    <label><input name="commodity_type" type="radio" value="2" />装备 </label>
+                    <input type="submit"> -->
+                    <div class="weui-cells__title">交易类型</div>
+                    <div class="weui-cells weui-cells_radio">
+                      <label class="weui-cell weui-check__label">
+                        <div class="weui-cell__bd">
+                          <p>我要买</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                          <input name="type" type="radio" value="1" checked="checked"  class="weui-check"/ >
+                          <span class="weui-icon-checked"></span>
+                        </div>
+                      </label>
+                      <label class="weui-cell weui-check__label" >
+
+                        <div class="weui-cell__bd">
+                          <p>我要卖</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                          <input name="type" type="radio" value="0"  class="weui-check"/>
+                          <span class="weui-icon-checked"></span>
+                        </div>
+                      </label>
+                    </div>
+
+                    <div class="weui-cells__title">交易</div>
+                    <div class="weui-cells weui-cells_radio">
+                      <label class="weui-cell weui-check__label" >
+                        <div class="weui-cell__bd">
+                          <p>人物</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                          <input name="commodity_type" type="radio" value="1" checked="checked" class="weui-check"/>
+                          <span class="weui-icon-checked"></span>
+                        </div>
+                      </label>
+                      <label class="weui-cell weui-check__label" >
+                        <div class="weui-cell__bd">
+                          <p>装备</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                          <input name="commodity_type" type="radio" value="2" class="weui-check"/>
+                          <span class="weui-icon-checked"></span>
+                        </div>
+                      </label>
+                    </div>  
+            </div>
+            <div class=" m20  ">
+                 <button type="submit"  class="weui-btn weui-btn_primary ">按钮</button>
+            </div>
+             </form>
+        </div>
+    </div>
+    <!-- body 最后 -->
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+    <!-- 如果使用了某些拓展插件还需要额外的JS -->
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
+</body>
+<script>
+
+
+</script>
+</html>

@@ -68,44 +68,52 @@
                             <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
                                 <div class="stitle mb15">当前装备</div>
                                 <div class="weui-flex mb5 flexcenter">
-                                    <div class="weui-flex__item">
-                                        <div class="item c1">
+                                    <div class="">
+                                        <div class="item c1" style="margin-right:15px">
 
                                             <if condition="$person.equipment_info eq ''">
-                                                <img src="/public/images/nullzhuangbei.png" alt="">
+                                                <img src="/public/images/nullzhuangbei.png" alt="" >
                                                 <else />
-                                                <img src="{$person.equipment_info.equipment_img}" alt="">
+                                                <img src="{$person.equipment_info.equipment_img}" alt="" >
                                             </if>
 
                                         </div>
                                     </div>
-                                    <div class="weui-flex__item itemname  f12">工具</div>
                                     <if condition="$person.equipment_info eq ''">
-                                        <div class="weui-flex__item itemname  f12">没有装备</div>
-                                        <div class="weui-flex__item itemname f12 dark"></div>
+                                        <div class="weui-flex__item itemname f12 dark">
+                                            <div class="itemname  f12">没有装备</div>
+                                            <div></div>
+                                        </div>
                                         <else />
-                                        <div class="weui-flex__item itemname  f12">{$person.equipment_info.equipment_name}</div>
-                                        <div class="weui-flex__item itemname f12 dark">耐久度：{$person.equipment_info.equipment_endurance}</div>
+                                        <div class="weui-flex__item f12 dark">
+                                        <div class="itemname black f12">{$person.equipment_info.equipment_name}</div>
+                                        <div>耐久度：{$person.equipment_info.equipment_endurance}</div>
+                                        </div>
                                     </if>
 
                                 </div>
                                 <div class="weui-flex mb5 flexcenter">
-                                    <div class="weui-flex__item">
-                                        <div class="item c1">
+                                    <div class="">
+                                        <div class="item c1" style="margin-right:15px">
                                             <if condition="$person.equipment_info eq ''">
-                                                <img src="/public/images/nullzhuangbei.png" alt="">
+                                                <img src="/public/images/nullzhuangbei.png" alt="" >
                                                 <else />
-                                                <img src="{$person.equipment_card_info.equipment_img}" alt="">
+                                                <img src="{$person.equipment_card_info.equipment_img}" alt="" >
                                             </if>
                                         </div>
                                     </div>
-                                    <div class="weui-flex__item itemname  f12">头部</div>
                                     <if condition="$person.equipment_info eq ''">
-                                        <div class="weui-flex__item itemname  f12">没有装备</div>
-                                        <div class="weui-flex__item itemname f12 dark"></div>
-                                        <else />
-                                        <div class="weui-flex__item itemname  f12">{$person.equipment_card_info.equipment_name}</div>
-                                        <div class="weui-flex__item itemname f12 dark">已装备</div>
+                                       
+                                        <div class="weui-flex__item itemname f12 dark">
+                                            <div class="itemname  f12">没有装备</div>
+                                            <div></div>
+                                        </div>
+                                        <else/>
+                                        
+                                        <div class="weui-flex__item f12 dark">
+                                        <div class="itemname black f12">{$person.equipment_card_info.equipment_name}</div>
+                                        <div>已装备</div>
+                                        </div>
                                     </if>
 
 
@@ -115,7 +123,7 @@
                                 <div class="stitle mt15 mb15">可用装备</div>
                                 <div>
                                     <ul class="flex-layout category-head" id="category-head" style="">
-                                        <li class="flex" style="" searchtype="brand">
+                                     <!--    <li class="flex" style="" searchtype="brand">
                                             <div class="omreitem c1 use">
                                                 <img src="http://placehold.it/300x300" alt="">
                                                 <input value="{$vo.id}" class="id" type="hidden">
@@ -132,7 +140,7 @@
                                             <div class="weui-flex__item itemname  f12 black mt5">大铁锤 </div>
                                             <div class="weui-flex__item itemname f12 dark">耐久度：7</div>
                                         </li>
-
+ -->
                                         <volist name="equipment_all" id="vo">
                                             <li class="flex" style="" searchtype="brand">
                                                 <div class="omreitem c1 use">
@@ -193,9 +201,8 @@
                                     <tbody>
                                     <volist name="log" id="vo">
                                         <tr>
-                                            <td scope="row">{:date('Y-m-d H:i:s',$vo['time'])}</td>
-                                            <td>/</td>
-                                            <td class="green">{$vo.msg}</td>
+                                           
+                                            <td class="green" style="text-align: left;"><div class="dark">{:date('Y-m-d H:i:s',$vo['time'])}</div>{$vo.msg}</td>
                                         </tr>
                                     </volist>
                                     </tbody>
@@ -235,20 +242,43 @@
                 <div class="stitle">操作</div>
                 <div class="weui-flex">
                     <div class="weui-flex__item text-center">
-                        <a href="sellmain.html" class="weui-btn weui-btn_mini weui-btn_warn  mt10 mb10">出售角色</a>
+                        <a href="sellmain.html" class="weui-btn  weui-btn_warn  mt10 mb10">出售角色</a>
                     </div>
-
-                    <div class="weui-flex__item text-center">
-                        <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary  mt10 mb10">卸下装备</a>
-                    </div>
-
                 </div>
             </div>
         </div>
 
 
         <div class="footheight"></div>
+         <div class="weui-tabbar">
+            <a href="{:U('bag/person')}" class="weui-tabbar__item weui-bar__item--on">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-gamepad"></i>
+                </div>
+                <p class="weui-tabbar__label">背包</p>
+            </a>
+            <a href="{:U('store/person')}" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-shopping-bag"></i>
+                </div>
+                <p class="weui-tabbar__label">商城</p>
+            </a>
+            <a href="{:U('putorder/orderList','','')}/type/1" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-gavel"></i>
+                </div>
+                <p class="weui-tabbar__label">交易</p>
+            </a>
+            <a href="{:U('bag/userMe')}" class="weui-tabbar__item ">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <p class="weui-tabbar__label">我的</p>
+            </a>
+        </div>
     </div>
+
+   
     <!-- body 最后 -->
     <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
@@ -262,6 +292,8 @@
                   text: '确定使用?',
                   onOK: function () {
                       //点击确认
+                      debugger
+                      
                   },
                   onCancel: function () {
                   }

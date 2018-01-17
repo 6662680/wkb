@@ -7,7 +7,10 @@
 ul {
     list-style: none;
 }
-
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
 a {
     color: #444444
 }
@@ -705,6 +708,7 @@ hr {
     display: inline-block;
     width: 80px;
     height: 30px;
+    margin-right:8px 
 }
 
 .progress {
@@ -777,4 +781,7 @@ hr {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+     height: 20px;
+
 }
+.mt20{margin-top: 20px}

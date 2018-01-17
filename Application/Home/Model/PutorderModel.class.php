@@ -8,13 +8,34 @@ class PutorderModel extends Model
     Protected $autoCheckFields = false;
 
     //订单列表
-    public function orderList($type)
+    public function orderList($type, $commodity_type)
     {
+
         if ($type == 0) {
-            $rst = M('user_sell_order')->where(['status' => 1])->select();
+            $model = M('user_sell_order');
+            if ($commodity_type == 1) {
+                $model->join('left join `person_bag` on person_bag.id=user_sell_order.commodity_id');
+                $model->join('left join `person` on person_bag.person_id=person.id');
+            } else {
+                $model->join('left join `equipment_bag` on equipment_bag.id=user_sell_order.commodity_id');
+                $model->join('left join `equipment` on equipment_bag.equipment_id=equipment.id');
+            }
+
+            $model->where(['user_sell_order.status' => 1,'user_sell_order.commodity_type' => $commodity_type]);
+            $rst  = $model->select();
+
         } else {
-            $rst = M('user_buy_order')->where(['status' => 1])->select();
+            $model = M('user_buy_order');
+            if ($commodity_type == 1) {
+
+                $model->join('left join `person` on user_buy_order.commodity_id=person.id');
+            } else {
+
+                $model->join('left join `equipment` on user_buy_order.commodity_id=equipment.id');
+            }
+            $rst = $model->where(['user_buy_order.status' => 1,'user_buy_order.commodity_type' => $commodity_type])->select();
         }
+
         return $rst;
     }
 

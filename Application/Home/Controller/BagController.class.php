@@ -36,10 +36,14 @@ class BagController extends BaseController
         $id = I('get.id');
 
         if (!$id) {
-           echo '非法访问';
+           $this->error();
         }
 
         $person = D('person')->getBagPersonDetails($id);
+
+        if (!$person['id']) {
+            $this->error();
+        }
 
         if ($person['equipment_id'] != 0) {
            $person['equipment_info'] =D('equipment')->getBagEquipment($person['equipment_id']);
