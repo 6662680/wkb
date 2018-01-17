@@ -16,12 +16,15 @@ class PutorderModel extends Model
             if ($commodity_type == 1) {
                 $model->join('left join `person_bag` on person_bag.id=user_sell_order.commodity_id');
                 $model->join('left join `person` on person_bag.person_id=person.id');
+                $model->field('user_sell_order.*,user_sell_order.id as order_id, person.*');
             } else {
                 $model->join('left join `equipment_bag` on equipment_bag.id=user_sell_order.commodity_id');
                 $model->join('left join `equipment` on equipment_bag.equipment_id=equipment.id');
+                $model->field('user_sell_order.*,user_sell_order.id as order_id, equipment.*');
             }
 
             $model->where(['user_sell_order.status' => 1,'user_sell_order.commodity_type' => $commodity_type]);
+
             $rst  = $model->select();
 
         } else {
@@ -29,10 +32,12 @@ class PutorderModel extends Model
             if ($commodity_type == 1) {
 
                 $model->join('left join `person` on user_buy_order.commodity_id=person.id');
+                $model->field('user_buy_order.*,user_buy_order.id as order_id, person.*');
             } else {
-
                 $model->join('left join `equipment` on user_buy_order.commodity_id=equipment.id');
+                $model->field('user_buy_order.*,user_buy_order.id as order_id, equipment.*');
             }
+
             $rst = $model->where(['user_buy_order.status' => 1,'user_buy_order.commodity_type' => $commodity_type])->select();
         }
 
@@ -167,11 +172,11 @@ class PutorderModel extends Model
     }
 
     //用户接单（订单类型：卖）
-    public function sellReceiving($receiving_user_id, $user_sell_order_id)
+    public function sellReceiving($receiving_user_id,$user_sell_order_id)
     {
-        $rst = M('user')->where(['id' => $user_sell_order_id])->field('site')->find();
+        $rst = M('user')->where(['id' => $receiving_user_id])->field('site')->find();
 
-        if ($rst['site']) {
+        if (!$rst['site']) {
             return ['status' => false, 'msg' => '您没有设置您的玩客币地址，请先设置地址'];
         }
 
@@ -179,7 +184,7 @@ class PutorderModel extends Model
         $time = array('GT', $time);
         //creation_time这里有问题，之后测试再调整
         $model = M('user_sell_order');
-        $rst = $model->where(['user_id' => $user_sell_order_id, 'creation_time' => $time])->find();
+        $rst = $model->where(['user_id' => $user_sell_order_id, 'use_time' => $time])->find();
 
         if ($rst) {
             return ['status' => false, 'msg' => '您有已锁定的订单，请先完成之前的交易'];
@@ -315,6 +320,7 @@ class PutorderModel extends Model
     //创建订单（订单类型：买）
     public function buyCreationOrder($user_id, $data)
     {
+
         if (empty($user_id) || empty($data['commodity_id']) || empty($data['commodity_type']) || empty($data['commodity_price']) || empty($data['residue'])) {
             return ['status' => false, 'msg' => '缺少参数'];
         }
@@ -366,7 +372,7 @@ class PutorderModel extends Model
         $add['residue'] = $data['residue'];
         $add['site'] = 0;
 
-        $rst = M('user_sell_order')->add($add);
+        $rst = M('user_buy_order')->add($add);
 
         if ($rst) {
             $trans->commit();
@@ -386,9 +392,9 @@ class PutorderModel extends Model
             return ['status' => false, 'msg' => '不存在的订单'];
         }
 
-        if ($order['use'] == 1 && $order['use_time'] > time() - C('ORDER_TIME')) {
-            return ['status' => false, 'msg' => '订单正在交易'];
-        }
+//        if ($order['use'] == 1 && $order['use_time'] > time() - C('ORDER_TIME')) {
+//            return ['status' => false, 'msg' => '订单正在交易'];
+//        }
 
         $map = [
             'receiving_user_id' => $receiving_user_id,
@@ -461,7 +467,7 @@ class PutorderModel extends Model
                 'person_id' => $order['commodity_id'],
                 'user_id' => $receiving_user_id,
             ];
-            $save = M('person_bag')->where($map)->list(1)->save(['user_id' => $receiving_user_id]);
+            $save = M('person_bag')->where($map)->limit(1)->save(['user_id' => $receiving_user_id]);
         }
 
         if ($order['commodity_type'] == 2) {
@@ -469,7 +475,7 @@ class PutorderModel extends Model
                 'equipment_id' => $order['commodity_id'],
                 'user_id' => $receiving_user_id,
             ];
-            $save = M('equipment_bag')->where($map)->list(1)->save(['user_id' => $receiving_user_id]);
+            $save = M('equipment_bag')->where($map)->limit(1)->save(['user_id' => $receiving_user_id]);
         }
 
         if ($save !== 1) {

@@ -41,30 +41,37 @@
         <foreach name="rst" item="vo">
         <div class="page__bd page__bd_spacing ">
             <ul class="sd">
-                <a href="{:U('putorder/buyReceiving','','')}/commodity_id/{$vo.id}/commodity_type/{$vo.commodity_type}">
+
                 <li class="bgw pzr">
                     <div class="mainflex js_category pb20">
                        
                         <div class="mainphoto c1">
                             <!-- 头像 -->
-                            <img src="{$vo.person_img}" alt="">
+                            <img src="{$vo.equipment_img}" alt="">
                         </div>
                         <div class="maintext">
                             <ul>
-                                <li>{$vo.person_name}
+                                <li>{$vo.equipment_name}
                                 </li>
-                                <li class="dark">等级:
-                                    <span>{$vo.level}</span>
+                                <li class="dark">耐久度:
+                                    <span>{$vo.equipment_endurance}</span>
                                 </li>
-                                <li class="dark">挖矿能力:
-                                    <span>{$vo.person_capacity}</span>
-                                </li>
+                                <if condition="$vo.equipment_protect eq 0">
+                                    <li class="dark">挖矿倍数:
+                                        <span>{$vo.equipment_multiple}</span>
+                                    </li>
+                                    <else />
+                                    <li class="dark">防坍塌
+                                        <span></span>
+                                    </li>
+                                </if>
+
                             </ul>
                         </div>
                         
                         <div class="buy dark f14 text-right">
                             售价
-                            <p class="red">{$vo.person_price}</p>
+                            <p class="red">{$vo.commodity_price}</p>
                         </div>
 
                         <div class="cleanfix"></div>
@@ -73,7 +80,7 @@
                         <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_warn ">购买</a>
                     </div>
                 </li>
-                </a>
+
             </ul>
         </div>
         </foreach>
@@ -129,7 +136,7 @@
                     <div class="weui-cells weui-cells_radio">
                       <label class="weui-cell weui-check__label">
                         <div class="weui-cell__bd">
-                          <p>我要买</p>
+                          <p>求购</p>
                         </div>
                         <div class="weui-cell__ft">
                           <input name="type" type="radio" value="1" checked="checked"  class="weui-check"/ >
@@ -139,7 +146,7 @@
                       <label class="weui-cell weui-check__label" >
 
                         <div class="weui-cell__bd">
-                          <p>我要卖</p>
+                          <p>卖出</p>
                         </div>
                         <div class="weui-cell__ft">
                           <input name="type" type="radio" value="0"  class="weui-check"/>

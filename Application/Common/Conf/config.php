@@ -22,6 +22,7 @@ return array(
 		2 => 'equipment',
 		3 => 'mediche',
 	),
+	'SITE' => '我是官方地址',
 
 	'ORDER_TIME' => 600,
 

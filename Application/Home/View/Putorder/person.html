@@ -17,7 +17,11 @@
     <div class="page home ">
         <div class="page__hd">
             <h1 class="page__title">
-                商城
+                <if condition="$type eq '1'">
+                    求购
+                    <else />
+                    卖出
+                </if>
             </h1>
             <div class="navbar sd">
 
@@ -38,10 +42,10 @@
         </div>
                     
 
-        <foreach name="person" item="vo">
+        <foreach name="rst" item="vo">
         <div class="page__bd page__bd_spacing ">
             <ul class="sd">
-                <a href="{:U('order/buy','','')}/commodity_id/{$vo.id}/commodity_type/{$vo.commodity_type}">
+
                 <li class="bgw pzr">
                     <div class="mainflex js_category pb20">
                        
@@ -53,14 +57,14 @@
                             <ul>
                                 <li>{$vo.person_name}
                                 </li>
-                                <li class="dark">等级:
-                                    <span>lv10</span>
+                                <li class="dark">等级大于:
+                                    <span>{$vo.person_level}</span>
                                 </li>
-                                <li class="dark">挖矿能力:
+                                <li class="dark">血量大于:
+                                    <span>{$vo.person_blood}</span>
+                                </li>
+                                <li class="dark">挖矿能力大于:
                                     <span>{$vo.person_capacity}</span>
-                                </li>
-                                <li class="dark">昨日产量:
-                                    <span>1200</span>
                                 </li>
                             </ul>
                         </div>
@@ -72,11 +76,18 @@
 
                         <div class="cleanfix"></div>
                     </div>
-                    <div class="pbottom ">
-                        <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_warn ">购买</a>
-                    </div>
+                    <if condition="$type eq '1'">
+                        <div class="pbottom ">
+                            <button  onclick="tijiao({$vo.order_id},1)" class="weui-btn weui-btn_mini weui-btn_warn ">卖给他</button>
+                        </div>
+                    <else />
+                        <div class="pbottom ">
+                            <button  onclick="tijiao({$vo.order_id},0)" class="weui-btn weui-btn_mini weui-btn_warn ">购买</button>
+                        </div>
+                </if>
+
                 </li>
-                </a>
+
             </ul>
         </div>
         </foreach>
@@ -132,7 +143,7 @@
                     <div class="weui-cells weui-cells_radio">
                       <label class="weui-cell weui-check__label">
                         <div class="weui-cell__bd">
-                          <p>我要买</p>
+                          <p>求购</p>
                         </div>
                         <div class="weui-cell__ft">
                           <input name="type" type="radio" value="1" checked="checked"  class="weui-check"/ >
@@ -142,7 +153,7 @@
                       <label class="weui-cell weui-check__label" >
 
                         <div class="weui-cell__bd">
-                          <p>我要卖</p>
+                          <p>卖出</p>
                         </div>
                         <div class="weui-cell__ft">
                           <input name="type" type="radio" value="0"  class="weui-check"/>
@@ -187,6 +198,66 @@
     <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
 </body>
 <script>
+function tijiao(order_id, type){
+
+        if (type == 1) {
+
+            $.ajax({
+                url:"{:U('putorder/buyReceiving','','')}/order_id/"+order_id,
+                type:'GET', //GET
+                async:true,    //或false,是否异步
+                data:{
+
+                },
+                timeout:5000,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                success:function(result){
+                    if (result.status) {
+                        $.ajax({
+                            url:"{:U('putorder/send','','')}/order_id/"+order_id+'/type/'+ {$type},
+                            type:'GET', //GET
+                            async:true,    //或false,是否异步
+                            data:{
+
+                            },
+                            timeout:5000,    //超时时间
+                            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                            success:function(result){
+                                if (result.status) {
+                                    alert('订购成功，已通知下单方付款，请10分钟后到个人中心订单中查看');
+                                } else {
+                                    alert(result.msg);
+                                }
+                            }
+                        })
+
+                    } else {
+                        alert(result.msg);
+                    }
+                }
+            })
+        } else {
+
+            $.ajax({
+                url:"{:U('putorder/sellReceiving','','')}/order_id/"+order_id,
+                type:'GET', //GET
+                async:true,    //或false,是否异步
+                data:{
+
+                },
+                timeout:5000,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                success:function(result){
+                    if (result.status) {
+                        window.location.href= "{:U('putorder/remit','','')}/" + "order_id/"+order_id+'/type/'+ {$type};
+                    } else {
+                        alert(result.msg);
+                    }
+                }
+            })
+        }
+
+    }
 
 
 </script>

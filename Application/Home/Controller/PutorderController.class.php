@@ -18,18 +18,29 @@ class PutorderController extends BaseController
         $type = I('post.type',1);
         $commodity_type = I('post.commodity_type',1);
         $rst = D('Putorder')->orderList($type, $commodity_type);
+
         $this->assign('rst',$rst);
-        echo $type; echo $commodity_type;
+
+
         if ($type == 1) {
             if ($commodity_type == 1) {
+//                echo '买 人物';
+                $this->assign('type',1);
                 $this->display('person');
             } else {
+//                echo '买 装备';
+                $this->assign('type',1);
                 $this->display('equipment');
             }
         } else {
+
             if ($commodity_type == 1) {
+//                echo '卖 人物';
+                $this->assign('type',2);
                 $this->display('person');
             } else {
+//                echo '卖 装备';
+                $this->assign('type',2);
                 $this->display('equipment');
             }
 
@@ -64,8 +75,8 @@ class PutorderController extends BaseController
      */
     public function sellReceiving()
     {
-
-        $rst = D('putorder')->receiving(session('user_id'),34);
+        $order_id = I('get.order_id');
+        $rst = D('putorder')->sellreceiving(session('user_id'), $order_id);
 
         if ($rst['status']) {
             returnajax(true, '','购买成功');
@@ -122,8 +133,8 @@ class PutorderController extends BaseController
      */
     public function buyReceiving()
     {
-        $order_id = I('post.order_id', '', 'int');
-        $rst = D('Putorder')->buyAccomplish(session('user_id'), 99);
+        $order_id = I('get.order_id', '', 'int');
+        $rst = D('Putorder')->buyReceiving(session('user_id'), $order_id);
 
         if ($rst['status'] == true) {
             returnajax(true, $rst['data']);
@@ -132,6 +143,74 @@ class PutorderController extends BaseController
         }
     }
 
+    /**
+     * 完成购买(订单类型：买)
+     * @author LiYang
+     * @date 2018-1-13
+     * @return void
+     */
+    public function buyAccomplish()
+    {
+        $order_id = I('get.order_id', '', 'int');
+        $rst = D('Putorder')->buyAccomplish(session('user_id'), $order_id);
+
+        if ($rst['status'] == true) {
+            returnajax(true, $rst['data']);
+        } else {
+            returnajax(false, '' , $rst['msg']);
+        }
+    }
+
+    //让用户打款
+    public function remit()
+    {
+        $order_id = I('get.order_id');
+        $type = I('get.type');
+
+        if ($type ==1) {
+            $model = M('user_buy_order');
+        } else {
+            $model = M('user_sell_order');
+        }
+
+        $rst = $model->where(['id' => $order_id])->find();
+
+        if ($rst['commodity_id'] == 1) {
+            $model = M('person');
+            $data = $model->where(['id' => $rst['commodity_id']])->find();
+            $rst['typeImg'] = $data['person_img'];
+        } else {
+            $model = M('mediche');
+            $data = $model->where(['id' => $rst['commodity_id']])->find();
+            $rst['typeImg'] = $data['mediche_img'];
+        }
+
+        $rst['server_price'] = $rst['commodity_price'] / 20;
+        $user = M('user')->where(['id' => $rst['user_id']])->find();
+        $rst['putorder_site'] = $user['site'];
+        $rst['order_time'] = $rst['use_time'] + C('ORDER_TIME');
+
+        $this->assign('rst',$rst);
+
+        $this->display('putorder/order');
+    }
+
+    //通知用户打款
+    public function send() {
+        $order_id = I('get.order_id');
+        $type = I('get.type');
+
+        if ($type ==1) {
+            $model = M('user_buy_order');
+        } else {
+            $model = M('user_sell_order');
+        }
+
+        $rst = $model->where(['id' => $order_id])->find();
+
+        //用户打款
+        returnajax(true);
+    }
 
 
 
