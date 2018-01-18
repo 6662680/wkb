@@ -35,7 +35,7 @@ class OrderController extends BaseController
 	{
 		
 		$get = I('get.');
-		$order = D('order')->where(['user_id' => session('user_id'),'status' =>  1])->order('id desc')->find();
+		$order = D('order')->where(['user_id' => session('user_id'),'status' =>  1,'commodity_id' =>  $get['commodity_id'],'commodity_type' =>  $get['commodity_type']])->order('id desc')->find();
 		
 		/*pr($order);die;*/
 		if ($order&&$order['creation_time']+C('ORDER_TIME' )< time()) {
