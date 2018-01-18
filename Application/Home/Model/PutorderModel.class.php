@@ -16,7 +16,13 @@ class PutorderModel extends Model
             if ($commodity_type == 1) {
                 $model->join('left join `person_bag` on person_bag.id=user_sell_order.commodity_id');
                 $model->join('left join `person` on person_bag.person_id=person.id');
-                $model->field('user_sell_order.*,user_sell_order.id as order_id, person.*');
+                $model->join('left join `equipment_bag` on equipment_bag.id=user_sell_order.equipment_id');
+                $model->join('left join `equipment` on equipment_bag.equipment_id=equipment.id');
+                $model->join('left join `equipment_bag` as ebag on ebag.id=user_sell_order.equipment_id_card');
+                $model->join('left join `equipment` as e on ebag.equipment_id=e.id');
+                $model->field('user_sell_order.*,user_sell_order.id as order_id, person.*, equipment.equipment_img,
+                e.equipment_img as equipment_img_card, ebag.equipment_endurance, e.equipment_name as equipment_name_card, equipment.equipment_multiple');
+
             } else {
                 $model->join('left join `equipment_bag` on equipment_bag.id=user_sell_order.commodity_id');
                 $model->join('left join `equipment` on equipment_bag.equipment_id=equipment.id');
@@ -24,6 +30,7 @@ class PutorderModel extends Model
             }
 
             $model->where(['user_sell_order.status' => 1,'user_sell_order.commodity_type' => $commodity_type]);
+            $model->order('user_sell_order.id desc');
 
             $rst  = $model->select();
 
@@ -38,7 +45,7 @@ class PutorderModel extends Model
                 $model->field('user_buy_order.*,user_buy_order.id as order_id, equipment.*');
             }
 
-            $rst = $model->where(['user_buy_order.status' => 1,'user_buy_order.commodity_type' => $commodity_type])->select();
+            $rst = $model->where(['user_buy_order.status' => 1,'user_buy_order.commodity_type' => $commodity_type])->order('user_buy_order.id desc')->select();
         }
 
         return $rst;
@@ -192,6 +199,10 @@ class PutorderModel extends Model
 
         $rst = M('user_sell_order')->where(['id' => $user_sell_order_id])->find();
 
+        if ($rst['user_id'] == $receiving_user_id) {
+            return ['status' => false, 'msg' => '这是您自己下的单'];
+        }
+
         if (!$rst) {
             return ['status' => false, 'msg' => '无法找到此订单'];
         }
@@ -218,27 +229,27 @@ class PutorderModel extends Model
     }
 
     // 完成购买（订单类型：卖）
-    public function sellAccomplish($commodity_price, $site)
+    public function sellAccomplish($user_id, $order_id)
     {
-        if (empty($commodity_price) || empty($site)) {
+        if (empty($user_id) || empty($order_id)) {
             return ['status' => false, 'msg' => '缺少参数'];
         }
 
-        $userRst = M('user')->where(['site' => $site])->field('id')->find();
+        $userRst = M('user')->where(['id' => $user_id])->field('id')->find();
 
         if (!$userRst['id']) {
-            return ['status' => false, 'msg' => '付款成功，购买失败原因：找不到此玩客币地址'];
+            return ['status' => false, 'msg' => '非法访问'];
         }
 
-        D('Log')->addLog('用户付款'. $commodity_price .', 地址为：'. $site, $userRst['user_id']);
+        //D('Log')->addLog('用户付款'. $commodity_price .', 地址为：'. $site, $userRst['user_id']);
 
         $time = time() - (C('ORDER_TIME') + 300);
         $time = array('GT', $time);
         //'creation_time' => $time,
-        $orderRst = M('user_sell_order')->where(['site' => $site, 'commodity_price' => $commodity_price,  'status' => 1])->find();
+        $orderRst = M('user_sell_order')->where(['id' => $order_id, 'status' => 1])->find();
 
         if (!$orderRst) {
-            D('Log')->addLog('交易异常：订单不存在或者过期失效', $userRst['id']);
+//            D('Log')->addLog('交易异常：订单不存在或者过期失效', $userRst['id']);
             return ['status' => false, 'msg' => '订单不存在或者过期失效'];
         }
 
@@ -250,10 +261,10 @@ class PutorderModel extends Model
         if ($orderRst['commodity_type'] == 1) {
             $saveRst = M('person_bag')->where(['id' => $orderRst['commodity_id']])->limit(1)->save(['user_id' => $userRst['id'], 'order_use' => 0]);
 
-            if ($saveRst != 1) {
-                D('Log')->addLog('交易失败:用户付款'. $commodity_price .', 该人物已在出售中或者不存在：', $userRst['id']);
+            if ($saveRst === false) {
+                D('Log')->addLog('交易失败:用户付款'. $orderRst['commodity_price'] .', 该人物已在出售中或者不存在：', $userRst['id']);
                 $trans->rollback();
-                return ['status' => false, 'msg' => '道具易主失败'];
+                return ['status' => false, 'msg' => '道具交易失败1'];
             } else {
                 $buymsg .= $orderRst['commodity_name'];
                 $selllog .= $orderRst['commodity_name'];
@@ -261,10 +272,12 @@ class PutorderModel extends Model
 
             if ($orderRst['equipment_id']) {
                 $saveRst = M('equipment_bag')->where(['id' => $orderRst['equipment_id'], 'order_use' => 1])->limit(1)->save(['user_id' => $userRst['id'], 'order_use' => 0]);
-                if ($saveRst != 1) {
+
+//                pr(M()->getLastSql());
+                if ($saveRst === false) {
                     $trans->rollback();
-                    D('Log')->addLog('交易失败:用户付款'. $commodity_price .', 该人物携带的装备已在出售中或者不存在：', $userRst['id']);
-                    return ['status' => false, 'msg' => '道具易主失败'];
+                    D('Log')->addLog('交易失败:用户付款'. $orderRst['commodity_price'] .', 该人物携带的装备已在出售中或者不存在：', $userRst['id']);
+                    return ['status' => false, 'msg' => '道具交易失败2'];
                 } else {
                     $buymsg .= ',附带装备:' .$orderRst['equipment_name'];
                     $selllog .= ',附带装备:' .$orderRst['equipment_name'];
@@ -273,10 +286,11 @@ class PutorderModel extends Model
 
             if ($orderRst['equipment_id_card']) {
                 $saveRst = M('equipment_bag')->where(['id' => $orderRst['equipment_id_card'], 'order_use' => 1])->limit(1)->save(['user_id' => $userRst['id'], 'order_use' => 0]);
-                if ($saveRst != 1) {
+
+                if ($saveRst === false) {
                     $trans->rollback();
-                    D('Log')->addLog('交易失败:用户付款'. $commodity_price .', 该人物携带的帽子已在出售中或者不存在：', $userRst['id']);
-                    return ['status' => false, 'msg' => '道具易主失败'];
+                    D('Log')->addLog('交易失败:用户付款'. $orderRst['commodity_price'] .', 该人物携带的帽子已在出售中或者不存在：', $userRst['id']);
+                    return ['status' => false, 'msg' => '道具交易失败3'];
                 } else {
                     $buymsg .= ',附带帽子:' .$orderRst['equipment_card_name'];
                     $selllog .= ',附带帽子:' .$orderRst['equipment_card_name'];
@@ -288,10 +302,10 @@ class PutorderModel extends Model
         if ($orderRst['commodity_type'] == 2) {
             $saveRst = M('equipment_bag')->where(['id' => $orderRst['commodity_id']])->limit(1)->save(['user_id' => $userRst['id'], 'order_use' => 0]);
 
-            if (!$saveRst != 1) {
-                D('Log')->addLog('交易失败:用户付款'. $commodity_price .', 该装备已在出售中或者不存在：', $userRst['id']);
+            if (!$saveRst === false) {
+                D('Log')->addLog('交易失败:用户付款'. $orderRst['commodity_price'] .', 该装备已在出售中或者不存在：', $userRst['id']);
                 $trans->rollback();
-                return ['status' => false, 'msg' => '道具易主失败'];
+                return ['status' => false, 'msg' => '道具交易失败'];
 
             } else {
                 $buymsg .= $orderRst['commodity_name'];
@@ -301,9 +315,11 @@ class PutorderModel extends Model
 
 
         $model = M('user_sell_order');
-        $saveRst = $model->where(['site' => $site, 'commodity_price' => $commodity_price, 'creation_time' => $time, 'status' => 1])->save(['status' => 2,'completion_time' => time(), 'receiving_user_id' => $userRst['id']]);
+        $saveRst = $model->where(['id' => $order_id, 'status' => 1])->save(['status' => 2,'completion_time' => time(), 'receiving_user_id' => $userRst['id']]);
 
-        if ($saveRst != 1) {
+
+
+        if ($saveRst === false) {
             $trans->rollback();
             D('Log')->addLog('交易异常：订单不存在或者过期失效', $userRst['user_id']);
             return ['status' => false, 'msg' => '没有找到该订单'];
@@ -488,4 +504,6 @@ class PutorderModel extends Model
         }
 
     }
+
+
 }

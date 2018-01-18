@@ -53,19 +53,35 @@
                             <!-- 头像 -->
                             <img src="{$vo.person_img}" alt="">
                         </div>
+
                         <div class="maintext">
                             <ul>
-                                <li>{$vo.person_name}
-                                </li>
-                                <li class="dark">等级大于:
-                                    <span>{$vo.person_level}</span>
-                                </li>
-                                <li class="dark">血量大于:
-                                    <span>{$vo.person_blood}</span>
-                                </li>
-                                <li class="dark">挖矿能力大于:
-                                    <span>{$vo.person_capacity}</span>
-                                </li>
+                                <if condition="$type eq '1'">
+                                    <li>{$vo.person_name}
+                                    </li>
+                                    <li class="dark">等级大于:
+                                        <span>{$vo.person_level}</span>
+                                    </li>
+                                    <li class="dark">血量大于:
+                                        <span>{$vo.person_blood}</span>
+                                    </li>
+                                    <li class="dark">挖矿能力大于:
+                                        <span>{$vo.person_capacity}</span>
+                                    </li>
+                                    <else />
+                                    <li>{$vo.person_name}
+                                    </li>
+                                    <li class="dark">等级:
+                                        <span>{$vo.person_level}</span>
+                                    </li>
+                                    <li class="dark">血量:
+                                        <span>{$vo.person_blood}</span>
+                                    </li>
+                                    <li class="dark">挖矿能力:
+                                        <span>{$vo.person_capacity}</span>
+                                    </li>
+                                </if>
+
                             </ul>
                         </div>
                         
@@ -74,7 +90,40 @@
                             <p class="red">{$vo.person_price}</p>
                         </div>
 
-                        <div class="cleanfix"></div>
+                        <div class="cleanfix">
+                            <if condition="$vo.equipment_img neq ''">
+                                <div class="weui-flex mb5 mt5 flexcenter">
+                                    <div class="">
+                                        <div class="item c1" style="margin-right:15px">
+                                            <img src="{$vo.equipment_img}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="weui-flex__item f12 dark">
+                                        <div class="itemname black f12">{$vo.equipment_name}</div>
+                                        <div>算力倍数{$vo.equipment_multiple}/耐久度：{$vo.equipment_endurance}</div>
+                                    </div>
+                                </div>
+
+                            </if>
+
+
+                            <if condition="$vo.equipment_img_card neq ''">
+                                <div class="weui-flex mb5 mt5 flexcenter">
+                                    <div class="">
+                                        <div class="item c1" style="margin-right:15px">
+                                            <img src="{$vo.equipment_img_card}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="weui-flex__item f12 dark">
+                                        <div class="itemname black f12">{$vo.equipment_name_card}</div>
+                                        <div>防坍塌</div>
+                                    </div>
+                                </div>
+
+                            </if>
+                        </div>
+
+
                     </div>
                     <if condition="$type eq '1'">
                         <div class="pbottom ">

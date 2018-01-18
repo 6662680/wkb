@@ -95,8 +95,8 @@ class PutorderController extends BaseController
      */
     public function sellAccomplish()
     {
-        $id = 2;
-        $rst = D('putorder')->sellAccomplish('200', 'dsfdsfdsgdfgfd');
+        $order_id = I('get.order_id');
+        $rst = D('putorder')->sellAccomplish(session('user_id'), $order_id);
 
         if ($rst['status']) {
             returnajax(true, '','购买成功');
@@ -190,7 +190,14 @@ class PutorderController extends BaseController
         $rst['putorder_site'] = $user['site'];
         $rst['order_time'] = $rst['use_time'] + C('ORDER_TIME');
 
+        $overtime = false;
+
+        if (time() > $rst['order_time'] || $rst['status'] == 2){
+            $overtime = true;
+        }
+
         $this->assign('rst',$rst);
+        $this->assign('overtime',$overtime);
 
         $this->display('putorder/order');
     }
