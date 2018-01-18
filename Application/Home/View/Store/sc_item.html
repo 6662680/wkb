@@ -132,7 +132,7 @@ function buy(commodity_id, commodity_type){
                 dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
                 success:function(result){
                     if (result.status) {
-						window.location.href= "{:U('order/dodobuy','','')}/commodity_id/"+commodity_id+"/commodity_type/"+commodity_type;
+                    	window.location.href= "{:U('order/pdOrder','','')}/commodity_id/"+commodity_id+"/commodity_type/"+commodity_type;
                     } else {
                         alert(result.msg);
                     }
@@ -140,7 +140,6 @@ function buy(commodity_id, commodity_type){
             })
 
     }
-
 
 </script>
 </html>
