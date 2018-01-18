@@ -41,6 +41,7 @@ class OrderController extends BaseController
 		if ($order&&$order['creation_time']+C('ORDER_TIME' )< time()) {
 			/*超时*/
 			$rst = D('order')->creationOrder(session('user_id'), $get['commodity_id'], $get['commodity_type']);
+			$order2 = D('order')->where(['user_id' => session('user_id'),'status' =>  1])->order('id desc')->find();
 			$user = D('user')->where(['id' =>  session('user_id')])->find();
 			if ($get['commodity_type']==1) {
 				$rst2 = D('person')->where(['id' =>  $get['commodity_id']])->find();
@@ -58,7 +59,7 @@ class OrderController extends BaseController
 				$typeName='mediche_name';
 				$typePrice='mediche_price';
 			}
-	        	$time=$order['creation_time']+C('ORDER_TIME');
+	        	$time=$order2['creation_time']+C('ORDER_TIME');
 				$commodity_id=$get['commodity_id'];
 				$commodity_type=$get['commodity_type'];
 				
