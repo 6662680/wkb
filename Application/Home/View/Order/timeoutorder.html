@@ -17,7 +17,7 @@
     <div class="page home ">
         <div class="page__hd">
             <h1 class="page__title">
-                购买
+                <span class="red">订单超时</span> 
             </h1>
         </div>
         <div class="page__bd page__bd_spacing ">
@@ -31,20 +31,10 @@
                 </div>
                 <div class="stitle">{$rst2.$typeName}</div>
                 <hr>
-                <h3 class="mt15">请使用绑定钱包</h3>
-                <div class="f12 dark">{$user.site}</div>
-                <div class="red f14 mt15">一次性</div>
-                <h3 class="mt15">向下方买家钱包
-                    <i class="fa fa-qr"></i>
-                </h3>
-                <div class="f12 dark">这里是官方自己的钱包地址</div>
-                <div class="f18 mt15">转账
-                    <span class="red">{$rst2.$typePrice}</span>wkc</div>
-                <div class="dark mt15">请在
-                    <span class="red">{$time|date="Y-m-d H:i:s",###}</span> 之前完成转账</div>
-                <div class="dark">超时订单将自动取消</div>
-                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary mt15">确认已支付</a><br />
-                <a href="{:U('order/unBuy','','')}/commodity_id/{$commodity_id}/commodity_type/{$commodity_type}" class="weui-btn weui-btn_mini weui-btn_warn mt15">取消订单</a>
+               
+                <div class="dark mt15">该订单应在
+                    <span class="red">{$time|date="Y-m-d H:i:s",###}</span> 之前完成支付,</div>
+                <div class="dark">现已超时,系统自动取消。</div>
                 
             </div>
         </div>

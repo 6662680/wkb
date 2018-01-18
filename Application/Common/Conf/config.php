@@ -24,7 +24,7 @@ return array(
 	),
 	'SITE' => '我是官方地址',
 
-	'ORDER_TIME' => 3,
+	'ORDER_TIME' => 10,
 
 	'SERVER_ADDRESS' => 'shouxufeidizhi',
 //    'THINK_EMAIL' => array(
