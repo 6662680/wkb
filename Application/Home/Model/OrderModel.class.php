@@ -7,7 +7,7 @@ class OrderModel extends Model
 
 
     /**
-     * 购买商品
+     * 检测玩客币地址与商品是否存在
      * @author LiYang
      * @date 2018-1-7
      * @return void
@@ -22,31 +22,38 @@ class OrderModel extends Model
         if (!C('COMMODITY_TYPE')[$commodity_type]) {
             returnajax('fasle', '', '参数类型错误');
         }
+		//检查玩客币地址，返回true
+		$rst = M('user')->where(['id' => $user_id])->field('site')->find();
 
+        if (!$rst['site']) {
+            return ['status' => false, 'msg' => '您没有支付注册费,无法购买人物,请到个人中心完成支付!'];
+        }
+		
         $rst = M(C('COMMODITY_TYPE')[$commodity_type])->where(['id' => $commodity_id, 'status' => 0])->find();
 
         if (empty($rst)) {
             returnajax('fasle', '', '不存在的商品');
         }
-			return $this->creationOrder($user_id, $commodity_id, $commodity_type, $rst[C('COMMODITY_TYPE')[$commodity_type].'_price']);
-		
+		returnajax('true');
 
     }
-
+	
 
     //创建订单
-    public function creationOrder($user_id, $commodity_id, $commodity_type, $commodity_price)
+    public function creationOrder($user_id, $commodity_id, $commodity_type)
     {
-        if (empty($user_id) || empty($commodity_id) || empty($commodity_type) || empty($commodity_price)) {
+        if (empty($user_id) || empty($commodity_id) || empty($commodity_type)) {
             return ['status' => false, 'msg' => '缺少参数'];
         }
 
         $rst = M('user')->where(['id' => $user_id])->field('site')->find();
 
         if (!$rst['site']) {
-            return ['status' => false, 'msg' => '您没有设置您的玩客币地址，请先设置地址'];
+            return ['status' => false, 'msg' => '您没有支付注册费,无法购买人物,请到个人中心完成支付!'];
         }
-
+		//创建订单
+		$price= M(C('COMMODITY_TYPE')[$commodity_type])->where(['id' => $commodity_id, 'status' => 0])->find();
+		$commodity_price=$price[C('COMMODITY_TYPE')[$commodity_type].'_price'];
         $add  = [
             'commodity_id' => $commodity_id,
             'commodity_type' => $commodity_type,
@@ -59,7 +66,7 @@ class OrderModel extends Model
         $rst = M('order')->add($add);
 		
         if ($rst) {
-            return ['status' => true,'creation_time'=> $add['creation_time']];
+            return ['status' => true,'msg'=> $add['creation_time']];
         } else {
             return ['status' => false, 'msg' => '创建订单失败，请稍候再购买'];
         }

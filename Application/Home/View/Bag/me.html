@@ -21,7 +21,7 @@
             </h1>
         </div>
         <div class="page__bd page__bd_spacing ">
-            <div class="sd bgw">
+            <div class="sd bgw" style="height: 84px;">
                 <div class="mainflex js_category flex" id="show-actions">
                     <div class="userphoto ">
                         <!-- 头像 -->
@@ -29,30 +29,9 @@
                     </div>
                     <div class="maintext">
                         <div class="usename">{$user.data.mobile}</div>
-                        <div class="usewkc">推广积分 {$user.data.point} wkc </div>
+                        <div class="usewkc" style="margin-top: 10px;">推广积分 {$user.data.point} wkc </div>
                         
-                        <div class="uselink">
-                        	<?php 
-						        if ($user['data']['site']) {
-										echo $user['data']['site'];
-									} elseif(!$user['data']['sitetemp']) {
-										echo '<a href="javascript:;" id="sitetemp">
-									                <div class="sd bgw mt1 p2 text-center">
-									                    <div class="lineb">
-									                        请填写您的wkc地址
-									                    </div>
-									                </div>
-									           </a>';
-								} elseif($user['data']['sitetemp']) {
-										echo  $user['data']['sitetemp'] .'<a href='.U("bag/zhifu").' >
-                    							<div class="sd bgw mt1 p2 text-center">
-									                    <div class="lineb">
-									                        请支付注册费开始挖矿
-									                    </div>
-									            </div>
-                    														</a>';
-								}	?>
-                        </div>
+                        
                     </div>
                     <div class="meicon pull-right">
                         <i class="fa fa-angle-right"></i>
@@ -60,6 +39,34 @@
                     <div class="cleanfix"></div>
                 </div>
             </div>
+            
+            <div class="uselink">
+                        	<?php 
+						        if ($user['data']['site']) {
+										echo  '<div class="sd bgw mt1 p2 text-center">
+									                    <div class="lineb" style="font-size: 12px;text-align: left;">'.
+									                        $user['data']['site'].'
+									                    </div>
+									            </div>'  ;
+									} elseif(!$user['data']['sitetemp']) {
+										echo '<a href="javascript:;" id="sitetemp">
+									                <div class="sd bgw mt1 p2 text-center">
+									                    <div class="lineb"  style="font-size: 12px;text-align: left;color: red;">
+									                        请填写您的wkc地址
+									                    </div>
+									                </div>
+									           </a>';
+								} elseif($user['data']['sitetemp']) {
+										echo  '<a href='.U("bag/zhifu").' >
+                    							<div class="sd bgw mt1 p2 text-left">'.$user['data']['sitetemp'].'
+									                    <div class="lineb"  style="font-size: 12px;text-align: left;padding-left: 80px;color: red;">
+									                        请支付注册费开始挖矿
+									                    </div>
+									            </div>
+                    							</a>';
+								}	?>
+                </div>
+            
             <div class="sd bgw mt15 p20">
                 <div class="stitle">游戏统计</div>
                 <div class="weui-flex">
@@ -76,20 +83,20 @@
                         <div class="sfont">总收益</div>
                     </div>
                     <div class="weui-flex__item text-center">
-                        <div class="lfont">{$user.data.point} </div>
-                        <div class="sfont">推广积分</div>
+                    	<a href="{:U('bag/orderDetail')}" >
+                    		<div class="lfont">{$OrderNum} </div>
+							<div class="sd bgw mt1 p2 text-center"><div class="sfont">交易订单</div></div>
+						</a>
                     </div>
                 </div>
             </div>
             <div class="sd bgw mt15 p20">
                 <div class="stitle">推广链接</div>
                 <div class="weui-flex">
-                    <!-- <div class="weui-flex__item text-center">
-                        
-                    </div> -->
+                   
                     <div class="weui-flex__item text-center" id="copyurl" data-clipboard-text="http://www.wkb.com/home/user/register?upuser={$user.data.id}">
                         <div class="alert alert-success" role="alert">
-                            http://www.wkb.com/
+                            http://www.wkb.com/home/user/register?upuser={$user.data.id}
                         </div>
 
                     </div>
@@ -223,10 +230,6 @@
                   }
               });
             });
-             
-
-            
-            
             
         // 弹出菜单
         $(document).on("click", "#show-actions", function () {
@@ -286,6 +289,28 @@
                 ]
             });
         });
+       /* 查看订单详情*/
+        /*function orderDetail(){
+
+            $.ajax({
+                url:"{:U('order/orderDetail')},
+                type:'GET', //GET
+                async:true,    //或false,是否异步
+                data:{
+
+                },
+                timeout:5000,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                success:function(result){
+                    if (result.status) {
+						window.location.href= "{:U('order/dodobuy','','')}/commodity_id/"+commodity_id+"/commodity_type/"+commodity_type;
+                    } else {
+                        alert(result.msg);
+                    }
+                }
+            })
+
+    }*/
     </script>
 </body>
 

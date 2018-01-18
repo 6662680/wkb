@@ -21,73 +21,28 @@ class OrderController extends BaseController
     {
         $get = I('get.');
 		
-		$order = D('order')->where(['user_id' =>  session('user_id'),'status' =>  1,'commodity_type' =>  $get['commodity_type'],'commodity_id' =>  $get['commodity_id']])->find();
-	
-		if ($order) {
-			
-			returnajax(true, '' ,'10分钟内的相同订单');
-	        
-		}else{
 			$rst = D('order')->buy(session('user_id'), $get['commodity_id'], $get['commodity_type']);
 			if ($rst['status'] == true) {
-	            returnajax(true, '' ,'下单成功');
+	            returnajax(true, '' ,$rst['msg']);
 	        } else {
 	            returnajax(false, '' , $rst['msg']);
 	        }
-		}
 		
         
     }
-	/*下单成功展示函数*/
-	public function dodoBuy()
-    {
-    		$get = I('get.');
-			
-    		$user = D('user')->where(['id' =>  session('user_id')])->find();
-			$order = D('order')->where(['user_id' =>  session('user_id'),'status' =>  1,'commodity_type' =>  $get['commodity_type'],'commodity_id' =>  $get['commodity_id']])->find();
-			$id=$order['id'];
-			$time=$order['creation_time']+C('ORDER_TIME');
-		if ($order && $time < time()) {/*超时显示的页面*/
-				$data    = [
-            		'status'     => 3,
-        		];
-				M('order')->where(['id' => $id])->save($data);
-				
-				if ($get['commodity_type']==1) {
-				$rst2 = D('person')->where(['id' =>  $get['commodity_id']])->find();
-				$typeImg='person_img';
-				$typeName='person_name';
-				$typePrice='person_price';
-			} elseif($get['commodity_type']==2) {
-				$rst2 = D('equipment')->where(['id' =>  $get['commodity_id']])->find();
-				$typeImg='equipment_img';
-				$typeName='equipment_name';
-				$typePrice='equipment_price';
-			}elseif($get['commodity_type']==3) {
-				$rst2 = D('mediche')->where(['id' =>  $get['commodity_id']])->find();
-				$typeImg='mediche_img';
-				$typeName='mediche_name';
-				$typePrice='mediche_price';
-			}
-	        	/*$time=$order['creation_time']+C('ORDER_TIME');*/
-				$commodity_id=$get['commodity_id'];
-				$commodity_type=$get['commodity_type'];
-				
-	        	$this->assign('rst2',$rst2);
-				$this->assign('typeImg',$typeImg);
-				$this->assign('typeName',$typeName);
-				$this->assign('typePrice',$typePrice);
-				$this->assign('time',$time);
-				$this->assign('user',$user);
-				$this->assign('commodity_id',$commodity_id);
-				$this->assign('commodity_type',$commodity_type);
-				
-				/*添加日志*/
-            	D('Log')->addLog('会员' . session('user_id') . '超时未支付,系统自动取消订单', session('user_id'));
-				$this->display('timeoutorder');
-			}
-		elseif($order && $time >= time()) {/*未超时显示的页面*/
-				if ($get['commodity_type']==1) {
+	// 检测是否创建新的订单还是显示之前下的
+	public function pdOrder()
+	{
+		
+		$get = I('get.');
+		$order = D('order')->where(['user_id' => session('user_id'),'status' =>  1])->order('id desc')->find();
+		
+		/*pr($order);die;*/
+		if ($order&&$order['creation_time']+C('ORDER_TIME' )< time()) {
+			/*超时*/
+			$rst = D('order')->creationOrder(session('user_id'), $get['commodity_id'], $get['commodity_type']);
+			$user = D('user')->where(['id' =>  session('user_id')])->find();
+			if ($get['commodity_type']==1) {
 				$rst2 = D('person')->where(['id' =>  $get['commodity_id']])->find();
 				$typeImg='person_img';
 				$typeName='person_name';
@@ -116,15 +71,85 @@ class OrderController extends BaseController
 				$this->assign('commodity_id',$commodity_id);
 				$this->assign('commodity_type',$commodity_type);
 				
-	        	$this->display('order');
+				
+				$this->display('order');
+			
+		} elseif($order&&$order['creation_time']+C('ORDER_TIME' )>= time()) {
+			/*未超时*/
+			$user = D('user')->where(['id' =>  session('user_id')])->find();
+			if ($get['commodity_type']==1) {
+				$rst2 = D('person')->where(['id' =>  $get['commodity_id']])->find();
+				$typeImg='person_img';
+				$typeName='person_name';
+				$typePrice='person_price';
+			} elseif($get['commodity_type']==2) {
+				$rst2 = D('equipment')->where(['id' =>  $get['commodity_id']])->find();
+				$typeImg='equipment_img';
+				$typeName='equipment_name';
+				$typePrice='equipment_price';
+			}elseif($get['commodity_type']==3) {
+				$rst2 = D('mediche')->where(['id' =>  $get['commodity_id']])->find();
+				$typeImg='mediche_img';
+				$typeName='mediche_name';
+				$typePrice='mediche_price';
 			}
-		else{/*超时显示的页面刷新后的显示*/
-			$this->redirect(U('store/person','',''));
+	        	$time=$order['creation_time']+C('ORDER_TIME');
+				$commodity_id=$get['commodity_id'];
+				$commodity_type=$get['commodity_type'];
+				
+	        	$this->assign('rst2',$rst2);
+				$this->assign('typeImg',$typeImg);
+				$this->assign('typeName',$typeName);
+				$this->assign('typePrice',$typePrice);
+				$this->assign('time',$time);
+				$this->assign('user',$user);
+				$this->assign('commodity_id',$commodity_id);
+				$this->assign('commodity_type',$commodity_type);
+				
+				$this->display('order');
+			
+
+		}else {
+			$rst = D('order')->creationOrder(session('user_id'), $get['commodity_id'], $get['commodity_type']);
+			$user = D('user')->where(['id' =>  session('user_id')])->find();
+			$order = D('order')->where(['user_id' => session('user_id'),'status' =>  1])->order('id desc')->find();
+			if ($get['commodity_type']==1) {
+				$rst2 = D('person')->where(['id' =>  $get['commodity_id']])->find();
+				$typeImg='person_img';
+				$typeName='person_name';
+				$typePrice='person_price';
+			} elseif($get['commodity_type']==2) {
+				$rst2 = D('equipment')->where(['id' =>  $get['commodity_id']])->find();
+				$typeImg='equipment_img';
+				$typeName='equipment_name';
+				$typePrice='equipment_price';
+			}elseif($get['commodity_type']==3) {
+				$rst2 = D('mediche')->where(['id' =>  $get['commodity_id']])->find();
+				$typeImg='mediche_img';
+				$typeName='mediche_name';
+				$typePrice='mediche_price';
+			}
+	        	$time=$order['creation_time']+C('ORDER_TIME');
+				$commodity_id=$get['commodity_id'];
+				$commodity_type=$get['commodity_type'];
+				
+	        	$this->assign('rst2',$rst2);
+				$this->assign('typeImg',$typeImg);
+				$this->assign('typeName',$typeName);
+				$this->assign('typePrice',$typePrice);
+				$this->assign('time',$time);
+				$this->assign('user',$user);
+				$this->assign('commodity_id',$commodity_id);
+				$this->assign('commodity_type',$commodity_type);
+				
+				$this->display('order');
+			
+			
 		}
-			
-			
-    	
-    }
+		
+	}
+	
+	
 	
     /**
      * 购买商品，异步更新

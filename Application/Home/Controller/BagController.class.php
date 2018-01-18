@@ -75,14 +75,121 @@ class BagController extends BaseController
 		foreach ($person as $key => $value) {
 			$sumEarnings+=$value['yesterday_capacity'];
 		}
+		/*获取会员的订单数据*/
+		$buyOrderList=D('user')->getBuyOrder();
+		$buyOrderNum=count($buyOrderList['data']);
+		$sellOrderList=D('user')->getSellOrder();
+		$sellOrderNum=count($sellOrderList['data']);
+		$OrderNum=$buyOrderNum+$sellOrderNum;
+		/*pr($OrderNum);die;*/
 		
 		$this->assign('user',$user);
         $this->assign('person',$person);
         $this->assign('personNum',$personNum);
         $this->assign('sumEarnings',$sumEarnings);
+        $this->assign('OrderNum',$OrderNum);
 		
         $this->display('me');
     }
+	/*获取会员的订单数据*/
+	public function orderDetail()
+    {
+		$buyOrder=D('user')->getBuyOrder();
+		$sellOrder=D('user')->getSellOrder();
+		$buyOrderList=$buyOrder['data'];
+		$sellOrderList=$sellOrder['data'];
+		foreach ($buyOrderList as $key => $value) {
+			if ($value['commodity_type']==1) {
+				
+				if ($value['commodity_id']==1) {
+					
+					$nperson = M('person')->where("id = 1 ")->find();
+					
+					$buyOrderList[$key]['commodity_id']=$nperson['person_img'];
+					/*pr($value['commodity_id']);die;*/
+				} elseif($value['commodity_id']==2) {
+					$nperson = M('person')->where("id = 2 ")->find();
+					$buyOrderList[$key]['commodity_id']=$nperson['person_img'];
+				} elseif($value['commodity_id']==3) {
+					$nperson = M('person')->where("id = 3 ")->find();
+					$buyOrderList[$key]['commodity_id']=$nperson['person_img'];
+				} elseif($value['commodity_id']==4) {
+					$nperson = M('person')->where("id = 4 ")->find();
+					$buyOrderList[$key]['commodity_id']=$nperson['person_img'];
+				}
+				
+			} elseif($value['commodity_type']==2) {
+				if ($value['commodity_id']==1) {
+					$nequipment = M('equipment')->where("id = 1 ")->find();
+					$buyOrderList[$key]['commodity_id']=$nequipment['equipment_img'];
+				} elseif($value['commodity_id']==2) {
+					$nequipment = M('equipment')->where("id = 1 ")->find();
+					$buyOrderList[$key]['commodity_id']=$nequipment['equipment_img'];
+				} elseif($value['commodity_id']==3) {
+					$nequipment = M('equipment')->where("id = 1 ")->find();
+					$buyOrderList[$key]['commodity_id']=$nequipment['equipment_img'];
+				} elseif($value['commodity_id']==4) {
+					$nequipment = M('equipment')->where("id = 1 ")->find();
+					$buyOrderList[$key]['commodity_id']=$nequipment['equipment_img'];
+				}
+			}
+			
+		}
+		
+		$this->assign('buyOrderList',$buyOrderList);
+		$this->assign('sellOrderList',$sellOrderList);
+		/*pr($nperson['person_img']);die;*/
+        $this->display('want');
+    }
+	/*获取会员的出售订单数据*/
+	public function sellorderDetail()
+    {
+		$sellOrder=D('user')->getSellOrder();
+		$sellOrderList=$sellOrder['data'];
+		foreach ($sellOrderList as $key => $value) {
+			if ($value['commodity_type']==1) {
+				
+				if ($value['commodity_id']==1) {
+					
+					$nperson = M('person')->where("id = 1 ")->find();
+					
+					$sellOrderList[$key]['commodity_id']=$nperson['person_img'];
+					/*pr($value['commodity_id']);die;*/
+				} elseif($value['commodity_id']==2) {
+					$nperson = M('person')->where("id = 2 ")->find();
+					$sellOrderList[$key]['commodity_id']=$nperson['person_img'];
+				} elseif($value['commodity_id']==3) {
+					$nperson = M('person')->where("id = 3 ")->find();
+					$sellOrderList[$key]['commodity_id']=$nperson['person_img'];
+				} elseif($value['commodity_id']==4) {
+					$nperson = M('person')->where("id = 4 ")->find();
+					$sellOrderList[$key]['commodity_id']=$nperson['person_img'];
+				}
+				
+			} elseif($value['commodity_type']==2) {
+				if ($value['commodity_id']==1) {
+					$nequipment = M('equipment')->where("id = 1 ")->find();
+					$sellOrderList[$key]['commodity_id']=$nequipment['equipment_img'];
+				} elseif($value['commodity_id']==2) {
+					$nequipment = M('equipment')->where("id = 1 ")->find();
+					$sellOrderList[$key]['commodity_id']=$nequipment['equipment_img'];
+				} elseif($value['commodity_id']==3) {
+					$nequipment = M('equipment')->where("id = 1 ")->find();
+					$sellOrderList[$key]['commodity_id']=$nequipment['equipment_img'];
+				} elseif($value['commodity_id']==4) {
+					$nequipment = M('equipment')->where("id = 1 ")->find();
+					$sellOrderList[$key]['commodity_id']=$nequipment['equipment_img'];
+				}
+			}
+			
+		}
+		
+		$this->assign('sellOrderList',$sellOrderList);
+		/*pr($nperson['person_img']);die;*/
+        $this->display('sellout');
+    }
+	
+	
 	/*支付注册费*/
 	public function zhifu()
     {

@@ -226,7 +226,7 @@ class UserController extends Controller
             /*添加日志*/
             D('Log')->addLog('会员' . $user_id . '成功填写临时玩客币地址', $user_id);
 			
-            returnajax(TRUE, '', '玩客币临时地址填写成功!');
+            returnajax(TRUE, '', '玩客币地址填写成功!');
         }
     }
 
