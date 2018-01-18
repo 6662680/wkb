@@ -35,7 +35,7 @@ class BagController extends BaseController
     public function personDetails()
     {
         $id = I('get.id');
-
+        $m = I('get.m');
         if (!$id) {
            $this->error();
         }
@@ -47,18 +47,20 @@ class BagController extends BaseController
         }
 
         if ($person['equipment_id'] != 0) {
-           $person['equipment_info'] =D('equipment')->getBagEquipment($person['equipment_id']);
+           $person['equipment_info'] = D('equipment')->getBagEquipment($person['equipment_id']);
         }
 
         if ($person['equipment_id_card'] != 0) {
-            $person['equipment_card_info'] =D('equipment')->getBagEquipment($person['equipment_id_card']);
+            $person['equipment_card_info'] = D('equipment')->getBagEquipment($person['equipment_id_card']);
         }
 
-        $equipment_all = D('equipment')->getBagEquipment();
-        $mediche_all = D('mediche')->getBagMediche();
-        $log = D('log')->findLog(session('user_id'), $id, 2);
+        $equipment_all = D('equipment')->getBagEquipment(false, true);
 
+        $mediche_all = D('mediche')->getBagMediche(FALSE, true);
+        $log = D('log')->findLog(session('user_id'), $id, 2, 10);
+//        pr($mediche_all);die();
         $this->assign('person',$person);
+        $this->assign('m',$m);
         $this->assign('equipment_all',$equipment_all);
         $this->assign('mediche_all',$mediche_all);
         $this->assign('log',$log);
@@ -252,7 +254,7 @@ class BagController extends BaseController
     public function switchover()
     {
         $post = I('post.');
-        $equipment = D('equipment')->switchover($post['person_bage_id'], $post['equipment_bag_id']);
+        $equipment = D('equipment')->switchover($post['person_bage_id'], $post['equipment_bag_id'], $post['type']);
 
         if ($equipment['status'] == true) {
             returnajax(true);

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/main.css">
+    <link rel="stylesheet" href="../../../../Public/css/main.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
                 <a href="equipment">装备</a>
             </div>
             <div class="navbar__item ">
-                <!--<a href="mediche">食物</a>-->
+                <a href="mediche">食物</a>
             </div>
                 <div class="navbar__item pull-right">
                     <a href="">
@@ -36,13 +36,12 @@
             </div>
         </div>
         <div class="page__bd page__bd_spacing ">
-            <ul >
+            <ul class="sd">
         <volist name="person" id="vo">
 
 
-           
-                <li class="mb10 sd pzr">
-                     <a href="personDetails/id/{$vo.id}">
+            <a href="personDetails/id/{$vo.id}">
+                <li class="mb10">
                     <div class="mainflex js_category bgw">
 
                         <div class="mainphoto c1">
@@ -66,15 +65,10 @@
                         </div>
 
                         <div class="cleanfix"></div>
-
                     </div>
-                    </a>
-
 
                 </li>
-            
-             
-
+            </a>
         </volist>
     </ul>
     </div>

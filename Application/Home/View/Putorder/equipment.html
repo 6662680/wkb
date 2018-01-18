@@ -17,7 +17,7 @@
     <div class="page home ">
         <div class="page__hd">
             <h1 class="page__title">
-                商城
+                交易
             </h1>
             <div class="navbar sd">
 
@@ -76,9 +76,15 @@
 
                         <div class="cleanfix"></div>
                     </div>
-                    <div class="pbottom ">
-                        <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_warn ">购买</a>
-                    </div>
+                    <if condition="$type eq '1'">
+                        <div class="pbottom ">
+                            <button  onclick="tijiao({$vo.order_id},1)" class="weui-btn weui-btn_mini weui-btn_warn ">卖给他</button>
+                        </div>
+                        <else />
+                        <div class="pbottom ">
+                            <button  onclick="tijiao({$vo.order_id},0)" class="weui-btn weui-btn_mini weui-btn_warn ">购买</button>
+                        </div>
+                    </if>
                 </li>
 
             </ul>

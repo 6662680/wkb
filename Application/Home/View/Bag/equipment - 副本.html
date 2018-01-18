@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/main.css">
+    <link rel="stylesheet" href="../../../../Public/css/main.css">
 </head>
 
 <body>
@@ -20,14 +20,14 @@
                 背包
             </h1>
             <div class="navbar sd">
-            <div class="navbar__item weui_bar__item_on">
+            <div class="navbar__item ">
                 <a href="person">人物</a>
             </div>
-            <div class="navbar__item ">
+            <div class="navbar__item weui_bar__item_on">
                 <a href="equipment">装备</a>
             </div>
             <div class="navbar__item ">
-                <!--<a href="mediche">食物</a>-->
+                <a href="mediche">食物</a>
             </div>
                 <div class="navbar__item pull-right">
                     <a href="">
@@ -36,31 +36,32 @@
             </div>
         </div>
         <div class="page__bd page__bd_spacing ">
-            <ul >
-        <volist name="person" id="vo">
-
-
-           
-                <li class="mb10 sd pzr">
-                     <a href="personDetails/id/{$vo.id}">
+        <ul class="sd">
+        <volist name="equipment" id="vo">
+            <a href="personDetails/id/{$vo.id}">
+                <li class="mb10">
                     <div class="mainflex js_category bgw">
 
                         <div class="mainphoto c1">
                             <!-- 头像 -->
-                            <img src={$vo.person_img} alt="">
+                            <img src={$vo.equipment_img} alt="">
                         </div>
                         <div class="maintext">
                             <ul>
-                                <li>{$vo.person_name}
+                                <li>{$vo.equipment_name}
                                 </li>
-                                <li class="dark">等级:
-                                    <span>{$vo.level}</span>
-                                </li>
-                                <li class="dark">挖矿能力:
-                                    <span>{$vo.capacity}</span>
-                                </li>
-                                <li class="dark">昨日产量:
-                                    <span>{$vo.yesterday_capacity}</span>
+                                <if condition="$vo.equipment_protect eq '1'">
+                                    <li class="dark">防坍塌
+                                    </li>
+                                    <else />
+
+                                    <li class="dark">耐久:
+                                        <span>{$vo.equipment_endurance}</span>
+                                    </li>
+                                </if>
+
+                                <li class="dark">挖矿倍数:
+                                    <span>{$vo.equipment_multiple}</span>
                                 </li>
                             </ul>
                         </div>
@@ -68,19 +69,18 @@
                         <div class="cleanfix"></div>
 
                     </div>
-                    </a>
-
 
                 </li>
-            
-             
+            </a>
 
         </volist>
-    </ul>
+        </ul>
     </div>
-     <div class="footheight"></div>
+     <div class="footheight">
+         <button  onclick="buy({$vo.id},{$vo.commodity_type})"  class="weui-btn weui-btn_mini weui-btn_warn ">购买</button>
+     </div>
         <div class="weui-tabbar">
-            <a href="{:U('bag/person')}" class="weui-tabbar__item weui-bar__item--on">
+            <a href="{:U('store/person')}" class="weui-tabbar__item weui-bar__item--on">
                 <div class="weui-tabbar__icon">
                     <i class="fa fa-gamepad"></i>
                 </div>

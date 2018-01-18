@@ -23,7 +23,7 @@ class LogModel extends Model
         M('user_log')->add(['user_id' => $user_id, 'time' => time(), 'msg' => $msg, 'commodity_type' => $commodity_type, 'commodity_id' => $commodity_id]);
     }
 
-    public function findLog($id, $commodity_id =NULL, $commodity_type=NULL)
+    public function findLog($id, $commodity_id =NULL, $commodity_type=NULL, $page = NULL)
     {
         $model = M('user_log');
 
@@ -31,6 +31,10 @@ class LogModel extends Model
             $model->where(['user_id' => $id, 'commodity_id' => $commodity_id, 'commodity_type' => $commodity_type]);
         } else {
             $model->where(['user_id' => $id]);
+        }
+
+        if ($page) {
+            $model->limit(10);
         }
 
         return $model->select();

@@ -141,7 +141,7 @@ class PutorderModel extends Model
                 ->join('left join `equipment` on equipment_bag.equipment_id = equipment.id')
                 ->find();
             $commodity_name = $commodity['equipment_name'];
-
+            unset($commodity['equipment_id']);
             if ($commodity['equipment_id']) {
                 $saveRst = M('equipment_bag')->where(['id' => $commodity['equipment_id'], 'order_use' => 0])->limit(1)->save(['order_use' => 1]);
                 if ($saveRst != 1) {
@@ -150,6 +150,7 @@ class PutorderModel extends Model
                 }
             }
         }
+
 
 
         $add  = [
@@ -164,7 +165,7 @@ class PutorderModel extends Model
           'equipment_id' => $commodity['equipment_id'] ? $commodity['equipment_id'] : 0,
           'equipment_id_card' => $commodity['equipment_id_card'] ? $commodity['equipment_id_card'] : 0,
           'equipment_name' => $equipment_name['equipment_name'] ? $equipment_name['equipment_name'] : 0,
-          'equipment_card_name' => $equipment_card_name['equipment_name'] ? $equipment_name['equipment_name'] : 0,
+          'equipment_card_name' => $equipment_card_name['equipment_name'] ? $equipment_card_name['equipment_name'] : 0,
         ];
 
         $rst = M('user_sell_order')->add($add);
@@ -191,7 +192,7 @@ class PutorderModel extends Model
         $time = array('GT', $time);
         //creation_time这里有问题，之后测试再调整
         $model = M('user_sell_order');
-        $rst = $model->where(['user_id' => $user_sell_order_id, 'use_time' => $time])->find();
+        $rst = $model->where(['receiving_user_id' => $receiving_user_id, 'use_time' => $time])->find();
 
         if ($rst) {
             return ['status' => false, 'msg' => '您有已锁定的订单，请先完成之前的交易'];

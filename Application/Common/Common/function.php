@@ -589,9 +589,13 @@ function getIp() {
 }
 
 function getwkb($site, $page) {
+    xunlei($site,$page);
+}
+
+function xunlei($site, $page) {
     $url = "https://walletapi.onethingpcs.com/getTransactionRecords";
     $post_data =  '["'.$site.'","0","0","'.$page.'","10"]';
-    echo $post_data;
+
     $ch = curl_init();
     $this_header = array("content-type: application/x-www-form-urlencoded; charset=UTF-8");//访问链接时要发送的头信息
     $this_header[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:52.0) Gecko/20100101 Firefox/52.0';
@@ -612,7 +616,6 @@ function getwkb($site, $page) {
     //打印获得的数据
     print_r($output);
 }
-
 //创建TOKEN
 function creatToken() {
     $code = chr(mt_rand(0xB0, 0xF7)) . chr(mt_rand(0xA1, 0xFE)) . chr(mt_rand(0xB0, 0xF7)) . chr(mt_rand(0xA1, 0xFE)) . chr(mt_rand(0xB0, 0xF7)) . chr(mt_rand(0xA1, 0xFE));
