@@ -387,7 +387,7 @@ class PutorderModel extends Model
         $add['user_id'] = $user_id;
         $add['commodity_price'] = $data['commodity_price'];
         $add['residue'] = $data['residue'];
-        $add['site'] = 0;
+        $add['site'] = 0;//这里应该也要加上$rst['site']
 		$add['capacity'] = $data['capacity'];//zh加的，之前购买道具时，效率写不进数据库
 
         $rst = M('user_buy_order')->add($add);

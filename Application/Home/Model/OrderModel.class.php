@@ -73,24 +73,24 @@ class OrderModel extends Model
     }
 
     // 完成购买
-    public function accomplishBuy($commodity_price, $site)
+    public function accomplishBuy($order_id)
     {
-        if ( empty($site) || empty($commodity_price)) {
+        if ( empty($order)) {
             return ['status' => false, 'msg' => '缺少参数'];
         }
 
-        $orderRst = M('order')->where(['site' => $site])->find();
+        $orderRst = M('order')->where(['id' => $order_id])->find();
 
         if (!$orderRst['user_id']) {
             return ['status' => false, 'msg' => '付款成功，购买失败原因：找不到此玩客币地址'];
         }
-
+		
         $rst = M(C('COMMODITY_TYPE')[$orderRst['commodity_type']])->where(['id' => $orderRst['commodity_id']])->find();
 
         if (!$rst) {
             return ['status' => false, 'msg' => '不存在的商品'];
         }
-
+		pr($orderRst);die();
         $trans = new Model();
         $trans->startTrans();
 
@@ -113,6 +113,7 @@ class OrderModel extends Model
         }
 
         if ($orderRst['commodity_type'] == 2) {
+        	
             $model = M('equipment_bag');
             $model->user_id = $orderRst['user_id'];
             $model->equipment_id = $orderRst['commodity_id'];
