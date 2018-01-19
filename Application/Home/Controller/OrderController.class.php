@@ -36,7 +36,7 @@ class OrderController extends BaseController
 		
 		$get = I('get.');
 		$order = D('order')->where(['user_id' => session('user_id'),'status' =>  1,'commodity_id' =>  $get['commodity_id'],'commodity_type' =>  $get['commodity_type']])->order('id desc')->find();
-		
+		$order_id = $order['id'];
 		/*pr($order);die;*/
 		if ($order&&$order['creation_time']+C('ORDER_TIME' )< time()) {
 			/*超时*/
@@ -62,7 +62,7 @@ class OrderController extends BaseController
 	        	$time=$order2['creation_time']+C('ORDER_TIME');
 				$commodity_id=$get['commodity_id'];
 				$commodity_type=$get['commodity_type'];
-				
+				$this->assign('order_id',$order2['id']);
 	        	$this->assign('rst2',$rst2);
 				$this->assign('typeImg',$typeImg);
 				$this->assign('typeName',$typeName);
@@ -97,7 +97,8 @@ class OrderController extends BaseController
 	        	$time=$order['creation_time']+C('ORDER_TIME');
 				$commodity_id=$get['commodity_id'];
 				$commodity_type=$get['commodity_type'];
-				
+			
+				$this->assign('order_id',$order_id);
 	        	$this->assign('rst2',$rst2);
 				$this->assign('typeImg',$typeImg);
 				$this->assign('typeName',$typeName);
@@ -133,7 +134,7 @@ class OrderController extends BaseController
 	        	$time=$order['creation_time']+C('ORDER_TIME');
 				$commodity_id=$get['commodity_id'];
 				$commodity_type=$get['commodity_type'];
-				
+				$this->assign('order_id',$order['id']);
 	        	$this->assign('rst2',$rst2);
 				$this->assign('typeImg',$typeImg);
 				$this->assign('typeName',$typeName);
@@ -162,7 +163,7 @@ class OrderController extends BaseController
     {
 		$get = I('get.');
 		
-        $rst = D('order')->accomplishBuy($get['commodity_price'], $get['site']);
+        $rst = D('order')->accomplishBuy($get['order_id']);
        
         if ($rst['status']) {
             returnajax(true, '','购买成功');
@@ -182,7 +183,7 @@ class OrderController extends BaseController
     {
     	$get = I('get.');
 
-        $rst = D('order')->unBuy(session('user_id'), $get['commodity_id'], $get['commodity_type']);
+        $rst = D('order')->unBuy($get['order_id']);
         if ($rst) {
 			$this->redirect(U('store/person','',''));
             /*returnajax(true, '','取消订单成功');*/

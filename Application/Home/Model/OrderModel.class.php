@@ -75,7 +75,7 @@ class OrderModel extends Model
     // 完成购买
     public function accomplishBuy($order_id)
     {
-        if ( empty($order)) {
+        if ( empty($order_id)) {
             return ['status' => false, 'msg' => '缺少参数'];
         }
 
@@ -90,7 +90,7 @@ class OrderModel extends Model
         if (!$rst) {
             return ['status' => false, 'msg' => '不存在的商品'];
         }
-		pr($orderRst);die();
+		
         $trans = new Model();
         $trans->startTrans();
 
@@ -185,10 +185,10 @@ class OrderModel extends Model
      * @date 2018-1-16
      * @return void
      */
-    public function unBuy($user_id, $commodity_id, $commodity_type)
+    public function unBuy($order_id)
     {
         
-		$order = D('order')->where(['user_id' =>  $user_id,'status' =>  1,'commodity_type' =>  $commodity_type,'commodity_id' =>  $commodity_id])->find();
+		$order = D('order')->where(['id' =>  $order_id])->find();
 		if ($order) {
 			$id=$order['id'];
 			$data    = [

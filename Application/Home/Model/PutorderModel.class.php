@@ -471,11 +471,11 @@ class PutorderModel extends Model
     public function buyAccomplish($receiving_user_id, $user_buy_order_id)
     {
         $order = M('user_buy_order')->where(['id' => $user_buy_order_id])->find();
-
+		
         if (!$order) {
             return ['status' => false, 'msg' => '不存在的订单'];
         }
-
+		
         $buymsg = '购买道具:'. $order['commodity_name'];
         $selllog = '卖出道具:'. $order['commodity_name'];
 
@@ -486,6 +486,8 @@ class PutorderModel extends Model
                 'user_id' => $receiving_user_id,
             ];
             $save = M('person_bag')->where($map)->limit(1)->save(['user_id' => $receiving_user_id]);
+			
+			
         }
 
         if ($order['commodity_type'] == 2) {
