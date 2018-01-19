@@ -426,7 +426,7 @@ class PutorderModel extends Model
 
         if ($order['commodity_type'] == 1) {
             $map = [
-                'level' => ['GT', $order['person_level']],
+                'level' => ['EGT', $order['person_level']],
                 'person_id' => $order['commodity_id'],
                 'blood' => ['EGT', $order['residue']],
                 'user_id' => $receiving_user_id,

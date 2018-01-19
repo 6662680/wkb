@@ -229,5 +229,17 @@ class UserController extends Controller
             returnajax(TRUE, '', '玩客币地址填写成功!');
         }
     }
+    /*修改为正式地址*/
+    public function site()
+    {
+        $user = M('user')->where(['id' => session('user_id')])->find();
+        $rst = M('user')->where(['id' => session('user_id')])->save(['site' => $user['sitetemp']]);
+
+        if ($rst === false) {
+            returnajax(falsa, '', '验证失败，请联系客服');
+        } else {
+            returnajax(true);
+        }
+    }
 
 }
