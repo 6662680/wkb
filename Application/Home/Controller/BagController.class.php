@@ -202,7 +202,7 @@ class BagController extends BaseController
 			} elseif($value['commodity_type']==2) {
                 $nequipment = M('equipment')->where(['id' => $value['commodity_id']])->find();
                 $equipment = M('equipment_bag')->where(['id' => $nequipment['person_id']])->find();
-                $sellOrderList[$key]['commodity_img']=$equipment['equipment_img'];
+                $sellOrderList[$key]['commodity_img']=$nequipment['equipment_img'];
 			}
 		}
 

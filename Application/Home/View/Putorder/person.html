@@ -265,14 +265,18 @@
 						     <select class="weui-select" id="select1">
                                 <option selected="" value="1">人物</option>
                                 <option value="2">装备</option>
-                            </select>
-                               <select class="weui-select" id="select2" style="font-size: 16px;">
-                               	<foreach name="personarr" item="k">
-                               		<option value={$k.id}>{$k.person_name}</option>
-                               	</foreach>
-                            </select>
+                             </select>   
                         </div>
                     </div>
+                    <div class="weui-cell weui-cell_select">
+                        <div class="weui-cell__bd">
+                              <select class="weui-select" id="select2" style="font-size: 16px;">
+                                <foreach name="personarr" item="k">
+                                    <option value={$k.id}>{$k.person_name}</option>
+                                </foreach>
+                            </select>
+                        </div>
+                    </div>         
                     <div class="weui-cell">
                         <div class="weui-cell__hd">
                             <label class="weui-label">售价：</label>
@@ -385,6 +389,7 @@ function tijiao(order_id, type){
 <script>
 	$('#select1').change(function(){
 		var $id = $(this).val();
+        $("#wakuang").css("display","flex")
 		
 		 $.ajax({
             url:"{:U('putorder/getCommodity')}",
@@ -418,6 +423,14 @@ function tijiao(order_id, type){
             }
         })
 	})
+    $('#select2').change(function(){
+        var chane = $("#select2 option:selected").text()  
+        if (chane == " 安全帽"){
+            $("#wakuang").css("display","none")
+        } else{
+            $("#wakuang").css("display","flex")
+        }
+    })
 </script>
 <script>
 	

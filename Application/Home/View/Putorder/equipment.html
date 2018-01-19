@@ -252,7 +252,7 @@
                             <input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该等级" name="person_level" id="person_level" value="">
                         </div>
                     </div>
-                    <div class="weui-cell">
+                    <div class="weui-cell" id="wakuang">
                         <div class="weui-cell__hd">
                             <label class="weui-label">挖矿能力：</label>
                         </div>
@@ -277,6 +277,7 @@
 <script>
 	$('#select1').change(function(){
 		var $id = $(this).val();
+        $("#wakuang").css("display","flex")
 		
 		 $.ajax({
             url:"{:U('putorder/getCommodity')}",
@@ -300,6 +301,8 @@
             	} else {
             		$.each(result,function(i,n)
 				{
+					
+            			$("#wakuang").show();
             		$("#blood").text("耐久度");
             		$("#level").hide();
 					$("#select2").append("<option value="+n.id +"> "+ n.equipment_name + "</option>");
@@ -308,6 +311,14 @@
             }
         })
 	})
+    $('#select2').change(function(){
+        var chane = $("#select2 option:selected").text()  
+        if (chane == " 安全帽"){
+            $("#wakuang").css("display","none")
+        } else{
+            $("#wakuang").css("display","flex")
+        }
+    })
 </script>
 <script>
 	
@@ -323,7 +334,7 @@
 						commodity_price:$("#commodity_price").val(),
 						residue:$("#residue").val(),
 						person_level:$("#person_level").val(),
-						capacity:$("#capacity").val()
+						capacity:$("#capacity").val(),
                 },
                 timeout:5000,    //超时时间
                 dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text

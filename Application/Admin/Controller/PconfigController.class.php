@@ -89,7 +89,7 @@ class PconfigController extends PrivilegeController
 		
     	$configarr[$level] = $nvalue;
 		
-		$nconfigarr = json_encode($configarr, true);
+		$nconfigarr = json_encode($configarr);
 		$data = [
     		'value' => $nconfigarr,
     	];
