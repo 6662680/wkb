@@ -80,7 +80,7 @@ class OrderModel extends Model
         }
 
         $orderRst = M('order')->where(['id' => $order_id])->find();
-
+        $user = M('user')->where(['id' => session('user_id')])->find();
         if (!$orderRst['user_id']) {
             return ['status' => false, 'msg' => '付款成功，购买失败原因：找不到此玩客币地址'];
         }
@@ -90,7 +90,7 @@ class OrderModel extends Model
         if (!$rst) {
             return ['status' => false, 'msg' => '不存在的商品'];
         }
-		pr($orderRst);die();
+
         $trans = new Model();
         $trans->startTrans();
 
@@ -160,7 +160,7 @@ class OrderModel extends Model
             'user_id' => $orderRst['user_id'],
             'commodity_price' => $commodity_price,
             'status' => 1,
-            'site' => $site,
+            'site' => $user['site'],
             'creation_time' => $time]
         ;
 
