@@ -214,37 +214,56 @@
                     <h4 class="modal-title">发布求购</h4>
                 </div>
 
-
                 <div class="weui-cells weui-cells_form">
-                    <div class="weui-cell">
-                        <div class="weui-cell__hd">
-                            <label class="weui-label">售价</label>
-                        </div>
+                	<div class="weui-cell weui-cell_select">
                         <div class="weui-cell__bd">
-                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入售价">
-                        </div>
-                    </div>
-                    <div class="weui-cell">
-                        <div class="weui-cell__hd">
-                            <label class="weui-label">等级</label>
-                        </div>
-                        <div class="weui-cell__bd">
-                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该等级">
-                        </div>
-                    </div>
-                    <div class="weui-cell weui-cell_select">
-                        <div class="weui-cell__bd">
-                            <select class="weui-select" name="select1">
-                                <option selected="" value="1">微信号</option>
-                                <option value="2">QQ号</option>
-                                <option value="3">Email</option>
+						     <select class="weui-select" id="select1">
+                                <option selected="" value="1">人物</option>
+                                <option value="2">装备</option>
                             </select>
+                               <select class="weui-select" id="select2" style="font-size: 16px;">
+                               	<foreach name="personarr" item="k">
+                               		<option value={$k.id}>{$k.person_name}</option>
+                               	</foreach>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">售价：</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入售价" name="commodity_price" id="commodity_price" value="">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label" id="blood">血量：</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该值" name="residue" id="residue" value="">
+                        </div>
+                    </div>
+                    <div class="weui-cell" id="level">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">等级：</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该等级" name="person_level" id="person_level" value="">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">挖矿能力：</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该值" name="capacity" id="capacity" value="">
                         </div>
                     </div>
                 </div>
             </div>
             <div class=" m20  ">
-                <a href="javascript:;" class="weui-btn weui-btn_primary">发布</a>
+                <button  onclick="buyCreationOrder()"  class="weui-btn weui-btn_primary ">发布</button>
             </div>
         </div>
     </div>
@@ -256,7 +275,68 @@
     <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
 </body>
 <script>
+	$('#select1').change(function(){
+		var $id = $(this).val();
+		
+		 $.ajax({
+            url:"{:U('putorder/getCommodity')}",
+            type:'POST', //GET
+            async:true,    //或false,是否异步
+            data:{
+                id:$id,
+            },
+            timeout:5000,    //超时时间
+            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            success:function(result){
+            	$("#select2").empty()
+            	if ($id == 1) {
+        		$.each(result,function(i,n)
+					{
+				var str = "<option value="+n.id +">"  + n.person_name + '</option>';
+						$("#blood").text("血量");
+						$("#level").show();
+						$("#select2").append(str);
+					});
+            	} else {
+            		$.each(result,function(i,n)
+				{
+            		$("#blood").text("耐久度");
+            		$("#level").hide();
+					$("#select2").append("<option value="+n.id +"> "+ n.equipment_name + "</option>");
+				});
+            	}
+            }
+        })
+	})
+</script>
+<script>
+	
+	function buyCreationOrder(){
+			
+            $.ajax({
+                url:"{:U('putorder/buyCreationOrder','','')}",
+                type:'POST', //GET
+                async:true,    //或false,是否异步
+                data:{
+						commodity_id:$("#select2").val(),
+						commodity_type:$("#select1").val(),
+						commodity_price:$("#commodity_price").val(),
+						residue:$("#residue").val(),
+						person_level:$("#person_level").val(),
+						capacity:$("#capacity").val()
+                },
+                timeout:5000,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                success:function(result){
+                    if (result.status) {
+                    	alert(result.msg);
+                    	window.location.href= "{:U('bag/userMe','','')}";
+                    } else {
+                        alert(result.msg);
+                    }
+                }
+            })
 
-
+    }
 </script>
 </html>

@@ -21,7 +21,7 @@ class BagController extends BaseController
     {
         $person = D('person')->getBagPerson();
         $this->assign('person',$person);
-		
+		/*pr($person);die;*/
         $this->display('index');
     }
 

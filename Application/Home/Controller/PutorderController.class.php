@@ -21,11 +21,16 @@ class PutorderController extends BaseController
 
         $this->assign('rst',$rst);
 
-
+		$personList=M('Person')->where('status=0')->select();
+		
+		$this->assign('personarr',$personList);
         if ($type == 1) {
             if ($commodity_type == 1) {
 //                echo '买 人物';
                 $this->assign('type',1);
+				
+             
+				
                 $this->display('person');
             } else {
 //                echo '买 装备';
@@ -48,6 +53,23 @@ class PutorderController extends BaseController
 
     }
 
+/**
+     * ajax获取道具类型
+     * @author LiYang
+     * @date 2018-1-7
+     * @return void
+     */
+	public function getCommodity() 
+	{
+		$id = I('post.id');
+		if ($id == 1) {
+			$rst = D('person')->getStorePerson();
+		} else {
+			$rst = D('equipment')->getStoreEquipment();
+		}	
+		echo json_encode($rst);
+	}
+	
     /**
      * 挂单(订单类型：卖)
      * @author LiYang

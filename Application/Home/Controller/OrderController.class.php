@@ -160,9 +160,10 @@ class OrderController extends BaseController
      */
     public function accomplishBuy()
     {
-
-        $rst = D('order')->accomplishBuy('200', 'dsfdsfdsgdfgf');
-        pr($rst);
+		$get = I('get.');
+		
+        $rst = D('order')->accomplishBuy($get['commodity_price'], $get['site']);
+       
         if ($rst['status']) {
             returnajax(true, '','购买成功');
         } else {

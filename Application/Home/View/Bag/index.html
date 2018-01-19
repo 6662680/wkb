@@ -37,6 +37,10 @@
         </div>
         <div class="page__bd page__bd_spacing ">
             <ul >
+            	<?php 
+					if (!$person) {
+						echo '您还没有人物！';
+				} ?>
         <volist name="person" id="vo">
 
 

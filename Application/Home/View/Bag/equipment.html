@@ -37,6 +37,10 @@
         </div>
         <div class="page__bd page__bd_spacing ">
         <ul>
+        	<?php 
+					if (!$equipment) {
+						echo '您还没有装备！';
+				} ?>
         <volist name="equipment" id="vo">
                 <li class="mb10  sd pzr">
 
