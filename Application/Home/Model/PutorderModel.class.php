@@ -479,26 +479,37 @@ class PutorderModel extends Model
         if ($order['use_time'] + C('ORDER_TIME') < time()) {
             return ['status' => false, 'msg' => '订单超时失效'];
         }
-
+		
         $buymsg = '购买道具:'. $order['commodity_name'];
         $selllog = '卖出道具:'. $order['commodity_name'];
         $trans = new Model();
         $trans->startTrans();
-
+		
         if ($order['commodity_type'] == 1) {
+        	
             $map = [
-                'level' => ['GT', $order['person_level']],
+                'level' => ['EGT', $order['person_level']],
                 'person_id' => $order['commodity_id'],
-                'user_id' => $receiving_user_id,
+                'user_id' => $order['receiving_user_id'],
             ];
             $bag = M('person_bag')->where($map)->find();
-            $save = M('person_bag')->where($map)->limit(1)->save(['user_id' => $receiving_user_id]);
+			
+			   $map = [
+                'level' => ['EGT', $order['person_level']],
+                'person_id' => $order['commodity_id'],
+                'user_id' => $order['receiving_user_id'],
+            ];
+			
+            $save = M('person_bag')->where($map)->limit(1)->save(['user_id' => $order['user_id']]);
 
             if ($bag['equipment_id']) {
+            	
+            	//				pr(M()->getLastSql());die();
                 $save_equipment = M('equipment_bag')->where(['id' => $bag['equipment_id']])->limit(1)->save(['user_id' => $receiving_user_id]);
             }
-
+			
             if ($bag['equipment_id_card']) {
+            	
                 $save_equipment_card = M('equipment_bag')->where(['id' => $bag['equipment_id_card']])->limit(1)->save(['user_id' => $receiving_user_id]);
             }
 
@@ -507,7 +518,7 @@ class PutorderModel extends Model
                 return ['status' => false, 'msg' => '道具交易失败，请联系客服'];
             }
         }
-
+	
         if ($order['commodity_type'] == 2) {
             $map = [
                 'equipment_id' => $order['commodity_id'],
@@ -515,6 +526,7 @@ class PutorderModel extends Model
             ];
             $save = M('equipment_bag')->where($map)->limit(1)->save(['user_id' => $receiving_user_id]);
         }
+	
         $savedata = M('user_buy_order')->where(['id' => $user_buy_order_id])->save(['status' => 2]);
 
         if ($save === FALSE || $savedata ===FALSE) {
