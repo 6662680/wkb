@@ -48,10 +48,11 @@ class UserModel extends Model
 			->limit(10)
             ->select();
 		foreach($sellOrderList as &$value) {
-			if ($value['use_time'] + C('ORDER_TIME' )< time()) {
-				$value['status'] = 3;
+			if ($value['use_time'] + C('ORDER_TIME' )< time() && $value['status'] != 2) {
+				$value['status'] = 4;
 			}	
 		}		
+	
         if ($sellOrderList) {
             return ['status' => true, 'data' => $sellOrderList];
         } else {

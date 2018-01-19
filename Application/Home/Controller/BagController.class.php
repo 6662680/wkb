@@ -205,7 +205,7 @@ class BagController extends BaseController
                 $sellOrderList[$key]['commodity_img']=$nequipment['equipment_img'];
 			}
 		}
-
+		
 		$this->assign('sellOrderList',$sellOrderList);
 		/*pr($nperson['person_img']);die;*/
         $this->display('sellout');
