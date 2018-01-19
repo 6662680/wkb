@@ -61,7 +61,7 @@
                    <td><?php echo ($vo["mediche_name"]); ?></td>
                    <td><?php echo ($vo["mediche_treat"]); ?></td>
                    <td><?php echo ($vo["mediche_price"]); ?></td>
-                   <td><img style="width: 40px;height: 40px;" src="/Public<?php echo ($vo["mediche_img"]); ?>"/></td>
+                   <td><img style="width: 40px;height: 40px;" src="<?php echo ($vo["mediche_img"]); ?>"/></td>
                    <td>
                        <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->
                        <a href="<?php echo U('Mediche/edit',array('id' => $vo['id']));?>">编辑</a>

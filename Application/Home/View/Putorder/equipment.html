@@ -17,7 +17,11 @@
     <div class="page home ">
         <div class="page__hd">
             <h1 class="page__title">
-                交易
+                <if condition="$type eq '1'">
+                    求购
+                    <else />
+                    出售
+                </if>
             </h1>
             <div class="navbar sd">
 
@@ -35,6 +39,15 @@
                  
                 </div>
             </div>
+            <if condition="$type eq '1'">
+                    <div class="sd bgw p2 mb1" >
+		                <a href="javascript:;" class="weui-btn weui-btn_default open-popup" data-target="#want" style="font-size: 14px;line-height: 30px;">
+		                 	我要求购
+		                </a>
+		            </div>
+            <else />
+                   
+            </if>
         </div>
                     
 
@@ -187,6 +200,52 @@
                  <button type="submit"  class="weui-btn weui-btn_primary ">按钮</button>
             </div>
              </form>
+        </div>
+    </div>
+    <!-- 求购表单 -->
+    <div id="want" class="weui-popup__container">
+        <div class="weui-popup__overlay"></div>
+        <div class="weui-popup__modal">
+            <div class="bgw m20 p20 maxvh">
+                <div class="modal-header">
+                    <button type="button" class="close close-popup" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title">发布求购</h4>
+                </div>
+
+
+                <div class="weui-cells weui-cells_form">
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">售价</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入售价">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">等级</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该等级">
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_select">
+                        <div class="weui-cell__bd">
+                            <select class="weui-select" name="select1">
+                                <option selected="" value="1">微信号</option>
+                                <option value="2">QQ号</option>
+                                <option value="3">Email</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" m20  ">
+                <a href="javascript:;" class="weui-btn weui-btn_primary">发布</a>
+            </div>
         </div>
     </div>
     <!-- body 最后 -->

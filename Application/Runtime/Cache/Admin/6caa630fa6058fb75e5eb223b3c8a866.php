@@ -68,7 +68,7 @@
                    <td><?php echo ($vo["person_property"]); ?></td>
                    <td><?php  if ($vo['status']==1) { echo '是'; } else { echo '否'; } ?>
                    </td>
-                   <td><img style="width: 40px;height: 40px;" src="/Public<?php echo ($vo["person_img"]); ?>"/></td>
+                   <td><img style="width: 40px;height: 40px;" src="<?php echo ($vo["person_img"]); ?>"/></td>
                    <td>
                        <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->
                        <a href="<?php echo U('Person/edit',array('id' => $vo['id']));?>">编辑</a>
