@@ -475,9 +475,15 @@ class PutorderModel extends Model
         if (!$order) {
             return ['status' => false, 'msg' => '不存在的订单'];
         }
-		
+
+        if ($order['use_time'] + C('ORDER_TIME') < time()) {
+            return ['status' => false, 'msg' => '订单超时失效'];
+        }
+
         $buymsg = '购买道具:'. $order['commodity_name'];
         $selllog = '卖出道具:'. $order['commodity_name'];
+        $trans = new Model();
+        $trans->startTrans();
 
         if ($order['commodity_type'] == 1) {
             $map = [
@@ -485,9 +491,21 @@ class PutorderModel extends Model
                 'person_id' => $order['commodity_id'],
                 'user_id' => $receiving_user_id,
             ];
+            $bag = M('person_bag')->where($map)->find();
             $save = M('person_bag')->where($map)->limit(1)->save(['user_id' => $receiving_user_id]);
-			
-			
+
+            if ($bag['equipment_id']) {
+                $save_equipment = M('equipment_bag')->where(['id' => $bag['equipment_id']])->limit(1)->save(['user_id' => $receiving_user_id]);
+            }
+
+            if ($bag['equipment_id_card']) {
+                $save_equipment_card = M('equipment_bag')->where(['id' => $bag['equipment_id_card']])->limit(1)->save(['user_id' => $receiving_user_id]);
+            }
+
+            if ($save_equipment === false  && $save_equipment_card===false) {
+                $trans->rollback();
+                return ['status' => false, 'msg' => '道具交易失败，请联系客服'];
+            }
         }
 
         if ($order['commodity_type'] == 2) {
@@ -500,11 +518,13 @@ class PutorderModel extends Model
         $savedata = M('user_buy_order')->where(['id' => $user_buy_order_id])->save(['status' => 2]);
 
         if ($save === FALSE || $savedata ===FALSE) {
+            $trans->rollback();
             return ['status' => false, 'msg' => '道具交易失败，请联系客服'];
         } else {
             //添加日志
             D('Log')->addLog($buymsg .', 一共价格为：'. $order['commodity_price'], $order['id']);
             D('Log')->addLog($selllog.', 一共价格为：'. $order['commodity_price'], $receiving_user_id);
+            $trans->commit();
             return ['status' => true];
         }
 
