@@ -47,8 +47,10 @@ class UserModel extends Model
             ->where(['user_id' => session('user_id')])
 			->limit(10)
             ->select();
+
 		foreach($sellOrderList as &$value) {
-			if ($value['use_time'] + C('ORDER_TIME' )< time() && $value['status'] != 2) {
+
+			if ($value['use_time'] + C('ORDER_TIME' )< time() && $value['status'] != 2 && $value['user_id'] != session('user_id')) {
 				$value['status'] = 4;
 			}	
 		}		
