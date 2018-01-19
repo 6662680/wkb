@@ -39,7 +39,7 @@
                     <div class="mainflex js_category">
                             <div class="mainphoto c1">
                                 <!-- 头像 -->
-                                <img src="{$vo.commodity_id}" alt="">
+                                <img src="{$vo.commodity_img}" alt="">
                             </div>
                             <div class="maintext">
                                 <ul>
@@ -48,7 +48,7 @@
                                     <li class="dark">
                                     	<?php 
 						                   	if ($vo['person_level']) {
-															echo '等级:lv'.$vo['person_level'];
+															echo '等级:'.$vo['person_level'];
 														} ?>
                                     	
                                     </li>
@@ -59,7 +59,7 @@
 														} elseif($vo['commodity_type']==2) {
 															echo '耐久度:';
 														}?>
-                                        <span>{$vo.residue}</span>
+                                        <span>{$vo.blood}</span>
                                     </li>
                                     <li class="dark">
                                     	<?php 
@@ -77,11 +77,42 @@
                         <div class="buy dark f14 text-right">售价
                             <p class="red">{$vo.commodity_price}wkc</p>
                         </div>
+                        <div class="cleanfix">
+                            <if condition="$vo.equipment neq ''">
+                                <div class="weui-flex mb5 mt5 flexcenter">
+                                    <div class="">
+                                        <div class="item c1" style="margin-right:15px">
+                                            <img src="{$vo.equipment.equipment_img}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="weui-flex__item f12 dark">
+                                        <div class="itemname black f12">{$vo.equipment.equipment_name}</div>
+                                        <div>算力倍数{$vo.equipment.equipment_multiple}/耐久度：{$vo.equipment.equipment_endurance}</div>
+                                    </div>
+                                </div>
+                            </if>
+
+
+                            <if condition="$vo.equipment_card neq ''">
+                                <div class="weui-flex mb5 mt5 flexcenter">
+                                    <div class="">
+                                        <div class="item c1" style="margin-right:15px">
+                                            <img src="{$vo.equipment_card.equipment_img}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="weui-flex__item f12 dark">
+                                        <div class="itemname black f12">{$vo.equipment_card.equipment_name}</div>
+                                        <div>防坍塌</div>
+                                    </div>
+                                </div>
+
+                            </if>
+                        </div>
                         </a>
                         <?php 
 						    if ($vo['status']==1) {
 									echo '<div class="pbottom ">
-                            <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary cancel" >确认已收款</a>
+                        <aa class="weui-btn weui-btn_mini weui-btn_default " >请等待其他用户接单</aa>
                         </div>';
 								} elseif($vo['status']==2) {
 									echo '<div class="pbottom ">

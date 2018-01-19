@@ -494,8 +494,9 @@ class PutorderModel extends Model
             ];
             $save = M('equipment_bag')->where($map)->limit(1)->save(['user_id' => $receiving_user_id]);
         }
+        $savedata = M('user_buy_order')->where(['id' => $user_buy_order_id])->save(['status' => 2]);
 
-        if ($save !== 1) {
+        if ($save === FALSE || $savedata ===FALSE) {
             return ['status' => false, 'msg' => '道具交易失败，请联系客服'];
         } else {
             //添加日志

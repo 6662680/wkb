@@ -151,8 +151,8 @@ class PutorderController extends BaseController
      */
     public function buyAccomplish()
     {
-
-        $order_id = I('get.order_id', '', 'int');
+        
+        $order_id = I('post.order_id', '', 'int');
         $rst = D('Putorder')->buyAccomplish(session('user_id'), $order_id);
 
         if ($rst['status'] == true) {
