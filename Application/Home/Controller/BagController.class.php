@@ -111,7 +111,7 @@ class BagController extends BaseController
 			}
 			
 		}
-
+        $this->assign('user_id',session('user_id'));
 		$this->assign('buyOrderList',$buyOrderList);
 		$this->assign('sellOrderList',$sellOrderList);
 		/*pr($nperson['person_img']);die;*/

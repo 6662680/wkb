@@ -78,23 +78,56 @@
                             <p class="red">{$vo.commodity_price}wkc</p>
                         </div>
                         </a>
-                        <if condition="$vo.status eq '1'">
-                            <div class="pbottom ">
-                                <button data-id={$vo.id}  class="weui-btn weui-btn_mini weui-btn_primary cancel" >确认已支付</button>
-                            </div>
-                        </if>
-                        <if condition="$vo.status eq '2'">
+
+
+                            <if condition="$vo.status eq '1' ">
+                                <div class="pbottom ">
+                                    <button data-id={$vo.id}
+                                    <?php
+                                    if ($user_id == $vo['user_id']) {
+
+
+                                     echo 'id="1"';
+
+
+                                    }else {
+                                     echo 'id="2"';
+                                    }
+
+                                    ?> class="weui-btn weui-btn_mini weui-btn_primary cancel" >
+                                    <?php
+                                    if ($user_id == $vo['user_id']) {
+
+                                        echo '前往付款';
+
+
+                                    }else {
+                                        echo '已收款';
+                                    }
+
+                                    ?>
+                                    </button>
+                                </div>
+                            </if>
+                        <!--</else>-->
+                            <!--<if condition="$vo.status eq '1'">-->
+                                <!--<div class="pbottom ">-->
+                                    <!--<button data-id={$vo.id}  class="weui-btn weui-btn_mini weui-btn_primary cancel" >确认收款</button>-->
+                                <!--</div>-->
+                            <!--</if>-->
+                        <!--</if>-->
+
+
+                        <if condition="$vo.status eq '2' ">
                             <div class="pbottom ">
                                 <button data-id={$vo.id}  class="weui-btn weui-btn_mini weui-btn_default" >订单已完成</button>
                             </div>
                         </if>
-                        <if condition="$vo.status eq '3'">
+                        <if condition="$vo.status EGT '3'">
                             <div class="pbottom ">
-                                <button data-id={$vo.id}  class="weui-btn weui-btn_mini weui-btn_default" >订单已取消</button>
+                                <button data-id={$vo.id}  class="weui-btn weui-btn_mini weui-btn_default" >订单已超时或失效</button>
                             </div>
                         </if>
-
-
                         <div class="cleanfix"></div>
                         <div class="dark" style="font-size: 12px;">
                             <span>接单时间:{$vo.use_time|date="Y-m-d H:i:s",###}</span>
@@ -144,25 +177,31 @@
      <script>
      $(document).on("click", ".cancel", function () {
          var id= $(this).data('id');
+         var sid= $(this).attr('id');
+            if (sid == 1) {
+                window.location.href="{:U('putorder/remit','','')}/order_id/" + id+ "/type/1";
+            } else {
+                $.ajax({
+                    url:"{:U('putorder/buyAccomplish')}",
+                    type:'POST', //GET
+                    async:true,    //或false,是否异步
+                    data:{
+                        order_id:id,
+                    },
+                    timeout:5000,    //超时时间
+                    dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                    success:function(result){
+                        if (result.status) {
+                            window.location.reload();
+                        } else {
+                            alert(result.msg);
+                        }
+                    }
+                })
+            }
 
-         $.ajax({
-             url:"{:U('putorder/buyAccomplish')}",
-             type:'POST', //GET
-             async:true,    //或false,是否异步
-             data:{
-                 order_id:id,
-             },
-             timeout:5000,    //超时时间
-             dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-             success:function(result){
-                 if (result.status) {
-                     window.location.reload();
-                 } else {
-                     alert(result.msg);
-                 }
-             }
-         })
         })
+
         </script>
 </body>
 

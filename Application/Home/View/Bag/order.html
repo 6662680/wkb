@@ -33,13 +33,8 @@
                 <hr>
                 <h3 class="mt15">请使用绑定钱包</h3>
                 <div class="f12 dark">{$rst.site}</div>
-                <if condition="$overtime eq '1' || $status eq '1'" >
-                    <if condition="$status eq '1'">
-                        <div class="red f14 mt15">订单已完成</div>
-                    <else />
-                        <div class="red f14 mt15">订单已失效</div>
-                    </if>
-
+                <if condition="$overtime eq '1'">
+                    <div class="red f14 mt15">订单已失效</div>
                     <else />
                     <div class="red f14 mt15">向下方官方地址打款{$rst.server_price}wkb</div>
                     <div class="red f14 mt15">{:C('SITE')}</div>
@@ -52,7 +47,7 @@
                     <div class="dark mt15">请在
                         <span class="red">{$rst.order_time|date="Y-m-d H:i:s",###}</span> 之前完成转账</div>
                     <div class="dark">超时订单将自动取消</div>
-                    <a href="javascript:;" onclick="tijiao('{$rst.id}','{$type}')" class="weui-btn weui-btn_mini weui-btn_primary mt15">确认已支付</a><br />
+                    <a href="javascript:;" onclick="tijiao()" class="weui-btn weui-btn_mini weui-btn_primary mt15">确认已支付</a><br />
                 </if>
             </div>
         </div>
@@ -65,46 +60,25 @@
     <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
 </body>
 <script>
+    function tijiao() {
 
-    function tijiao(id,type) {
+        $.ajax({
+            url:"{:U('putorder/sellAccomplish','','')}/order_id/"+ {$rst.id},
+            type:'GET', //GET
+            async:true,    //或false,是否异步
+            data:{
 
-            if (type == 1) {
-                $.ajax({
-                    url:"{:U('putorder/buyAccomplish')}",
-                    type:'POST', //GET
-                    async:true,    //或false,是否异步
-                    data:{
-                        order_id:id,
-                    },
-                    timeout:5000,    //超时时间
-                    dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-                    success:function(result){
-                        if (result.status) {
-                            alert('购买成功');
-                        } else {
-                            alert(result.msg);
-                        }
-                    }
-                })
-            } else {
-                $.ajax({
-                        url:"{:U('putorder/sellAccomplish','','')}/order_id/"+ {$rst.id}+ "/type/1",
-                        type:'GET', //GET
-                        async:true,    //或false,是否异步
-                        data:{
-                },
-                timeout:5000,    //超时时间
-                        dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-                        success:function(result){
-                    if (result.status) {
-                        alert('购买成功');
-                    } else {
-                        alert(result.msg);
-                    }
+            },
+            timeout:5000,    //超时时间
+            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            success:function(result){
+                if (result.status) {
+                    alert('购买成功');
+                } else {
+                    alert(result.msg);
                 }
-            })
             }
-
+        })
 
     }
 

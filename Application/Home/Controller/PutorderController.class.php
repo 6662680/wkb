@@ -215,14 +215,20 @@ class PutorderController extends BaseController
 
         $overtime = false;
 
-        if (time() > $rst['order_time'] || $rst['status'] == 2){
+        if (time() > $rst['order_time']){
             $overtime = true;
         }
+        $status = false;
+        if ($rst['status'] == 2) {
+            $status = true;
+        }
+
 
         $this->assign('rst',$rst);
 
         $this->assign('overtime',$overtime);
-
+        $this->assign('status',$status);
+        $this->assign('type',$type);
         $this->display('putorder/order');
     }
 
