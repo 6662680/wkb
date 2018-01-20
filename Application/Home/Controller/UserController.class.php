@@ -232,14 +232,29 @@ class UserController extends Controller
     /*修改为正式地址*/
     public function site()
     {
-        $user = M('user')->where(['id' => session('user_id')])->find();
+    	//访问迅雷接口
+    	$user = M('user')->where(['id' => session('user_id')])->find();
+		$userSite = $user['sitetemp'];//getwkb的第一个参数
+		$page = 1 ;//先设置为1
+		$time = $user['create_time'];
+		$result = getwkb('0x19e2fbe87147cb8d7b15b92b0b7e35b906339b6b', $page,$time);
+		pr($result);
+		/*if ($newOutput['timestamp'] < $time) {
+			echo '该会员最近的转账时间：'.$newOutput['timestamp'].'，点击确认已支付时间：'.$time.'没有对应转账记录！';
+		} else {
+			echo '有对应转账记录！';
+		}*/
+		die;
+		
+		/*接口验证成功后执行的代码*/
+        /*$user = M('user')->where(['id' => session('user_id')])->find();
         $rst = M('user')->where(['id' => session('user_id')])->save(['site' => $user['sitetemp']]);
 
         if ($rst === false) {
-            returnajax(falsa, '', '验证失败，请联系客服');
+            returnajax(false, '', '验证失败，请联系客服');
         } else {
             returnajax(true);
-        }
+        }*/
     }
 
 }

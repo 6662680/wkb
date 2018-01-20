@@ -588,14 +588,17 @@ function getIp() {
     return ($ip);
 }
 
-function getwkb($site, $page) {
-    xunlei($site,$page);
+function getwkb($site, $page,$time) {
+    return xunlei($site,$page,$time);
 }
 
-function xunlei($site, $page) {
+function xunlei($site, $page,$time) {
     $url = "https://walletapi.onethingpcs.com/getTransactionRecords";
     $post_data =  '["'.$site.'","0","0","'.$page.'","10"]';
-
+	
+	/*if (拿第一条时间匹配需要打款的时间，如果时间小于打款时间) {
+		return false;
+	}	*/
     $ch = curl_init();
     $this_header = array("content-type: application/x-www-form-urlencoded; charset=UTF-8");//访问链接时要发送的头信息
     $this_header[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:52.0) Gecko/20100101 Firefox/52.0';
@@ -612,9 +615,25 @@ function xunlei($site, $page) {
 
     $output = curl_exec($ch);
     curl_close($ch);
-
+	$output = json_decode($output,true);
     //打印获得的数据
-    print_r($output);
+    //pr($output);
+	
+	//转账记录匹配
+	if (!$output['result']) {
+		return FALSE;
+		//echo '没有转账记录';
+	}else{
+		$newOutput = reset($output['result']);
+		//return $newOutput;
+		if ($newOutput['timestamp'] < $time) {
+			return '支付失败';
+		} else {
+			
+		}
+		
+	}
+	
 }
 //创建TOKEN
 function creatToken() {
