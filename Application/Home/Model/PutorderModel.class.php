@@ -21,7 +21,7 @@ class PutorderModel extends Model
                 $model->join('left join `equipment_bag` as ebag on ebag.id=user_sell_order.equipment_id_card');
                 $model->join('left join `equipment` as e on ebag.equipment_id=e.id');
                 $model->field('user_sell_order.*,user_sell_order.id as order_id, person.*, equipment.equipment_img,
-                e.equipment_img as equipment_img_card, ebag.equipment_endurance, e.equipment_name as equipment_name_card, equipment.equipment_multiple');
+                e.equipment_img as equipment_img_card, ebag.equipment_endurance, e.equipment_name as equipment_name_card, equipment.equipment_multiple,person_bag.level,person_bag.person_id');
 
             } else {
                 $model->join('left join `equipment_bag` on equipment_bag.id=user_sell_order.commodity_id');
@@ -39,7 +39,7 @@ class PutorderModel extends Model
             if ($commodity_type == 1) {
 
                 $model->join('left join `person` on user_buy_order.commodity_id=person.id');
-                $model->field('user_buy_order.*,user_buy_order.id as order_id, person.*');
+                $model->field('user_buy_order.*,user_buy_order.id as order_id,user_buy_order.commodity_id as person_id, person.*');
             } else {
                 $model->join('left join `equipment` on user_buy_order.commodity_id=equipment.id');
                 $model->field('user_buy_order.*,user_buy_order.id as order_id, equipment.*');

@@ -18,18 +18,28 @@ class PutorderController extends BaseController
         $type = I('post.type',1);
         $commodity_type = I('post.commodity_type',1);
         $rst = D('Putorder')->orderList($type, $commodity_type);
+		
+		/*foreach ($rst as &$value) {
+            $level = $value['level'] / 10;
+
+            $img = M('person_img')->where(['person_id' => $value['person_id'], 'level' => floor($level)])->find();
+            if ($value['residue'] > 0) {
+                $value['person_img'] = $img['action_img'];
+            } else {
+                $value['person_img'] = $img['img'];
+            }
+        }*/
+		
 
         $this->assign('rst',$rst);
 
 		$personList=M('Person')->where('status=0')->select();
-		
+		/*pr($rst);die;*/
 		$this->assign('personarr',$personList);
         if ($type == 1) {
             if ($commodity_type == 1) {
 //                echo '买 人物';
                 $this->assign('type',1);
-				
-             
 				
                 $this->display('person');
             } else {
@@ -40,7 +50,10 @@ class PutorderController extends BaseController
         } else {
 
             if ($commodity_type == 1) {
+            	
+				
 //                echo '卖 人物';
+				
                 $this->assign('type',2);
                 $this->display('person');
             } else {

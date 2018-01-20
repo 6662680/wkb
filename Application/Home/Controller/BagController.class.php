@@ -54,6 +54,18 @@ class BagController extends BaseController
         }
 
         $person = D('person')->getBagPersonDetails($id);
+		/*pr($person);die;*/
+		
+			//显示动态图
+            $level = $person['level'] / 10;
+
+            $img = M('person_img')->where(['person_id' => $person['person_id'], 'level' => floor($level)])->find();
+
+            if ($person['blood'] > 0) {
+                $person['person_img'] = $img['action_img'];
+            } else {
+                $person['person_img'] = $img['img'];
+            }
 
         if (!$person['id']) {
             $this->error();
@@ -116,7 +128,18 @@ class BagController extends BaseController
 		foreach ($buyOrderList as $key => $value) {
 			if ($value['commodity_type']==1) {
 					$nperson = M('person')->where(['id' => $value['commodity_id']])->find();
-					$buyOrderList[$key]['commodity_img']=$nperson['person_img'];
+					
+					/*pr($value);die();*/
+					//修改为动态图
+					$level = $buyOrderList[$key]['person_level'] / 10;
+		            $img = M('person_img')->where(['person_id' => $nperson['id'], 'level' => floor($level)])->find();
+					/*pr($nperson);die();*/
+		            if ($buyOrderList[$key]['residue'] > 0) {
+		                $buyOrderList[$key]['commodity_img'] = $img['action_img'];
+		            } else {
+		                $buyOrderList[$key]['commodity_img'] = $img['img'];
+		            }
+					
 			} elseif($value['commodity_type']==2) {
 					$nequipment = M('equipment')->where(['id' => $value['commodity_id']])->find();
 					$buyOrderList[$key]['commodity_img']=$nequipment['equipment_img'];
@@ -124,6 +147,7 @@ class BagController extends BaseController
 			}
 			
 		}
+		/*pr($buyOrderList);die;*/
         $this->assign('user_id',session('user_id'));
 		$this->assign('buyOrderList',$buyOrderList);
 		$this->assign('sellOrderList',$sellOrderList);
@@ -137,6 +161,7 @@ class BagController extends BaseController
     {
 		$sellOrder=D('user')->getSellOrder();
 		$sellOrderList=$sellOrder['data'];
+		/*pr($sellOrderList);die;*/
 
 		foreach ($sellOrderList as $key => $value) {
 			if ($value['commodity_type']==1) {
@@ -165,13 +190,31 @@ class BagController extends BaseController
                 $sellOrderList[$key]['blood']=$nperson['blood'];
                 $sellOrderList[$key]['level']=$nperson['level'];
                 $sellOrderList[$key]['capacity']=$person['person_capacity'];
+				
+				/*pr($nperson);die;*/
+				//修改为动态图
+				$level = $sellOrderList[$key]['level'] / 10;
+
+	            $img = M('person_img')->where(['person_id' => $nperson['person_id'], 'level' => floor($level)])->find();
+	
+	            if ($sellOrderList[$key]['blood'] > 0) {
+	                $sellOrderList[$key]['commodity_img'] = $img['action_img'];
+	            } else {
+	                $sellOrderList[$key]['commodity_img'] = $img['img'];
+	            }
+				
 			} elseif($value['commodity_type']==2) {
-                $nequipment = M('equipment')->where(['id' => $value['commodity_id']])->find();
-                $equipment = M('equipment_bag')->where(['id' => $nequipment['person_id']])->find();
-                $sellOrderList[$key]['commodity_img']=$nequipment['equipment_img'];
+                $nequipment = M('equipment_bag')->where(['id' => $value['commodity_id']])->find();
+                $equipment = M('equipment')->where(['id' => $nequipment['equipment_id']])->find();
+				$sellOrderList[$key]['equipment_endurance']=$nequipment['equipment_endurance'];
+				$sellOrderList[$key]['equipment_multiple']=$equipment['equipment_multiple'];
+				/*pr($sellOrderList[$key]);die;*/
+				
+                $sellOrderList[$key]['commodity_img']=$equipment['equipment_img'];
+				/*pr($sellOrderList[$key]);die;*/
 			}
 		}
-		
+		/*pr($sellOrderList);die;*/
 		$this->assign('sellOrderList',$sellOrderList);
 		/*pr($nperson['person_img']);die;*/
         $this->display('sellout');

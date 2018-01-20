@@ -47,29 +47,27 @@
                                     </li>
                                     <li class="dark">
                                     	<?php 
-						                   	if ($vo['person_level']) {
-															echo '等级:'.$vo['person_level'];
+						                   	if ($vo['level']) {
+															echo '等级:'.$vo['level'];
 														} ?>
                                     	
                                     </li>
                                     <li class="dark">
                                     	<?php 
 						                   	if ($vo['commodity_type']==1) {
-															echo '血量:';
+															echo '血量:'.$vo['blood'];
 														} elseif($vo['commodity_type']==2) {
-															echo '耐久度:';
+															echo '耐久度:'.$vo['equipment_endurance'];
 														}?>
-                                        <span>{$vo.blood}</span>
                                     </li>
                                     <li class="dark">
                                     	<?php 
 						                   	if ($vo['commodity_type']==1) {
-															echo '挖矿能力:';
+															echo '挖矿能力:'.$vo['capacity'];
 														} elseif($vo['commodity_type']==2) {
-															echo '挖矿效率:';
+															echo '挖矿效率:'.$vo['equipment_multiple'];
 														}?>
                                     	
-                                        <span>{$vo.capacity}</span>
                                     </li>
                                    
                                 </ul>
