@@ -26,6 +26,10 @@ class UserController extends Controller
             $data = [];
             $post = I('post.');
 
+            if (S('code'.$post['mobile']) != $post['code']) {
+                returnajax(false, '', '验证码不正确');
+            }
+
             if (empty($post['mobile']) && empty($post['password'])) {
                 returnajax(false, '', '请完善用户信息');
             }
@@ -160,10 +164,31 @@ class UserController extends Controller
      */
     public function reset()
     {
+        $mobile = I('post.mobile');
 
+        $rst = M('user')->where(['mobile' => $mobile])->find();
+
+        if (!empty($rst)) {
+            returnajax(false, '', '已经注册的手机号');
+        }
+        $code = generate_code();
+        S('code'.$mobile, $code);
     	    // 发送验证码
-        Vendor('AliyunMns.mns');
-        $result = run($post['mobile'],  'SMS_75810093',array("number" => strval($code)));
+        Vendor('aliNote.TopSdk','','.php');
+        //Vendor('aliNote.Topsdk.php');
+        $c = new \TopClient;
+        $c ->appkey = 23427369 ;
+        $c ->secretKey = 'd0eb6e03b0d3c9dfb369a1659d92698c' ;
+        $req = new \AlibabaAliqinFcSmsNumSendRequest;
+        $req ->setExtend( "" );
+        $req ->setSmsType( "normal" );
+        $req ->setSmsFreeSignName( "上饶比特" );
+        $req ->setSmsParam( "{name:'$code',time:'2222'}" );
+        $req ->setRecNum($mobile);
+        $req ->setSmsTemplateCode( "SMS_66675064" );
+        $resp = $c ->execute( $req );
+
+        returnajax(true, '', '发送成功');
     }
 
     
@@ -256,5 +281,7 @@ class UserController extends Controller
             returnajax(true);
         }*/
     }
+
+
 
 }

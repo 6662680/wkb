@@ -19,8 +19,8 @@ function run($phone, $sms, $data)
 	 */
 	$endPoint = "http://1495574994956310.mns.cn-hangzhou.aliyuncs.com/"; // eg. http://1234567890123456.mns.cn-shenzhen.aliyuncs.com
 
-     $accessId = "LTAI0DHSPZKYReRY";
-    $accessKey = "N9nVtEgIAD879SJ735BJ7PQYgKrCvp";
+     $accessId = "23427369";
+    $accessKey = "d0eb6e03b0d3c9dfb369a1659d92698c";
 	$client = new Client($endPoint, $accessId, $accessKey);
 	/**
 	 * Step 2. 获取主题引用

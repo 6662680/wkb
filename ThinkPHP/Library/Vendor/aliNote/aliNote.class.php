@@ -13,9 +13,9 @@ namespace Vendor\aliNote;
 class aliNote 
 {
     /** App Key */
-    private $appkey = '23315424';
+    private $appkey = '23427369';
     /** 密码 */
-    private $appSecret = 'a1909069fe8ec22f04844d3ab7da9a2b';
+    private $appSecret = 'd0eb6e03b0d3c9dfb369a1659d92698c';
     /** 服务器地址 */
     private $server = 'http://gw.api.taobao.com/router/rest';
     /** 返回信息格式 */
@@ -31,7 +31,7 @@ class aliNote
     public function send($mobiles = '', $content = '', $template = '')
     {
         include "TopSdk.php";
-        
+
         $c = new \TopClient;
         $c->appkey = $this->appkey;
         $c->secretKey = $this->appSecret;
@@ -40,7 +40,7 @@ class aliNote
 
         $req = new \AlibabaAliqinFcSmsNumSendRequest;
         $req->setSmsType("normal");
-        $req->setSmsFreeSignName("当贝视频通话");
+        $req->setSmsFreeSignName("只是测试短信");
         $req->setSmsParam(json_encode($content));
         /** $req->setRecNum("13336046996"); */
         $req->setRecNum($mobiles);
@@ -48,8 +48,8 @@ class aliNote
         $req->setSmsTemplateCode($template);
 
         $rst = $c->execute($req);
+       $this->resultHandle($rst);
 
-        $this->resultHandle($rst);
     }
 
     /**

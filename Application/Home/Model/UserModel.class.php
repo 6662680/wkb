@@ -32,7 +32,8 @@ class UserModel extends Model
 			if ($value['use_time'] + C('ORDER_TIME' ) < time() && $value['status'] != 2) {
 				$value['status'] = 4;
 			}	
-		}		
+		}
+
         if ($buyOrderList) {
             return ['status' => true, 'data' => $buyOrderList];
         } else {

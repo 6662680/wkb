@@ -371,12 +371,6 @@ function tuisong($deviceid, $data, $key = NULL, $stersecret = NULL) {
     return $rst;
 }
 
-/*网易云信*/
-function yunxin() {
-    Vendor('wangyiyun.ServerAPI');
-    $serverAPI = new \ServerAPI(C(YUNXIN_APPKey),C(YUNXIN_AppSecret),'curl');
-    return $serverAPI;
-}
 
 /*发送短信*/
 function sms($mobile, $nubmer, $data) {
