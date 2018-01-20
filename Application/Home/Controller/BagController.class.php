@@ -20,6 +20,19 @@ class BagController extends BaseController
     public function person()
     {
         $person = D('person')->getBagPerson();
+
+        foreach ($person as &$value) {
+            $level = $value['level'] / 10;
+
+            $img = M('person_img')->where(['person_id' => $value['person_id'], 'level' => floor($level)])->find();
+
+            if ($value['blood'] > 0) {
+                $value['person_img'] = $img['action_img'];
+            } else {
+                $value['person_img'] = $img['img'];
+            }
+        }
+
         $this->assign('person',$person);
 		/*pr($person);die;*/
         $this->display('index');

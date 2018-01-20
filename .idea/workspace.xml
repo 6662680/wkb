@@ -79,11 +79,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Home/Controller/UserController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3580247">
-              <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="283" column="0" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BagController.class.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Home/Controller/BagController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.59117305">
+              <caret line="34" column="0" selection-start-line="23" selection-start-column="6" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonModel.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Home/Model/PersonModel.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.0">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -109,7 +129,6 @@
         <option value="$PROJECT_DIR$/Application/Home/View/User/login.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Index/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/PrivilegeController.class.php" />
-        <option value="$PROJECT_DIR$/Application/Home/Model/PersonModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/PersonController.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/Model/MedicheModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/View/Store/sc.html" />
@@ -134,7 +153,6 @@
         <option value="$PROJECT_DIR$/Application/Home/Controller/PutorderController.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/View/Putorder/person.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Bag/sellout.html" />
-        <option value="$PROJECT_DIR$/Application/Home/Controller/BagController.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/Model/UserModel.class.php" />
         <option value="$PROJECT_DIR$/Public/css/main.css" />
         <option value="$PROJECT_DIR$/ThinkPHP/Library/Vendor/aliNote/aliNote.class.php" />
@@ -143,9 +161,11 @@
         <option value="$PROJECT_DIR$/Application/Common/Conf/config.php" />
         <option value="$PROJECT_DIR$/Application/Common/Common/function.php" />
         <option value="$PROJECT_DIR$/Application/Home/View/Bag/zhifu.html" />
-        <option value="$PROJECT_DIR$/Application/Home/Controller/UserController.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/Model/PutorderModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/View/Bag/me.html" />
+        <option value="$PROJECT_DIR$/Application/Home/Controller/UserController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Home/Model/PersonModel.class.php" />
+        <option value="$PROJECT_DIR$/Application/Home/Controller/BagController.class.php" />
       </list>
     </option>
   </component>
@@ -800,13 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/Model/PersonModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42069742">
-          <caret line="17" column="107" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33296213">
@@ -839,6 +852,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3321719">
           <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -962,17 +976,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/BagController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38271606">
-          <caret line="235" column="5" selection-start-line="235" selection-start-column="5" selection-end-line="235" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_8.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="752" column="9" selection-start-line="752" selection-start-column="9" selection-end-line="752" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1055,8 +1063,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/Controller/UserController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3580247">
-          <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="283" column="0" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/Model/PersonModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/BagController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59117305">
+          <caret line="34" column="0" selection-start-line="23" selection-start-column="6" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
