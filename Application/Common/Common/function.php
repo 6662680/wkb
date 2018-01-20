@@ -607,7 +607,7 @@ function xunlei($site, $page, $time, $type, $other_side_site, $price) {
     $ch = curl_init();
     $this_header = array("content-type: application/x-www-form-urlencoded; charset=UTF-8");//访问链接时要发送的头信息
     $this_header[] = 'User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:52.0) Gecko/20100101 Firefox/52.0';
-
+	
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch,CURLOPT_HTTPHEADER,$this_header);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -629,13 +629,17 @@ function xunlei($site, $page, $time, $type, $other_side_site, $price) {
 		return FALSE;
 		//echo '没有转账记录';
 	}else{
+	
         if ($output['result'][0]['timestamp'] < $time) {
                 return false;
         }
-		foreach ($output['result'] as $value) {
-
+		
+		foreach ($output['result'] as $key => $value) {
+			
+				
+			
             if ($value['tradeAccount'] == $other_side_site && dec($value['amount']) == $price && $type == $value['type']) {
-
+				
                 return $data =[
                     'timestamp' => $value['timestamp'],
                     'tradeAccount' => $value['tradeAccount'],
@@ -645,7 +649,7 @@ function xunlei($site, $page, $time, $type, $other_side_site, $price) {
 
             }
         }
-        return xunlei($site, $page+1, $time, $type, $other_side_site, $price);
+        //return xunlei($site, $page+1, $time, $type, $other_side_site, $price);
 	}
 	
 }

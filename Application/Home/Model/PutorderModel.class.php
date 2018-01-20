@@ -496,10 +496,12 @@ class PutorderModel extends Model
             return ['status' => false, 'msg' => '非法访问'];
         }
         $putuserRst = M('user')->where(['id' => $order['user_id']])->find();
-
-        $result = getwkb($putuserRst['site'],$userRst['site'],$order['use_time'], 0, $order['commodity_price']);
+		$receivingRst = M('user')->where(['id' => $order['receiving_user_id']])->find();
+		
+        $result = getwkb($putuserRst['site'],$receivingRst['site'],$order['use_time'], 0, $order['commodity_price']);
+	
         $officialRst = getwkb($putuserRst['site'],C('SITE'),$order['use_time'], 0, $order['commodity_price']  / 20);
-
+		
         if (!$result) {
             returnajax(false, '', '没有找到您的打款记录,如果您有疑问，请联系客服');
         }
