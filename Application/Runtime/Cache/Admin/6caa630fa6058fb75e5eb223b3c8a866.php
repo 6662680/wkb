@@ -33,7 +33,7 @@
 
 
     <nav class="breadcrumb">
-    <i class="Hui-iconfont">&#xe67f;</i> 后台管理 <span class="c-gray en">&gt;</span> 人物管理 <span class="c-gray en">&gt;</span> 人物基础配置列表
+    <i class="Hui-iconfont">&#xe67f;</i> 后台管理 <span class="c-gray en">&gt;</span> 人物管理 <span class="c-gray en">&gt;</span> 商城人物基础配置列表
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
 	</nav>
     <div class="page-container">
@@ -71,8 +71,9 @@
                    <td><img style="width: 40px;height: 40px;" src="<?php echo ($vo["person_img"]); ?>"/></td>
                    <td>
                        <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->
-                       <a href="<?php echo U('Person/edit',array('id' => $vo['id']));?>">编辑</a>
-                       <a href="<?php echo U('Person/del',array('id' => $vo['id']));?>" onclick="return confirm('您确定要删除此人物吗?')">删除</a>
+                       <a style="color: #00CD00;" href="<?php echo U('Person/edit',array('id' => $vo['id']));?>">编辑</a>
+                       <a style="color: #FFA500;" href="<?php echo U('Person/personImg',array('id' => $vo['id']));?>">等级图编辑</a>
+                       <a style="color: red;" href="<?php echo U('Person/del',array('id' => $vo['id']));?>" onclick="return confirm('您确定要删除此人物吗?')">删除</a>
                    </td>
                 </tr><?php endforeach; endif; ?>
             </tbody>

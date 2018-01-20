@@ -25,8 +25,12 @@ class PconfigController extends PrivilegeController
 			$arr[$key]['tlevel2'] = ($key+1)*10-1;
 			$arr[$key]['value'] = $value;
 		}
-		/*pr($arr);die;*/
+		$personImg=M('person_img')->select();
+		
+		/*pr($configarr);die;*/
+		
     	$this->assign('configList',$arr);
+		$this->assign('personImg',$personImg);
         $this->display();
     }
     /**

@@ -47,6 +47,8 @@
                 <th>等级阶段</th>
                 <th>实际等级跨度</th>
                 <th>难度时间</th>
+                <!--<th>静态图(休眠中)</th>
+                <th>动态图(挖矿中)</th>-->
                 <th>操作</th>
             </tr>
             </thead>
@@ -55,6 +57,10 @@
                    <td><?php echo ($vo["level"]); ?></td>
                    <td><?php echo ($vo["tlevel"]); ?>~<?php echo ($vo["tlevel2"]); ?>级</td>
                    <td><?php echo ($vo["value"]); ?></td>
+                   <!--<td>静态图(休眠中)</td>
+                   <td>动态图(挖矿中)</td>-->
+                   
+                   
                    <td>
                        <a href="<?php echo U('Pconfig/edit',array('level' => $vo['level']));?>">修改难度时间</a>
                    </td>

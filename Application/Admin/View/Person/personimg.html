@@ -1,0 +1,46 @@
+<extend name="Public/base"/>
+<block name="body">
+    <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 后台管理 <span class="c-gray en">&gt;</span><a href="{:U('Person/index')}">商城人物基础配置 </a> <span class="c-gray en">&gt;</span> {$Personname}等级图配置列表
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+    <div class="page-container">
+        <form class="form-inline definewidth m20" id="searchForm" action="">
+        </form>
+        
+        <table class="table table-border table-bordered table-bg table-sort">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>人物名称</th>
+                <th>等级阶段</th>
+                <th>实际等级跨度</th>
+                <th>静态图(休眠中)</th>
+                <th>动态图(挖矿中)</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            	<?php $iid=0;  ?>
+            <foreach name="PersonimgList" item="vo">
+                <tr >
+                   <td><?php echo ++$iid; ?></td>
+                   <td>{$vo.person_name}</td>
+                   <td>{$vo.level}</td>
+                   <td>{$vo.tlevel}~{$vo.tlevel2}级</td>
+                   <td><img style="width: 40px;height: 40px;" src="{$vo.img}"/></td>
+                   <td><img style="width: 40px;height: 40px;" src="{$vo.action_img}"/></td>
+                   <td>
+                       <a href="{:U('Person/editImg1',array('id' => $vo['id'],'typeId' => $typeId))}">编辑静态图</a>
+                       <a href="{:U('Person/editImg2',array('id' => $vo['id'],'typeId' => $typeId))}">编辑动态图</a>
+                   </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+       
+    </div>
+
+</block>
+<block name="javascript">
+</block>

@@ -1,0 +1,45 @@
+<extend name="Public/base"/>
+<block name="body">
+    <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 人物管理 <span class="c-gray en">&gt;</span> <a href="{:U('Person/personImg',array('id' => $typeId))}">{$Personname}等级图配置列表</a><span class="c-gray en">&gt;</span> {$actionName}
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
+	   </nav>
+    <div class="page-container">
+        <form action="{:U('Person/editPost2')}" method="post" class="form form-horizontal" id="form-member-add" novalidate="novalidate"  enctype="multipart/form-data">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>人物名称:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="{$Personname}"  disabled>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>等级阶段:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="{$level}" disabled>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>实际等级跨度:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="{$level1}~{$level2}级"  disabled>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>动态图(挖矿中):</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="file" name="action_img" id="" value="" />
+                </div>
+            </div>
+            
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                    <input type="hidden" name="id" value="{$id}">
+                    <input type="hidden" name="typeId" value="{$typeId}">
+                    <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </div>
+</block>
+<block name="javascript">
+</block>

@@ -182,4 +182,167 @@ class PersonController extends PrivilegeController
 		M('Person')->delete($id);
 		$this->success('删除成功');
 	}
+
+	/**
+	 * 等级图列表
+	 * @author zh <[<email address>]>
+	 * @return [type] [description]
+	 */
+    public function personImg()
+    {
+    	$id = I('get.id');
+    	$pageSize = 10;
+        $p = I('request.p', 1, 'intval');
+        $page = getpage(M('person_img')->count(), $pageSize, array());
+		
+		$model = M('person_img');
+		$model->join('left join `person` on person.id=person_img.person_id');
+		$model->field('person_img.*,person.person_name');
+		$model->limit($page->firstRow, $page->listRows);
+		$model->where("person_id = $id");
+		$PersonimgList  = $model->select();
+		
+		foreach ($PersonimgList as $key => $value) {
+			$PersonimgList[$key]['level'] = $key;
+			$PersonimgList[$key]['tlevel'] = ($key)*10;
+			$PersonimgList[$key]['tlevel2'] = ($key+1)*10-1;
+		}
+		/*pr($PersonimgList);die;*/
+    	
+    	$this->assign('typeId',$id);
+		$this->assign('Personname',$PersonimgList[0]['person_name']);
+    	$this->assign('PersonimgList',$PersonimgList);
+    	$this->assign('page',$page->show());
+        $this->display('personimg');
+    }
+	/**
+	 * 等级图修改--静态
+	 * @author zh <[<email address>]>
+	 * @return [type] [description]
+	 */
+    public function editImg1()
+    {
+    	$id = I('get.id');
+		/*pr($id );die;*/
+		$typeId=I('get.typeId');
+		
+		$model = M('person_img');
+		$model->join('left join `person` on person.id=person_img.person_id');
+		$model->field('person_img.*,person.person_name');
+		$model->limit($page->firstRow, $page->listRows);
+		$model->where("person_id = $typeId");
+		$PersonimgList  = $model->select();
+		
+    	$nPersonimg = M('Person_img')->where("id = $id")->find();
+		/*pr($nPersonimg);die;*/
+		$level1=$nPersonimg['level']*10;
+		$level2=($nPersonimg['level']+1)*10-1;
+		
+		$this->assign('level',$nPersonimg['level']);
+		$this->assign('level1',$level1);
+		$this->assign('level2',$level2);
+    	
+    	$this->assign('actionName','编辑等级图');
+		$this->assign('Personname',$PersonimgList[0]['person_name']);
+		
+    	$this->assign('typeId',$typeId);
+		$this->assign('id',$id);
+		
+        $this->display('editimg1');
+    }
+	
+	/**
+	 * 等级图修改->提交后--静态
+	 * @author zh <[<email address>]>
+	 * @return [type] [description]
+	 */
+    public function editPost1()
+    {
+    	$id = I('post.id');
+		$typeId=I('post.typeId');
+		/*pr($id );die;*/
+		
+	    $upload = $this->upload();
+		
+		if(!$upload['info']['img']) {// 上传错误提示错误信息
+
+	        $this->error($upload['errorMsg']);
+		}else{// 上传成功 获取上传文件信息
+		        $img='/public/images/'.$upload['info']['img']['savepath'].'/'.$upload['info']['img']['savename'];
+				
+		}
+		
+		$data = [
+    		'img' => $img,
+    		];
+		/*pr($data);die;*/
+    	M('Person_img')->where("id = $id")->save($data);
+
+		$this->success('操作成功!',U('Person/personImg',array('id' => $typeId)),2);
+    }
+	/**
+	 * 等级图修改--动态
+	 * @author zh <[<email address>]>
+	 * @return [type] [description]
+	 */
+    public function editImg2()
+    {
+    	$id = I('get.id');
+		/*pr($id );die;*/
+		$typeId=I('get.typeId');
+		
+		$model = M('person_img');
+		$model->join('left join `person` on person.id=person_img.person_id');
+		$model->field('person_img.*,person.person_name');
+		$model->limit($page->firstRow, $page->listRows);
+		$model->where("person_id = $typeId");
+		$PersonimgList  = $model->select();
+		
+    	$nPersonimg = M('Person_img')->where("id = $id")->find();
+		/*pr($nPersonimg);die;*/
+		$level1=$nPersonimg['level']*10;
+		$level2=($nPersonimg['level']+1)*10-1;
+		
+		$this->assign('level',$nPersonimg['level']);
+		$this->assign('level1',$level1);
+		$this->assign('level2',$level2);
+    	
+    	$this->assign('actionName','编辑等级图');
+		$this->assign('Personname',$PersonimgList[0]['person_name']);
+		
+    	$this->assign('typeId',$typeId);
+		$this->assign('id',$id);
+		
+        $this->display('editimg2');
+    }
+	
+	/**
+	 * 等级图修改->提交后--动态
+	 * @author zh <[<email address>]>
+	 * @return [type] [description]
+	 */
+    public function editPost2()
+    {
+    	$id = I('post.id');
+		$typeId=I('post.typeId');
+		/*pr($id );die;*/
+		
+	    $upload = $this->upload();
+		
+		
+		if(!$upload['info']['action_img']) {// 上传错误提示错误信息
+
+	        $this->error($upload['errorMsg']);
+		}else{// 上传成功 获取上传文件信息
+		        $action_img='/public/images/'.$upload['info']['action_img']['savepath'].'/'.$upload['info']['action_img']['savename'];
+				
+		}
+		$data = [
+    		'action_img' => $action_img,
+    		];
+		/*pr($data);die;*/
+    	M('Person_img')->where("id = $id")->save($data);
+
+		$this->success('操作成功!',U('Person/personImg',array('id' => $typeId)),2);
+    }
 }

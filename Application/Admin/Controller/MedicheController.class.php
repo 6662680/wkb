@@ -68,14 +68,16 @@ class MedicheController extends PrivilegeController
     	$mediche_price = I('post.mediche_price');
 		/*$mediche_img = I('post.mediche_img');*/
 		
-		$upload = new \Think\Upload();// 实例化上传类
+		/*$upload = new \Think\Upload();// 实例化上传类
 	    $upload->maxSize   =     3145728 ;// 设置附件上传大小
 	    $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
 	    $upload->autoSub = FALSE;// 取消上传时自动生成日期形式的文件夹
 		$upload->saveName = '';// 设置成以原文件名存放
 	    $upload->rootPath  =      './Public/images/mediche/'; // 设置附件上传根目录
 	    // 上传单个文件 
-	    $info   =   $upload->uploadOne($_FILES['mediche_img']);
+	    $info   =   $upload->uploadOne($_FILES['mediche_img']);*/
+	    
+	    $upload = $this->upload();
 		/*pr($info);die;*/
 		
     	//$id存在就是修改,不存在就是添加
@@ -107,10 +109,11 @@ class MedicheController extends PrivilegeController
     		'mediche_price' => $mediche_price,
     		];
 		} else {
-			if(!$info) {// 上传错误提示错误信息
+			if(!$upload['info']['mediche_img']) {// 上传错误提示错误信息
 	        $this->error($upload->getError());
 		    }else{// 上传成功 获取上传文件信息
-		        $mediche_img='/images/mediche/'.$info['savename'];
+		        $mediche_img='/public/images/'.$upload['info']['mediche_img']['savepath'].'/'.$upload['info']['mediche_img']['savename'];
+		        
 		    }
 			$data = [
     		'mediche_name' => $mediche_name,
