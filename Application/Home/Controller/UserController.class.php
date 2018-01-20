@@ -257,29 +257,40 @@ class UserController extends Controller
     /*修改为正式地址*/
     public function site()
     {
+
     	//访问迅雷接口
     	$user = M('user')->where(['id' => session('user_id')])->find();
+
+        if ($user['site']) {
+            returnajax(false, '', '您已经通过验证');
+        }
+
 		$userSite = $user['sitetemp'];//getwkb的第一个参数
 		$page = 1 ;//先设置为1
 		$time = $user['create_time'];
-		$result = getwkb('0x19e2fbe87147cb8d7b15b92b0b7e35b906339b6b', $page,$time);
-		pr($result);
-		/*if ($newOutput['timestamp'] < $time) {
-			echo '该会员最近的转账时间：'.$newOutput['timestamp'].'，点击确认已支付时间：'.$time.'没有对应转账记录！';
-		} else {
-			echo '有对应转账记录！';
-		}*/
-		die;
-		
+
+//		$result = getwkb('0xc92fb1c425e40469de1ce4729a32f49949c39b81',C('SITE'),$time, 0, 23);
+		$result = getwkb($user['sitetemp'],C('SITE'),$time, 0, 1);
+
+        if (!$result) {
+            returnajax(false, '', '没有找到您的打款记录,如果您有疑问，请联系客服');
+        }
+
+        $add = M('earnings')->add(['user_id' => session('user_id'), 'price' => $result['price'], 'creation_time' => time(), 'order_id' => $result['order_id']]);
+
+        if (!$add) {
+            returnajax(false, '', '打款记录异常,请联系客服');
+        }
+
 		/*接口验证成功后执行的代码*/
-        /*$user = M('user')->where(['id' => session('user_id')])->find();
+        $user = M('user')->where(['id' => session('user_id')])->find();
         $rst = M('user')->where(['id' => session('user_id')])->save(['site' => $user['sitetemp']]);
 
         if ($rst === false) {
             returnajax(false, '', '验证失败，请联系客服');
         } else {
             returnajax(true);
-        }*/
+        }
     }
 
 

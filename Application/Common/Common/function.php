@@ -582,11 +582,22 @@ function getIp() {
     return ($ip);
 }
 
-function getwkb($site, $page,$time) {
-    return xunlei($site,$page,$time);
+// type:0 是 出  1是进
+function getwkb($site, $other_side_site, $time, $type, $price) {
+    $page = 1;
+     return xunlei($site,$page,$time,$type, $other_side_site, $price);
 }
 
-function xunlei($site, $page,$time) {
+function dec($n) {
+    return base_convert($n, 16, 10) / 1000000000000000000;
+}
+
+function xunlei($site, $page, $time, $type, $other_side_site, $price) {
+
+    if ( $page > 10) {
+        return FALSE;
+    }
+
     $url = "https://walletapi.onethingpcs.com/getTransactionRecords";
     $post_data =  '["'.$site.'","0","0","'.$page.'","10"]';
 	
@@ -612,20 +623,29 @@ function xunlei($site, $page,$time) {
 	$output = json_decode($output,true);
     //打印获得的数据
     //pr($output);
-	
+
 	//转账记录匹配
 	if (!$output['result']) {
 		return FALSE;
 		//echo '没有转账记录';
 	}else{
-		$newOutput = reset($output['result']);
-		//return $newOutput;
-		if ($newOutput['timestamp'] < $time) {
-			return '支付失败';
-		} else {
-			
-		}
-		
+        if ($output['result'][0]['timestamp'] < $time) {
+                return false;
+        }
+		foreach ($output['result'] as $value) {
+
+            if ($value['tradeAccount'] == $other_side_site && dec($value['amount']) == $price && $type == $value['type']) {
+
+                return $data =[
+                    'timestamp' => $value['timestamp'],
+                    'tradeAccount' => $value['tradeAccount'],
+                    'price' => dec($value['amount']),
+                    'order_id' => $value['order_id'],
+                ];
+
+            }
+        }
+        return xunlei($site, $page+1, $time, $type, $other_side_site, $price);
 	}
 	
 }

@@ -151,8 +151,6 @@ class PutorderModel extends Model
             }
         }
 
-
-
         $add  = [
           'commodity_id' => $commodity_id,
           'commodity_type' => $commodity_type,
@@ -248,6 +246,20 @@ class PutorderModel extends Model
         $time = array('GT', $time);
         //'creation_time' => $time,
         $orderRst = M('user_sell_order')->where(['id' => $order_id, 'status' => 1])->find();
+
+        $putuserRst = M('user')->where(['id' => $orderRst['user_id']])->find();
+
+        $result = getwkb($userRst['site'],$putuserRst['site'],$orderRst['use_time'], 0, $orderRst['commodity_price']);
+
+        if (!$result) {
+            returnajax(false, '', '没有找到您的打款记录,如果您有疑问，请联系客服');
+        }
+
+        $add = M('earnings')->add(['user_id' => session('user_id'), 'price' => $result['price'], 'creation_time' => time(), 'order_id' => $result['order_id']]);
+
+        if (!$add) {
+            returnajax(false, '', '打款记录异常,请联系客服');
+        }
 
         if (!$orderRst) {
 //            D('Log')->addLog('交易异常：订单不存在或者过期失效', $userRst['id']);
@@ -471,7 +483,7 @@ class PutorderModel extends Model
     public function buyAccomplish($receiving_user_id, $user_buy_order_id)
     {
         $order = M('user_buy_order')->where(['id' => $user_buy_order_id])->find();
-		
+
         if (!$order) {
             return ['status' => false, 'msg' => '不存在的订单'];
         }
@@ -479,7 +491,27 @@ class PutorderModel extends Model
         if ($order['use_time'] + C('ORDER_TIME') < time()) {
             return ['status' => false, 'msg' => '订单超时失效'];
         }
-		
+
+        $userRst = M('user')->where(['id' => $receiving_user_id])->field('id')->find();
+
+        if (!$userRst['id']) {
+            return ['status' => false, 'msg' => '非法访问'];
+        }
+        $putuserRst = M('user')->where(['id' => $order['user_id']])->find();
+
+        $result = getwkb($putuserRst['site'],$userRst['site'],$order['use_time'], 0, $order['commodity_price']);
+
+        if (!$result) {
+            returnajax(false, '', '没有找到您的打款记录,如果您有疑问，请联系客服');
+        }
+
+        $add = M('earnings')->add(['user_id' => session('user_id'), 'price' => $result['price'], 'creation_time' => time(), 'order_id' => $result['order_id']]);
+
+        if (!$add) {
+            returnajax(false, '', '打款记录异常,请联系客服');
+        }
+
+
         $buymsg = '购买道具:'. $order['commodity_name'];
         $selllog = '卖出道具:'. $order['commodity_name'];
         $trans = new Model();

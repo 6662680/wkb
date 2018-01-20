@@ -39,7 +39,7 @@
                     <span class="red">10</span>wkc</div>
                 <div class="dark mt15">支付完成后，就可以购买人物开始挖矿啦！</div>
                 <div class="dark">收益出乎您的想象！</div>
-                <a href="{:U('user/site','','')}" id="zhifu" class="weui-btn weui-btn_mini weui-btn_primary mt15">确认已支付</a><br />
+                <button  id="zhifu" class="weui-btn weui-btn_mini weui-btn_primary mt15">确认已支付</button><br />
                 <a href="{:U('bag/unZhifu','','')}" class="weui-btn weui-btn_mini weui-btn_warn mt15">取消支付</a>
                 
             </div>
@@ -52,8 +52,10 @@
     <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
 </body>
-<!--<script>
+<script>
     $('#zhifu').click(function(){
+        $(this).attr('disabled',"disabled");
+        $(this).text('验证中...');
         $.ajax({
             url:"{:U('user/site')}",
             type:'POST', //GET
@@ -69,10 +71,11 @@
                     window.location.href="{:U('bag/userMe')}";
                 } else {
                     alert(result.msg);
+                    window.location.href="{:U('bag/zhifu')}";
                 }
             }
         })
     });
 
-</script>-->
+</script>
 </html>
