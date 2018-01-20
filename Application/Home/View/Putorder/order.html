@@ -32,7 +32,7 @@
                 <div class="stitle">{$rst.commodity_name}</div>
                 <hr>
                 <h3 class="mt15">请使用绑定钱包</h3>
-                <div class="f12 dark">{$rst.site}</div>
+                <div class="f12 dark">{$rst.putorder_site}</div>
                 <if condition="$overtime eq '1' || $status eq '1'" >
                     <if condition="$status eq '1'">
                         <div class="red f14 mt15">订单已完成</div>
@@ -46,7 +46,7 @@
                     <h3 class="mt15">再向下方玩家钱包
                         <!--<i class="fa fa-qr"></i>-->
                     </h3>
-                    <div class="f12 dark">{$rst.putorder_site}</div>
+                    <div class="f12 dark">{$rst.site}</div>
                     <div class="f18 mt15">转账
                         <span class="red">{$rst.commodity_price}</span>wkc</div>
                     <div class="dark mt15">请在

@@ -241,7 +241,6 @@ class PutorderController extends BaseController
             $status = true;
         }
 
-
         $this->assign('rst',$rst);
 
         $this->assign('overtime',$overtime);
