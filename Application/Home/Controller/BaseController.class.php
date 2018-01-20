@@ -25,9 +25,9 @@ class BaseController extends Controller
 
     public function ban()
     {
-        if (date('G') >= 23 ||  date('G') < 1) {
-            returnajax(false, '' , '抱歉，为了方便结算,每天23-凌晨1点期间不允许有任何操作');
-        }
+//        if (date('G') >= 23 ||  date('G') < 1) {
+//            returnajax(false, '' , '抱歉，为了方便结算,每天23-凌晨1点期间不允许有任何操作');
+//        }
     }
 
 }
