@@ -94,6 +94,18 @@ class OrderModel extends Model
         $trans = new Model();
         $trans->startTrans();
 
+        $result = getwkb($user['site'], C('SITE'), $orderRst['creation_time'], 0, $orderRst['commodity_price']);
+
+        if (!$result) {
+            returnajax(false, '', '没有找到您的打款记录,如果您有疑问，请联系客服');
+        }
+
+        $add = M('earnings')->add(['user_id' => session('user_id'), 'price' => $result['price'], 'creation_time' => time(), 'order_id' => $result['order_id']]);
+
+        if (!$add) {
+            returnajax(false, '', '打款记录异常,请联系客服');
+        }
+
         if ($orderRst['commodity_type'] == 1) {
 
             $model = M('person_bag');

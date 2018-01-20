@@ -92,7 +92,7 @@ class PutorderController extends BaseController
     public function sellCreationOrder()
     {
         $post = I('post.');
-
+        $this->ban();
         $rst = D('Putorder')->sellCreationOrder(session('user_id'), $post['commodity_id'], $post['commodity_type'], $post['commodity_price']);
 
         if ($rst['status'] == true) {
@@ -110,6 +110,7 @@ class PutorderController extends BaseController
      */
     public function sellReceiving()
     {
+        $this->ban();
         $order_id = I('get.order_id');
         $rst = D('putorder')->sellreceiving(session('user_id'), $order_id);
 
@@ -130,6 +131,7 @@ class PutorderController extends BaseController
      */
     public function sellAccomplish()
     {
+        $this->ban();
         $order_id = I('get.order_id');
         $rst = D('putorder')->sellAccomplish(session('user_id'), $order_id);
 
@@ -149,6 +151,7 @@ class PutorderController extends BaseController
      */
     public function buyCreationOrder()
     {
+        $this->ban();
         $post = I('post.');
 
         $rst = D('Putorder')->buyCreationOrder(session('user_id'), $post ,1);
@@ -168,6 +171,7 @@ class PutorderController extends BaseController
      */
     public function buyReceiving()
     {
+        $this->ban();
         $order_id = I('get.order_id', '', 'int');
         $rst = D('Putorder')->buyReceiving(session('user_id'), $order_id);
 
@@ -186,7 +190,7 @@ class PutorderController extends BaseController
      */
     public function buyAccomplish()
     {
-        
+        $this->ban();
         $order_id = I('post.order_id', '', 'int');
         $rst = D('Putorder')->buyAccomplish(session('user_id'), $order_id);
 
@@ -200,6 +204,7 @@ class PutorderController extends BaseController
     //让用户打款
     public function remit()
     {
+
         $order_id = I('get.order_id');
         $type = I('get.type');
 

@@ -22,7 +22,8 @@ return array(
 		2 => 'equipment',
 		3 => 'mediche',
 	),
-	'SITE' => '0x377d4b2b9086155cb35d89067de77786a410f9bf',
+//	'SITE' => '0x377d4b2b9086155cb35d89067de77786a410f9bf',
+	'SITE' => '0xcc975ea43170640508481319a753b916b9636df1',
 
 	'ORDER_TIME' => 600,
 

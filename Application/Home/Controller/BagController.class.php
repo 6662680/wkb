@@ -281,6 +281,8 @@ class BagController extends BaseController
      */
     public function switchover()
     {
+        $this->ban();
+
         $post = I('post.');
         $equipment = D('equipment')->switchover($post['person_bage_id'], $post['equipment_bag_id'], $post['type']);
 
@@ -299,6 +301,7 @@ class BagController extends BaseController
      */
     public function useMediche()
     {
+        $this->ban();
         $post = I('post.');
         $mediche = D('mediche')->useMediche($post['person_bag_id'], $post['mediche_bag_id']);
 

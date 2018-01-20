@@ -19,14 +19,16 @@ class OrderController extends BaseController
      */
     public function buy()
     {
+//	    $this->ban();
         $get = I('get.');
-		
-			$rst = D('order')->buy(session('user_id'), $get['commodity_id'], $get['commodity_type']);
-			if ($rst['status'] == true) {
-	            returnajax(true, '' ,$rst['msg']);
-	        } else {
-	            returnajax(false, '' , $rst['msg']);
-	        }
+
+
+		$rst = D('order')->buy(session('user_id'), $get['commodity_id'], $get['commodity_type']);
+		if ($rst['status'] == true) {
+            returnajax(true, '' ,$rst['msg']);
+        } else {
+            returnajax(false, '' , $rst['msg']);
+        }
 		
         
     }
@@ -150,9 +152,9 @@ class OrderController extends BaseController
 		}
 		
 	}
-	
-	
-	
+
+
+
     /**
      * 购买商品，异步更新
      * @author LiYang
@@ -162,7 +164,7 @@ class OrderController extends BaseController
     public function accomplishBuy()
     {
 		$get = I('get.');
-		
+	    $this->ban();
         $rst = D('order')->accomplishBuy($get['order_id']);
        
         if ($rst['status']) {
@@ -184,7 +186,7 @@ class OrderController extends BaseController
     public function unBuy()
     {
     	$get = I('get.');
-
+	    $this->ban();
         $rst = D('order')->unBuy($get['order_id']);
         if ($rst) {
 			$this->redirect(U('store/person','',''));
