@@ -20,13 +20,8 @@ class SpreadController extends BaseController
     public function award()
     {
 
-        //获取价格
-        /*$rst = D('spread')->getPriceOrNum(2);*/
-        //处理价格
         //
-
-        //
-    	$user_id=5;
+    	$user_id=session('user_id');
 		/*获取某会员的总消费金额*/
         $rst = D('spread')->getSumPrice($user_id);
 		/*pr($rst);*/
@@ -60,7 +55,7 @@ class SpreadController extends BaseController
      */
     public function awardEquipment()
     {
-    	$user_id=2;
+    	$user_id=session('user_id');
 		/*获取某会员的消费次数，从而判断是否第一次消费*/
     	$rst=M('order')->where(['user_id' => $user_id, 'status' => 2])->field('COUNT(*) as num ')->find();
 		$rst2=M('first_buy')->where(['id' => 1])->find();

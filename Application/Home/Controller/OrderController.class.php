@@ -166,6 +166,8 @@ class OrderController extends BaseController
         $rst = D('order')->accomplishBuy($get['order_id']);
        
         if ($rst['status']) {
+        	$award=A('Spread')->award();
+			$awardEquipment=A('Spread')->awardEquipment();
             returnajax(true, '','购买成功');
         } else {
             returnajax(false, '', $rst['msg']);
