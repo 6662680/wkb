@@ -225,12 +225,19 @@ class PutorderController extends BaseController
 
             $rst['typeImg'] = $img['img'];
         } else {
-        	
-            $model = M('equipment_bag');
-            $data = $model->where(['id' => $rst['commodity_id']])->find();
-			$equipmentimg=M('equipment')->where(['id' => $data['equipment_id']])->find();
-			/*pr($equipmentimg);die;*/
-            $rst['typeImg'] = $equipmentimg['equipment_img'];
+
+            if ($type == 1) {
+                $equipmentimg = M('equipment')->where(['id' => $rst['commodity_id']])->find();
+                $rst['typeImg'] = $equipmentimg['equipment_img'];
+            } else {
+                $model = M('equipment_bag');
+                $data = $model->where(['id' => $rst['commodity_id']])->find();
+                $equipmentimg=M('equipment')->where(['id' => $data['equipment_id']])->find();
+                /*pr($equipmentimg);die;*/
+                $rst['typeImg'] = $equipmentimg['equipment_img'];
+            }
+
+
         }
 
         $rst['server_price'] = $rst['commodity_price'] / 20;

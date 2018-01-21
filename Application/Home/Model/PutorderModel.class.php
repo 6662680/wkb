@@ -476,7 +476,7 @@ class PutorderModel extends Model
         $save = M('user_buy_order')
             ->where(['id' => $user_buy_order_id])
             ->limit(1)
-            ->save(['use' => 1, 'use_time' => time(), 'receiving_user_id' => $receiving_user_id, 'site' => $receiving_user['site']]);
+            ->save(['use' => 1, 'use_time' => time(), 'receiving_user_id' => $receiving_user_id, 'site' => $receiving_user['site'], 'commodity_id_bag' => $find['id']]);
 
         if ($save !== 1) {
             return ['status' => false, 'msg' => '购买失败，请稍候再试'];
@@ -563,11 +563,14 @@ class PutorderModel extends Model
         }
 	
         if ($order['commodity_type'] == 2) {
+
             $map = [
-                'equipment_id' => $order['commodity_id'],
-                'user_id' => $receiving_user_id,
+                'equipment_id' => $order['commodity_id_bag'],
+                'user_id' => $order['receiving_user_id'],
             ];
+
             $save = M('equipment_bag')->where($map)->limit(1)->save(['user_id' => $receiving_user_id]);
+
         }
 	
         $savedata = M('user_buy_order')->where(['id' => $user_buy_order_id])->save(['status' => 2, 'wkb_order_id' => $result['order_id']]);
