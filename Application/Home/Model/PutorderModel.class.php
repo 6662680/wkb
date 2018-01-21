@@ -65,7 +65,7 @@ class PutorderModel extends Model
 
         //获取自身装备信息
         $model = M(C('COMMODITY_TYPE')[$commodity_type] . '_bag');
-        $commodity_rst = $model->where(['id' => $commodity_id])->find();
+        $commodity_rst = $model->where(['id' => $commodity_id, 'user_id' => session('user_id')])->find();
 
         if (empty($commodity_rst)) {
             return ['status' => false, 'msg' => '不存在的道具'];
@@ -78,6 +78,11 @@ class PutorderModel extends Model
             return ['status' => false, 'msg' => '您没有设置您的玩客币地址，请先设置地址'];
         }
 
+        $user_sell_rst = M('user_sell_order')->where(['status' => 1, 'user_id' => session('user_id'), 'commodity_id' => $commodity_id])->find();
+
+        if ($user_sell_rst) {
+            return ['status' => false, 'msg' => '此道具已挂在交易中心,请勿重复挂单'];
+        }
 
         $trans = new Model();
         $trans->startTrans();
@@ -234,7 +239,7 @@ class PutorderModel extends Model
             return ['status' => false, 'msg' => '缺少参数'];
         }
 
-        $userRst = M('user')->where(['id' => $user_id])->field('id')->find();
+        $userRst = M('user')->where(['id' => $user_id])->find();
 
         if (!$userRst['id']) {
             return ['status' => false, 'msg' => '非法访问'];
@@ -248,9 +253,12 @@ class PutorderModel extends Model
         $orderRst = M('user_sell_order')->where(['id' => $order_id, 'status' => 1])->find();
 
         $putuserRst = M('user')->where(['id' => $orderRst['user_id']])->find();
+        $officialRst = getwkb($userRst['site'],C('SITE'),$orderRst['use_time'], 0, $orderRst['commodity_price']  / 20);
 
         $result = getwkb($userRst['site'],$putuserRst['site'],$orderRst['use_time'], 0, $orderRst['commodity_price']);
-        $officialRst = getwkb($putuserRst['site'],C('SITE'),$orderRst['use_time'], 0, $orderRst['commodity_price']  / 20);
+
+
+
         if (!$result) {
             returnajax(false, '', '没有找到您的打款记录,如果您有疑问，请联系客服');
         }

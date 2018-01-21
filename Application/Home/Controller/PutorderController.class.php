@@ -216,14 +216,21 @@ class PutorderController extends BaseController
 
         $rst = $model->where(['id' => $order_id])->find();
 
-        if ($rst['commodity_id'] == 1) {
-            $model = M('person');
+        if ($rst['commodity_type'] == 1) {
+
+            $model = M('person_bag');
             $data = $model->where(['id' => $rst['commodity_id']])->find();
-            $rst['typeImg'] = $data['person_img'];
+
+            $level = $data['level'] / 10;
+
+            $img = M('person_img')->where(['person_id' => $data['person_id'], 'level' => floor($level)])->find();
+
+
+            $rst['typeImg'] = $img['img'];
         } else {
-            $model = M('mediche');
+            $model = M('equipment_bag');
             $data = $model->where(['id' => $rst['commodity_id']])->find();
-            $rst['typeImg'] = $data['mediche_img'];
+            $rst['typeImg'] = $data['equipment_img'];
         }
 
         $rst['server_price'] = $rst['commodity_price'] / 20;
@@ -239,6 +246,11 @@ class PutorderController extends BaseController
         $status = false;
         if ($rst['status'] == 2) {
             $status = true;
+        }
+        if ($type == 2) {
+            $tmp = $rst['putorder_site'];
+            $rst['putorder_site'] = $rst['site'];
+            $rst['site'] = $tmp;
         }
 
         $this->assign('rst',$rst);

@@ -600,7 +600,7 @@ function xunlei($site, $page, $time, $type, $other_side_site, $price) {
 
     $url = "https://walletapi.onethingpcs.com/getTransactionRecords";
     $post_data =  '["'.$site.'","0","0","'.$page.'","10"]';
-	
+
 	/*if (拿第一条时间匹配需要打款的时间，如果时间小于打款时间) {
 		return false;
 	}	*/
@@ -633,13 +633,19 @@ function xunlei($site, $page, $time, $type, $other_side_site, $price) {
         if ($output['result'][0]['timestamp'] < $time) {
                 return false;
         }
-		
-		foreach ($output['result'] as $key => $value) {
-			
-				
-			
-            if ($value['tradeAccount'] == $other_side_site && dec($value['amount']) == $price && $type == $value['type']) {
-				
+//        pr($price);
+//		pr(dec($output['result'][1]['amount']));die();
+
+//        pr($output['result'][1]['tradeAccount']);
+//        pr($other_side_site);die();
+
+//                pr($output['result'][1]['type']);
+//        pr($type);die();
+
+        foreach ($output['result'] as $key => $value) {
+
+            if ($value['tradeAccount'] == $other_side_site &&  dec($value['amount']) == (string)$price && $type == $value['type']) {
+
                 return $data =[
                     'timestamp' => $value['timestamp'],
                     'tradeAccount' => $value['tradeAccount'],
@@ -649,7 +655,7 @@ function xunlei($site, $page, $time, $type, $other_side_site, $price) {
 
             }
         }
-        //return xunlei($site, $page+1, $time, $type, $other_side_site, $price);
+        return xunlei($site, $page+1, $time, $type, $other_side_site, $price);
 	}
 	
 }

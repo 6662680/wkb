@@ -275,6 +275,68 @@
     <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
 </body>
 <script>
+
+    function tijiao(order_id, type){
+
+        if (type == 1) {
+
+            $.ajax({
+                url:"{:U('putorder/buyReceiving','','')}/order_id/"+order_id,
+                type:'GET', //GET
+                async:true,    //或false,是否异步
+                data:{
+
+                },
+                timeout:5000,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                success:function(result){
+                    if (result.status) {
+                        $.ajax({
+                            url:"{:U('putorder/send','','')}/order_id/"+order_id+'/type/'+ {$type},
+                            type:'GET', //GET
+                            async:true,    //或false,是否异步
+                            data:{
+
+                            },
+                            timeout:5000,    //超时时间
+                            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                            success:function(result){
+                                if (result.status) {
+                                    alert('订购成功，已通知下单方付款，请10分钟后到个人中心订单中查看');
+                                } else {
+                                    alert(result.msg);
+                                }
+                            }
+                        })
+
+                    } else {
+                        alert(result.msg);
+                    }
+                }
+            })
+        } else {
+
+            $.ajax({
+                url:"{:U('putorder/sellReceiving','','')}/order_id/"+order_id,
+                type:'GET', //GET
+                async:true,    //或false,是否异步
+                data:{
+
+                },
+                timeout:5000,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                success:function(result){
+                    if (result.status) {
+                        window.location.href= "{:U('putorder/remit','','')}/" + "order_id/"+order_id+'/type/'+ {$type};
+                    } else {
+                        alert(result.msg);
+                    }
+                }
+            })
+        }
+
+    }
+
 	$('#select1').change(function(){
 		var $id = $(this).val();
         $("#wakuang").css("display","flex")
