@@ -19,16 +19,13 @@ class PutorderController extends BaseController
         $commodity_type = I('post.commodity_type',1);
         $rst = D('Putorder')->orderList($type, $commodity_type);
 		
-		/*foreach ($rst as &$value) {
+		foreach ($rst as &$value) {
             $level = $value['level'] / 10;
 
             $img = M('person_img')->where(['person_id' => $value['person_id'], 'level' => floor($level)])->find();
-            if ($value['residue'] > 0) {
-                $value['person_img'] = $img['action_img'];
-            } else {
+            
                 $value['person_img'] = $img['img'];
-            }
-        }*/
+        }
 		
 
         $this->assign('rst',$rst);
@@ -228,9 +225,12 @@ class PutorderController extends BaseController
 
             $rst['typeImg'] = $img['img'];
         } else {
+        	
             $model = M('equipment_bag');
             $data = $model->where(['id' => $rst['commodity_id']])->find();
-            $rst['typeImg'] = $data['equipment_img'];
+			$equipmentimg=M('equipment')->where(['id' => $data['equipment_id']])->find();
+			/*pr($equipmentimg);die;*/
+            $rst['typeImg'] = $equipmentimg['equipment_img'];
         }
 
         $rst['server_price'] = $rst['commodity_price'] / 20;
