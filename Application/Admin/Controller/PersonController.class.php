@@ -18,7 +18,7 @@ class PersonController extends PrivilegeController
     	$pageSize = 10;
         $p = I('request.p', 1, 'intval');
         $page = getpage(M('Person')->count(), $pageSize, array());
-    	$PersonList = M('Person')->limit($page->firstRow, $page->listRows)->select();
+    	$PersonList = M('Person')->limit($page->firstRow, $page->listRows)->where("isdel = 1")->select();
 	
     	$this->assign('PersonList',$PersonList);
     	$this->assign('page',$page->show());
@@ -178,8 +178,10 @@ class PersonController extends PrivilegeController
 		{
 			$this->error('非法请求');
 		}
-		
-		M('Person')->delete($id);
+		$data = [
+    		'isdel' => 2,
+    		];
+		M('Person')->where("id = $id")->save($data);
 		$this->success('删除成功');
 	}
 

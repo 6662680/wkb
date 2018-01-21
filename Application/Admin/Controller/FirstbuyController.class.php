@@ -35,7 +35,7 @@ class FirstbuyController extends PrivilegeController
     		$this->requestSubmit();
     	}
     	$this->assign('actionName','首次消费奖励编辑');
-		$this->assign('equipmentInfo',M('equipment')->select());
+		$this->assign('equipmentInfo',M('equipment')->where("isdel = 1")->select());
     	$this->assign('firstbuyInfo',M('first_buy')->find());
         $this->display('form');
     }

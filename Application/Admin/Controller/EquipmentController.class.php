@@ -18,7 +18,7 @@ class EquipmentController extends PrivilegeController
     	$pageSize = 10;
         $p = I('request.p', 1, 'intval');
         $page = getpage(M('Equipment')->count(), $pageSize, array());
-    	$equipmentList = M('Equipment')->limit($page->firstRow, $page->listRows)->select();
+    	$equipmentList = M('Equipment')->limit($page->firstRow, $page->listRows)->where("isdel = 1")->select();
     	$this->assign('equipmentList',$equipmentList);
     	$this->assign('page',$page->show());
         $this->display();
@@ -168,8 +168,10 @@ class EquipmentController extends PrivilegeController
 		{
 			$this->error('非法请求');
 		}
-		
-		M('Equipment')->delete($id);
+		$data = [
+    		'isdel' => 2,
+    		];
+		M('Equipment')->where("id = $id")->save($data);
 		$this->success('删除成功');
 	}
 }

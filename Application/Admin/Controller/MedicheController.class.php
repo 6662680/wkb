@@ -18,7 +18,7 @@ class MedicheController extends PrivilegeController
     	$pageSize = 10;
         $p = I('request.p', 1, 'intval');
         $page = getpage(M('Mediche')->count(), $pageSize, array());
-    	$medicheList = M('Mediche')->limit($page->firstRow, $page->listRows)->select();
+    	$medicheList = M('Mediche')->limit($page->firstRow, $page->listRows)->where("isdel = 1")->select();
     	$this->assign('medicheList',$medicheList);
     	$this->assign('page',$page->show());
         $this->display();
@@ -155,8 +155,10 @@ class MedicheController extends PrivilegeController
 		{
 			$this->error('非法请求');
 		}
-		
-		M('Mediche')->delete($id);
+		$data = [
+    		'isdel' => 2,
+    		];
+		M('Mediche')->where("id = $id")->save($data);
 		$this->success('删除成功');
 	}
 }
