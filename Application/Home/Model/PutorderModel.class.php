@@ -323,7 +323,7 @@ class PutorderModel extends Model
         if ($orderRst['commodity_type'] == 2) {
             $saveRst = M('equipment_bag')->where(['id' => $orderRst['commodity_id']])->limit(1)->save(['user_id' => $userRst['id'], 'order_use' => 0]);
 
-            if (!$saveRst === false) {
+            if ($saveRst === false) {
                 D('Log')->addLog('交易失败:用户付款'. $orderRst['commodity_price'] .', 该装备已在出售中或者不存在：', $userRst['id']);
                 $trans->rollback();
                 return ['status' => false, 'msg' => '道具交易失败'];
