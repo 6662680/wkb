@@ -133,11 +133,12 @@
                         	 <?php
                                     if ($user_id == $vo['user_id']) {
 
-                                     echo '下单时间:'.{$vo.creation_time|date="Y-m-d H:i:s",###};
+                                     echo '下单时间:'.date("Y-m-d H:i:s",$vo['creation_time']);
+                                     
 
 
                                     }else {
-                                     echo "接单时间:".{$vo.use_time|date="Y-m-d H:i:s",###};
+                                     echo "接单时间:".date("Y-m-d H:i:s",$vo['use_time']);
                                     }
 
                         </div>
