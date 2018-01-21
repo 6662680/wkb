@@ -32,17 +32,15 @@
                 <div class="stitle">{$rst2.$typeName}</div>
                 <hr>
                 <h3 class="mt15">请使用绑定钱包</h3>
-                <div class="f12 dark" id="usersite" data-clipboard-text="{$user.site}">
-                	<div class="alert alert-success" role="alert">
-                	{$user.site}
-                	</div>
+                <div class="f12 dark"  id="usersite" data-clipboard-text="{$user.site}">
+                	<div class="alert alert-success " style="text-align: center;margin-left: -12px;" role="alert">{$user.site}</div>
                 </div>
                 <div class="red f14 mt15">一次性</div>
                 <h3 class="mt15">向下方官方钱包
                     <i class="fa fa-qr"></i>
                 </h3>
                 <div class="f12 dark" id="storesite" data-clipboard-text="{:C('SITE')}">
-                	<div class="alert alert-success" role="alert">
+                	<div class="alert alert-success" role="alert" style="text-align: center;margin-left: -12px;">
                 	{:C('SITE')}
                 	</div>
                 </div>
