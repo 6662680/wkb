@@ -23,11 +23,12 @@ class UserModel extends Model
 	//获取会员求购订单
     public function getBuyOrder()
     {
+    	$userid=session('user_id');
         $buyOrderList = M('user_buy_order')
-            ->where(['user_id' => session('user_id')])
+            ->where( "user_id = $userid || receiving_user_id=$userid")
 			->limit(10)
             ->select();
-
+		/*pr(M()->getLastSql());die;*/
 		foreach($buyOrderList as &$value) {
 			if ($value['use_time'] + C('ORDER_TIME' ) < time() && $value['status'] != 2) {
 				$value['status'] = 4;
@@ -44,11 +45,12 @@ class UserModel extends Model
 	//获取会员出售订单
     public function getSellOrder()
     {
+    	$userid=session('user_id');
         $sellOrderList = M('user_sell_order')
-            ->where(['user_id' => session('user_id')])
+            ->where("user_id = $userid || receiving_user_id=$userid")
 			->limit(10)
             ->select();
-
+/*pr(M()->getLastSql());die;*/
 		foreach($sellOrderList as &$value) {
 
 			if ($value['use_time'] + C('ORDER_TIME' )< time() && $value['status'] != 2 && $value['user_id'] != session('user_id')) {
