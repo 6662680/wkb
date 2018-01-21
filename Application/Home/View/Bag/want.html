@@ -98,7 +98,14 @@
                                             echo 'class="weui-btn weui-btn_mini weui-btn_default" >等待用户接单';
                                         }
                                     }else {
-                                        echo 'class="weui-btn weui-btn_mini weui-btn_primary cancel" >已收款';
+                                        if ($vo['use_time'] != 0) {
+                                            echo 'class="weui-btn weui-btn_mini weui-btn_default " >等待对方付款';
+                                        } else {
+                                        	if($vo['status'] == 2){
+                                        		echo 'class="weui-btn weui-btn_mini weui-btn_primary" >订单已完成';
+                                        	}
+                                            
+                                        }
                                     }
 
                                     ?>
