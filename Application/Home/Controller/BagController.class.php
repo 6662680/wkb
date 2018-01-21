@@ -223,6 +223,10 @@ class BagController extends BaseController
 	/*支付注册费*/
 	public function zhifu()
     {
+    	$user=M('user')->where(['id' => session('user_id')])->find();
+		$sitetemp=$user['sitetemp'];
+		/*pr($sitetemp);die;*/
+		$this->assign('sitetemp',$sitetemp);
         $this->display('zhifu');
     }
 	/*取消支付*/

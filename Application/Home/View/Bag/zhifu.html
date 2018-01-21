@@ -29,12 +29,20 @@
                 
                 <hr>
                 <h3 class="mt15">请使用您的绑定钱包</h3>
-                <div class="f12 dark">{$user.site}</div>
+                <div class="f12 dark" id="sitetemp" data-clipboard-text="{$sitetemp}">
+                	<div class="alert alert-success" role="alert">
+                	{$sitetemp}
+                	</div>
+                </div>
                 
                 <h3 class="mt15">向官方地址
                     <i class="fa fa-qr"></i>
                 </h3>
-                <div class="f12 dark">{:C('SITE')}</div>
+                <div class="f12 dark" id="storesite" data-clipboard-text="{:C('SITE')}">
+                	<div class="alert alert-success" role="alert">
+                	{:C('SITE')}
+                	</div>
+                </div>
                 <div class="f18 mt15">转账
                     <span class="red">1</span>wkc</div>
                 <div class="dark mt15">支付完成后，就可以购买人物开始挖矿啦！</div>
@@ -51,6 +59,7 @@
     <!-- 如果使用了某些拓展插件还需要额外的JS -->
     <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
+    <script src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
 </body>
 <script>
     $('#zhifu').click(function(){
@@ -76,6 +85,19 @@
             }
         })
     });
-
+    //复制玩家玩客币地址
+	$(document).ready(function () {
+            var clipboard = new Clipboard('#sitetemp');
+            clipboard.on('success', function (e) {
+                $.alert("复制成功");
+            });
+        })
+	//复制商城玩客币地址
+	$(document).ready(function () {
+            var clipboard = new Clipboard('#storesite');
+            clipboard.on('success', function (e) {
+                $.alert("复制成功");
+            });
+        })
 </script>
 </html>
