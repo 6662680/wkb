@@ -66,7 +66,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-              <folding />
+              <folding>
+                <marker date="1516516859140" expanded="true" signature="34:3934" placeholder="..." />
+                <marker date="1516516859140" expanded="true" signature="42:635" placeholder="..." />
+                <marker date="1516516859140" expanded="true" signature="643:1114" placeholder="..." />
+                <marker date="1516516859140" expanded="true" signature="672:1114" placeholder="..." />
+                <marker date="1516516859140" expanded="true" signature="703:795" placeholder="..." />
+                <marker date="1516516859140" expanded="true" signature="740:780" placeholder="..." />
+                <marker date="1516516859140" expanded="true" signature="844:1114" placeholder="..." />
+                <marker date="1516516859140" expanded="true" signature="904:1114" placeholder="..." />
+                <marker date="1516516859140" expanded="true" signature="945:989" placeholder="..." />
+                <marker date="1516516859140" expanded="true" signature="3917:3926" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,19 +95,41 @@
       <file leaf-file-name="BagController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Home/Controller/BagController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.033334">
-              <caret line="206" column="89" selection-start-line="206" selection-start-column="89" selection-end-line="206" selection-end-column="89" />
+            <state vertical-scroll-proportion="-7.5333333">
+              <caret line="123" column="40" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sellout.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserModel.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Home/Model/UserModel.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.866667">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sellout.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Home/View/Bag/sellout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.90992016">
-              <caret line="130" column="75" selection-start-line="130" selection-start-column="75" selection-end-line="131" selection-end-column="37" />
+            <state vertical-scroll-proportion="-24.4">
+              <caret line="126" column="84" selection-start-line="126" selection-start-column="82" selection-end-line="126" selection-end-column="84" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="want.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Home/View/Bag/want.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5267959">
+              <caret line="89" column="77" selection-start-line="89" selection-start-column="77" selection-end-line="89" selection-end-column="77" />
+              <folding>
+                <element signature="n#style#0;n#div#4;n#div#0;n#li#0;n#ul#0;n#div#0;n#foreach#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,24 +138,13 @@
         <entry file="file://$PROJECT_DIR$/Application/Runtime/Cache/Home/8db5d40ea6b8a4c60ca5c3a2ac0206bd.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="164" column="0" selection-start-line="138" selection-start-column="5" selection-end-line="164" selection-end-column="0" />
+              <caret line="154" column="0" selection-start-line="128" selection-start-column="5" selection-end-line="154" selection-end-column="0" />
               <folding>
-                <marker date="1516524783288" expanded="true" signature="1389:5244" placeholder="..." />
-                <marker date="1516524783288" expanded="true" signature="3299:3786" placeholder="..." />
-                <marker date="1516524783288" expanded="true" signature="3898:4208" placeholder="..." />
-                <marker date="1516524783288" expanded="true" signature="4316:4522" placeholder="..." />
-                <marker date="1516524783288" expanded="true" signature="4587:4796" placeholder="..." />
+                <marker date="1516525743347" expanded="true" signature="1389:4877" placeholder="..." />
+                <marker date="1516525743347" expanded="true" signature="3299:3354" placeholder="..." />
+                <marker date="1516525743347" expanded="true" signature="3949:4155" placeholder="..." />
+                <marker date="1516525743347" expanded="true" signature="4220:4429" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Home/Controller/OrderController.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -162,7 +184,6 @@
         <option value="$PROJECT_DIR$/Application/Home/View/Bag/index.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Bag/order.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Putorder/person.html" />
-        <option value="$PROJECT_DIR$/Application/Home/Model/UserModel.class.php" />
         <option value="$PROJECT_DIR$/Public/css/main.css" />
         <option value="$PROJECT_DIR$/ThinkPHP/Library/Vendor/aliNote/aliNote.class.php" />
         <option value="$PROJECT_DIR$/ThinkPHP/Library/Vendor/AliyunMns/mns.php" />
@@ -183,6 +204,7 @@
         <option value="$PROJECT_DIR$/Application/Home/View/Putorder/equipment.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Bag/sellout.html" />
         <option value="$PROJECT_DIR$/Application/Home/Model/PutorderModel.class.php" />
+        <option value="$PROJECT_DIR$/Application/Home/Model/UserModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/View/Bag/want.html" />
       </list>
     </option>
@@ -952,13 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/Model/UserModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17283951">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1022,7 +1037,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-          <folding />
+          <folding>
+            <marker date="1516516859140" expanded="true" signature="34:3934" placeholder="..." />
+            <marker date="1516516859140" expanded="true" signature="42:635" placeholder="..." />
+            <marker date="1516516859140" expanded="true" signature="643:1114" placeholder="..." />
+            <marker date="1516516859140" expanded="true" signature="672:1114" placeholder="..." />
+            <marker date="1516516859140" expanded="true" signature="703:795" placeholder="..." />
+            <marker date="1516516859140" expanded="true" signature="740:780" placeholder="..." />
+            <marker date="1516516859140" expanded="true" signature="844:1114" placeholder="..." />
+            <marker date="1516516859140" expanded="true" signature="904:1114" placeholder="..." />
+            <marker date="1516516859140" expanded="true" signature="945:989" placeholder="..." />
+            <marker date="1516516859140" expanded="true" signature="3917:3926" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1084,13 +1110,12 @@
     <entry file="file://$PROJECT_DIR$/Application/Runtime/Cache/Home/8db5d40ea6b8a4c60ca5c3a2ac0206bd.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="164" column="0" selection-start-line="138" selection-start-column="5" selection-end-line="164" selection-end-column="0" />
+          <caret line="154" column="0" selection-start-line="128" selection-start-column="5" selection-end-line="154" selection-end-column="0" />
           <folding>
-            <marker date="1516524783288" expanded="true" signature="1389:5244" placeholder="..." />
-            <marker date="1516524783288" expanded="true" signature="3299:3786" placeholder="..." />
-            <marker date="1516524783288" expanded="true" signature="3898:4208" placeholder="..." />
-            <marker date="1516524783288" expanded="true" signature="4316:4522" placeholder="..." />
-            <marker date="1516524783288" expanded="true" signature="4587:4796" placeholder="..." />
+            <marker date="1516525743347" expanded="true" signature="1389:4877" placeholder="..." />
+            <marker date="1516525743347" expanded="true" signature="3299:3354" placeholder="..." />
+            <marker date="1516525743347" expanded="true" signature="3949:4155" placeholder="..." />
+            <marker date="1516525743347" expanded="true" signature="4220:4429" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1113,14 +1138,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/BagController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.033334">
-          <caret line="206" column="89" selection-start-line="206" selection-start-column="89" selection-end-line="206" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/Model/PutorderModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.266666">
@@ -1129,19 +1146,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/View/Bag/want.html">
+    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/BagController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57696694">
-          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.5333333">
+          <caret line="123" column="40" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/View/Bag/sellout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90992016">
-          <caret line="130" column="75" selection-start-line="130" selection-start-column="75" selection-end-line="131" selection-end-column="37" />
+        <state vertical-scroll-proportion="-24.4">
+          <caret line="126" column="84" selection-start-line="126" selection-start-column="82" selection-end-line="126" selection-end-column="84" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/Model/UserModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.866667">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/View/Bag/want.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5267959">
+          <caret line="89" column="77" selection-start-line="89" selection-start-column="77" selection-end-line="89" selection-end-column="77" />
+          <folding>
+            <element signature="n#style#0;n#div#4;n#div#0;n#li#0;n#ul#0;n#div#0;n#foreach#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

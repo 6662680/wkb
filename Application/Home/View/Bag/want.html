@@ -82,40 +82,29 @@
 
                             <if condition="$vo.status eq '1' ">
                                 <div class="pbottom ">
-                                    <button data-id={$vo.id}
                                     <?php
+
                                     if ($user_id == $vo['user_id']) {
-
-
-                                     echo 'id="1"';
-
-
+                                     echo '<button data-id="' .$vo['id'] .'" id="1"';
                                     }else {
-                                     echo 'id="2"';
+                                      echo '<button data-id="' .$vo['id'] .'"id="2"';
                                     }
 
-                                    ?> class="weui-btn weui-btn_mini weui-btn_primary cancel" >
-                                    <?php
+
                                     if ($user_id == $vo['user_id']) {
-
-                                        echo '前往付款';
-
-
+                                        if ($vo['use_time'] != 0) {
+                                            echo 'class="weui-btn weui-btn_mini weui-btn_primary cancel" >前往付款';
+                                        } else {
+                                            echo 'class="weui-btn weui-btn_mini weui-btn_default" >等待用户接单';
+                                        }
                                     }else {
-                                        echo '已收款';
+                                        echo 'class="weui-btn weui-btn_mini weui-btn_primary cancel" >已收款';
                                     }
 
                                     ?>
                                     </button>
                                 </div>
                             </if>
-                        <!--</else>-->
-                            <!--<if condition="$vo.status eq '1'">-->
-                                <!--<div class="pbottom ">-->
-                                    <!--<button data-id={$vo.id}  class="weui-btn weui-btn_mini weui-btn_primary cancel" >确认收款</button>-->
-                                <!--</div>-->
-                            <!--</if>-->
-                        <!--</if>-->
 
 
                         <if condition="$vo.status eq '2' ">

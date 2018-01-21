@@ -28,11 +28,15 @@ class UserModel extends Model
             ->where( "user_id = $userid || receiving_user_id=$userid")
 			->limit(10)
             ->select();
+
 		/*pr(M()->getLastSql());die;*/
 		foreach($buyOrderList as &$value) {
-			if ($value['use_time'] + C('ORDER_TIME' ) < time() && $value['status'] != 2) {
-				$value['status'] = 4;
-			}	
+            if ($value['receiving_user_id'] == session('user_id')) {
+                if ($value['use_time'] + C('ORDER_TIME' ) < time() && $value['status'] != 2) {
+                    $value['status'] = 4;
+                }
+            }
+
 		}
 
         if ($buyOrderList) {
