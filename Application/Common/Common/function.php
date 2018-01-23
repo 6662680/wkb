@@ -645,14 +645,14 @@ function xunlei($site, $page, $time, $type, $other_side_site, $price) {
         foreach ($output['result'] as $key => $value) {
 
             if ($value['tradeAccount'] == $other_side_site &&  dec($value['amount']) == (string)$price && $type == $value['type']) {
-
-                return $data =[
-                    'timestamp' => $value['timestamp'],
-                    'tradeAccount' => $value['tradeAccount'],
-                    'price' => dec($value['amount']),
-                    'order_id' => $value['order_id'],
-                ];
-
+                if (!M('earnings')->where(['order_id' => $value['order_id']])->find()) {
+                    return $data =[
+                        'timestamp' => $value['timestamp'],
+                        'tradeAccount' => $value['tradeAccount'],
+                        'price' => dec($value['amount']),
+                        'order_id' => $value['order_id'],
+                    ];
+                }
             }
         }
         return xunlei($site, $page+1, $time, $type, $other_side_site, $price);
