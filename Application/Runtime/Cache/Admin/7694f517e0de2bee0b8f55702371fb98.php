@@ -47,6 +47,7 @@
                 <th>等级阶段</th>
                 <th>实际等级跨度</th>
                 <th>难度时间</th>
+                <th>时间周期</th>
                 <!--<th>静态图(休眠中)</th>
                 <th>动态图(挖矿中)</th>-->
                 <th>操作</th>
@@ -57,6 +58,7 @@
                    <td><?php echo ($vo["level"]); ?></td>
                    <td><?php echo ($vo["tlevel"]); ?>~<?php echo ($vo["tlevel2"]); ?>级</td>
                    <td><?php echo ($vo["value"]); ?></td>
+                   <td><?php echo ($vo["time"]); ?></td>
                    <!--<td>静态图(休眠中)</td>
                    <td>动态图(挖矿中)</td>-->
                    
@@ -66,6 +68,12 @@
                    </td>
                 </tr><?php endforeach; endif; ?>
             </tbody>
+             <thead>
+            <tr>
+                <th colspan="3">0~100所需的时间周期</th>
+                <th colspan="2"><?php echo ($totaTime); ?></th>
+            </tr>
+            </thead>
         </table>
         
     </div>

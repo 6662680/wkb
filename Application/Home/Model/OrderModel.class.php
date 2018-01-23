@@ -28,6 +28,20 @@ class OrderModel extends Model
         if (!$rst['site']) {
             return ['status' => false, 'msg' => '您没有支付注册费,无法购买人物,请到个人中心完成支付!'];
         }
+		//检查商城是否已有待付款订单，防刷单
+		$rstorder = M('order')->where(['user_id' => $user_id,'status' => 1])->select();
+		foreach($rstorder as &$value) {
+                if ($value['creation_time'] + C('ORDER_TIME' ) < time() ) {
+                    $value = FALSE;
+                }else{
+                	return ['status' => false, 'msg' => '您有商城订单未支付,暂时无法购买,请到个人中心完成支付!'];
+                }
+
+		}
+		/*pr($rstorder);
+        if ($rstorder) {
+            return ['status' => false, 'msg' => '您有商城订单未支付,暂时无法购买,请到个人中心完成支付!'];
+        }*/
 		
         $rst = M(C('COMMODITY_TYPE')[$commodity_type])->where(['id' => $commodity_id, 'status' => 0])->find();
 

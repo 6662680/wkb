@@ -22,7 +22,6 @@ class OrderController extends BaseController
 //	    $this->ban();
         $get = I('get.');
 
-
 		$rst = D('order')->buy(session('user_id'), $get['commodity_id'], $get['commodity_type']);
 		if ($rst['status'] == true) {
             returnajax(true, '' ,$rst['msg']);
@@ -153,7 +152,43 @@ class OrderController extends BaseController
 		
 	}
 
+	// 从商城订单前往付款按钮执行的
+	public function sczfOrder()
+	{
+		
+		$get = I('get.');
+		$order = D('order')->where(['user_id' => session('user_id'),'id' =>   $get['id']])->find();
+		$order_id = $order['id'];
+		/*pr($order);die;*/
+			
+			$user = D('user')->where(['id' =>  session('user_id')])->find();
+			if ($order['commodity_type']==1) {
+				$rst2 = D('person')->where(['id' =>  $order['commodity_id']])->find();
+				$typeImg=$rst2['person_img'];
+				$typeName=$rst2['person_name'];
+			} elseif($order['commodity_type']==2) {
+				$rst2 = D('equipment')->where(['id' =>  $order['commodity_id']])->find();
+				$typeImg=$rst2['equipment_img'];
+				$typeName=$rst2['equipment_name'];
+			}elseif($order['commodity_type']==3) {
+				$rst2 = D('mediche')->where(['id' =>  $order['commodity_id']])->find();
+				$typeImg=$rst2['mediche_img'];
+				$typeName=$rst2['mediche_name'];
+			}
+	        	$time=$order['creation_time']+C('ORDER_TIME');
+			
+				$this->assign('order_id',$order_id);
+	        	$this->assign('rst2',$rst2);
+				$this->assign('typeImg',$typeImg);
+				$this->assign('typeName',$typeName);
+				$this->assign('typePrice',$order['commodity_price']);
+				$this->assign('time',$time);
+				$this->assign('user',$user);
+				
+				$this->display('sczforder');
 
+		
+	}
 
     /**
      * 购买商品，异步更新
@@ -189,7 +224,7 @@ class OrderController extends BaseController
 	    $this->ban();
         $rst = D('order')->unBuy($get['order_id']);
         if ($rst) {
-			$this->redirect(U('store/person','',''));
+			$this->redirect(U('Store/person','',''));
             /*returnajax(true, '','取消订单成功');*/
         } else {
             returnajax(false, '', $rst['msg']);

@@ -212,14 +212,34 @@ class UserController extends Controller
             'create_time' => time(),
             'site'        => $user['site'],
         ];
-        $list    = M('user_withdraw')->where(['user_id' => $user_id])->find();
-        if ($list && ($list['status'] == 1 || $list['status'] == 3)) {
-            returnajax(FALSE, '', '已有提现在审核中，不能重复提现!');
-        } elseif ((date('w') == 5) || (date('w') == 6)) {
+        $list    = M('user_withdraw')->where(['user_id' => $user_id])->select();
+		
+        if ($list) {
+        	foreach ($list as &$value) {
+        		if ($value['status'] == 1 || $value['status'] == 3) {
+        			returnajax(FALSE, '', '已有提现在审核中，不能重复提现!');
+        		} else {
+        			$thisweek_start=mktime(0,0,0,date('m'),date('d')-date('w'+1),date('Y'));
+					$thisweek_end=mktime(23,59,59,date('m'),date('d')-date('w')+7,date('Y'));
+					$map['create_time'] = array(
+					    array('egt',$thisweek_start),
+					    array('lt',$thisweek_end)
+					);
+					$rst    = M('user_withdraw')->where(['user_id' => $user_id])->where($map)->find();
+					if($rst){
+						returnajax(FALSE, '', '本周已提现，请下周再来!');
+					}
+        		}
+        	}
+            
+        } 
+		if ((date('w') == 5) || (date('w') == 6)) {
             returnajax(FALSE, '', '周五、周六不允许提现!');
-		} elseif (!$wpoint||!regexp('int',$wpoint)) {
+		} 
+		if (!$wpoint||!regexp('int',$wpoint)) {
         	returnajax(FALSE, '', '请输入提现数额!');
-        } elseif ($wpoint>$user['point']) {
+        } 
+		if ($wpoint>$user['point']) {
         	returnajax(FALSE, '', '提现积分大于总积分!');
         
         } else {
@@ -241,10 +261,13 @@ class UserController extends Controller
             'sitetemp'     => $sitetemp,
         	];
         
+		
         if (!$sitetemp) {
             returnajax(FALSE, '', '请输入您的玩客币地址!');
         } elseif (!regexp('sitetemp',$sitetemp)) {
+        	/*pr($data);die;*/
         	returnajax(FALSE, '', '请输入正确格式的地址!');
+			
         } else {
             M('user')->where(['id' => $user_id])->save($data);
 			

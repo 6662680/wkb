@@ -322,6 +322,7 @@
                                 success:function(result){
                                     if (result.status) {
                                         alert('挂单成功，若有用户购买则会以短信的方式通知您!');
+                                        window.location.href= "{:U('bag/userMe','','')}";
                                     } else {
                                         alert(result.msg);
 

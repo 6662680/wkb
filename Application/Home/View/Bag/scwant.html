@@ -17,11 +17,7 @@
     <div class="page home ">
         <div class="page__hd">
             <h1 class="page__title">
-                订单详情
-                <div class="pull-right stonelink">
-                    <a href="{:U('bag/sellorderDetail')}">出售订单</a> /
-                    <a class="onstone" href="{:U('bag/orderDetail')}">求购订单</a>
-                </div>
+                商城订单详情
             </h1>
 
             <div class="navbar sd">
@@ -32,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <foreach name="buyOrderList" item="vo">
+        <foreach name="scOrderList" item="vo">
         <div class="page__bd page__bd_spacing ">
             <ul class="sd" >
                 <li class="pzr">
@@ -45,21 +41,17 @@
                                 <ul>
                                     <li>{$vo.commodity_name}
                                     </li>
-                                    <li class="dark">
-                                    	<?php 
-						                   	if ($vo['person_level']) {
-															echo '等级:lv'.$vo['person_level'];
-														} ?>
-                                    	
-                                    </li>
+                                   
                                     <li class="dark">
                                     	<?php 
 						                   	if ($vo['commodity_type']==1) {
 															echo '血量:';
 														} elseif($vo['commodity_type']==2) {
 															echo '耐久度:';
+														}elseif($vo['commodity_type']==3) {
+															echo '回血值:';
 														}?>
-                                        <span>{$vo.residue}</span>
+                                        <span>{$vo.commodity_residue}</span>
                                     </li>
                                     <li class="dark">
                                     	<?php 
@@ -69,9 +61,22 @@
 															echo '挖矿效率:';
 														}?>
                                     	
-                                        <span>{$vo.capacity}</span>
+                                        <span>{$vo.commodity_capacity}</span>
                                     </li>
-                                   
+                                    <li class="dark">
+                                    	<?php 
+						                   	if ($vo['commodity_type']==1) {
+															echo '初始等级:lv0';
+														} elseif($vo['commodity_type']==2) {
+															if ($vo['commodity_protect']==1) {
+																echo '是否防坍塌:是';
+															}elseif ($vo['commodity_protect']==0) {
+																echo '是否防坍塌:否';
+															}
+															
+														}?>
+                                    	
+                                    </li>
                                 </ul>
                             </div>
                         <div class="buy dark f14 text-right">售价
@@ -81,36 +86,9 @@
 
 
                             <if condition="$vo.status eq '1' ">
-                                <div class="pbottom ">
-                                    <?php
-
-                                    if ($user_id == $vo['user_id']) {
-                                     echo '<button data-id="' .$vo['id'] .'" id="1"';
-                                    }else {
-                                      echo '<button data-id="' .$vo['id'] .'"id="2"';
-                                    }
-
-
-                                    if ($user_id == $vo['user_id']) {
-                                        if ($vo['use_time'] != 0) {
-                                            echo 'class="weui-btn weui-btn_mini weui-btn_primary cancel" >前往付款';
-                                        } else {
-                                            echo 'class="weui-btn weui-btn_mini weui-btn_default" >等待用户接单';
-                                        }
-                                    }else {
-                                        if ($vo['use_time'] != 0) {
-                                            echo 'class="weui-btn weui-btn_mini weui-btn_default " >等待对方付款';
-                                        } else {
-                                        	if($vo['status'] == 2){
-                                        		echo 'class="weui-btn weui-btn_mini weui-btn_default" >订单已完成';
-                                        	}
-                                            
-                                        }
-                                    }
-
-                                    ?>
-                                    </button>
-                                </div>
+                               <div class="pbottom ">
+                                <button data-id={$vo.id} id="{$vo.id}" class="weui-btn weui-btn_mini weui-btn_primary cancel" >前往付款</button>
+                            	</div>
                             </if>
 
 
@@ -184,31 +162,13 @@
      $(document).on("click", ".cancel", function () {
          var id= $(this).data('id');
          var sid= $(this).attr('id');
-            if (sid == 1) {
-                window.location.href="{:U('putorder/remit','','')}/order_id/" + id+ "/type/1";
-            } else {
-                $.ajax({
-                    url:"{:U('putorder/buyAccomplish')}",
-                    type:'POST', //GET
-                    async:true,    //或false,是否异步
-                    data:{
-                        order_id:id,
-                    },
-                    timeout:5000,    //超时时间
-                    dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-                    success:function(result){
-                        if (result.status) {
-                            window.location.href="{:U('bag/userMe')}";
-                        } else {
-                            alert(result.msg);
-                        }
-                    }
-                })
-            }
+           
+                window.location.href="{:U('Order/sczfOrder','','')}/id/" + sid;
+            
 
         })
 
-        </script>
+       </script>
 </body>
 
 </html>

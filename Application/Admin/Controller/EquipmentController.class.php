@@ -68,6 +68,8 @@ class EquipmentController extends PrivilegeController
     	$equipment_protect = I('post.equipment_protect');
 		$equipment_price = I('post.equipment_price');
 		$equipment_multiple = I('post.equipment_multiple');
+		$status = I('post.status');
+		
 		/*$equipment_img = I('post.equipment_img');*/
 		/*$upload = new \Think\Upload();// 实例化上传类
 	    $upload->maxSize   =     3145728 ;// 设置附件上传大小
@@ -117,12 +119,16 @@ class EquipmentController extends PrivilegeController
     		'equipment_protect' => $equipment_protect,
     		'equipment_price' => $equipment_price,
     		'equipment_multiple' => $equipment_multiple,
+    		'status' => $status,
+    		
     		];
 		} else {
 			if(!$upload['info']['equipment_img']) {// 上传错误提示错误信息
-	        $this->error($upload->getError());
+	       		$this->error($upload['errorMsg']);
+	        //$this->error('上传失败');
+			
 		    }else{// 上传成功 获取上传文件信息
-		        $equipment_img='/public/images/'.$upload['info']['equipment_img']['savepath'].'/'.$upload['info']['equipment_img']['savename'];
+		        $equipment_img='/Public/images/'.$upload['info']['equipment_img']['savepath'].'/'.$upload['info']['equipment_img']['savename'];
 		        
 		    }
 			$data = [
@@ -132,6 +138,7 @@ class EquipmentController extends PrivilegeController
     		'equipment_price' => $equipment_price,
     		'equipment_multiple' => $equipment_multiple,
     		'equipment_img' => $equipment_img,
+    		'status' => $status,
     		];
 		}
 

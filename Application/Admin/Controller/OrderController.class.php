@@ -74,7 +74,16 @@ class OrderController extends PrivilegeController{
 			
         }
 
-
+		//当天总收入
+		$map['completion_time'] = array(
+			    array('egt',strtotime(date('Y-m-d',time()))),
+			    array('lt',strtotime(date('Y-m-d',time()))+86400)
+			);
+		$where['status']=2;
+		$currentOrder=M('order')->where($map)->where($where)->field('SUM(commodity_price)')->find();
+		/*pr($currentOrder['sum(commodity_price)']);die;*/
+		
+		$this->assign("sumCurrentOrder",$currentOrder['sum(commodity_price)']);
         $this->assign("orderData",$orderData);
         $this->assign("page",$show);
         $this->display('orderList');

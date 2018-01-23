@@ -13,13 +13,13 @@ class BaseController extends Controller
     public function check_login()
     {
         if (empty(session('user_id'))) {
-           redirect(U('home/user/login'));
+           redirect(U('Home/User/login'));
         }
     }
 
     public function error()
     {
-        $this->display('base/404');
+        $this->display('Base/404');
         die();
     }
 
