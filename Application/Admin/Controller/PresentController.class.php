@@ -44,7 +44,10 @@ class PresentController extends PrivilegeController
      */
     public function present()
     {
-    	$userid = I('post.userid');
+    	if (!I('post.userid')) {
+    		$this->error('请输入接收会员ID!');
+    	} 
+    		$userid = I('post.userid');
 		$user=M('user')->where(" id=$userid ")->find();
 		/*pr(M()->getLastSql());die;*/
 		if ($user) {
@@ -109,6 +112,8 @@ class PresentController extends PrivilegeController
 		} else {
 			$this->error('没有该会员!');
 		}
+    	
+    	
 		
     }
     

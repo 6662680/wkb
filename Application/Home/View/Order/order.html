@@ -90,7 +90,7 @@ function accomplishBuy(id, $thiss){
 
     }
 
-//复制玩家玩客币地址
+/*//复制玩家玩客币地址
 	$(document).ready(function () {
             var clipboard = new Clipboard('#usersite');
             clipboard.on('success', function (e) {
@@ -103,7 +103,22 @@ function accomplishBuy(id, $thiss){
             clipboard.on('success', function (e) {
                 $.alert("复制成功");
             });
-        })
+        })*/
 
+
+// 复制玩家玩客币地址
+        $("#usersite").on('click',function () {
+            var clipboard = new Clipboard('#usersite');
+            clipboard.on('success', function (e) {
+                $.alert("复制成功");
+            });
+        })
+    // 复制商城玩客币地址
+        $("#storesite").on('click',function () {
+            var clipboard = new Clipboard('#storesite');
+            clipboard.on('success', function (e) {
+                $.alert("复制成功");
+            });
+        })
 </script>
 </html>

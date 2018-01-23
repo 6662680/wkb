@@ -32,6 +32,8 @@ class WithdrawController extends PrivilegeController
 	 */
     public function grant()
     {
+    	//有bug---应该传id明天改
+    	
     	$user_id=I('get.user_id');
 		/*pr($user_id);die;*/
     	$withdraw = M('user_withdraw')->where(" user_id=$user_id ")->find();

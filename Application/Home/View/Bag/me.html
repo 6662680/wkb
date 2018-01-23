@@ -21,7 +21,7 @@
             </h1>
         </div>
         <div class="page__bd page__bd_spacing ">
-            <div class="sd bgw" style="height: 84px;">
+            <div class="sd bgw" >
                 <div class="mainflex js_category flex" id="show-actions">
                     <div class="userphoto ">
                         <!-- 头像 -->
@@ -40,31 +40,31 @@
                 </div>
             </div>
             
-            <div class="uselink">
-                        	<?php 
-						        if ($user['data']['site']) {
-										echo  '<div class="sd bgw mt1 p2 text-center">
-									                    <div class="lineb" style="font-size: 12px;text-align: left;">'.
-									                        $user['data']['site'].'
-									                    </div>
-									            </div>'  ;
-									} elseif(!$user['data']['sitetemp']) {
-										echo '<a href="javascript:;" id="sitetemp">
-									                <div class="sd bgw mt1 p2 text-center">
-									                    <div class="lineb"  style="font-size: 12px;text-align: left;color: red;">
-									                        请填写您的wkc地址
-									                    </div>
-									                </div>
-									           </a>';
-								} elseif($user['data']['sitetemp']) {
-										echo  '<a href='.U("bag/zhifu").' >
-                    							<div class="sd bgw mt1 p2 text-left">'.$user['data']['sitetemp'].'
-									                    <div class="lineb"  style="font-size: 12px;text-align: left;padding-left: 80px;color: red;">
-									                        请支付注册费开始挖矿
-									                    </div>
-									            </div>
-                    							</a>';
-								}	?>
+             <div class="uselink" >
+                            <?php 
+                                if ($user['data']['site']) {
+                                        echo  '<div class="sd bgw mt1 p2 text-center">
+                                                        <div class="lineb" style="font-size: 12px;text-align: left; padding:5px 20px">'.
+                                                            $user['data']['site'].'
+                                                        </div>
+                                                </div>'  ;
+                                    } elseif(!$user['data']['sitetemp']) {
+                                        echo '<a href="javascript:;" id="sitetemp">
+                                                    <div class="sd bgw mt1 p2 text-center">
+                                                        <div class="lineb"  style="font-size: 12px;text-align: left;color: red;">
+                                                            请填写您的wkc地址
+                                                        </div>
+                                                    </div>
+                                               </a>';
+                                } elseif($user['data']['sitetemp']) {
+                                        echo  '<a href='.U("bag/zhifu").' >
+                                                <div class="sd bgw mt1 p2 text-left">'.$user['data']['sitetemp'].'
+                                                        <div class="lineb"  style="font-size: 12px;text-align: left;padding-left: 80px;color: red;">
+                                                            请支付注册费开始挖矿
+                                                        </div>
+                                                </div>
+                                                </a>';
+                                }   ?>
                 </div>
             
             <div class="sd bgw mt15 p20">
@@ -81,13 +81,13 @@
                     <div class="weui-flex__item text-center">
                     	<a href="{:U('bag/scorderDetail')}" >
                     		<div class="lfont">{$scOrderNum} </div>
-							<div class="sd bgw mt1 p2 text-center"><div class="sfont">商城订单</div></div>
+							<div class="sfont">商城订单</div>
 						</a>
                     </div>
                     <div class="weui-flex__item text-center">
                     	<a href="{:U('bag/sellorderDetail')}" >
                     		<div class="lfont">{$OrderNum} </div>
-							<div class="sd bgw mt1 p2 text-center"><div class="sfont">交易订单</div></div>
+							<div class="sfont">交易订单</div>
 						</a>
                     </div>
                 </div>

@@ -237,7 +237,7 @@ class UserController extends Controller
         	returnajax(FALSE, '', '请输入提现数额!');
         } 
 		if ($wpoint>$user['point']) {
-        	returnajax(FALSE, '', '提现积分大于总积分!');
+        	returnajax(FALSE, '', '提现积分大于您的总积分!');
         
         } else {
             M('user_withdraw')->add($data);

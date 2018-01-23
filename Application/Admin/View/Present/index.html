@@ -12,7 +12,7 @@
         <table class="table table-border table-bordered table-bg table-sort">
             <thead>
             <tr>
-                <th>赠送奖励</th>
+                <th>选择赠送奖励</th>
                 <th>接收会员</th>
                 <th>操作</th>
             </tr>
@@ -21,7 +21,6 @@
                 <tr >
                    <td>
                    	<select name="id">
-                   		<option>请选择赠送装备</option>
                    		<optgroup label="人物"> 
                    			<volist name="person" id="vo">
                    				<option value="{$vo.id}">{$vo.person_name}</option>
@@ -39,7 +38,7 @@
                    		</optgroup> 
                    </select>
                    </td>
-                   <td><input type="text" name="userid" id="userid" value="" /></td>
+                   <td><input type="text" name="userid" id="userid" value="" placeholder="请输入会员ID"/></td>
                    <td>
                        <input type="submit" name="" id="" value="赠送" />
                    </td>

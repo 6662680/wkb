@@ -121,7 +121,7 @@
 
 
     }
-//复制付款玩家玩客币地址
+/*//复制付款玩家玩客币地址
 	$(document).ready(function () {
             var clipboard = new Clipboard('#putordersite');
             clipboard.on('success', function (e) {
@@ -137,6 +137,29 @@
         })
 	//复制收款玩家玩客币地址
 	$(document).ready(function () {
+            var clipboard = new Clipboard('#recsite');
+            clipboard.on('success', function (e) {
+                $.alert("复制成功");
+            });
+        })
+	*/
+	
+// 复制付款玩家玩客币地址
+        $("#putordersite").on('click',function () {
+            var clipboard = new Clipboard('#putordersite');
+            clipboard.on('success', function (e) {
+                $.alert("复制成功");
+            });
+        })
+    // 复制商城玩客币地址
+        $("#storesite").on('click',function () {
+            var clipboard = new Clipboard('#storesite');
+            clipboard.on('success', function (e) {
+                $.alert("复制成功");
+            });
+        })	
+    // 复制收款玩家玩客币地址
+        $("#recsite").on('click',function () {
             var clipboard = new Clipboard('#recsite');
             clipboard.on('success', function (e) {
                 $.alert("复制成功");
