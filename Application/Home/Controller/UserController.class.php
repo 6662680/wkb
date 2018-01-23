@@ -216,23 +216,20 @@ class UserController extends Controller
 		
         if ($list) {
         	foreach ($list as &$value) {
-        		if ($value['status'] == 1 || $value['status'] == 3) {
+        		/*pr($value['status']);*/
+        		if (($value['status'] == 1) || ($value['status'] == 3)) {
         			returnajax(FALSE, '', '已有提现在审核中，不能重复提现!');
         		} else {
         			$thisweek_start=mktime(0,0,0,date('m'),date('d')-date('w'+1),date('Y'));
 					$thisweek_end=mktime(23,59,59,date('m'),date('d')-date('w')+7,date('Y'));
-					$map['create_time'] = array(
-					    array('egt',$thisweek_start),
-					    array('lt',$thisweek_end)
-					);
-					$rst    = M('user_withdraw')->where(['user_id' => $user_id])->where($map)->find();
-					if($rst){
+					
+					if($value['create_time']>=$thisweek_start&&$value['create_time']<$thisweek_end){
 						returnajax(FALSE, '', '本周已提现，请下周再来!');
 					}
         		}
         	}
-            
         } 
+		
 		if ((date('w') == 5) || (date('w') == 6)) {
             returnajax(FALSE, '', '周五、周六不允许提现!');
 		} 
