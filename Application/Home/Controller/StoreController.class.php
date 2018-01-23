@@ -41,7 +41,7 @@ class StoreController extends BaseController
         $equipment = D('equipment')->getStoreEquipment();
 		
         $this->assign('equipment',$equipment);
-        $this->display('sc_item');
+        $this->display('scitem');
     }
 
     /**
@@ -56,7 +56,7 @@ class StoreController extends BaseController
 		$mediche=$medicheList['data'];
 		/*pr($mediche['data']);die;*/
         $this->assign('mediche',$mediche);
-        $this->display('sc_food');
+        $this->display('scfood');
     }
 
 }

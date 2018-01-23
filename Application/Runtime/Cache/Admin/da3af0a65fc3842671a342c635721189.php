@@ -70,6 +70,13 @@
                 </div>
             </div>
             <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否为隐藏道具:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <label><input name="status" type="radio" value="1" <?php if($equipmentInfo['status'] == '1'): ?>checked<?php endif; ?>/>是 </label> 
+					<label><input name="status" type="radio" value="0" <?php if($equipmentInfo['status'] == '0'): ?>checked<?php endif; ?> />否 </label> 
+                </div>
+            </div>
+            <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图片样式:</label>
                 <div class="formControls col-xs-8 col-sm-3">
                     <input type="file" name="equipment_img" id="" value="" />

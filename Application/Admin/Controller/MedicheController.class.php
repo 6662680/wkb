@@ -110,9 +110,9 @@ class MedicheController extends PrivilegeController
     		];
 		} else {
 			if(!$upload['info']['mediche_img']) {// 上传错误提示错误信息
-	        $this->error($upload->getError());
+	        	$this->error($upload['errorMsg']);
 		    }else{// 上传成功 获取上传文件信息
-		        $mediche_img='/public/images/'.$upload['info']['mediche_img']['savepath'].'/'.$upload['info']['mediche_img']['savename'];
+		        $mediche_img='/Public/images/'.$upload['info']['mediche_img']['savepath'].'/'.$upload['info']['mediche_img']['savename'];
 		        
 		    }
 			$data = [

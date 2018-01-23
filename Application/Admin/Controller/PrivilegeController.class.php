@@ -55,7 +55,7 @@ class PrivilegeController extends CommonController
 		$upload = new \Think\Upload();
 		$upload->maxSize = 10485760;
 		$upload->exts = explode(',', 'jpg,gif,png,jpeg');
-		$upload->rootPath = './public/images/';
+		$upload->rootPath = './Public/images/';
 		$upload->saveName = array('uniqid','');
 		$upload->autoSub = true;
 		$upload->subName = array('date','Ymd');

@@ -265,7 +265,7 @@ class PutorderController extends BaseController
         $this->assign('overtime',$overtime);
         $this->assign('status',$status);
         $this->assign('type',$type);
-        $this->display('putorder/order');
+        $this->display('Putorder/order');
     }
 
     //通知用户打款

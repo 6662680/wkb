@@ -1,0 +1,54 @@
+<extend name="Public/base"/>
+<block name="body">
+    <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 后台管理 <span class="c-gray en">&gt;</span> 提现管理<span class="c-gray en">&gt;</span> 推广基础参数设置
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+    <div class="page-container">
+        <form class="form-inline definewidth m20" id="searchForm" method="post" action="{:U('Present/present')}">
+        
+        
+            <br>
+        <table class="table table-border table-bordered table-bg table-sort">
+            <thead>
+            <tr>
+                <th>赠送奖励</th>
+                <th>接收会员</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr >
+                   <td>
+                   	<select name="id">
+                   		<option>请选择赠送装备</option>
+                   		<optgroup label="人物"> 
+                   			<volist name="person" id="vo">
+                   				<option value="{$vo.id}">{$vo.person_name}</option>
+                   			</volist>
+                   		</optgroup> 
+                   		<optgroup label="道具" > 
+                   			<volist name="equipment" id="vo2">
+                   				<option value="{$vo2.id}">{$vo2.equipment_name}</option>
+                   			</volist>
+                   		</optgroup>
+                   		<optgroup label="食物"> 
+                   			<volist name="mediche" id="vo3">
+                   				<option value="{$vo3.id}">{$vo3.mediche_name}</option>
+                   			</volist>
+                   		</optgroup> 
+                   </select>
+                   </td>
+                   <td><input type="text" name="userid" id="userid" value="" /></td>
+                   <td>
+                       <input type="submit" name="" id="" value="赠送" />
+                   </td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+
+</block>
+<block name="javascript">
+</block>

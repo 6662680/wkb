@@ -19,16 +19,21 @@ class PconfigController extends PrivilegeController
 		$configarr = json_decode($configList[0]['value'], true);
 		
 		$arr = array();
+		$i=0;
+		$totaTime=0;
 		foreach ($configarr as $key => $value) {
 			$arr[$key]['level'] = $key;
 			$arr[$key]['tlevel'] = ($key)*10;
-			$arr[$key]['tlevel2'] = ($key+1)*10-1;
+			$arr[$key]['tlevel2'] = ($key+1)*10;
 			$arr[$key]['value'] = $value;
+			$arr[$key]['time'] = (($i++)*100+45)*$value;
+			$totaTime+=$arr[$key]['time'];
 		}
+		/*pr($time);die;*/
 		$personImg=M('person_img')->select();
 		
 		/*pr($configarr);die;*/
-		
+		$this->assign('totaTime',$totaTime);
     	$this->assign('configList',$arr);
 		$this->assign('personImg',$personImg);
         $this->display();

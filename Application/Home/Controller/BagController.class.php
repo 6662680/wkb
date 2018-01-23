@@ -109,12 +109,18 @@ class BagController extends BaseController
 		$sellOrderNum=count($sellOrderList['data']);
 		$OrderNum=$buyOrderNum+$sellOrderNum;
 		/*pr($OrderNum);die;*/
+		/*获取会员的商城订单数据*/
+		$scOrderList=D('user')->getscOrder();
+		$scOrderNum=count($scOrderList['data']);
+		/*pr($OrderNum);die;*/
+		
 		
 		$this->assign('user',$user);
         $this->assign('person',$person);
         $this->assign('personNum',$personNum);
         $this->assign('sumEarnings',$sumEarnings);
         $this->assign('OrderNum',$OrderNum);
+		$this->assign('scOrderNum',$scOrderNum);
 		
         $this->display('me');
     }
@@ -218,6 +224,47 @@ class BagController extends BaseController
 		$this->assign('sellOrderList',$sellOrderList);
 		/*pr($nperson['person_img']);die;*/
         $this->display('sellout');
+    }
+
+	/*获取会员的商城订单数据*/
+	public function scorderDetail()
+    {
+		$scOrder=D('user')->getscOrder();
+		$scOrderList=$scOrder['data'];
+		foreach ($scOrderList as $key => $value) {
+			if ($value['commodity_type']==1) {
+					$nperson = M('person')->where(['id' => $value['commodity_id']])->find();
+					$scOrderList[$key]['commodity_img']=$nperson['person_img'];
+					$scOrderList[$key]['commodity_name']=$nperson['person_name'];
+					$scOrderList[$key]['commodity_residue']=$nperson['person_blood'];
+					$scOrderList[$key]['commodity_capacity']=$nperson['person_capacity'];
+					
+					
+					
+			} elseif($value['commodity_type']==2) {
+					$nequipment = M('equipment')->where(['id' => $value['commodity_id']])->find();
+					$scOrderList[$key]['commodity_img']=$nequipment['equipment_img'];
+					$scOrderList[$key]['commodity_name']=$nequipment['equipment_name'];
+					$scOrderList[$key]['commodity_residue']=$nequipment['equipment_endurance'];
+					$scOrderList[$key]['commodity_capacity']=$nequipment['equipment_multiple'];
+					$scOrderList[$key]['commodity_protect']=$nequipment['equipment_protect'];
+
+			}elseif($value['commodity_type']==3) {
+					$nmediche = M('mediche')->where(['id' => $value['commodity_id']])->find();
+					$scOrderList[$key]['commodity_img']=$nmediche['mediche_img'];
+					$scOrderList[$key]['commodity_name']=$nmediche['mediche_name'];
+					$scOrderList[$key]['commodity_residue']=$nmediche['mediche_treat'];
+					
+					
+
+			}
+			
+		}
+		/*pr($buyOrderList);die;*/
+        $this->assign('user_id',session('user_id'));
+		$this->assign('scOrderList',$scOrderList);
+		/*pr($nperson['person_img']);die;*/
+        $this->display('scwant');
     }
 
 	/*支付注册费*/

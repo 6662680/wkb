@@ -79,8 +79,10 @@
                         <div class="sfont">昨日收益</div>
                     </div>
                     <div class="weui-flex__item text-center">
-                        <div class="lfont">还未统计 </div>
-                        <div class="sfont">总收益</div>
+                    	<a href="{:U('bag/scorderDetail')}" >
+                    		<div class="lfont">{$scOrderNum} </div>
+							<div class="sd bgw mt1 p2 text-center"><div class="sfont">商城订单</div></div>
+						</a>
                     </div>
                     <div class="weui-flex__item text-center">
                     	<a href="{:U('bag/sellorderDetail')}" >
@@ -169,12 +171,20 @@
     <script src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
     <script>
         // 复制链接
-        $(document).ready(function () {
+       /* $(document).ready(function () {
+            var clipboard = new Clipboard('#copyurl');
+            clipboard.on('success', function (e) {
+                $.alert("复制成功");
+            });
+        })*/
+        // 复制链接
+        $("#copyurl").on('click',function () {
             var clipboard = new Clipboard('#copyurl');
             clipboard.on('success', function (e) {
                 $.alert("复制成功");
             });
         })
+        
         //提现
           $(document).on("click", "#withdraw", function () {
 

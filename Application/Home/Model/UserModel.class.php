@@ -26,6 +26,7 @@ class UserModel extends Model
     	$userid=session('user_id');
         $buyOrderList = M('user_buy_order')
             ->where( "user_id = $userid || receiving_user_id=$userid")
+			->order('creation_time desc')
 			->limit(10)
             ->select();
 
@@ -52,6 +53,7 @@ class UserModel extends Model
     	$userid=session('user_id');
         $sellOrderList = M('user_sell_order')
             ->where("user_id = $userid || receiving_user_id=$userid")
+			->order('creation_time desc')
 			->limit(10)
             ->select();
 /*pr(M()->getLastSql());die;*/
@@ -66,6 +68,32 @@ class UserModel extends Model
             return ['status' => true, 'data' => $sellOrderList];
         } else {
             return ['status' => false, 'msg' => '该会员没有出售订单'];
+        }
+
+    }
+	//获取会员商城订单
+    public function getscOrder()
+    {
+    	$userid=session('user_id');
+        $scOrderList = M('order')
+            ->where( "user_id = $userid")
+			->order('creation_time desc')
+			->limit(10)
+            ->select();
+
+		/*pr(M()->getLastSql());die;*/
+		foreach($scOrderList as &$value) {
+            
+                if ($value['creation_time'] + C('ORDER_TIME' ) < time() && $value['status'] != 2) {
+                    $value['status'] = 3;
+                }
+
+		}
+
+        if ($scOrderList) {
+            return ['status' => true, 'data' => $scOrderList];
+        } else {
+            return ['status' => false, 'msg' => '该会员没有求购订单'];
         }
 
     }

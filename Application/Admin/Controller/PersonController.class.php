@@ -62,7 +62,7 @@ class PersonController extends PrivilegeController
     private function requestSubmit()
     {
     	$id = I('post.id');
-    	
+    	/*pr($id);die;*/
     	$person_name = I('post.person_name');
     	$person_capacity = I('post.person_capacity');
     	$person_blood = I('post.person_blood');
@@ -126,13 +126,14 @@ class PersonController extends PrivilegeController
     		'person_blood' => $person_blood,
     		'person_price' => $person_price,
     		'person_property' => $person_property,
+    		'status' => $status,
     		];
 		} else {
 			if(!$upload['info']['person_img']) {// 上传错误提示错误信息
 
 	        $this->error($upload['errorMsg']);
 		    }else{// 上传成功 获取上传文件信息
-		        $person_img='/public/images/'.$upload['info']['person_img']['savepath'].'/'.$upload['info']['person_img']['savename'];
+		        $person_img='/Public/images/'.$upload['info']['person_img']['savepath'].'/'.$upload['info']['person_img']['savename'];
 		    }
 			$data = [
     		'person_name' => $person_name,
@@ -141,6 +142,7 @@ class PersonController extends PrivilegeController
     		'person_price' => $person_price,
     		'person_property' => $person_property,
     		'person_img' => $person_img,
+    		'status' => $status,
     		];
 		}
 		
@@ -156,7 +158,9 @@ class PersonController extends PrivilegeController
 
     	if ( $id )
     	{
+    		/*pr($data);die;*/
     		M('Person')->where("id = $id")->save($data);
+    		
     	}
     	else 
     	{
@@ -270,7 +274,7 @@ class PersonController extends PrivilegeController
 
 	        $this->error($upload['errorMsg']);
 		}else{// 上传成功 获取上传文件信息
-		        $img='/public/images/'.$upload['info']['img']['savepath'].'/'.$upload['info']['img']['savename'];
+		        $img='/Public/images/'.$upload['info']['img']['savepath'].'/'.$upload['info']['img']['savename'];
 				
 		}
 		
@@ -336,7 +340,7 @@ class PersonController extends PrivilegeController
 
 	        $this->error($upload['errorMsg']);
 		}else{// 上传成功 获取上传文件信息
-		        $action_img='/public/images/'.$upload['info']['action_img']['savepath'].'/'.$upload['info']['action_img']['savename'];
+		        $action_img='/Public/images/'.$upload['info']['action_img']['savepath'].'/'.$upload['info']['action_img']['savename'];
 				
 		}
 		$data = [
