@@ -74,7 +74,14 @@
                    <td>{$vo.blood}</td>
                    <td>{$vo.level}</td>
                    <td>{$vo.yesterday_capacity}</td>
-                   <td>{$vo.start_mining}</td>
+                   <td>
+                   	<?php 
+                   	if ($vo['start_mining']==0) {
+									echo '未开始';
+								} else {
+									echo date("Y-m-d H:i:s",$vo['start_mining']);
+								}?>
+                   </td>
                    
                    
                 </tr>

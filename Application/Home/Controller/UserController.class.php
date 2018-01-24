@@ -212,6 +212,14 @@ class UserController extends Controller
             'create_time' => time(),
             'site'        => $user['site'],
         ];
+		
+		if ((date('w') == 5) || (date('w') == 6)) {
+            returnajax(FALSE, '', '周五、周六不允许提现!');
+		} 
+		if (!$wpoint||!regexp('int',$wpoint)) {
+        	returnajax(FALSE, '', '请输入大于0的数值!');
+        } 
+		
         $list    = M('user_withdraw')->where(['user_id' => $user_id])->select();
 		
         if ($list) {
@@ -230,12 +238,7 @@ class UserController extends Controller
         	}
         } 
 		
-		if ((date('w') == 5) || (date('w') == 6)) {
-            returnajax(FALSE, '', '周五、周六不允许提现!');
-		} 
-		if (!$wpoint||!regexp('int',$wpoint)) {
-        	returnajax(FALSE, '', '请输入提现数额!');
-        } 
+		
 		if ($wpoint>$user['point']) {
         	returnajax(FALSE, '', '提现积分大于您的总积分!');
         
