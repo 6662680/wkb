@@ -67,11 +67,14 @@ class UserController extends PrivilegeController
     	/*根据道具id查询道具名称显示到人物背包数组*/
     	foreach ($personList as $key => $value) {
     		$equipment_id=$value['equipment_id'];
-    		$nequipmentList = M('equipment')->where("id = '$equipment_id' ")->find();
+			$npequipment = M('equipment_bag')->where("id = '$equipment_id' ")->find();
+			$npequipmentid=$npequipment['equipment_id'];
+			
+    		$nequipmentList = M('equipment')->where("id = '$npequipmentid' ")->find();
 			if ($nequipmentList['equipment_name']) {
-				$personList[$key]['equipment_id']=$nequipmentList['equipment_name'];
+				$personList[$key]['equipment_nname']=$nequipmentList['equipment_name'];
 			} else {
-				$personList[$key]['equipment_id']='未配备道具';
+				$personList[$key]['equipment_nname']='未配备道具';
 			}
     	}
     	$this->assign('personList',$personList);

@@ -26,7 +26,7 @@ class PersonimgController extends PrivilegeController
 		foreach ($PersonimgList as $key => $value) {
 			$PersonimgList[$key]['level'] = $key;
 			$PersonimgList[$key]['tlevel'] = ($key)*10;
-			$PersonimgList[$key]['tlevel2'] = ($key+1)*10-1;
+			$PersonimgList[$key]['tlevel2'] = ($key+1)*10;
 		}
 		/*pr($PersonimgList);die;*/
     	
