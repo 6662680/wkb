@@ -11,17 +11,17 @@ class EquipmentModel extends Model
         $model = M('equipment_bag');
 
         if ($id) {
-                $model->where(['user_id' => session('user_id'), 'equipment_bag.id' => $id]);
+                $model->where(['user_id' => session('user_id'), 'equipment_bag.id' => $id, 'equipment_bag.equipment_endurance' => ['neq', 0]]);
         } else {
             if ($s) {
-                $model->where(['user_id' => session('user_id'), 'use' => 0]);
+                $model->where(['user_id' => session('user_id'), 'use' => 0, 'equipment_bag.equipment_endurance' => ['neq', 0]]);
             } else {
-                $model->where(['user_id' => session('user_id')]);
+                $model->where(['user_id' => session('user_id'), 'equipment_bag.equipment_endurance' => ['neq', 0]]);
             }
         }
 
         $model->join('left join equipment on equipment_bag.equipment_id = equipment.id');
-        $model->field('equipment_bag.*, equipment.equipment_name,equipment.equipment_img,equipment.equipment_endurance,equipment.equipment_protect,equipment_multiple');
+        $model->field('equipment_bag.*, equipment.equipment_name,equipment.equipment_img,equipment_bag.equipment_endurance,equipment.equipment_protect,equipment_multiple');
 
         if ($id) {
             $equipment = $model->find();

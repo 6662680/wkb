@@ -175,8 +175,11 @@ class BagController extends BaseController
                 $person = M('person')->where(['id' => $nperson['person_id']])->find();
 
                 if ($value['equipment_id']) {
+
                     $equipment_bag = M('equipment_bag')->where(['id' => $value['equipment_id']])->find();
+
                     $nequipment = M('equipment')->where(['id' =>$equipment_bag['equipment_id']])->find();
+
                     $sellOrderList[$key]['equipment']['equipment_img'] = $nequipment['equipment_img'];
                     $sellOrderList[$key]['equipment']['equipment_endurance'] = $equipment_bag['equipment_endurance'];
                     $sellOrderList[$key]['equipment']['equipment_multiple'] = $nequipment['equipment_multiple'];

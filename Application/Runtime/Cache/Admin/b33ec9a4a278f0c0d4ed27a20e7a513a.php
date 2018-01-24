@@ -69,6 +69,12 @@
                 </div>
             </div>
             <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>人物说明:</label>
+                <div class="formControls col-xs-8 col-sm-3">
+                    <input type="text" class="input-text" value="<?php echo ($PersonInfo['explain']); ?>" name="explain" >
+                </div>
+            </div>
+            <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>是否为隐藏人物:</label>
                 <div class="formControls col-xs-8 col-sm-3">
                     <label><input name="status" type="radio" value="1" <?php if($PersonInfo['status'] == '1'): ?>checked<?php endif; ?>/>是 </label> 

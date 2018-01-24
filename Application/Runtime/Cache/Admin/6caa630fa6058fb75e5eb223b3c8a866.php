@@ -54,6 +54,8 @@
                 <th>人物价格</th>
                 <th>人物成长</th>
                 <th>是否为隐藏人物</th>
+                <th>人物说明</th>
+                
                 <th>图片样式</th>
                 <th>操作</th>
             </tr>
@@ -68,6 +70,8 @@
                    <td><?php echo ($vo["person_property"]); ?></td>
                    <td><?php  if ($vo['status']==1) { echo '是'; } else { echo '否'; } ?>
                    </td>
+                   <td><?php echo ($vo["explain"]); ?></td>
+                   
                    <td><img style="width: 40px;height: 40px;" src="<?php echo ($vo["person_img"]); ?>"/></td>
                    <td>
                        <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->

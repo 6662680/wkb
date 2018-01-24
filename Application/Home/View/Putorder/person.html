@@ -187,11 +187,12 @@
                     <div class="f10 nena dark">血量<span>{$vo.person_blood}</span>·算力{$vo.person_capacity}<span>·等级{$vo.level}</div>
                     <div class="f10 dark"> 售价<span class="red f10">{$vo.commodity_price}wkb</span></div>
 
-                    <button  onclick="tijiao({$vo.order_id},0)" class="weui-btn weui-btn_mini weui-btn_warn ">购买</button>
+                    <button  onclick="tijiao({$vo.order_id},0)" class="weui-btn weui-btn_mini weui-btn_warn pull-right ">购买</button>
 
                 </div>
             </foreach>
         </div>
+        <div class="footheight"></div>
     <div class="weui-tabbar">
         <a href="{:U('bag/person')}" class="weui-tabbar__item">
             <div class="weui-tabbar__icon">
@@ -262,7 +263,7 @@
                         <!--</div>-->
                       <!--</label>-->
                     <!--</div>-->
-
+                    
                     <div class="weui-cells__title">交易</div>
                     <div class="weui-cells weui-cells_radio">
                       <label class="weui-cell weui-check__label" >

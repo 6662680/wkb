@@ -75,7 +75,7 @@
                         <div class="buy dark f14 text-right">售价
                             <p class="red">{$vo.commodity_price}wkc</p>
                         </div>
-                        <div class="cleanfix">
+                        <div class="cleanfix"></div>
                             <if condition="$vo.equipment neq ''">
                                 <div class="weui-flex mb5 mt5 flexcenter">
                                     <div class="">
@@ -105,40 +105,44 @@
                                 </div>
 
                             </if>
-                        </div>
+                        
                         </a>
                         <?php 
 						    if ($vo['status']==1) {
 
                                 if (session('user_id') == $vo['user_id']) {
                                     echo '<div class="pbottom ">
-                                    <aa class="weui-btn weui-btn_mini weui-btn_default "  >等待用户接单</aa>
-                                    <button  onclick="tijiao(' . $vo['id']. ',0)" class="weui-btn weui-btn_mini weui-btn_warn ">取消订单</button>
+                                    <div>
+                                    <a class="weui-btn weui-btn_mini weui-btn_default "  >等待接单</a>
+                                    </div>
+                                    <div>
+                                    <button  onclick="tijiao(' . $vo['id']. ',0)" class="weui-btn weui-btn_mini weui-btn_warn mt5" >取消订单</button>
+                                    </div>
                                     </div>';
 
                                 } else {
 
                                     echo '<div class="pbottom ">
-                                    <aa data-id=' . $vo['id'].' id="1" class="weui-btn weui-btn_mini weui-btn_primary cancel" >前往付款</aa>
+                                    <a data-id=' . $vo['id'].' id="1" class="weui-btn weui-btn_mini weui-btn_primary cancel" >前往付款</a>
                                 </div>';
                                 }
 
                             } elseif($vo['status']==2) {
 									echo '<div class="pbottom ">
-                            <aa class="weui-btn weui-btn_mini weui-btn_default " >订单已完成</aa>
+                            <a class="weui-btn weui-btn_mini weui-btn_default " >订单已完成</a>
                         </div>';
 						} elseif($vo['status']==3) {
 									echo '<div class="pbottom ">
-                            <aa class="weui-btn weui-btn_mini weui-btn_default " >订单已失效</aa>
+                            <a class="weui-btn weui-btn_mini weui-btn_default " >订单失败</a>
                              </div>';
                         } elseif($vo['status']==4) {
 									echo '<div class="pbottom ">
-                        	<aa class="weui-btn weui-btn_mini weui-btn_default " >订单超时</aa>
+                        	<a class="weui-btn weui-btn_mini weui-btn_default " >订单超时</a>
                         </div>';
 						}?>
 
                         <div class="cleanfix"></div>
-                        <div class="dark" style="font-size: 12px;">
+                        <div class="dark" style="font-size: 10px;margin-top: 9px;color: #ccc!important;">
                             <span>下单时间:{$vo.creation_time|date="Y-m-d H:i:s",###}</span>
                         </div>
                     </div>
@@ -147,6 +151,7 @@
              
         </div>
         </foreach>
+        <div class="footheight"></div>
         <div class="weui-tabbar">
             <a href="{:U('bag/person')}" class="weui-tabbar__item">
                 <div class="weui-tabbar__icon">
@@ -219,29 +224,25 @@
 
      })
 
-function tijiao(order_id) {
-    $.confirm({
-        title: '',
-        text: '确定取消订单?',
-        onOK: function () {
-            $.ajax({
-                url: "{:U('putorder/cancel','','')}/order_id/" + order_id,
-                type: 'GET', //GET
-                async: true,    //或false,是否异步
-                data: {},
-                timeout: 5000,    //超时时间
-                dataType: 'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-                success: function (result) {
-                    if (result.status) {
-                        window.location.href = "{:U('bag/sellorderDetail')}";
-                    } else {
-                        alert(result.msg);
-                    }
+function tijiao(order_id){
+        $.ajax({
+            url:"{:U('putorder/cancel','','')}/order_id/"+order_id,
+            type:'GET', //GET
+            async:true,    //或false,是否异步
+            data:{
+            },
+            timeout:5000,    //超时时间
+            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            success:function(result){
+                if (result.status) {
+                    window.location.href= "{:U('bag/sellorderDetail')}";
+                } else {
+                    alert(result.msg);
                 }
-            })
-        },
-    });
-}
+            }
+        })
+    }
+
 
      </script>
 </body>

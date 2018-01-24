@@ -147,7 +147,7 @@
                 </div>
                 <p class="weui-tabbar__label">商城</p>
             </a>
-            <a href="{:U('putorder/orderList','','')}/type/1" class="weui-tabbar__item">
+            <a href="{:U('putorder/orderList','','')}/commodity_type/1/type/1" class="weui-tabbar__item">
                 <div class="weui-tabbar__icon">
                     <i class="fa fa-gavel"></i>
                 </div>
@@ -191,7 +191,7 @@
               //如果参数过多，建议通过 object 方式传入
               $.prompt({
                   title: '积分提现',
-                  input: '输入数额',
+                  input: '',
                   empty: false, // 是否允许为空
                   onOK: function (input) {
 			                  	$.ajax({
@@ -218,7 +218,7 @@
               //如果参数过多，建议通过 object 方式传入
               $.prompt({
                   title: '您的玩客币钱包地址',
-                  input: '输入地址',
+                  input: '',
                   empty: false, // 是否允许为空
                   onOK: function (input) {
 			                  	$.ajax({
@@ -256,7 +256,7 @@
                         onClick: function () {
                             $.prompt({
 				                  title: '积分提现',
-				                  input: '输入数额',
+				                  input: '',
 				                  empty: false, // 是否允许为空
 				                  onOK: function (input) {
 							                  	$.ajax({

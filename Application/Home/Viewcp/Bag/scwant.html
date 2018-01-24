@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <!-- head 中 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../Public/css/main.css">
+</head>
+
+<body>
+    <div class="page home ">
+        <div class="page__hd">
+            <h1 class="page__title">
+                商城订单详情
+            </h1>
+
+            <div class="navbar sd">
+                <div class="navbar__item weui_bar__item_on ">
+                </div>
+
+                <div class="navbar__item pull-right">
+                </div>
+            </div>
+        </div>
+        <foreach name="scOrderList" item="vo">
+        <div class="page__bd page__bd_spacing ">
+            <ul class="sd" >
+                <li class="pzr">
+                    <div class="mainflex js_category">
+                            <div class="mainphoto c1">
+                                <!-- 头像 -->
+                                <img src="{$vo.commodity_img}" alt="">
+                            </div>
+                            <div class="maintext">
+                                <ul>
+                                    <li>{$vo.commodity_name}
+                                    </li>
+                                   
+                                    <li class="dark">
+                                    	<?php 
+						                   	if ($vo['commodity_type']==1) {
+															echo '血量:';
+														} elseif($vo['commodity_type']==2) {
+															echo '耐久度:';
+														}elseif($vo['commodity_type']==3) {
+															echo '回血值:';
+														}?>
+                                        <span>{$vo.commodity_residue}</span>
+                                    </li>
+                                    <li class="dark">
+                                    	<?php 
+						                   	if ($vo['commodity_type']==1) {
+															echo '挖矿能力:';
+														} elseif($vo['commodity_type']==2) {
+															echo '挖矿效率:';
+														}?>
+                                    	
+                                        <span>{$vo.commodity_capacity}</span>
+                                    </li>
+                                    <li class="dark">
+                                    	<?php 
+						                   	if ($vo['commodity_type']==1) {
+															echo '初始等级:lv0';
+														} elseif($vo['commodity_type']==2) {
+															if ($vo['commodity_protect']==1) {
+																echo '是否防坍塌:是';
+															}elseif ($vo['commodity_protect']==0) {
+																echo '是否防坍塌:否';
+															}
+															
+														}?>
+                                    	
+                                    </li>
+                                </ul>
+                            </div>
+                        <div class="buy dark f14 text-right">售价
+                            <p class="red">{$vo.commodity_price}wkc</p>
+                        </div>
+                        </a>
+
+
+                            <if condition="$vo.status eq '1' ">
+                               <div class="pbottom ">
+                                <button data-id={$vo.id} id="{$vo.id}" class="weui-btn weui-btn_mini weui-btn_primary cancel" >前往付款</button>
+                            	</div>
+                            </if>
+
+
+                        <if condition="$vo.status eq '2' ">
+                            <div class="pbottom ">
+                                <button data-id={$vo.id}  class="weui-btn weui-btn_mini weui-btn_default" >订单已完成</button>
+                            </div>
+                        </if>
+                        <if condition="$vo.status EGT '3'">
+                            <div class="pbottom ">
+                                <button data-id={$vo.id}  class="weui-btn weui-btn_mini weui-btn_default" >订单已超时或失效</button>
+                            </div>
+                        </if>
+                        <div class="cleanfix"></div>
+                        <div class="dark" style="font-size: 12px;">
+                        	 <?php
+                                    if ($user_id == $vo['user_id']) {
+
+                                     echo '下单时间:'.date("Y-m-d H:i:s",$vo['creation_time']);
+
+
+
+                                    }else {
+                                     echo "接单时间:".date("Y-m-d H:i:s",$vo['use_time']);
+                                    }
+							 ?>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+             
+        </div>
+        </foreach><br /><br /><br /><br /><br /><br />
+        <div class="weui-tabbar">
+            <a href="{:U('bag/person')}" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-gamepad"></i>
+                </div>
+                <p class="weui-tabbar__label">首页</p>
+            </a>
+            <a href="{:U('store/person')}" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-shopping-bag"></i>
+                </div>
+                <p class="weui-tabbar__label">商城</p>
+            </a>
+            <a href="{:U('putorder/orderList','','')}/commodity_type/1/type/1" class="weui-tabbar__item ">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-gavel"></i>
+                </div>
+                <p class="weui-tabbar__label">交易</p>
+            </a>
+            <a href="{:U('bag/userMe')}" class="weui-tabbar__item weui-bar__item--on">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <p class="weui-tabbar__label">我的</p>
+            </a>
+        </div>
+    </div>
+
+    
+
+    <!-- body 最后 -->
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+    <!-- 如果使用了某些拓展插件还需要额外的JS -->
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
+     <script>
+     $(document).on("click", ".cancel", function () {
+         var id= $(this).data('id');
+         var sid= $(this).attr('id');
+           
+                window.location.href="{:U('Order/sczfOrder','','')}/id/" + sid;
+            
+
+        })
+
+       </script>
+</body>
+
+</html>

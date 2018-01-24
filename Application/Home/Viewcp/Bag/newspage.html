@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <!-- head 中 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../Public/css/main.css">
+</head>
+
+<body>
+    <div class="page home ">
+        <div class="page__hd">
+            <h1 class="page__title">
+                公告
+            </h1>
+        </div>
+        <div class="page__bd page__bd_spacing ">
+                        <div class="sd bgw p20">
+                            <volist name="notice" id="vo1">
+                            <div class="pageline">
+                                <h4>{$vo1.title}</h4>
+                                <div class="time">{$vo1.creation_time|date="Y-m-d H:i:s",###}</div>
+                                <p>{$vo1.text}</p>
+                            </div>
+                            </volist>
+                            
+                            <div class="pageline">
+                                <h4>矿山坍塌公告</h4>
+                                <p>系统矿山会随机发生坍塌，一旦发生坍塌，系统会及时公告各位会员大大。</p>
+                                <volist name="collapse" id="vo">
+                                	<p>尊敬的各位会员，系统矿山于<span style="color: red;">{$vo.collapse_time|date="Y-m-d H:i:s",###}</span>发生坍塌，导致您所有未配备安全帽的矿工血量降为1，为保证您的收益，请及时为您的矿工补充血量。</p>
+                                </volist>
+                            </div>
+                           
+                        </div>
+        </div>
+
+    </div>
+    <!-- body 最后 -->
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+    <!-- 如果使用了某些拓展插件还需要额外的JS -->
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
+  
+</body>
+
+</html>

@@ -139,7 +139,7 @@ class OrderModel extends Model
         }
 
         if ($orderRst['commodity_type'] == 2) {
-        	
+
             $model = M('equipment_bag');
             $model->user_id = $orderRst['user_id'];
             $model->equipment_id = $orderRst['commodity_id'];

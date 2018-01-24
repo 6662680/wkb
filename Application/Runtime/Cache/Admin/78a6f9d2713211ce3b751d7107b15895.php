@@ -54,6 +54,8 @@
                 <th>道具价格</th>
                 <th>挖矿效率</th>
                 <th>是否为隐藏道具</th>
+                <th>道具说明</th>
+                
                 <th>图片样式</th>
                 <th>操作</th>
             </tr>
@@ -69,6 +71,8 @@
 					<td><?php echo ($vo["equipment_multiple"]); ?></td>
 					<td><?php  if ($vo['status']==1) { echo '是'; } else { echo '否'; } ?>
 					</td>
+					<td><?php echo ($vo["explain"]); ?></td>
+					
                    <td><img style="width: 40px;height: 40px;" src="<?php echo ($vo["equipment_img"]); ?>"/></td>
                    <td>
                        <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->

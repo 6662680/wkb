@@ -62,8 +62,8 @@ class UserModel extends Model
 			if ($value['use_time'] + C('ORDER_TIME' )< time() && $value['status'] != 2 && $value['user_id'] != session('user_id')) {
 				$value['status'] = 4;
 			}	
-		}		
-	
+		}
+        
         if ($sellOrderList) {
             return ['status' => true, 'data' => $sellOrderList];
         } else {

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <!-- head 中 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../Public/css/main.css">
+</head>
+
+<body>
+    <div class="page home ">
+        <div class="page__hd">
+            <h1 class="page__title">
+                商城
+            </h1>
+            <div class="navbar sd">
+                <div class="navbar__item ">
+                    <a href="{:U('store/person')}">人物</a>
+                </div>
+                <div class="navbar__item weui_bar__item_on">
+                    <a href="{:U('store/equipment')}">装备</a>
+                </div>
+                <div class="navbar__item ">
+                    <a href="{:U('store/mediche')}">食物</a>
+                </div>
+                <!--<div class="navbar__item pull-right">
+                    <a href=""><i class="fa fa-filter mr5" aria-hidden="true"></i>等级</a>
+                </div>-->
+            </div>
+        </div>
+        <foreach name="equipment" item="vo">
+        <div class="page__bd page__bd_spacing ">
+            <ul class="sd">
+                <li class="bgw pzr">
+                    <div class="mainflex js_category pb20">
+                       
+                        <div class="mainphoto c1">
+                            <!-- 头像 -->
+                            <img src="{$vo.equipment_img}" alt="">
+                        </div>
+                        <div class="maintext">
+                            <ul>
+                                <li>{$vo.equipment_name}
+                                </li>
+                                
+                                <li class="dark">挖矿效率:
+                                    <span>{$vo.equipment_multiple}</span>
+                                </li>
+                                <li class="dark">基础耐久度:
+                                    <span>{$vo.equipment_endurance}</span>
+                                </li>
+                                <li class="dark">是否防坍塌:
+                                    <span><?php 
+						                   	if ($vo['equipment_protect']==1) {
+															echo '是';
+														} else {
+															echo '否';
+														} ?>
+                                    </span>
+                                </li>
+                            </ul>
+                           
+                        </div>
+                        
+                        <div class="buy dark f14 text-right">
+                            售价
+                            <p class="red">{$vo.equipment_price}</p>
+                        </div>
+
+                        <div class="cleanfix"></div>
+                    </div>
+                    <!--<a href="{:U('order/buy','','')}/commodity_id/{$vo.id}/commodity_type/{$vo.commodity_type}">-->
+                    <div class="pbottom ">
+                        <button  onclick="buy({$vo.id},{$vo.commodity_type})" class="weui-btn weui-btn_mini weui-btn_warn ">购买</button>
+                    </div>
+                    <!--</a>-->
+                </li>
+                
+            </ul>
+        </div>
+        </foreach>
+        <div class="footheight"></div>
+    <div class="weui-tabbar">
+        <a href="{:U('bag/person')}" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <i class="fa fa-gamepad"></i>
+            </div>
+            <p class="weui-tabbar__label">背包</p>
+        </a>
+        <a href="{:U('store/person')}" class="weui-tabbar__item weui-bar__item--on">
+            <div class="weui-tabbar__icon">
+                <i class="fa fa-shopping-bag"></i>
+            </div>
+            <p class="weui-tabbar__label">商城</p>
+        </a>
+        <a href="{:U('putorder/orderList','','')}/commodity_type/1/type/1" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <i class="fa fa-gavel"></i>
+            </div>
+            <p class="weui-tabbar__label">交易</p>
+        </a>
+        <a href="{:U('bag/userMe')}" class="weui-tabbar__item ">
+            <div class="weui-tabbar__icon">
+                <i class="fa fa-user"></i>
+            </div>
+            <p class="weui-tabbar__label">我的</p>
+        </a>
+    </div>
+    </div>
+    <!-- body 最后 -->
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+    <!-- 如果使用了某些拓展插件还需要额外的JS -->
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
+</body>
+<script>
+function buy(commodity_id, commodity_type){
+
+            $.ajax({
+                url:"{:U('order/buy','','')}/commodity_id/"+commodity_id+"/commodity_type/"+commodity_type,
+                type:'GET', //GET
+                async:true,    //或false,是否异步
+                data:{
+
+                },
+                timeout:5000,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                success:function(result){
+                    if (result.status) {
+                    	window.location.href= "{:U('order/pdOrder','','')}/commodity_id/"+commodity_id+"/commodity_type/"+commodity_type;
+                    } else {
+                        alert(result.msg);
+                    }
+                }
+            })
+
+    }
+
+</script>
+</html>
