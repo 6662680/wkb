@@ -48,6 +48,7 @@
                 <th>人物ID</th>
                 <th>人物名称</th>
                 <th>配备道具类型</th>
+                <th>配备道具的ID</th>
                 <th>是否戴安全帽</th>
                 <th>人物血量</th>
                 <th>人物等级</th>
@@ -63,6 +64,7 @@
                    <td><?php echo ++$iid; ?></td>
                    <td>{$vo.id}</td>
                    <td>{$vo.person_id}</td>
+                   <td>{$vo.equipment_nname}</td>
                    <td>{$vo.equipment_id}</td>
                    <td><?php 
                    	if ($vo['equipment_id_card']==1) {
@@ -105,7 +107,7 @@
                 <th>道具ID</th>
                 <th>道具名称</th>
                 <th>道具耐久度</th>
-                <th>所配备人物ID</th>
+                <!--<th>所配备人物ID</th>-->
                 <th>是否使用中</th>
                 
             </tr>
@@ -118,7 +120,7 @@
                    <td>{$vo.id}</td>
                    <td>{$vo.equipment_id}</td>
                    <td>{$vo.equipment_endurance}</td>
-                   <td>{$vo.person_id}</td>
+                   <!--<td>{$vo.person_id}</td>-->
                    <td><?php 
                    	if ($vo['use']==1) {
 									echo '使用中';
