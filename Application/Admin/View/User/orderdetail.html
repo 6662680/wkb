@@ -205,7 +205,7 @@
                    <td>{$vo.commodity_name}</td>
                    <td>{$vo.equipment_name}</td>
                    <td><?php 
-                   	if ($vo['equipment_id_card']==1) {
+                   	if ($vo['equipment_id_card']) {
 									echo '是';
 								} elseif($vo['equipment_id_card']==0) {
 									echo '否';
@@ -222,7 +222,11 @@
                    </td>
                    
                    <td>{$vo.commodity_price}</td>
-                   <td>{$vo.site}</td>
+                   <td>
+                   	<if condition="$vo.site eq 0 "> 无
+						<else />{$vo.site}
+					</if>
+                   </td>
                    <td>{$vo.receiving_user_id}</td>
                    
                    <td>{$vo.creation_time|date="Y-m-d H:i:s",###}</td>

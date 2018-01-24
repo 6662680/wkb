@@ -54,7 +54,7 @@
 				<td>{$vo.commodity_name}</td>
 				<td>{$vo.equipment_name}</td>
 				<td><?php 
-                if ($vo['equipment_id_card']==1) {
+                if ($vo['equipment_id_card']) {
 									echo '是';
 								} elseif($vo['equipment_id_card']==0) {
 									echo '否';
@@ -62,7 +62,12 @@
 				</td>
 				
 				<td>{$vo.commodity_price}</td>
-				<td>{$vo.site}</td>
+				<td>
+					<if condition="$vo.site eq 0 "> 无
+						<else />{$vo.site}
+					</if>
+					
+				</td>
 				
 				<td>
 					<if condition="$vo.creation_time eq null "> 未完成
