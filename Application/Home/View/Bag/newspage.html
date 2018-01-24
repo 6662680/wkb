@@ -22,12 +22,14 @@
         </div>
         <div class="page__bd page__bd_spacing ">
                         <div class="sd bgw p20">
+                            <volist name="notice" id="vo1">
                             <div class="pageline">
-                                <h4>公告1</h4>
-                                <div class="time">2019-08-10 24:43:32</div>
-                                <p>你的网站和应用能在 Bootstrap 的帮助下通过同一份代码快速、有效适配手机、平板、PC 设备，这一切都是 CSS 媒体查询（Media Query）的功劳。</p>
-                                <p>你的网站和应用能在 Bootstrap 的帮助下通过同一份代码快速、有效适配手机、平板、PC 设备，这一切都是 CSS 媒体查询（Media Query）的功劳。</p>
+                                <h4>{$vo1.title}</h4>
+                                <div class="time">{$vo1.creation_time|date="Y-m-d H:i:s",###}</div>
+                                <p>{$vo1.text}</p>
                             </div>
+                            </volist>
+                            
                             <div class="pageline">
                                 <h4>矿山坍塌公告</h4>
                                 <p>系统矿山会随机发生坍塌，一旦发生坍塌，系统会及时公告各位会员大大。</p>

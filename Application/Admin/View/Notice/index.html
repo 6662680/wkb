@@ -1,0 +1,39 @@
+<extend name="Public/base"/>
+<block name="body">
+    <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 后台管理 <span class="c-gray en">&gt;</span> 系统公告<span class="c-gray en">&gt;</span> 发布公告
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+    <div class="page-container">
+        <form class="form-inline definewidth m20" id="searchForm" method="post" action="{:U('Notice/notice')}">
+        
+        
+            <br>
+        <table class="table table-border table-bordered table-bg table-sort">
+            <thead>
+            <tr>
+                <th>公告标题</th>
+                <th>公告内容</th>
+                <th>操作</th>
+                <th>备注</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+                <tr >
+                   <td><input type="text" name="title" id="title" value="" /></td>
+                   
+                   <td><textarea name="text" rows="5" cols="60"></textarea></td>
+                   <td>
+                       <input type="submit" name="" id="" value="点击我发布" />
+                   </td>
+                   <td>坍塌公告在触发坍塌时即已自动公告。</td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+
+</block>
+<block name="javascript">
+</block>

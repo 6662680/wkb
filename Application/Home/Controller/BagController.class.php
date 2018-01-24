@@ -288,8 +288,10 @@ class BagController extends BaseController
 	/*系统公告*/
 	public function newspage()
     {
+    	$notice=M('Notice')->where(' isdel=1')->order('creation_time desc')->limit(3)->select();
     	$collapse=M('Collapse')->order('collapse_time desc')->limit(3)->select();
 		
+        $this->assign('notice',$notice);
         $this->assign('collapse',$collapse);
         $this->display('newspage');
     }
