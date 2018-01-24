@@ -47,9 +47,9 @@
                 <th>序号</th>
                 <th>人物ID</th>
                 <th>人物名称</th>
-                <th>配备道具类型</th>
-                <th>配备道具的ID</th>
-                <th>是否戴安全帽</th>
+                <th>配备算力道具名称</th>
+                <th>配备算力道具ID</th>
+                <th>佩戴安全帽ID</th>
                 <th>人物血量</th>
                 <th>人物等级</th>
                 <th>昨日产能</th>
@@ -68,17 +68,17 @@
                    <td>
                    	<?php 
                    	if ($vo['equipment_id']==0) {
-									echo '未配备道具';
+									echo '未配备';
 								}else {
 									echo $vo['equipment_id'];
 								} ?>
                    	<!--{$vo.equipment_id}-->
                    </td>
                    <td><?php 
-                   	if ($vo['equipment_id_card']==1) {
-									echo '是';
+                   	if ($vo['equipment_id_card']) {
+									echo $vo['equipment_id_card'];
 								}elseif($vo['equipment_id_card']==0) {
-									echo '否';
+									echo '未佩戴安全帽';
 								} ?>
                    </td>
                    <td>{$vo.blood}</td>

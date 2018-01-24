@@ -74,7 +74,7 @@ class UserController extends PrivilegeController
 			if ($nequipmentList['equipment_name']) {
 				$personList[$key]['equipment_nname']=$nequipmentList['equipment_name'];
 			} else {
-				$personList[$key]['equipment_nname']='未配备道具';
+				$personList[$key]['equipment_nname']='未配备';
 			}
     	}
     	$this->assign('personList',$personList);
