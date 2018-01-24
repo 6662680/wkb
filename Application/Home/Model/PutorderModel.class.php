@@ -11,7 +11,7 @@ class PutorderModel extends Model
     public function orderList($type, $commodity_type)
     {
 
-        if ($type == 0) {
+//        if ($type == 0) {
             $model = M('user_sell_order');
             if ($commodity_type == 1) {
                 $model->join('left join `person_bag` on person_bag.id=user_sell_order.commodity_id');
@@ -21,7 +21,7 @@ class PutorderModel extends Model
                 $model->join('left join `equipment_bag` as ebag on ebag.id=user_sell_order.equipment_id_card');
                 $model->join('left join `equipment` as e on ebag.equipment_id=e.id');
                 $model->field('user_sell_order.*,user_sell_order.id as order_id, person.*, equipment.equipment_img,
-                e.equipment_img as equipment_img_card, ebag.equipment_endurance, e.equipment_name as equipment_name_card, equipment.equipment_multiple,person_bag.level,person_bag.person_id');
+                e.equipment_img as equipment_img_card, equipment_bag.equipment_endurance, e.equipment_name as equipment_name_card, equipment.equipment_multiple,person_bag.level,person_bag.person_id');
 
             } else {
                 $model->join('left join `equipment_bag` on equipment_bag.id=user_sell_order.commodity_id');
@@ -30,23 +30,20 @@ class PutorderModel extends Model
             }
 
             $model->where(['user_sell_order.status' => 1,'user_sell_order.commodity_type' => $commodity_type]);
-            $model->order('user_sell_order.id desc');
 
-            $rst  = $model->select();
-
-        } else {
-            $model = M('user_buy_order');
-            if ($commodity_type == 1) {
-
-                $model->join('left join `person` on user_buy_order.commodity_id=person.id');
-                $model->field('user_buy_order.*,user_buy_order.id as order_id,user_buy_order.commodity_id as person_id, person.*');
-            } else {
-                $model->join('left join `equipment` on user_buy_order.commodity_id=equipment.id');
-                $model->field('user_buy_order.*,user_buy_order.id as order_id, equipment.*');
+            if ($type == 1) {
+                $model->order('user_sell_order.commodity_price desc');
             }
-
-            $rst = $model->where(['user_buy_order.status' => 1,'user_buy_order.commodity_type' => $commodity_type])->order('user_buy_order.id desc')->select();
-        }
+            if ($type == 2) {
+                $model->order('user_sell_order.commodity_price asc');
+            }
+            if ($type == 3) {
+                $model->order('level desc');
+            }
+            if ($type == 4) {
+                $model->order('level asc');
+            }
+            $rst  = $model->select();
 
         return $rst;
     }

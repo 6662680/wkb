@@ -13,56 +13,55 @@ class PutorderController extends BaseController
 
 
     //订单列表
+    //1 价格最高 2价格最低 3等级最高 4等级最低
     public function orderList()
     {
-        $type = I('post.type',1);
-        $commodity_type = I('post.commodity_type',1);
+
+        $commodity_type = I('get.commodity_type');
+        $type = I('get.type');
+
         $rst = D('Putorder')->orderList($type, $commodity_type);
-		
+
 		foreach ($rst as &$value) {
             $level = $value['level'] / 10;
-
             $img = M('person_img')->where(['person_id' => $value['person_id'], 'level' => floor($level)])->find();
-            
-                $value['person_img'] = $img['img'];
+            $value['person_img'] = $img['img'];
+
+            if ($value['equipment_id'] != 0 ) {
+                $value['capacity'] = $value['person_capacity'] + ($value['person_property'] * $value['level']);
+
+                $equipment = M('equipment_bag')->where(['id' => $value['equipment_id']])->find();
+                $equipment_bag = M('equipment')->where(['id' => $equipment['equipment_id']])->find();
+                $value['person_capacity'] = $value['capacity'] * $equipment_bag['equipment_multiple'];
+            }
         }
-		
 
         $this->assign('rst',$rst);
-
 		$personList=M('Person')->where('status=0')->select();
-		/*pr($rst);die;*/
 		$this->assign('personarr',$personList);
-        if ($type == 1) {
-            if ($commodity_type == 1) {
-//                echo '买 人物';
-                $this->assign('type',1);
-				
-                $this->display('person');
-            } else {
-//                echo '买 装备';
-                $this->assign('type',1);
-                $this->display('equipment');
-            }
+
+        if ($commodity_type == 1) {
+            $this->assign('type',2);
+            $this->display('person');
         } else {
+            $this->assign('type',2);
+            $this->display('equipment');
+        }
+    }
 
-            if ($commodity_type == 1) {
-            	
-				
-//                echo '卖 人物';
-				
-                $this->assign('type',2);
-                $this->display('person');
-            } else {
-//                echo '卖 装备';
-                $this->assign('type',2);
-                $this->display('equipment');
-            }
 
+    public function cancel()
+    {
+        $order_id = I('get.order_id');
+        $rst = M('user_sell_order')->where(['id' => $order_id, 'user_id' => session('user_id')])->save(['status' => '3']);
+
+        if ($rst === false) {
+            returnajax(false, '','取消失败');
+        } else {
+            returnajax(true, '','取消成功');
         }
 
     }
-
 /**
      * ajax获取道具类型
      * @author LiYang

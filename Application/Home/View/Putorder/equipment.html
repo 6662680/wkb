@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../../../Public/css/main.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/main.css">
 </head>
 
 <body>
@@ -25,84 +25,122 @@
             </h1>
             <div class="navbar sd">
 
-                <!--<div class="navbar__item weui_bar__item_on">-->
-                    <!--<a href="{:U('putorder/orderList','','')}/type/1">我要买</a>-->
-                <!--</div>-->
-                <!--<div class="navbar__item">-->
-                    <!--<a href="{:U('putorder/orderList')}/type/0">我要卖</a>-->
-                <!--</div>-->
-                <!--<div class="navbar__item">-->
-                    <!--<a href="{:U('putorder/mediche')}">我的订单</a>-->
+                <div class="navbar__item">
+                    <a href="{:U('putorder/orderList','','')}/commodity_type/2/type/
+                    <?php
+                    if ($_GET['type'] == 5) {
+                        echo 6;
+                    }
+
+                    else {
+                        echo 5;
+                    }
+                    ?>
+                    ">按价格</a>
+                </div>
+                <div class="navbar__item">
+                    <a href="{:U('putorder/orderList','','')}/commodity_type/2/type/
+                    <?php
+                    if ($_GET['type'] ==7) {
+                        echo 8;
+                    }
+
+                    else {
+                        echo 7;
+                    }
+                    ?>
+                    ">按等级</a>
+                    <!--<a href="{:U('putorder/orderList','','')}/type/3">按等级</a>-->
+                </div>
                 <!--</div>-->
                 <div class="navbar__item pull-right">
-                    <a href="javascript:;" class=" open-popup" data-target="#sx"><i class="fa fa-filter mr5" aria-hidden="true"></i>筛选</a>
-                 
+                    <a href="{:U('putorder/orderList','','')}/commodity_type/1/type/1"  data-target="#sx"><i class="fa fa-filter mr5" aria-hidden="true"></i>人物</a>
                 </div>
             </div>
-            <if condition="$type eq '1'">
-                    <div class="sd bgw p2 mb1" >
-		                <a href="javascript:;" class="weui-btn weui-btn_default open-popup" data-target="#want" style="font-size: 14px;line-height: 30px;">
-		                 	我要求购
-		                </a>
-		            </div>
-            <else />
-                   
+            <!--<if condition="$type eq '1'">-->
+                    <!--<div class="sd bgw p2 mb1" >-->
+		                <!--<a href="javascript:;" class="weui-btn weui-btn_default open-popup" data-target="#want" style="font-size: 14px;line-height: 30px;">-->
+		                 	<!--我要求购-->
+		                <!--</a>-->
+		            <!--</div>-->
+            <!--<else />-->
+                   <!---->
             </if>
         </div>
                     
 
-        <foreach name="rst" item="vo">
-        <div class="page__bd page__bd_spacing ">
-            <ul class="sd">
+        <!--<foreach name="rst" item="vo">-->
+        <!--<div class="page__bd page__bd_spacing ">-->
+            <!--<ul class="sd">-->
 
-                <li class="bgw pzr">
-                    <div class="mainflex js_category pb20">
-                       
-                        <div class="mainphoto c1">
-                            <!-- 头像 -->
-                            <img src="{$vo.equipment_img}" alt="">
-                        </div>
-                        <div class="maintext">
-                            <ul>
-                                <li>{$vo.equipment_name}
-                                </li>
-                                <li class="dark">耐久度:
-                                    <span>{$vo.equipment_endurance}</span>
-                                </li>
-                                <if condition="$vo.equipment_protect eq 0">
-                                    <li class="dark">挖矿倍数:
-                                        <span>{$vo.equipment_multiple}</span>
-                                    </li>
-                                    <else />
-                                    <li class="dark">防坍塌
-                                        <span></span>
-                                    </li>
-                                </if>
+                <!--<li class="bgw pzr">-->
+                    <!--<div class="mainflex js_category pb20">-->
+                       <!---->
+                        <!--<div class="mainphoto c1">-->
+                            <!--&lt;!&ndash; 头像 &ndash;&gt;-->
+                            <!--<img src="{$vo.equipment_img}" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="maintext">-->
+                            <!--<ul>-->
+                                <!--<li>{$vo.equipment_name}-->
+                                <!--</li>-->
+                                <!--<li class="dark">耐久度:-->
+                                    <!--<span>{$vo.equipment_endurance}</span>-->
+                                <!--</li>-->
+                                <!--<if condition="$vo.equipment_protect eq 0">-->
+                                    <!--<li class="dark">挖矿倍数:-->
+                                        <!--<span>{$vo.equipment_multiple}</span>-->
+                                    <!--</li>-->
+                                    <!--<else />-->
+                                    <!--<li class="dark">防坍塌-->
+                                        <!--<span></span>-->
+                                    <!--</li>-->
+                                <!--</if>-->
 
-                            </ul>
-                        </div>
-                        
-                        <div class="buy dark f14 text-right">
-                            售价
-                            <p class="red">{$vo.commodity_price}</p>
-                        </div>
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!---->
+                        <!--<div class="buy dark f14 text-right">-->
+                            <!--售价-->
+                            <!--<p class="red">{$vo.commodity_price}</p>-->
+                        <!--</div>-->
 
-                        <div class="cleanfix"></div>
+                        <!--<div class="cleanfix"></div>-->
+                    <!--</div>-->
+
+                        <!--<div class="pbottom ">-->
+                            <!--<button  onclick="tijiao({$vo.order_id},0)" class="weui-btn weui-btn_mini weui-btn_warn ">购买</button>-->
+                        <!--</div>-->
+                  <!---->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--</foreach>-->
+
+        <div class="page__bd page__bd_spacing flexa">
+            <foreach name="rst" item="vo">
+                <div class="pb20 peop ">
+                    <div class="sd pzr w100 bgw mb10">
+                        <img src="{$vo.equipment_img}" alt="">
+                        <div class="f10 namea">{$vo.equipment_name} </div>
+                        <div class="f10 namearig"><span></span></div>
+                        <div class="zb1">
+                        </div>
                     </div>
-                    <if condition="$type eq '1'">
-                        <div class="pbottom ">
-                            <button  onclick="tijiao({$vo.order_id},1)" class="weui-btn weui-btn_mini weui-btn_warn ">卖给他</button>
-                        </div>
-                        <else />
-                        <div class="pbottom ">
-                            <button  onclick="tijiao({$vo.order_id},0)" class="weui-btn weui-btn_mini weui-btn_warn ">购买</button>
-                        </div>
-                    </if>
-                </li>
+                    <div class="f10 nena dark">耐久度<span>{$vo.equipment_endurance}</span>·
+                        <?php
+                        if (!$vo['equipment_protect']) {
+                           echo '挖矿倍数:'. $vo['equipment_multiple'];
+                        }
+                        ?>
+                        <span></div>
+                    <div class="f10 dark"> 售价<span class="red f10">{$vo.commodity_price}wkb</span></div>
 
-            </ul>
+                    <button  onclick="tijiao({$vo.order_id},0)" class="weui-btn weui-btn_mini weui-btn_warn ">购买</button>
+
+                </div>
+            </foreach>
         </div>
-        </foreach>
     <div class="weui-tabbar">
         <a href="{:U('bag/person')}" class="weui-tabbar__item">
             <div class="weui-tabbar__icon">
@@ -116,7 +154,7 @@
             </div>
             <p class="weui-tabbar__label">商城</p>
         </a>
-        <a href="{:U('putorder/orderList')}" class="weui-tabbar__item weui-bar__item--on">
+        <a href="{:U('putorder/orderList')}/type/1" class="weui-tabbar__item weui-bar__item--on">
             <div class="weui-tabbar__icon">
                 <i class="fa fa-gavel"></i>
             </div>
@@ -134,7 +172,7 @@
     <div id="sx" class="weui-popup__container">
         <div class="weui-popup__overlay"></div>
         <div class="weui-popup__modal">
-                <form action="{:U('putorder/orderList','','')}/type" method="post">
+                <form action="{:U('putorder/orderList','','')}/type/1/commodity_type" method="get">
              
             <div class="bgw m20 p20 maxvh">
                 <div class="modal-header" style="height: 50px;">
@@ -151,28 +189,28 @@
                     <label><input name="commodity_type" type="radio" value="1" />人物 </label>
                     <label><input name="commodity_type" type="radio" value="2" />装备 </label>
                     <input type="submit"> -->
-                    <div class="weui-cells__title">交易类型</div>
-                    <div class="weui-cells weui-cells_radio">
-                      <label class="weui-cell weui-check__label">
-                        <div class="weui-cell__bd">
-                          <p>求购</p>
-                        </div>
-                        <div class="weui-cell__ft">
-                          <input name="type" type="radio" value="1" checked="checked"  class="weui-check"/ >
-                          <span class="weui-icon-checked"></span>
-                        </div>
-                      </label>
-                      <label class="weui-cell weui-check__label" >
+                    <!--<div class="weui-cells__title">交易类型</div>-->
+                    <!--<div class="weui-cells weui-cells_radio">-->
+                      <!--<label class="weui-cell weui-check__label">-->
+                        <!--<div class="weui-cell__bd">-->
+                          <!--<p>求购</p>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cell__ft">-->
+                          <!--<input name="type" type="radio" value="1" checked="checked"  class="weui-check"/ >-->
+                          <!--<span class="weui-icon-checked"></span>-->
+                        <!--</div>-->
+                      <!--</label>-->
+                      <!--<label class="weui-cell weui-check__label" >-->
 
-                        <div class="weui-cell__bd">
-                          <p>卖出</p>
-                        </div>
-                        <div class="weui-cell__ft">
-                          <input name="type" type="radio" value="0"  class="weui-check"/>
-                          <span class="weui-icon-checked"></span>
-                        </div>
-                      </label>
-                    </div>
+                        <!--<div class="weui-cell__bd">-->
+                          <!--<p>卖出</p>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cell__ft">-->
+                          <!--<input name="type" type="radio" value="0"  class="weui-check"/>-->
+                          <!--<span class="weui-icon-checked"></span>-->
+                        <!--</div>-->
+                      <!--</label>-->
+                    <!--</div>-->
 
                     <div class="weui-cells__title">交易</div>
                     <div class="weui-cells weui-cells_radio">
@@ -202,71 +240,71 @@
              </form>
         </div>
     </div>
-    <!-- 求购表单 -->
-    <div id="want" class="weui-popup__container">
-        <div class="weui-popup__overlay"></div>
-        <div class="weui-popup__modal">
-            <div class="bgw m20 p20 maxvh">
-                <div class="modal-header">
-                    <button type="button" class="close close-popup" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    <h4 class="modal-title">发布求购</h4>
-                </div>
+    <!--&lt;!&ndash; 求购表单 &ndash;&gt;-->
+    <!--<div id="want" class="weui-popup__container">-->
+        <!--<div class="weui-popup__overlay"></div>-->
+        <!--<div class="weui-popup__modal">-->
+            <!--<div class="bgw m20 p20 maxvh">-->
+                <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close close-popup" data-dismiss="modal" aria-label="Close">-->
+                        <!--<span aria-hidden="true">×</span>-->
+                    <!--</button>-->
+                    <!--<h4 class="modal-title">发布求购</h4>-->
+                <!--</div>-->
 
-                <div class="weui-cells weui-cells_form">
-                	<div class="weui-cell weui-cell_select">
-                        <div class="weui-cell__bd">
-						     <select class="weui-select" id="select1">
-                                <option selected="" value="1">人物</option>
-                                <option value="2">装备</option>
-                            </select>
-                               <select class="weui-select" id="select2" style="font-size: 16px;">
-                               	<foreach name="personarr" item="k">
-                               		<option value={$k.id}>{$k.person_name}</option>
-                               	</foreach>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="weui-cell">
-                        <div class="weui-cell__hd">
-                            <label class="weui-label">售价：</label>
-                        </div>
-                        <div class="weui-cell__bd">
-                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入售价" name="commodity_price" id="commodity_price" value="">
-                        </div>
-                    </div>
-                    <div class="weui-cell">
-                        <div class="weui-cell__hd">
-                            <label class="weui-label" id="blood">血量：</label>
-                        </div>
-                        <div class="weui-cell__bd">
-                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该值" name="residue" id="residue" value="">
-                        </div>
-                    </div>
-                    <div class="weui-cell" id="level">
-                        <div class="weui-cell__hd">
-                            <label class="weui-label">等级：</label>
-                        </div>
-                        <div class="weui-cell__bd">
-                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该等级" name="person_level" id="person_level" value="">
-                        </div>
-                    </div>
-                    <div class="weui-cell" id="wakuang">
-                        <div class="weui-cell__hd">
-                            <label class="weui-label">挖矿能力：</label>
-                        </div>
-                        <div class="weui-cell__bd">
-                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该值" name="capacity" id="capacity" value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class=" m20  ">
-                <button  onclick="buyCreationOrder()"  class="weui-btn weui-btn_primary ">发布</button>
-            </div>
-        </div>
-    </div>
+                <!--<div class="weui-cells weui-cells_form">-->
+                	<!--<div class="weui-cell weui-cell_select">-->
+                        <!--<div class="weui-cell__bd">-->
+						     <!--<select class="weui-select" id="select1">-->
+                                <!--<option selected="" value="1">人物</option>-->
+                                <!--<option value="2">装备</option>-->
+                            <!--</select>-->
+                               <!--<select class="weui-select" id="select2" style="font-size: 16px;">-->
+                               	<!--<foreach name="personarr" item="k">-->
+                               		<!--<option value={$k.id}>{$k.person_name}</option>-->
+                               	<!--</foreach>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="weui-cell">-->
+                        <!--<div class="weui-cell__hd">-->
+                            <!--<label class="weui-label">售价：</label>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cell__bd">-->
+                            <!--<input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入售价" name="commodity_price" id="commodity_price" value="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="weui-cell">-->
+                        <!--<div class="weui-cell__hd">-->
+                            <!--<label class="weui-label" id="blood">血量：</label>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cell__bd">-->
+                            <!--<input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该值" name="residue" id="residue" value="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="weui-cell" id="level">-->
+                        <!--<div class="weui-cell__hd">-->
+                            <!--<label class="weui-label">等级：</label>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cell__bd">-->
+                            <!--<input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该等级" name="person_level" id="person_level" value="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="weui-cell" id="wakuang">-->
+                        <!--<div class="weui-cell__hd">-->
+                            <!--<label class="weui-label">挖矿能力：</label>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cell__bd">-->
+                            <!--<input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该值" name="capacity" id="capacity" value="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class=" m20  ">-->
+                <!--<button  onclick="buyCreationOrder()"  class="weui-btn weui-btn_primary ">发布</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
     <!-- body 最后 -->
     <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>

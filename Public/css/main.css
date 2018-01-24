@@ -11,7 +11,6 @@ table {
     border-spacing: 0;
     border-collapse: collapse;
 }
-
 a {
     color: #444444
 }
@@ -23,18 +22,7 @@ a {
 .weui-tabbar {
     position: fixed !important;
 }
-.sae{
-    height: 34px;
-    background-color: #1aae19;
-    padding: 6px 10px;
-    font-size: 14px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 0 4px 4px 0;
-    color: #fff;
-    border: 0;
-}
+
 .green {
     color: #04BE02!important
 }
@@ -267,6 +255,9 @@ a {
 
 .zb>img, .item>img, .omreitem>img, .mainphoto>img, .buyphoto>img {
     max-width: 100%
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
 }
 
 .flexcenter {
@@ -419,6 +410,7 @@ a {
 
 .loginbg {
     background: url(/Public/images/bg.jpeg) no-repeat center center fixed;
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -797,3 +789,54 @@ hr {
 
 }
 .mt20{margin-top: 20px}
+
+.mb10{margin-bottom: 10px}
+.sae{
+    height: 34px;
+    background-color: #1aae19;
+    padding: 6px 10px;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 4px 4px 0;
+    color: #fff;
+    border: 0;
+}
+.flexa{display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;justify-content: space-between }
+.peop{ -webkit-box-flex: 0;
+    -ms-flex: 0 0 48%;
+    flex: 0 0 48%;
+    max-width: 48%;}
+.peop img{max-height: 140px; max-width: 120px;margin:10px auto; }
+.namea{    position: absolute;
+    top: 10px;
+    left: 0px;
+    background: #e4e4e4a8;
+    width: 60px;
+    border-radius: 0 20px 20px 0;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color: #a0a0a0;
+overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;}
+    .namearig{
+          position: absolute;
+    top: 10px;
+    right:5px;
+    color: #a0a0a0;
+    }
+.nena{}  
+.w100{width: 100%}  
+.mb10{margin-bottom: 10px}
+.text-center{text-align: center;}
+.zb1{position: absolute;right: 5px;top: 30px;text-align: right;}
+.zb1 img, .zb2 img{width: 30px ;height: 30px;margin:0px;text-align: }
+.zb2{position: absolute;right: 5px;top: 65px}

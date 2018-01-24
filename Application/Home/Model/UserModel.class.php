@@ -56,7 +56,7 @@ class UserModel extends Model
 			->order('creation_time desc')
 			->limit(10)
             ->select();
-/*pr(M()->getLastSql());die;*/
+
 		foreach($sellOrderList as &$value) {
 
 			if ($value['use_time'] + C('ORDER_TIME' )< time() && $value['status'] != 2 && $value['user_id'] != session('user_id')) {

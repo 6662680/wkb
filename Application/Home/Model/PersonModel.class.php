@@ -16,11 +16,28 @@ class PersonModel extends Model
 
         foreach ($person as &$value) {
             $value['capacity'] = $value['person_capacity'] + ($value['person_property'] * $value['level']);
+
+            if ($value['equipment_id'] != 0) {
+                $value['capacity'] = $value['capacity'] * $this->getPersonCapacity($value['id']);
+            }
+
         }
 
         return $person;
     }
 
+    //获取人物总属性
+    public function getPersonCapacity($person_id)
+    {
+        $rst = M('person_bag')->where(['id' => $person_id])->find();
+
+        if ($rst['equipment_id'] != 0) {
+            $equipment = M('equipment_bag')->where(['id' => $rst['equipment_id']])->find();
+            $equipment_bag = M('equipment')->where(['id' => $equipment['equipment_id']])->find();
+        }
+
+        return $equipment_bag['equipment_multiple'];
+    }
 
     //获取背包人物
     public function getBagPersonDetails($id)
@@ -32,6 +49,10 @@ class PersonModel extends Model
             ->find();
 
         $person['capacity'] = $person['person_capacity'] + ($person['person_property'] * $person['level']);
+
+        if ($person['equipment_id'] != 0) {
+            $person['capacity'] = $person['capacity'] * $this->getPersonCapacity($person['id']);
+        }
 
         return $person;
     }

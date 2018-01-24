@@ -19,8 +19,8 @@
             <h1 class="page__title">
                 订单详情
                 <div class="pull-right stonelink">
-                    <a class="onstone"  href="{:U('bag/sellorderDetail')}">出售订单</a> /
-                    <a href="{:U('bag/orderDetail')}">求购订单</a>
+                    <a class="onstone"  href="{:U('bag/sellorderDetail')}"></a>
+                    <!--<a href="{:U('bag/orderDetail')}">求购订单</a>-->
                 </div>
             </h1>
 
@@ -113,6 +113,7 @@
                                 if (session('user_id') == $vo['user_id']) {
                                     echo '<div class="pbottom ">
                                     <aa class="weui-btn weui-btn_mini weui-btn_default "  >等待用户接单</aa>
+                                    <button  onclick="tijiao(' . $vo['id']. ',0)" class="weui-btn weui-btn_mini weui-btn_warn ">取消订单</button>
                                     </div>';
 
                                 } else {
@@ -135,7 +136,7 @@
                         	<aa class="weui-btn weui-btn_mini weui-btn_default " >订单超时</aa>
                         </div>';
 						}?>
-                        
+
                         <div class="cleanfix"></div>
                         <div class="dark" style="font-size: 12px;">
                             <span>下单时间:{$vo.creation_time|date="Y-m-d H:i:s",###}</span>
@@ -217,6 +218,26 @@
          }
 
      })
+
+function tijiao(order_id){
+        $.ajax({
+            url:"{:U('putorder/cancel','','')}/order_id/"+order_id,
+            type:'GET', //GET
+            async:true,    //或false,是否异步
+            data:{
+            },
+            timeout:5000,    //超时时间
+            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            success:function(result){
+                if (result.status) {
+                    window.location.href= "{:U('bag/sellorderDetail')}";
+                } else {
+                    alert(result.msg);
+                }
+            }
+        })
+    }
+
 
      </script>
 </body>

@@ -196,7 +196,14 @@ class BagController extends BaseController
                 $sellOrderList[$key]['blood']=$nperson['blood'];
                 $sellOrderList[$key]['level']=$nperson['level'];
                 $sellOrderList[$key]['capacity']=$person['person_capacity'];
-				
+                $sellOrderList[$key]['person_property']=$person['person_property'];
+
+
+
+                $sellOrderList[$key]['capacity'] = $person['person_capacity'] + ($person['person_property'] * $nperson['level']);
+
+                $sellOrderList[$key]['capacity'] = $sellOrderList[$key]['capacity'] * $sellOrderList[$key]['equipment']['equipment_multiple'];
+
 				/*pr($nperson);die;*/
 				//修改为动态图
 				$level = $sellOrderList[$key]['level'] / 10;
@@ -208,6 +215,7 @@ class BagController extends BaseController
 	            } else {
 	                $sellOrderList[$key]['commodity_img'] = $img['img'];
 	            }
+
 				
 			} elseif($value['commodity_type']==2) {
                 $nequipment = M('equipment_bag')->where(['id' => $value['commodity_id']])->find();
@@ -220,7 +228,8 @@ class BagController extends BaseController
 				/*pr($sellOrderList[$key]);die;*/
 			}
 		}
-		/*pr($sellOrderList);die;*/
+
+
 		$this->assign('sellOrderList',$sellOrderList);
 		/*pr($nperson['person_img']);die;*/
         $this->display('sellout');
