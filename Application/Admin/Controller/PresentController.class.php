@@ -9,7 +9,7 @@ use Think\Controller;
 class PresentController extends PrivilegeController
 {
 	/**
-	 * 推广基础参数
+	 * 赠送基础参数
 	 * @author zh <[<email address>]>
 	 * @return [type] [description]
 	 */

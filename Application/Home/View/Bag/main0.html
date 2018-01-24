@@ -305,19 +305,10 @@
                     //点击确认
                     $.prompt({
                         title: '请输入在交易中心挂单价格',
-                        input: '',
+                        input: '输入数额',
                         empty: false, // 是否允许为空
                         onOK: function (input) {
-                            var input = input;
-                            if (input=='0') {
-                                $.alert("出售价格不能为0");
-                                result(false)
-                            }
-                            $.confirm({
-                              title: '出售提示',
-                              text: '确定以'+input+'wkc价格出售该人物?',
-                              onOK: function () {
-                                   $.ajax({
+                            $.ajax({
                                 url:"{:U('putorder/sellCreationOrder')}",
                                 type:'POST', //GET
                                 async:true,    //或false,是否异步
@@ -339,12 +330,6 @@
 
                                 }
                             })
-                                //点击确认
-                              },
-                              onCancel: function () {
-                              }
-                            });
-                         
 
                         },
                         onCancel: function () {
@@ -401,7 +386,6 @@
                   title: '',
                   text: '确定使用?',
                   onOK: function () {
-
                       //点击确认
                      
                        //$(that).parents("li").remove();

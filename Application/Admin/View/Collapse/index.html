@@ -1,0 +1,37 @@
+<extend name="Public/base"/>
+<block name="body">
+    <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 后台管理 <span class="c-gray en">&gt;</span> 矿山坍塌设置<span class="c-gray en">&gt;</span> 触发坍塌
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+    <div class="page-container">
+        <form class="form-inline definewidth m20" id="searchForm" method="post" action="{:U('Collapse/collapse')}">
+        
+        
+            <br>
+        <table class="table table-border table-bordered table-bg table-sort">
+            <thead>
+            <tr>
+                <th>矿山状态</th>
+                <th>操作</th>
+                <th>备注</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+                <tr >
+                   
+                   <td>矿山坍塌</td>
+                   <td>
+                       <input type="submit" name="" id="" value="点击我触发矿山坍塌" />
+                   </td>
+                   <td>一旦触发坍塌，同时公告于会员中心的系统公告中。</td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+
+</block>
+<block name="javascript">
+</block>

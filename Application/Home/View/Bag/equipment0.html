@@ -129,42 +129,29 @@
                     input: '',
                     empty: false, // 是否允许为空
                     onOK: function (input) {
-                    	var input = input;
-                            if (input=='0') {
-                                $.alert("出售价格不能为0");
-                                result(false)
+                        $.ajax({
+                            url:"{:U('putorder/sellCreationOrder')}",
+                            type:'POST', //GET
+                            async:true,    //或false,是否异步
+                            data:{
+
+                                commodity_type:2,
+                                commodity_id : id,
+                                commodity_price :input
+                            },
+                            timeout:5000,    //超时时间
+                            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                            success:function(result){
+                                if (result.status) {
+                                    alert('挂单成功，若有用户购买则会以短信的方式通知您!');
+                                } else {
+                                    alert(result.msg);
+
+                                }
+
                             }
-                        $.confirm({
-                              title: '出售提示',
-                              text: '确定以'+input+'wkc价格出售该装备?',
-                              onOK: function () {
-                                $.ajax({
-                                    url:"{:U('putorder/sellCreationOrder')}",
-                                    type:'POST', //GET
-                                    async:true,    //或false,是否异步
-                                    data:{
+                        })
 
-                                        commodity_type:2,
-                                        commodity_id : id,
-                                        commodity_price :input
-                                    },
-                                    timeout:5000,    //超时时间
-                                    dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-                                    success:function(result){
-                                        if (result.status) {
-                                            alert('挂单成功，若有用户购买则会以短信的方式通知您!');
-                                        } else {
-                                            alert(result.msg);
-
-                                        }
-
-                                    }
-                                })
-                                //点击确认
-                              },
-                              onCancel: function () {
-                              }
-                            });
                     },
                     onCancel: function () {
                         //点击取消

@@ -29,10 +29,11 @@
                                 <p>你的网站和应用能在 Bootstrap 的帮助下通过同一份代码快速、有效适配手机、平板、PC 设备，这一切都是 CSS 媒体查询（Media Query）的功劳。</p>
                             </div>
                             <div class="pageline">
-                                <h4>公告2</h4>
-                                <div class="time">2019-08-10 24:43:32</div>
-                                <p>你的网站和应用能在 Bootstrap 的帮助下通过同一份代码快速、有效适配手机、平板、PC 设备，这一切都是 CSS 媒体查询（Media Query）的功劳。</p>
-                                <p>你的网站和应用能在 Bootstrap 的帮助下通过同一份代码快速、有效适配手机、平板、PC 设备，这一切都是 CSS 媒体查询（Media Query）的功劳。</p>
+                                <h4>矿山坍塌公告</h4>
+                                <p>系统矿山会随机发生坍塌，一旦发生坍塌，系统会及时公告各位会员大大。</p>
+                                <volist name="collapse" id="vo">
+                                	<p>尊敬的各位会员，系统矿山于<span style="color: red;">{$vo.collapse_time|date="Y-m-d H:i:s",###}</span>发生坍塌，导致您所有未配备安全帽的矿工血量降为1，为保证您的收益，请及时为您的矿工补充血量。</p>
+                                </volist>
                             </div>
                            
                         </div>

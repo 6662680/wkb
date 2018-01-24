@@ -20,7 +20,7 @@
                 <th>会员ID</th>
                 <th>提现积分</th>
                 
-                <th>创建时间</th>
+                <th>提现时间</th>
                 <th>玩客币地址</th>
                 <th>状态</th>
                 
@@ -47,11 +47,11 @@
 								}?>
                    </td>
                    <td>
-                       <a href="{:U('Withdraw/grant',array('user_id' => $vo['user_id']))}"<?php  if ($vo['status']!=1) { echo 'style="display:none;"';}?>><span style="color: #00CD00;">发放</span></a>
+                       <a href="{:U('Withdraw/grant',array('id' => $vo['id']))}"<?php  if ($vo['status']!=1) { echo 'style="display:none;"';}?>><span style="color: #00CD00;">发放</span></a>
                        <?php  if ($vo['status']==1) { echo '&nbsp;&nbsp;';}?>
-                       <a href="{:U('Withdraw/freeze',array('user_id' => $vo['user_id']))}" <?php  if ($vo['status']!=1) { echo 'style="display:none;"';}?>><span style="color: red;">冻结</span></a>
+                       <a href="{:U('Withdraw/freeze',array('id' => $vo['id']))}" <?php  if ($vo['status']!=1) { echo 'style="display:none;"';}?>><span style="color: red;">冻结</span></a>
                        <?php  if ($vo['status']==1) { echo '&nbsp;&nbsp;';}?>
-                       <a href="{:U('Withdraw/defreeze',array('user_id' => $vo['user_id']))}"<?php  if ($vo['status']==1) { echo 'style="display:none;"';}?>><span style="color: #FFA500;">解冻</span></a>
+                       <a href="{:U('Withdraw/defreeze',array('id' => $vo['id']))}"<?php  if ($vo['status']==1) { echo 'style="display:none;"';}?>><span style="color: #FFA500;">解冻</span></a>
                    </td>
                 </tr>
             </foreach>

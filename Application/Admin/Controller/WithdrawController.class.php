@@ -15,7 +15,7 @@ class WithdrawController extends PrivilegeController
 	 */
     public function index()
     {
-    	/*数据暂为假-2018.1.13*/
+    	
     	$pageSize = 10;
         $p = I('request.p', 1, 'intval');
         $page = getpage(M('user_withdraw')->where(' status!=2 ')->count(), $pageSize, array());
@@ -32,20 +32,20 @@ class WithdrawController extends PrivilegeController
 	 */
     public function grant()
     {
-    	//有bug---应该传id明天改
     	
-    	$user_id=I('get.user_id');
+    	$id=I('get.id');
 		/*pr($user_id);die;*/
-    	$withdraw = M('user_withdraw')->where(" user_id=$user_id ")->find();
-    	$user = M('user')->where(" id=$user_id ")->find();
+    	$withdraw = M('user_withdraw')->where(" id=$id ")->find();
+		$userid=$withdraw['user_id'];
+    	$user = M('user')->where(" id=$userid ")->find();
 		$data = [
     		'status' => 2,
     		];
-		M('user_withdraw')->where(" user_id=$user_id ")->save($data);
+		M('user_withdraw')->where(" id=$id ")->save($data);
 		$data2 = [
     		'point' => $user['point']-$withdraw['wpoint'],
     		];
-		M('user')->where(" id=$user_id ")->save($data2);
+		M('user')->where(" id=$userid ")->save($data2);
 		
 		$this->success('审核发放成功!',U('Withdraw/index'),2);
     }
@@ -57,12 +57,12 @@ class WithdrawController extends PrivilegeController
 	 */
     public function freeze()
     {
-    	$user_id=I('get.user_id');
-    	$withdraw = M('user_withdraw')->where(" user_id=$user_id ")->find();
+    	$id=I('get.id');
+    	$withdraw = M('user_withdraw')->where(" id=$id ")->find();
 		$data = [
     		'status' => 3,
     		];
-		M('user_withdraw')->where(" user_id=$user_id ")->save($data);
+		M('user_withdraw')->where(" id=$id ")->save($data);
 		
 		$this->success('冻结成功!',U('Withdraw/index'),2);
     	
@@ -74,12 +74,12 @@ class WithdrawController extends PrivilegeController
 	 */
 	public function defreeze()
     {
-    	$user_id=I('get.user_id');
-    	$withdraw = M('user_withdraw')->where(" user_id=$user_id ")->find();
+    	$id=I('get.id');
+    	$withdraw = M('user_withdraw')->where(" id=$id ")->find();
 		$data = [
     		'status' => 1,
     		];
-		M('user_withdraw')->where(" user_id=$user_id ")->save($data);
+		M('user_withdraw')->where(" id=$id ")->save($data);
 		
 		$this->success('解冻成功!',U('Withdraw/index'),2);
     	
