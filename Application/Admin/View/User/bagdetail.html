@@ -65,7 +65,15 @@
                    <td>{$vo.id}</td>
                    <td>{$vo.person_id}</td>
                    <td>{$vo.equipment_nname}</td>
-                   <td>{$vo.equipment_id}</td>
+                   <td>
+                   	<?php 
+                   	if ($vo['equipment_id']==0) {
+									echo '未配备道具';
+								}else {
+									echo $vo['equipment_id'];
+								} ?>
+                   	<!--{$vo.equipment_id}-->
+                   </td>
                    <td><?php 
                    	if ($vo['equipment_id_card']==1) {
 									echo '是';

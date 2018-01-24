@@ -65,6 +65,7 @@ class SpreadController extends BaseController
 			$data = [
     		'user_id' => $user_id,
     		'equipment_id' => $rst2['aequipment_id'],
+    		'equipment_endurance' => $rst3['equipment_endurance'],
     		
     		];
 			$erst=M('equipment_bag')->where("id = $user_id")->add($data);
