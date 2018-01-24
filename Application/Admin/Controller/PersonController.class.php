@@ -69,6 +69,8 @@ class PersonController extends PrivilegeController
 		$person_price = I('post.person_price');
 		$person_property = I('post.person_property');
 		$status = I('post.status');
+		$explain = I('post.explain');
+		
 	
 		/*$person_img = I('post.person_img');*/
 	    $upload = $this->upload();
@@ -104,6 +106,10 @@ class PersonController extends PrivilegeController
     	{
     		$this->error('请填写人物价格');
     	}
+		if ( !$id && !$explain )
+    	{
+    		$this->error('请填写人物说明');
+    	}
 		if ( !$id && !($status=='0' || $status==1) )
     	{
     		$this->error('请填写人物是否隐藏');
@@ -127,6 +133,8 @@ class PersonController extends PrivilegeController
     		'person_price' => $person_price,
     		'person_property' => $person_property,
     		'status' => $status,
+    		'explain' => $explain,
+    		
     		];
 		} else {
 			if(!$upload['info']['person_img']) {// 上传错误提示错误信息
@@ -143,6 +151,8 @@ class PersonController extends PrivilegeController
     		'person_property' => $person_property,
     		'person_img' => $person_img,
     		'status' => $status,
+    		'explain' => $explain,
+    		
     		];
 		}
 		

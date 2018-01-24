@@ -69,6 +69,8 @@ class EquipmentController extends PrivilegeController
 		$equipment_price = I('post.equipment_price');
 		$equipment_multiple = I('post.equipment_multiple');
 		$status = I('post.status');
+		$explain = I('post.explain');
+		
 		
 		/*$equipment_img = I('post.equipment_img');*/
 		/*$upload = new \Think\Upload();// 实例化上传类
@@ -99,6 +101,10 @@ class EquipmentController extends PrivilegeController
     	{
     		$this->error('请填写挖矿效率');
     	}
+		if ( !$id && !$explain )
+    	{
+    		$this->error('请填写道具说明');
+    	}
 		if ( !$id && !($equipment_protect=='0' || $equipment_protect==1) )
     	{
     		$this->error('请填写是否防坍塌');
@@ -120,6 +126,8 @@ class EquipmentController extends PrivilegeController
     		'equipment_price' => $equipment_price,
     		'equipment_multiple' => $equipment_multiple,
     		'status' => $status,
+    		'explain' => $explain,
+    		
     		
     		];
 		} else {
@@ -139,6 +147,8 @@ class EquipmentController extends PrivilegeController
     		'equipment_multiple' => $equipment_multiple,
     		'equipment_img' => $equipment_img,
     		'status' => $status,
+    		'explain' => $explain,
+    		
     		];
 		}
 

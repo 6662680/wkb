@@ -66,6 +66,8 @@ class MedicheController extends PrivilegeController
     	$mediche_name = I('post.mediche_name');
     	$mediche_treat = I('post.mediche_treat');
     	$mediche_price = I('post.mediche_price');
+    	$explain = I('post.explain');
+		
 		/*$mediche_img = I('post.mediche_img');*/
 		
 		/*$upload = new \Think\Upload();// 实例化上传类
@@ -93,6 +95,10 @@ class MedicheController extends PrivilegeController
     	{
     		$this->error('请填写食物价格');
     	}
+    	if ( !$id && !$explain )
+    	{
+    		$this->error('请填写食物说明');
+    	}
 		if ( !$id && $_FILES['mediche_img']['error']==4 )// ==4说明没有上传图片
     	{
     		$this->error('请上传图片样式');
@@ -107,6 +113,8 @@ class MedicheController extends PrivilegeController
     		'mediche_name' => $mediche_name,
     		'mediche_treat' => $mediche_treat,
     		'mediche_price' => $mediche_price,
+    		'explain' => $explain,
+    		
     		];
 		} else {
 			if(!$upload['info']['mediche_img']) {// 上传错误提示错误信息
@@ -120,6 +128,8 @@ class MedicheController extends PrivilegeController
     		'mediche_treat' => $mediche_treat,
     		'mediche_price' => $mediche_price,
     		'mediche_img' => $mediche_img,
+    		'explain' => $explain,
+    		
     		];
 		}
 

@@ -22,6 +22,8 @@
                 <th>人物价格</th>
                 <th>人物成长</th>
                 <th>是否为隐藏人物</th>
+                <th>人物说明</th>
+                
                 <th>图片样式</th>
                 <th>操作</th>
             </tr>
@@ -42,6 +44,8 @@
 									echo '否';
 								} ?>
                    </td>
+                   <td>{$vo.explain}</td>
+                   
                    <td><img style="width: 40px;height: 40px;" src="{$vo.person_img}"/></td>
                    <td>
                        <!-- <a href="{:U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']))}">配置权限</a> -->

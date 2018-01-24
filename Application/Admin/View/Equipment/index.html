@@ -22,6 +22,8 @@
                 <th>道具价格</th>
                 <th>挖矿效率</th>
                 <th>是否为隐藏道具</th>
+                <th>道具说明</th>
+                
                 <th>图片样式</th>
                 <th>操作</th>
             </tr>
@@ -48,6 +50,8 @@
 									echo '否';
 								} ?>
 					</td>
+					<td>{$vo.explain}</td>
+					
                    <td><img style="width: 40px;height: 40px;" src="{$vo.equipment_img}"/></td>
                    <td>
                        <!-- <a href="{:U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']))}">配置权限</a> -->
