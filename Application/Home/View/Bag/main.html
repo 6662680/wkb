@@ -309,6 +309,12 @@
                         empty: false, // 是否允许为空
                         onOK: function (input) {
                             var input = input;
+                             var strP=/^\d+(\.\d+)?$/;
+ 								if(!strP.test(input)) {
+ 								
+                            	$.alert("请输入数字");
+                                result(false)
+                            }
                             if (input=='0') {
                                 $.alert("出售价格不能为0");
                                 result(false)
