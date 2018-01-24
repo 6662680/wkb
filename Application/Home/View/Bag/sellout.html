@@ -129,7 +129,7 @@
                         </div>';
 						} elseif($vo['status']==3) {
 									echo '<div class="pbottom ">
-                            <aa class="weui-btn weui-btn_mini weui-btn_default " >订单失败</aa>
+                            <aa class="weui-btn weui-btn_mini weui-btn_default " >订单已失效</aa>
                              </div>';
                         } elseif($vo['status']==4) {
 									echo '<div class="pbottom ">
@@ -160,7 +160,7 @@
                 </div>
                 <p class="weui-tabbar__label">商城</p>
             </a>
-            <a href="{:U('putorder/orderList','','')}/type/1" class="weui-tabbar__item ">
+            <a href="{:U('putorder/orderList','','')}/commodity_type/1/type/1" class="weui-tabbar__item ">
                 <div class="weui-tabbar__icon">
                     <i class="fa fa-gavel"></i>
                 </div>
@@ -219,25 +219,29 @@
 
      })
 
-function tijiao(order_id){
-        $.ajax({
-            url:"{:U('putorder/cancel','','')}/order_id/"+order_id,
-            type:'GET', //GET
-            async:true,    //或false,是否异步
-            data:{
-            },
-            timeout:5000,    //超时时间
-            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-            success:function(result){
-                if (result.status) {
-                    window.location.href= "{:U('bag/sellorderDetail')}";
-                } else {
-                    alert(result.msg);
+function tijiao(order_id) {
+    $.confirm({
+        title: '',
+        text: '确定取消订单?',
+        onOK: function () {
+            $.ajax({
+                url: "{:U('putorder/cancel','','')}/order_id/" + order_id,
+                type: 'GET', //GET
+                async: true,    //或false,是否异步
+                data: {},
+                timeout: 5000,    //超时时间
+                dataType: 'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                success: function (result) {
+                    if (result.status) {
+                        window.location.href = "{:U('bag/sellorderDetail')}";
+                    } else {
+                        alert(result.msg);
+                    }
                 }
-            }
-        })
-    }
-
+            })
+        },
+    });
+}
 
      </script>
 </body>
