@@ -194,11 +194,13 @@ class OrderModel extends Model
         $time = array('GT', $time);
 
         $map = [
-            'user_id' => $orderRst['user_id'],
-            'commodity_price' => $commodity_price,
-            'status' => 1,
-            'site' => $user['site'],
-            'creation_time' => $time]
+            'id' => $orderRst['id'],
+//            'user_id' => $orderRst['user_id'],
+//            'commodity_price' => $commodity_price,
+//            'status' => 1,
+//            'site' => $user['site'],
+//            'creation_time' => $time
+            ]
         ;
 
         $model = M('order');
