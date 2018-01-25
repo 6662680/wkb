@@ -104,8 +104,8 @@
       <file leaf-file-name="me.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Home/View/Bag/me.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5558036">
-              <caret line="208" column="32" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.40848213">
+              <caret line="307" column="61" selection-start-line="307" selection-start-column="61" selection-end-line="307" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -163,7 +163,6 @@
         <option value="$PROJECT_DIR$/Application/Home/View/Bag/main0.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Bag/equipment0.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Bag/mediche.html" />
-        <option value="$PROJECT_DIR$/Application/Home/View/Bag/me.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/Bag/scwant.html" />
         <option value="$PROJECT_DIR$/Application/Home/Model/UserModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/Model/EquipmentModel.class.php" />
@@ -190,6 +189,7 @@
         <option value="$PROJECT_DIR$/Application/Home/Controller/PutorderController.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/Model/OrderModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Home/View/Bag/me.html" />
       </list>
     </option>
   </component>
@@ -447,7 +447,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-17" y="10" width="1854" height="1085" extended-state="1" />
+    <frame x="-17" y="10" width="1854" height="1085" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20680045" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -875,8 +875,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/View/Bag/me.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5558036">
-          <caret line="208" column="32" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.40848213">
+          <caret line="307" column="61" selection-start-line="307" selection-start-column="61" selection-end-line="307" selection-end-column="61" />
           <folding />
         </state>
       </provider>
