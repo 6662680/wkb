@@ -46,7 +46,14 @@
         <td><?php echo ++$iid; ?></td>
 				<td>{$vo.id}</td>
 				<td>{$vo.user_id}</td>
-				<td>{$vo.receiving_user_id}</td>
+				<td>
+					<?php 
+                if ($vo['receiving_user_id']) {
+									echo $vo['receiving_user_id'];
+								} elseif($vo['receiving_user_id']==0) {
+									echo '无';
+								}?>
+				</td>
 				
 				<td>{$vo.commodity_type}</td>
 				<td>{$vo.commodity_id}</td>
@@ -91,6 +98,8 @@
 									echo '完成';
 								}elseif($vo['status']==3) {
 									echo '取消';
+								}elseif($vo['status']==4) {
+									echo '已超时';
 								}?>
 				</td>
 			</tr>

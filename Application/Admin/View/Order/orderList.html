@@ -3,6 +3,23 @@
 <block name="body">
   <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 后台管理 <span class="c-gray en">&gt;</span> 订单管理 <span class="c-gray en">&gt;</span> 官方商城订单列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
+	
+	<form action="{:U('Order/returnMoney')}" method="post">
+		<div >
+		今日总收入：
+		<input type="text" class="input-text" value="{$sumMoney}" style="width:150px;" disabled="disabled"/>
+		</div>
+		<div style="margin-top: 6px;">
+		返 还 比 例：
+		<input type="text" class="input-text" name="bili" value="{:C('RETURN_MONEY')}" style="width:150px;" />
+		<input type="submit" value="修改比例"/>
+		</div>
+		<div style="margin-top: 6px;margin-bottom: 10px;">
+		返 还 总 额：
+		<input type="text" class="input-text" value="{$rSumMoney}" style="width:150px;" disabled="disabled"/>
+		</div>
+		
+	</form>
 	<form action="{:U('Order/lists')}" method="post">
 		<div class="text-c"> 下单时间：
 			<input type="text" onClick="laydate()" placeholder="开始时间" name="start_time" class="input-text Wdate" style="width:150px;">
@@ -12,10 +29,7 @@
 			<button type="submit" class="btn btn-success radius"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 		</div>
 	</form>
-	<div style="margin-left: 220px;margin-top: 6px;">
-		今日商城总收入：
-		<input type="text" class="input-text" value="{$sumCurrentOrder}" style="width:150px;" disabled="disabled"/>
-	</div>
+	
 	<div class="mt-20">
 	<table class="table table-border table-bordered table-hover table-bg table-sort">
 		<thead>
@@ -61,6 +75,8 @@
 									echo '完成';
 								}elseif($vo['status']==3) {
 									echo '取消';
+								}elseif($vo['status']==4) {
+									echo '已超时';
 								}?>
 				</td>
 			</tr>

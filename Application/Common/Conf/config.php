@@ -49,6 +49,9 @@ return array(
     'URL_CASE_INSENSITIVE' => true,
 
     'HOST_HOME' => '118.24.67.186',
+    //返还比例
+	'RETURN_MONEY' => 0.95,
+	
 
 	//商品类型
 	'COMMODITY_TYPE' => array(

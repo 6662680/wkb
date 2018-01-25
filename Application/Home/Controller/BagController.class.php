@@ -114,7 +114,11 @@ class BagController extends BaseController
 		$scOrderNum=count($scOrderList['data']);
 		/*pr($OrderNum);die;*/
 		
+		$wpointList = M('user_withdraw')->where(['user_id' => session('user_id'),'status' => 2])->field('SUM(wpoint)')->find();
+		/*pr($wpointList['sum(wpoint)']);die;*/
+		$sumWpoint=$wpointList['sum(wpoint)'];
 		
+		$this->assign('sumWpoint',$sumWpoint);
 		$this->assign('user',$user);
         $this->assign('person',$person);
         $this->assign('personNum',$personNum);

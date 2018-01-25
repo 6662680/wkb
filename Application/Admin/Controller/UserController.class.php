@@ -105,14 +105,17 @@ class UserController extends PrivilegeController
 	 */
     public function orderdetail()
     {
-    	/*交易大厅某会员的出售详情*/
+    	/*交易大厅某会员的出售下单详情*/
         $user_id=I('get.id');
         $pageSize = 5;
         $p = I('request.p', 1, 'intval');
         $page = getpage(M('user_sell_order')->where("user_id = '$user_id' ")->count(), $pageSize, array());
-    	$user_sell_orderList = M('user_sell_order')->limit($page->firstRow, $page->listRows)->where("user_id = '$user_id' ")->select();
+    	$user_sell_orderList = M('user_sell_order')->limit($page->firstRow, $page->listRows)->where("user_id = '$user_id' ")->order('creation_time desc')->select();
     	/*pr($user_sell_orderList);die;*/
     	foreach ($user_sell_orderList as $key => $value) {
+    		if ($value['creation_time'] + C('ORDER_TIME' )< time() &&$value['status']==1) {
+				$user_sell_orderList[$key]['status'] = 4;
+			}
     		$receiving_user_id=$value['receiving_user_id'];
     		$nuserList = M('user')->where("id = '$receiving_user_id' ")->find();
 			if ($nuserList['mobile']) {
@@ -127,44 +130,36 @@ class UserController extends PrivilegeController
     	$userList = M('user')->find(I('get.id'));
     	$this->assign('userList',$userList);
 		
-		/*交易大厅某会员的求购详情*/
+		/*交易大厅某会员的出售接单详情*/
         
-        $page3 = getpage(M('user_buy_order')->where("user_id = '$user_id' ")->count(), $pageSize, array());
-    	$user_buy_orderList = M('user_buy_order')->limit($page->firstRow, $page->listRows)->where("user_id = '$user_id' ")->select();
+        $page3 = getpage(M('user_sell_order')->where("receiving_user_id = '$user_id' ")->count(), $pageSize, array());
+    	$user_sell_orderList2 = M('user_sell_order')->limit($page->firstRow, $page->listRows)->where("receiving_user_id = '$user_id' ")->order('creation_time desc')->select();
     	/*pr($user_sell_orderList);die;*/
-    	foreach ($user_buy_orderList as $key => $value) {
-    		$receiving_user_id=$value['receiving_user_id'];
-    		$nuserList = M('user')->where("id = '$receiving_user_id' ")->find();
+    	foreach ($user_sell_orderList2 as $key => $value) {
+    		if ($value['creation_time'] + C('ORDER_TIME' )< time() &&$value['status']==1) {
+				$user_sell_orderList2[$key]['status'] = 4;
+			}
+    		$user_id2=$value['user_id'];
+    		$nuserList = M('user')->where("id = '$user_id2' ")->find();
 			if ($nuserList['mobile']) {
-				$user_buy_orderList[$key]['receiving_user_id']=$nuserList['mobile'];
+				$user_sell_orderList2[$key]['user_id']=$nuserList['mobile'];
 			} else {
-				$user_buy_orderList[$key]['receiving_user_id']='无';
+				$user_sell_orderList2[$key]['user_id']='无';
 			}
-			
-			$commodity_type=$value['commodity_type'];
-			$commodity_id=$value['commodity_id'];
-			if ($commodity_type==1) {
-    			$npersonList = M('person')->where("id = '$commodity_id' ")->find();
-    			$user_buy_orderList[$key]['commodity_type']='人物';
-				$user_buy_orderList[$key]['commodity_id']=$npersonList['person_name'];
-			} elseif($commodity_type==2) {
-				$nequipmentList = M('equipment')->where("id = '$commodity_id' ")->find();
-				$user_buy_orderList[$key]['commodity_type']='道具';
-				$user_buy_orderList[$key]['commodity_id']=$nequipmentList['equipment_name'];
-			}
-			
     	}
 		/*pr($user_sell_orderList);die;*/
-    	$this->assign('user_buy_orderList',$user_buy_orderList);
+    	$this->assign('user_sell_orderList2',$user_sell_orderList2);
     	$this->assign('page3',$page3->show());
-    	$userList = M('user')->find(I('get.id'));
-    	$this->assign('userList',$userList);
+    	
 		
         /*官方求购订单详情*/
         $page2 = getpage(M('order')->where("user_id = '$user_id' ")->count(), $pageSize, array());
-    	$orderList = M('order')->limit($page->firstRow, $page->listRows)->where("user_id = '$user_id' ")->select();
+    	$orderList = M('order')->limit($page->firstRow, $page->listRows)->where("user_id = '$user_id' ")->order('creation_time desc')->select();
     	/*pr($orderList);die;*/
 		foreach ($orderList as $key => $value) {
+			if ($value['creation_time'] + C('ORDER_TIME' )< time() &&$value['status']==1) {
+				$orderList[$key]['status'] = 4;
+			}	
     		$commodity_type=$value['commodity_type'];
 			$commodity_id=$value['commodity_id'];
 			if ($commodity_type==1) {

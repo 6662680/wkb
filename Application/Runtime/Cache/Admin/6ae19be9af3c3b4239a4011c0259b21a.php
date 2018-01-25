@@ -51,6 +51,8 @@
                 <th>食物名称</th>
                 <th>回血值</th>
                 <th>食物价格</th>
+                <th>食物说明</th>
+                
                 <th>图片样式</th>
                 <th>操作</th>
             </tr>
@@ -61,6 +63,8 @@
                    <td><?php echo ($vo["mediche_name"]); ?></td>
                    <td><?php echo ($vo["mediche_treat"]); ?></td>
                    <td><?php echo ($vo["mediche_price"]); ?></td>
+                   <td><?php echo ($vo["explain"]); ?></td>
+                   
                    <td><img style="width: 40px;height: 40px;" src="<?php echo ($vo["mediche_img"]); ?>"/></td>
                    <td>
                        <!-- <a href="<?php echo U('Role/privilegeEdit',array('admin_id' => $vo['admin_id']));?>">配置权限</a> -->

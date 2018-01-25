@@ -52,7 +52,9 @@ class UsersellorderController extends PrivilegeController{
 		/*pr($usersellorderData);die;*/
 
         foreach ($usersellorderData as $key => $value) {
-			
+			if ($value['creation_time'] + C('ORDER_TIME' )< time() &&$value['status']==1) {
+				$usersellorderData[$key]['status'] = 4;
+			}
 			$commodity_type=$value['commodity_type'];
 			if ($commodity_type==1) {
     			$usersellorderData[$key]['commodity_type']='人物';
