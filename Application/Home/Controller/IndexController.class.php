@@ -9,6 +9,6 @@ class IndexController extends BaseController
 	}
 
     public function index(){
-
+//       pr(D('order')->test('site'));
     }
 }

@@ -288,8 +288,10 @@ class BagController extends BaseController
     {
     	$user=M('user')->where(['id' => session('user_id')])->find();
 		$sitetemp=$user['sitetemp'];
+        $site = D('log')->getconfig('site');
 		/*pr($sitetemp);die;*/
 		$this->assign('sitetemp',$sitetemp);
+		$this->assign('site',$site);
         $this->display('zhifu');
     }
 	/*取消支付*/

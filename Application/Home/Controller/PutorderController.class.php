@@ -258,12 +258,13 @@ class PutorderController extends BaseController
             $rst['putorder_site'] = $rst['site'];
             $rst['site'] = $tmp;
         }
-
+        $site = D('log')->getconfig('site');
         $this->assign('rst',$rst);
         
         $this->assign('overtime',$overtime);
         $this->assign('status',$status);
         $this->assign('type',$type);
+        $this->assign('site',$site);
         $this->display('Putorder/order');
     }
 

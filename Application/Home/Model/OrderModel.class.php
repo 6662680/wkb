@@ -29,15 +29,15 @@ class OrderModel extends Model
             return ['status' => false, 'msg' => '您没有支付注册费,无法购买人物,请到个人中心完成支付!'];
         }
 		//检查商城是否已有待付款订单，防刷单
-		$rstorder = M('order')->where(['user_id' => $user_id,'status' => 1])->select();
-		foreach($rstorder as &$value) {
-                if ($value['creation_time'] + C('ORDER_TIME' ) < time() ) {
-                    $value = FALSE;
-                }else{
-                	return ['status' => false, 'msg' => '您有商城订单未支付,暂时无法购买,请到个人中心完成支付!'];
-                }
-
-		}
+//		$rstorder = M('order')->where(['user_id' => $user_id,'status' => 1])->select();
+//		foreach($rstorder as &$value) {
+//                if ($value['creation_time'] + C('ORDER_TIME' ) < time() ) {
+//                    $value = FALSE;
+//                }else{
+//                	return ['status' => false, 'msg' => '您有商城订单未支付,暂时无法购买,请到个人中心完成支付!'];
+//                }
+//
+//		}
 		/*pr($rstorder);
         if ($rstorder) {
             return ['status' => false, 'msg' => '您有商城订单未支付,暂时无法购买,请到个人中心完成支付!'];
@@ -54,8 +54,9 @@ class OrderModel extends Model
 	
 
     //创建订单
-    public function creationOrder($user_id, $commodity_id, $commodity_type)
+    public function creationOrder($user_id, $commodity_id, $commodity_type, $num = 1)
     {
+
         if (empty($user_id) || empty($commodity_id) || empty($commodity_type)) {
             return ['status' => false, 'msg' => '缺少参数'];
         }
@@ -65,18 +66,22 @@ class OrderModel extends Model
         if (!$rst['site']) {
             return ['status' => false, 'msg' => '您没有支付注册费,无法购买人物,请到个人中心完成支付!'];
         }
+
 		//创建订单
 		$price= M(C('COMMODITY_TYPE')[$commodity_type])->where(['id' => $commodity_id, 'status' => 0])->find();
 		$commodity_price=$price[C('COMMODITY_TYPE')[$commodity_type].'_price'];
+
         $add  = [
             'commodity_id' => $commodity_id,
             'commodity_type' => $commodity_type,
             'status' => 1,
             'creation_time' => time(),
             'user_id' => $user_id,
-            'commodity_price' => $commodity_price,
+            'commodity_price' => $commodity_price * $num,
             'site' => $rst['site'],
+            'num' => $num,
         ];
+
         $rst = M('order')->add($add);
 		
         if ($rst) {
@@ -108,7 +113,7 @@ class OrderModel extends Model
         $trans = new Model();
         $trans->startTrans();
 
-        $result = getwkb($user['site'], C('SITE'), $orderRst['creation_time'], 0, $orderRst['commodity_price']);
+        $result = getwkb($user['site'], D('log')->getconfig('site'), $orderRst['creation_time'], 0, $orderRst['commodity_price']);
 
         if (!$result) {
             returnajax(false, '', '没有找到您的打款记录,如果您有疑问，请联系客服');
@@ -122,34 +127,40 @@ class OrderModel extends Model
 
         if ($orderRst['commodity_type'] == 1) {
 
-            $model = M('person_bag');
-            $model->user_id = $orderRst['user_id'];
-            $model->person_id = $orderRst['commodity_id'];
-            $model->equipment_id = 0;
-            $model->equipment_id_card = 0;
-            $model->blood = $rst['person_blood'];
-            $model->level = 1;
-            $model->yesterday_capacity = 0;
-            $model->start_mining = 0;
-            $addRst = $model->add();
+            for ($i = 1; $i <= $orderRst['num'] ; $i++ ) {
+                $model = M('person_bag');
+                $model->user_id = $orderRst['user_id'];
+                $model->person_id = $orderRst['commodity_id'];
+                $model->equipment_id = 0;
+                $model->equipment_id_card = 0;
+                $model->blood = $rst['person_blood'];
+                $model->level = 1;
+                $model->yesterday_capacity = 0;
+                $model->start_mining = 0;
+                $addRst = $model->add();
 
+            }
             $commodity_name = $rst['person_name'];
-
             $commodity_price = $rst['person_price'];
+
         }
 
         if ($orderRst['commodity_type'] == 2) {
 
-            $model = M('equipment_bag');
-            $model->user_id = $orderRst['user_id'];
-            $model->equipment_id = $orderRst['commodity_id'];
-            $model->equipment_endurance = $rst['equipment_endurance'];
-            $model->person_id = 0;
-            $model->use = 0;
-            $addRst = $model->add();
+            for ($i = 1; $i <= $orderRst['num'] ; $i++ ) {
+                $model                      = M('equipment_bag');
+                $model->user_id             = $orderRst['user_id'];
+                $model->equipment_id        = $orderRst['commodity_id'];
+                $model->equipment_endurance = $rst['equipment_endurance'];
+                $model->person_id           = 0;
+                $model->use                 = 0;
+                $addRst                     = $model->add();
+            }
 
-            $commodity_name = $rst['equipment_name'];
+
+            $commodity_name  = $rst['equipment_name'];
             $commodity_price = $rst['equipment_price'];
+
         }
 
         if ($orderRst['commodity_type'] == 3) {
@@ -161,12 +172,12 @@ class OrderModel extends Model
             if ($mediche_bag_rst) {
                 $addRst = M('mediche_bag')
                     ->where(['user_id' => $orderRst['user_id'], 'mediche_id' => $orderRst['commodity_id']])
-                    ->setInc('mediche_num',1);
+                    ->setInc('mediche_num',$orderRst['num']);
             } else {
                 $model = M('mediche_bag');
                 $model->user_id = $orderRst['user_id'];
                 $model->mediche_id = $orderRst['commodity_id'];
-                $model->mediche_num = 1;
+                $model->mediche_num = $orderRst['num'];
                 $addRst = $model->add();
             }
 
@@ -199,7 +210,7 @@ class OrderModel extends Model
         }
 
         //添加日志
-        D('Log')->addLog('购买道具'. $commodity_name .', 价格为：'. $commodity_price, $orderRst['user_id']);
+        D('Log')->addLog('购买道具'. $commodity_name .', 价格为：'. $commodity_price * $orderRst['num'], $orderRst['user_id']);
 
         $trans->commit();
         return ['status' => true];
@@ -213,7 +224,6 @@ class OrderModel extends Model
      */
     public function unBuy($order_id)
     {
-        
 		$order = D('order')->where(['id' =>  $order_id])->find();
 		if ($order) {
 			$id=$order['id'];
@@ -225,8 +235,7 @@ class OrderModel extends Model
 		} else {
 			return ['status' => false, 'msg' => '没有找到该订单'];
 		}
-		
-		
-
     }
+
+
 }

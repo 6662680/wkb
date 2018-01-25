@@ -250,7 +250,7 @@ class PutorderModel extends Model
         $orderRst = M('user_sell_order')->where(['id' => $order_id, 'status' => 1])->find();
 
         $putuserRst = M('user')->where(['id' => $orderRst['user_id']])->find();
-        $officialRst = getwkb($userRst['site'],C('SITE'),$orderRst['use_time'], 0, $orderRst['commodity_price']  / 20);
+        $officialRst = getwkb($userRst['site'],D('log')->getconfig('site'),$orderRst['use_time'], 0, $orderRst['commodity_price']  / 20);
 
         $result = getwkb($userRst['site'],$putuserRst['site'],$orderRst['use_time'], 0, $orderRst['commodity_price']);
 
@@ -505,7 +505,7 @@ class PutorderModel extends Model
 		
         $result = getwkb($putuserRst['site'],$receivingRst['site'],$order['use_time'], 0, $order['commodity_price']);
 
-        $officialRst = getwkb($putuserRst['site'],C('SITE'),$order['use_time'], 0, $order['commodity_price']  / 20);
+        $officialRst = getwkb($putuserRst['site'],D('log')->getconfig('site'),$order['use_time'], 0, $order['commodity_price']  / 20);
 
         if (!$result) {
             returnajax(false, '', '没有找到您的打款记录,如果您有疑问，请联系客服');

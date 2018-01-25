@@ -41,4 +41,14 @@ class LogModel extends Model
 
     }
 
+    public function getconfig($key, $value=NULL)
+    {
+        if ($value == null) {
+            $rst = M('config')->where(['key' => $key])->find();
+            return $rst['value'];
+        } else {
+            return M('config')->where(['key' => $key])->save(['value' => $value]);
+        }
+
+    }
 }

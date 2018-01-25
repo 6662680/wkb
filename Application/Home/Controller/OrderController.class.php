@@ -36,12 +36,14 @@ class OrderController extends BaseController
 	{
 		
 		$get = I('get.');
+
 		$order = D('order')->where(['user_id' => session('user_id'),'status' =>  1,'commodity_id' =>  $get['commodity_id'],'commodity_type' =>  $get['commodity_type']])->order('id desc')->find();
+		$site = D('log')->getconfig('site');
 		$order_id = $order['id'];
 		/*pr($order);die;*/
 		if ($order&&$order['creation_time']+C('ORDER_TIME' )< time()) {
 			/*超时*/
-			$rst = D('order')->creationOrder(session('user_id'), $get['commodity_id'], $get['commodity_type']);
+			$rst = D('order')->creationOrder(session('user_id'), $get['commodity_id'], $get['commodity_type'], $get['num']);
 			$order2 = D('order')->where(['user_id' => session('user_id'),'status' =>  1])->order('id desc')->find();
 			$user = D('user')->where(['id' =>  session('user_id')])->find();
 			if ($get['commodity_type']==1) {
@@ -67,53 +69,53 @@ class OrderController extends BaseController
 	        	$this->assign('rst2',$rst2);
 				$this->assign('typeImg',$typeImg);
 				$this->assign('typeName',$typeName);
-				$this->assign('typePrice',$typePrice);
+				$this->assign('typePrice',$order2['commodity_price']);
 				$this->assign('time',$time);
 				$this->assign('user',$user);
 				$this->assign('commodity_id',$commodity_id);
 				$this->assign('commodity_type',$commodity_type);
-				
-				
+				$this->assign('site',$site);
 				$this->display('order');
-			
-		} elseif($order&&$order['creation_time']+C('ORDER_TIME' )>= time()) {
-			/*未超时*/
-			$user = D('user')->where(['id' =>  session('user_id')])->find();
-			if ($get['commodity_type']==1) {
-				$rst2 = D('person')->where(['id' =>  $get['commodity_id']])->find();
-				$typeImg='person_img';
-				$typeName='person_name';
-				$typePrice='person_price';
-			} elseif($get['commodity_type']==2) {
-				$rst2 = D('equipment')->where(['id' =>  $get['commodity_id']])->find();
-				$typeImg='equipment_img';
-				$typeName='equipment_name';
-				$typePrice='equipment_price';
-			}elseif($get['commodity_type']==3) {
-				$rst2 = D('mediche')->where(['id' =>  $get['commodity_id']])->find();
-				$typeImg='mediche_img';
-				$typeName='mediche_name';
-				$typePrice='mediche_price';
-			}
-	        	$time=$order['creation_time']+C('ORDER_TIME');
-				$commodity_id=$get['commodity_id'];
-				$commodity_type=$get['commodity_type'];
-			
-				$this->assign('order_id',$order_id);
-	        	$this->assign('rst2',$rst2);
-				$this->assign('typeImg',$typeImg);
-				$this->assign('typeName',$typeName);
-				$this->assign('typePrice',$typePrice);
-				$this->assign('time',$time);
-				$this->assign('user',$user);
-				$this->assign('commodity_id',$commodity_id);
-				$this->assign('commodity_type',$commodity_type);
-				
-				$this->display('order');
-			
+//		elseif($order&&$order['creation_time']+C('ORDER_TIME' )>= time()) {
+//				/*未超时*/
+//				$user = D('user')->where(['id' =>  session('user_id')])->find();
+//				if ($get['commodity_type']==1) {
+//					$rst2 = D('person')->where(['id' =>  $get['commodity_id']])->find();
+//					$typeImg='person_img';
+//					$typeName='person_name';
+//					$typePrice=$rst2['person_price'];
+//				} elseif($get['commodity_type']==2) {
+//					$rst2 = D('equipment')->where(['id' =>  $get['commodity_id']])->find();
+//					$typeImg='equipment_img';
+//					$typeName='equipment_name';
+//					$typePrice=$rst2['equipment_price'];
+//				}elseif($get['commodity_type']==3) {
+//					$rst2 = D('mediche')->where(['id' =>  $get['commodity_id']])->find();
+//					$typeImg='mediche_img';
+//					$typeName='mediche_name';
+//					$typePrice=$rst2['mediche_price'];
+//				}
+//				$time=$order['creation_time']+C('ORDER_TIME');
+//				$commodity_id=$get['commodity_id'];
+//				$commodity_type=$get['commodity_type'];
+//
+//				$this->assign('order_id',$order_id);
+//				$this->assign('rst2',$rst2);
+//				$this->assign('typeImg',$typeImg);
+//				$this->assign('typeName',$typeName);
+//				$this->assign('typePrice',$typePrice * $get['num']);
+//				$this->assign('time',$time);
+//				$this->assign('user',$user);
+//				$this->assign('commodity_id',$commodity_id);
+//				$this->assign('commodity_type',$commodity_type);
+//
+//				$this->display('order');
+//
+//
+//			}
+		} else {
 
-		}else {
-			$rst = D('order')->creationOrder(session('user_id'), $get['commodity_id'], $get['commodity_type']);
+			$rst = D('order')->creationOrder(session('user_id'), $get['commodity_id'], $get['commodity_type'], $get['num']);
 			$user = D('user')->where(['id' =>  session('user_id')])->find();
 			$order = D('order')->where(['user_id' => session('user_id'),'status' =>  1])->order('id desc')->find();
 			if ($get['commodity_type']==1) {
@@ -132,6 +134,7 @@ class OrderController extends BaseController
 				$typeName='mediche_name';
 				$typePrice='mediche_price';
 			}
+
 	        	$time=$order['creation_time']+C('ORDER_TIME');
 				$commodity_id=$get['commodity_id'];
 				$commodity_type=$get['commodity_type'];
@@ -139,15 +142,14 @@ class OrderController extends BaseController
 	        	$this->assign('rst2',$rst2);
 				$this->assign('typeImg',$typeImg);
 				$this->assign('typeName',$typeName);
-				$this->assign('typePrice',$typePrice);
+				$this->assign('typePrice',$order['commodity_price']);
 				$this->assign('time',$time);
 				$this->assign('user',$user);
 				$this->assign('commodity_id',$commodity_id);
 				$this->assign('commodity_type',$commodity_type);
-				
+				$this->assign('site',$site);
+
 				$this->display('order');
-			
-			
 		}
 		
 	}
@@ -159,6 +161,7 @@ class OrderController extends BaseController
 		$get = I('get.');
 		$order = D('order')->where(['user_id' => session('user_id'),'id' =>   $get['id']])->find();
 		$order_id = $order['id'];
+		$site = D('log')->getconfig('site');
 		/*pr($order);die;*/
 			
 			$user = D('user')->where(['id' =>  session('user_id')])->find();
@@ -184,7 +187,8 @@ class OrderController extends BaseController
 				$this->assign('typePrice',$order['commodity_price']);
 				$this->assign('time',$time);
 				$this->assign('user',$user);
-				
+				$this->assign('site',$site);
+
 				$this->display('sczforder');
 
 		

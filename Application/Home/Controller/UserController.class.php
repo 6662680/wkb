@@ -69,15 +69,6 @@ class UserController extends Controller
                 'last_login_ip' => getIp(),
             	];
 			}
-			
-            /*$data = [
-                'mobile' => $post['mobile'],
-                'salt' => $salt,
-                'password' => $password,
-                'create_time' => time(),
-                'last_login_time' => time(),
-                'last_login_ip' => getIp(),
-            ];*/
 
             $rst = M('user')->add($data);
 
@@ -164,6 +155,34 @@ class UserController extends Controller
      */
     public function reset()
     {
+        if (!IS_POST) {
+            $this->display('reset');
+        } else {
+            $post = I('post.');
+
+            if ($post['code'] != S('resetcode'.$post['mobile'], $post['code'])) {
+                returnajax(false, '', '验证码失败');
+            }
+
+
+            $salt = createSalt();
+            $password = encryption($post['password'], $salt);
+            /*pr(I('post.'));die;*/
+
+            $rst = M('user')->where(['mobile' => $post['mobile']])->save(['password' => $password, 'salt' => $salt]);
+
+            returnajax(true, '', '修改成功');
+        }
+    }
+
+    /**
+     * 注册
+     * @author LiYang
+     * @date 2018-1-7
+     * @return void
+     */
+    public function send()
+    {
         $mobile = I('post.mobile');
 
         $rst = M('user')->where(['mobile' => $mobile])->find();
@@ -173,6 +192,41 @@ class UserController extends Controller
         }
         $code = generate_code();
         S('code'.$mobile, $code);
+        // 发送验证码
+        Vendor('aliNote.TopSdk','','.php');
+        //Vendor('aliNote.Topsdk.php');
+        $c = new \TopClient;
+        $c ->appkey = 23427369 ;
+        $c ->secretKey = 'd0eb6e03b0d3c9dfb369a1659d92698c' ;
+        $req = new \AlibabaAliqinFcSmsNumSendRequest;
+        $req ->setExtend( "" );
+        $req ->setSmsType( "normal" );
+        $req ->setSmsFreeSignName( "上饶比特" );
+        $req ->setSmsParam( "{name:'$code',time:'2222'}" );
+        $req ->setRecNum($mobile);
+        $req ->setSmsTemplateCode( "SMS_66675064" );
+        $resp = $c ->execute( $req );
+        returnajax(true, '', '发送成功');
+
+    }
+
+    /**
+     * 重置密码
+     * @author LiYang
+     * @date 2018-1-7
+     * @return void
+     */
+    public function resetsend()
+    {
+        $mobile = I('post.mobile');
+
+        $rst = M('user')->where(['mobile' => $mobile])->find();
+
+        if (empty($rst)) {
+            returnajax(false, '', '未注册的手机号');
+        }
+        $code = generate_code();
+        S('resetcode'.$mobile, $code);
     	    // 发送验证码
         Vendor('aliNote.TopSdk','','.php');
         //Vendor('aliNote.Topsdk.php');
@@ -187,8 +241,8 @@ class UserController extends Controller
         $req ->setRecNum($mobile);
         $req ->setSmsTemplateCode( "SMS_66675064" );
         $resp = $c ->execute( $req );
-
         returnajax(true, '', '发送成功');
+
     }
 
     
@@ -293,7 +347,7 @@ class UserController extends Controller
 		$time = $user['create_time'];
 
 //		$result = getwkb('0xc92fb1c425e40469de1ce4729a32f49949c39b81',C('SITE'),$time, 0, 23);
-		$result = getwkb($user['sitetemp'],C('SITE'),$time, 0, 1);
+		$result = getwkb($user['sitetemp'],D('log')->getconfig('site'),$time, 0, 1);
 
         if (!$result) {
             returnajax(false, '', '没有找到您的打款记录,如果您有疑问，请联系客服');

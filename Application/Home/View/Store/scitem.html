@@ -124,9 +124,23 @@
 </body>
 <script>
 function buy(commodity_id, commodity_type){
+    $.prompt({
+        title: '请输入购买的数量',
+        input: '',
+        empty: false, // 是否允许为空
+        onOK: function (input) {
+            if (input=='0') {
+                $.alert("购买数量能为0或空");
+                return
+            }
+
+            if(isNaN(input)){
+                $.alert("请输入整数");
+                return
+            }
 
             $.ajax({
-                url:"{:U('order/buy','','')}/commodity_id/"+commodity_id+"/commodity_type/"+commodity_type,
+                url:"{:U('order/buy','','')}/commodity_id/"+commodity_id+"/commodity_type/"+commodity_type + '/num/' + input,
                 type:'GET', //GET
                 async:true,    //或false,是否异步
                 data:{
@@ -136,13 +150,14 @@ function buy(commodity_id, commodity_type){
                 dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
                 success:function(result){
                     if (result.status) {
-                    	window.location.href= "{:U('order/pdOrder','','')}/commodity_id/"+commodity_id+"/commodity_type/"+commodity_type;
+                    	window.location.href= "{:U('order/pdOrder','','')}/commodity_id/"+commodity_id+"/commodity_type/"+commodity_type + '/num/' + input;
                     } else {
                         alert(result.msg);
                     }
                 }
             })
-
+        }
+    });
     }
 
 </script>
