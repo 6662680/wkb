@@ -94,8 +94,14 @@ class OrderController extends PrivilegeController{
 		/*pr($sumM['sum(price)']);die;*/
 		
 		/*pr(C('RETURN_MONEY'));die;*/
-		$rSumM=$sumM['sum(price)']*C('RETURN_MONEY');
+		$biliList=M('config')->where(' id = 2')->find();
 		
+		$bili=$biliList['value'];
+		$bili=(float)$bili;
+		/*pr($bili);die;*/
+		$rSumM=$sumM['sum(price)']*$bili;
+		
+		$this->assign("bili",$bili);
 		$this->assign("sumMoney",$sumM['sum(price)']);
 		$this->assign("rSumMoney",$rSumM);
 		
@@ -116,7 +122,11 @@ class OrderController extends PrivilegeController{
     	if (!$bili) {
     		$this->error('请填写比例参数!');
     	} 
-    	C('RETURN_MONEY',$bili);
+    	$data    = [
+		    'value'     => $bili,
+		            
+		];
+		$rst=M('config')->where('id=2 ')->save($data);
 		
 		$this->success('比例参数修改成功!',U('Order/lists'),1);
     }

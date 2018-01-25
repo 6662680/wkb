@@ -15,7 +15,10 @@ class SiteController extends PrivilegeController
 	 */
     public function index()
     {
-    	
+    	$siteList=M('config')->where(' id = 3')->find();
+		$site=$siteList['value'];
+		/*pr($site);die;*/
+		$this->assign("site",$site);
         $this->display();
     }
     
@@ -33,9 +36,13 @@ class SiteController extends PrivilegeController
     	if (!$site) {
     		$this->error('请填写域名!');
     	} 
-    	C('HOST_HOME',$site);
+    	$data    = [
+		    'value'     => $site,
+		            
+		];
+		$rst=M('config')->where('id=3 ')->save($data);
 		
-		$this->success('域名设置成功!',U('Site/site'),2);
+		$this->success('域名设置成功!',U('Site/index'),2);
     }
     
 }
