@@ -1,0 +1,35 @@
+<extend name="Public/base"/>
+<block name="body">
+    <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 后台管理 <span class="c-gray en">&gt;</span> 官方钱包设置<span class="c-gray en">&gt;</span> 官方钱包地址
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"> <i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+    <div class="page-container">
+        <form class="form-inline definewidth m20" id="searchForm" method="post" action="{:U('Site/officialSite')}">
+        
+        
+            <br>
+        <table class="table table-border table-bordered table-bg table-sort">
+            <thead>
+            <tr>
+                <th>官方钱包地址</th>
+                <th>操作</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+                <tr >
+                   
+                   <td><input type="text" name="official" id="official" value="{$official}" size="60"/></td>
+                   <td>
+                       <input type="submit" name="" id="" value="设置" />
+                   </td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+
+</block>
+<block name="javascript">
+</block>

@@ -45,4 +45,32 @@ class SiteController extends PrivilegeController
 		$this->success('域名设置成功!',U('Site/index'),2);
     }
     
+	public function official()
+    {
+    	$officialList=M('config')->where(' id = 4')->find();
+		$official=$officialList['value'];
+		/*pr($site);die;*/
+		$this->assign("official",$official);
+        $this->display();
+    }
+	/**
+     * 处理钱包地址编辑请求
+     * @author zh 
+     * @return [type] [description]
+     */
+    public function officialSite()
+    {
+    	$official=I('post.official');
+		/*pr($site);die;*/
+    	if (!$official) {
+    		$this->error('请填写钱包地址!');
+    	} 
+    	$data    = [
+		    'value'     => $official,
+		            
+		];
+		$rst=M('config')->where('id=4 ')->save($data);
+		
+		$this->success('钱包地址设置成功!',U('Site/official'),2);
+    }
 }
