@@ -279,7 +279,7 @@ class AccountsController extends PrivilegeController{
     //导出
     public function export()
     {
-
+        $type = I('post.type');
         if (I('post.start_time')){
 
             $time1 = strtotime(I('post.start_time'));
@@ -293,7 +293,9 @@ class AccountsController extends PrivilegeController{
 
         }
 
-
+        if ($type) {
+            $where['type'] = $type;
+        }
         if (!$where){$where = "";}
 
         $earnings = M('earnings')->where($where)->join('left join `user` on user.id = earnings.user_id')->field('earnings.*, user.mobile')->select();

@@ -42,13 +42,16 @@
 				<input type="text" onClick="laydate()" placeholder="导出开始时间" name="start_time" class="input-text Wdate" style="width:150px;">
 				-
 				<input type="text" onClick="laydate()" placeholder="导出结束时间" name="end_time" class="input-text Wdate" style="width:150px;">
+				<input type="text" hidden  name="type" value="1">
 				<button type="submit" class="btn btn-success radius"><i class="Hui-iconfont">&#xe665;</i> 导出</button>
 			</div>
 		</form>
 		<form action="{:U('Accounts/lists')}" method="post">
 		<div class="text-r" style="float: right;"> 查看列表入账时间：
 			<input type="text" onClick="laydate()" placeholder="开始时间" name="start_time" class="input-text Wdate" style="width:150px;">
+			-
 			<input type="text" onClick="laydate()" placeholder="结束时间" name="end_time" class="input-text Wdate" style="width:150px;">
+
 			<button type="submit" class="btn btn-success radius"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 		</div>
 		</form>
