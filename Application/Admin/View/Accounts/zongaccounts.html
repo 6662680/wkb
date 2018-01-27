@@ -23,21 +23,21 @@
 	<div style="margin-bottom: 40px;" >
 		<div style="float: left;" >
 			<span style="border: solid 1px black;margin-right: 12px;padding: 2px;">
-				<a href="{:U('Accounts/zonglists')}">总收入详情表</a>
+				<a href="{:U('Accounts/zonglists')}"><span style="color: green;">总收入详情表</span></a>
 			</span>
 			<span style="border: solid 1px black;margin-right: 12px;padding: 2px;">
-				<a href="{:U('Accounts/lists')}">注册收入详情表</span></a>
+				<a href="{:U('Accounts/lists')}">注册收入详情表</a>
 			</span>
 			<span style="border: solid 1px black;margin-right: 12px;padding: 2px;">
 				<a href="{:U('Accounts/sclists')}">商城收入详情表</a>
 			</span>
 			<span style="border: solid 1px black;margin-right: 12px;padding: 2px;">
-				<a href="{:U('Accounts/sxflists')}"><span style="color: green;">手续费收入详情表</span></a>
+				<a href="{:U('Accounts/sxflists')}">手续费收入详情表</a>
 			</span>
 			<span style="margin-right: 12px;padding: 2px;">
 			</span>						
 		</div>
-		<form action="{:U('Accounts/sxflists')}" method="post">
+		<form action="{:U('Accounts/lists')}" method="post">
 		<div class="text-r" style="float: right;"> 入账时间：
 			<input type="text" onClick="laydate()" placeholder="开始时间" name="start_time" class="input-text Wdate" style="width:150px;">
 			-
@@ -52,14 +52,15 @@
 	<table class="table table-border table-bordered table-hover table-bg table-sort">
 		<thead>
 			<tr class="text-l">
-				<th >交易手续费收入详情表</th>
-				<th >今日注册总收入：</th>
+				<th >总收入详情表</th>
+				<th >今日总收入：</th>
 				<th >
-					<if condition="$sumsxfM eq null "> 0.00
-						<else />{$sumsxfM}
+					<if condition="$sumMoney eq null "> 0.00
+						<else />{$sumMoney}
 					</if>
 				</th>
-				<th colspan="2" >导出数据</th>
+				<th colspan="3" >导出数据</th>
+				
 
 			</tr>
 			<tr class="text-c">
@@ -68,6 +69,8 @@
 				<th>支付会员ID</th>
 				<th>入账数额</th>
 				<th>入账时间</th>
+				<th>入账类型</th>
+				
 
 			</tr>
 		</thead>
@@ -82,7 +85,15 @@
 				<td>
 					{$vo.creation_time|date="Y-m-d H:i:s",###}
 				</td>
-				
+				<td><?php 
+                   	if ($vo['type']==1) {
+									echo '注册收入';
+								} elseif($vo['type']==2) {
+									echo '商城收入';
+								}elseif($vo['type']==3) {
+									echo '手续费收入';
+								}?>
+				</td>
 			</tr>
                     </volist>                               
 		</tbody>
