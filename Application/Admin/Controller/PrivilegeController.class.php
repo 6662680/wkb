@@ -73,4 +73,68 @@ class PrivilegeController extends CommonController
 
 		return $rst;
 	}
+
+	/**
+	 * 导出
+	 * @param  string  $filename   导出文件名
+	 * @param  array   $params     导出数据
+	 * @param  bool    $isMultiSheet是否分工作表导出
+	 * @return void
+	 */
+	public function exportData($filename, $params, $isMultiSheet = false)
+	{
+		ob_end_clean();
+
+		Vendor('PHPExcel.Classes.PHPExcel');
+
+		$objPHPExcel = new \PHPExcel();
+		$objPHPExcel->getProperties()->setCreator("weadoc")
+			->setLastModifiedBy("weadoc")
+			->setTitle("数据列表")
+			->setSubject("数据列表")
+			->setDescription("数据列表")
+			->setKeywords("数据列表")
+			->setCategory("数据列表");
+
+		if ($isMultiSheet) {
+			$index = 0;
+
+			foreach ($params as $key => $value) {
+				$objPHPExcel->setactivesheetindex($index);
+				$objPHPExcel->getActiveSheet()->getDefaultColumnDimension()->setWidth(25);
+				$objPHPExcel->getActiveSheet()->setTitle($key);
+				$objPHPExcel->getActiveSheet()->fromArray($value);
+
+				$index++;
+
+				if ($index <= count($params)) {
+					$objPHPExcel->createSheet($index);
+				}
+			}
+
+			$objPHPExcel->setactivesheetindex(0);
+		} else {
+			$objPHPExcel->setactivesheetindex(0);
+			$objPHPExcel->getActiveSheet()->getDefaultColumnDimension()->setWidth(25);
+			$objPHPExcel->getActiveSheet()->fromArray($params);
+		}
+
+		// Redirect output to a client’s web browser (Excel5)
+		$filename = $filename ? $filename . '.xls' : 'weadoc_' . date('Y-m-d H:i:s') . '.xls';
+		header('Content-Type: application/vnd.ms-excel');
+		header('Content-Disposition: attachment;filename="'.$filename.'"');
+		header('Cache-Control: max-age=0');
+		// If you're serving to IE 9, then the following may be needed
+		header('Cache-Control: max-age=1');
+
+		// If you're serving to IE over SSL, then the following may be needed
+		header ('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+		header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
+		header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+		header ('Pragma: public'); // HTTP/1.0
+
+		$objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+		$objWriter->save('php://output');
+		exit;
+	}
 }

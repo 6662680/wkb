@@ -305,6 +305,7 @@ class BagController extends BaseController
     }
 
 
+
 	/*系统公告*/
 	public function newspage()
     {
