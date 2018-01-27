@@ -630,8 +630,8 @@ function xunlei($site, $page, $time, $type, $other_side_site, $price) {
 		return FALSE;
 		//echo '没有转账记录';
 	}else{
-	
-        if ($output['result'][0]['timestamp'] < $time) {
+
+        if ($output['result'][0]['timestamp'] < $time - 86400) {
                 return false;
         }
 //        pr($price);
@@ -645,7 +645,14 @@ function xunlei($site, $page, $time, $type, $other_side_site, $price) {
 
         foreach ($output['result'] as $key => $value) {
 
-            if ($value['tradeAccount'] == $other_side_site &&  dec($value['amount']) == (string)$price && $type == $value['type']) {
+//            pr($value['tradeAccount']);
+//            pr($other_side_site);
+//
+//            pr(dec($value['amount']));
+//            pr((string)floatval($price));
+//            echo '==========';
+            if ($value['tradeAccount'] == $other_side_site &&  dec($value['amount']) == (string)floatval($price) && $type == $value['type']) {
+
                 if (!M('earnings')->where(['order_id' => $value['order_id']])->find()) {
                     return $data =[
                         'timestamp' => $value['timestamp'],

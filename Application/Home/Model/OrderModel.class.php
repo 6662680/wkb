@@ -187,7 +187,7 @@ class OrderModel extends Model
 
         if (!$addRst) {
             $trans->rollback();
-            return ['status' => false, 'msg' => '添加失败'];
+            return ['status' => false, 'msg' => '添加失败,请联系客服'];
         }
 
         $time = time() - C('ORDER_TIME');
