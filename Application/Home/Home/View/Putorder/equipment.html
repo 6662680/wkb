@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <!-- head 中 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/main.css">
+</head>
+
+<body>
+    <div class="page home ">
+        <div class="page__hd">
+            <h1 class="page__title">
+                <if condition="$type eq '1'">
+                    求购
+                    <else />
+                    出售
+                </if>
+            </h1>
+            <div class="navbar sd">
+
+                <div class="navbar__item">
+                    <a href="{:U('putorder/orderList','','')}/commodity_type/2/type/
+                    <?php
+                    if ($_GET['type'] == 5) {
+                        echo 6;
+                    }
+
+                    else {
+                        echo 5;
+                    }
+                    ?>
+                    ">按价格</a>
+                </div>
+                <div class="navbar__item">
+                    <a href="{:U('putorder/orderList','','')}/commodity_type/2/type/
+                    <?php
+                    if ($_GET['type'] ==7) {
+                        echo 8;
+                    }
+
+                    else {
+                        echo 7;
+                    }
+                    ?>
+                    ">按等级</a>
+                    <!--<a href="{:U('putorder/orderList','','')}/type/3">按等级</a>-->
+                </div>
+                <!--</div>-->
+                <div class="navbar__item pull-right">
+                    <a href="{:U('putorder/orderList','','')}/commodity_type/1/type/1"  data-target="#sx"><i class="fa fa-filter mr5" aria-hidden="true"></i>人物</a>
+                </div>
+            </div>
+            <!--<if condition="$type eq '1'">-->
+                    <!--<div class="sd bgw p2 mb1" >-->
+		                <!--<a href="javascript:;" class="weui-btn weui-btn_default open-popup" data-target="#want" style="font-size: 14px;line-height: 30px;">-->
+		                 	<!--我要求购-->
+		                <!--</a>-->
+		            <!--</div>-->
+            <!--<else />-->
+                   <!---->
+            </if>
+        </div>
+                    
+
+        <!--<foreach name="rst" item="vo">-->
+        <!--<div class="page__bd page__bd_spacing ">-->
+            <!--<ul class="sd">-->
+
+                <!--<li class="bgw pzr">-->
+                    <!--<div class="mainflex js_category pb20">-->
+                       <!---->
+                        <!--<div class="mainphoto c1">-->
+                            <!--&lt;!&ndash; 头像 &ndash;&gt;-->
+                            <!--<img src="{$vo.equipment_img}" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="maintext">-->
+                            <!--<ul>-->
+                                <!--<li>{$vo.equipment_name}-->
+                                <!--</li>-->
+                                <!--<li class="dark">耐久度:-->
+                                    <!--<span>{$vo.equipment_endurance}</span>-->
+                                <!--</li>-->
+                                <!--<if condition="$vo.equipment_protect eq 0">-->
+                                    <!--<li class="dark">挖矿倍数:-->
+                                        <!--<span>{$vo.equipment_multiple}</span>-->
+                                    <!--</li>-->
+                                    <!--<else />-->
+                                    <!--<li class="dark">防坍塌-->
+                                        <!--<span></span>-->
+                                    <!--</li>-->
+                                <!--</if>-->
+
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!---->
+                        <!--<div class="buy dark f14 text-right">-->
+                            <!--售价-->
+                            <!--<p class="red">{$vo.commodity_price}</p>-->
+                        <!--</div>-->
+
+                        <!--<div class="cleanfix"></div>-->
+                    <!--</div>-->
+
+                        <!--<div class="pbottom ">-->
+                            <!--<button  onclick="tijiao({$vo.order_id},0)" class="weui-btn weui-btn_mini weui-btn_warn ">购买</button>-->
+                        <!--</div>-->
+                  <!---->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--</foreach>-->
+
+        <div class="page__bd page__bd_spacing flexa">
+            <foreach name="rst" item="vo">
+                <div class="pb20 peop ">
+                    <div class="sd pzr w100 bgw mb10">
+                        <img src="{$vo.equipment_img}" alt="">
+                        <div class="f10 namea">{$vo.equipment_name} </div>
+                        <div class="f10 namearig"><span></span></div>
+                        <div class="zb1">
+                        </div>
+                    </div>
+                    <div class="f10 nena dark">耐久度<span>{$vo.equipment_endurance}</span>·
+                        <?php
+                        if (!$vo['equipment_protect']) {
+                           echo '挖矿倍数:'. $vo['equipment_multiple'];
+                        }
+                        ?>
+                        <span></div>
+                    <div class="f10 dark"> 售价<span class="red f10">{$vo.commodity_price}wkb</span></div>
+
+                    <button  onclick="tijiao({$vo.order_id},0)" class="weui-btn weui-btn_mini weui-btn_warn ">购买</button>
+
+                </div>
+            </foreach>
+        </div>
+        <div class="footheight"></div>
+    <div class="weui-tabbar">
+        <a href="{:U('bag/person')}" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <i class="fa fa-gamepad"></i>
+            </div>
+            <p class="weui-tabbar__label">背包</p>
+        </a>
+        <a href="{:U('store/person')}" class="weui-tabbar__item ">
+            <div class="weui-tabbar__icon">
+                <i class="fa fa-shopping-bag"></i>
+            </div>
+            <p class="weui-tabbar__label">商城</p>
+        </a>
+        <a href="{:U('putorder/orderList')}/type/1" class="weui-tabbar__item weui-bar__item--on">
+            <div class="weui-tabbar__icon">
+                <i class="fa fa-gavel"></i>
+            </div>
+            <p class="weui-tabbar__label">交易</p>
+        </a>
+        <a href="{:U('bag/userMe')}" class="weui-tabbar__item ">
+            <div class="weui-tabbar__icon">
+                <i class="fa fa-user"></i>
+            </div>
+            <p class="weui-tabbar__label">我的</p>
+        </a>
+    </div>
+    </div>
+     <!-- 筛选 -->
+    <div id="sx" class="weui-popup__container">
+        <div class="weui-popup__overlay"></div>
+        <div class="weui-popup__modal">
+                <form action="{:U('putorder/orderList','','')}/type/1/commodity_type" method="get">
+             
+            <div class="bgw m20 p20 maxvh">
+                <div class="modal-header" style="height: 50px;">
+                    <a href="javascript:;" class="close close-popup" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </a>
+                </div>
+
+
+                  <!--  <br /><br />
+                    <label><input name="type" type="radio" value="1" />我要买 </label>
+                    <label><input name="type" type="radio" value="0" />我要卖 </label>
+                    </br>
+                    <label><input name="commodity_type" type="radio" value="1" />人物 </label>
+                    <label><input name="commodity_type" type="radio" value="2" />装备 </label>
+                    <input type="submit"> -->
+                    <!--<div class="weui-cells__title">交易类型</div>-->
+                    <!--<div class="weui-cells weui-cells_radio">-->
+                      <!--<label class="weui-cell weui-check__label">-->
+                        <!--<div class="weui-cell__bd">-->
+                          <!--<p>求购</p>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cell__ft">-->
+                          <!--<input name="type" type="radio" value="1" checked="checked"  class="weui-check"/ >-->
+                          <!--<span class="weui-icon-checked"></span>-->
+                        <!--</div>-->
+                      <!--</label>-->
+                      <!--<label class="weui-cell weui-check__label" >-->
+
+                        <!--<div class="weui-cell__bd">-->
+                          <!--<p>卖出</p>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cell__ft">-->
+                          <!--<input name="type" type="radio" value="0"  class="weui-check"/>-->
+                          <!--<span class="weui-icon-checked"></span>-->
+                        <!--</div>-->
+                      <!--</label>-->
+                    <!--</div>-->
+
+                    <div class="weui-cells__title">交易</div>
+                    <div class="weui-cells weui-cells_radio">
+                      <label class="weui-cell weui-check__label" >
+                        <div class="weui-cell__bd">
+                          <p>人物</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                          <input name="commodity_type" type="radio" value="1" checked="checked" class="weui-check"/>
+                          <span class="weui-icon-checked"></span>
+                        </div>
+                      </label>
+                      <label class="weui-cell weui-check__label" >
+                        <div class="weui-cell__bd">
+                          <p>装备</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                          <input name="commodity_type" type="radio" value="2" class="weui-check"/>
+                          <span class="weui-icon-checked"></span>
+                        </div>
+                      </label>
+                    </div>  
+            </div>
+            <div class=" m20  ">
+                 <button type="submit"  class="weui-btn weui-btn_primary ">按钮</button>
+            </div>
+             </form>
+        </div>
+    </div>
+    <!--&lt;!&ndash; 求购表单 &ndash;&gt;-->
+    <!--<div id="want" class="weui-popup__container">-->
+        <!--<div class="weui-popup__overlay"></div>-->
+        <!--<div class="weui-popup__modal">-->
+            <!--<div class="bgw m20 p20 maxvh">-->
+                <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close close-popup" data-dismiss="modal" aria-label="Close">-->
+                        <!--<span aria-hidden="true">×</span>-->
+                    <!--</button>-->
+                    <!--<h4 class="modal-title">发布求购</h4>-->
+                <!--</div>-->
+
+                <!--<div class="weui-cells weui-cells_form">-->
+                	<!--<div class="weui-cell weui-cell_select">-->
+                        <!--<div class="weui-cell__bd">-->
+						     <!--<select class="weui-select" id="select1">-->
+                                <!--<option selected="" value="1">人物</option>-->
+                                <!--<option value="2">装备</option>-->
+                            <!--</select>-->
+                               <!--<select class="weui-select" id="select2" style="font-size: 16px;">-->
+                               	<!--<foreach name="personarr" item="k">-->
+                               		<!--<option value={$k.id}>{$k.person_name}</option>-->
+                               	<!--</foreach>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="weui-cell">-->
+                        <!--<div class="weui-cell__hd">-->
+                            <!--<label class="weui-label">售价：</label>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cell__bd">-->
+                            <!--<input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入售价" name="commodity_price" id="commodity_price" value="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="weui-cell">-->
+                        <!--<div class="weui-cell__hd">-->
+                            <!--<label class="weui-label" id="blood">血量：</label>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cell__bd">-->
+                            <!--<input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该值" name="residue" id="residue" value="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="weui-cell" id="level">-->
+                        <!--<div class="weui-cell__hd">-->
+                            <!--<label class="weui-label">等级：</label>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cell__bd">-->
+                            <!--<input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该等级" name="person_level" id="person_level" value="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="weui-cell" id="wakuang">-->
+                        <!--<div class="weui-cell__hd">-->
+                            <!--<label class="weui-label">挖矿能力：</label>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cell__bd">-->
+                            <!--<input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该值" name="capacity" id="capacity" value="">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class=" m20  ">-->
+                <!--<button  onclick="buyCreationOrder()"  class="weui-btn weui-btn_primary ">发布</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!-- body 最后 -->
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+    <!-- 如果使用了某些拓展插件还需要额外的JS -->
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
+</body>
+<script>
+
+    function tijiao(order_id, type){
+
+        if (type == 1) {
+
+            $.ajax({
+                url:"{:U('putorder/buyReceiving','','')}/order_id/"+order_id,
+                type:'GET', //GET
+                async:true,    //或false,是否异步
+                data:{
+
+                },
+                timeout:5000,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                success:function(result){
+                    if (result.status) {
+                        $.ajax({
+                            url:"{:U('putorder/send','','')}/order_id/"+order_id+'/type/'+ {$type},
+                            type:'GET', //GET
+                            async:true,    //或false,是否异步
+                            data:{
+
+                            },
+                            timeout:5000,    //超时时间
+                            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                            success:function(result){
+                                if (result.status) {
+                                    alert('订购成功，已通知下单方付款，请10分钟后到个人中心订单中查看');
+                                } else {
+                                    alert(result.msg);
+                                }
+                            }
+                        })
+
+                    } else {
+                        alert(result.msg);
+                    }
+                }
+            })
+        } else {
+
+            $.ajax({
+                url:"{:U('putorder/sellReceiving','','')}/order_id/"+order_id,
+                type:'GET', //GET
+                async:true,    //或false,是否异步
+                data:{
+
+                },
+                timeout:5000,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                success:function(result){
+                    if (result.status) {
+                        window.location.href= "{:U('putorder/remit','','')}/" + "order_id/"+order_id+'/type/'+ {$type};
+                    } else {
+                        alert(result.msg);
+                    }
+                }
+            })
+        }
+
+    }
+
+	$('#select1').change(function(){
+		var $id = $(this).val();
+        $("#wakuang").css("display","flex")
+		
+		 $.ajax({
+            url:"{:U('putorder/getCommodity')}",
+            type:'POST', //GET
+            async:true,    //或false,是否异步
+            data:{
+                id:$id,
+            },
+            timeout:5000,    //超时时间
+            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+            success:function(result){
+            	$("#select2").empty()
+            	if ($id == 1) {
+        		$.each(result,function(i,n)
+					{
+				var str = "<option value="+n.id +">"  + n.person_name + '</option>';
+						$("#blood").text("血量");
+						$("#level").show();
+						$("#select2").append(str);
+					});
+            	} else {
+            		$.each(result,function(i,n)
+				{
+					
+            			$("#wakuang").show();
+            		$("#blood").text("耐久度");
+            		$("#level").hide();
+					$("#select2").append("<option value="+n.id +"> "+ n.equipment_name + "</option>");
+				});
+            	}
+            }
+        })
+	})
+    $('#select2').change(function(){
+        var chane = $("#select2 option:selected").text()  
+        if (chane == " 安全帽"){
+            $("#wakuang").css("display","none")
+        } else{
+            $("#wakuang").css("display","flex")
+        }
+    })
+</script>
+<script>
+	
+	function buyCreationOrder(){
+			
+            $.ajax({
+                url:"{:U('putorder/buyCreationOrder','','')}",
+                type:'POST', //GET
+                async:true,    //或false,是否异步
+                data:{
+						commodity_id:$("#select2").val(),
+						commodity_type:$("#select1").val(),
+						commodity_price:$("#commodity_price").val(),
+						residue:$("#residue").val(),
+						person_level:$("#person_level").val(),
+						capacity:$("#capacity").val(),
+                },
+                timeout:5000,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                success:function(result){
+                    if (result.status) {
+                    	alert(result.msg);
+                    	window.location.href= "{:U('bag/userMe','','')}";
+                    } else {
+                        alert(result.msg);
+                    }
+                }
+            })
+
+    }
+</script>
+</html>

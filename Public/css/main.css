@@ -444,10 +444,13 @@ a {
 }
 
 .logomain {
+	
     padding: 20px
 }
 
 .form-group {
+	margin: 0 auto;
+	width: 50%;
     margin-bottom: 10px;
 }
 

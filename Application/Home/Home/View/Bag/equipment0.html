@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <!-- head 中 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../Public/css/main.css">
+</head>
+
+<body>
+    <div class="page home ">
+        <div class="page__hd">
+            <h1 class="page__title">
+                背包
+            </h1>
+            <div class="navbar sd">
+            <div class="navbar__item ">
+                <a href="person">人物</a>
+            </div>
+            <div class="navbar__item weui_bar__item_on">
+                <a href="equipment">装备</a>
+            </div>
+            <div class="navbar__item ">
+                <!--<a href="mediche">食物</a>-->
+            </div>
+                <div class="navbar__item pull-right">
+                    <a href="">
+                        <i class="fa fa-filter mr5" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="page__bd page__bd_spacing ">
+        <ul>
+        	<?php 
+					if (!$equipment) {
+						echo '您还没有装备！';
+				} ?>
+        <volist name="equipment" id="vo">
+                <li class="mb10  sd pzr">
+
+                    <div class="mainflex js_category bgw">
+
+                        <div class="mainphoto c1">
+                            <!-- 头像 -->
+                            <img src={$vo.equipment_img} alt="">
+                        </div>
+                        <div class="maintext">
+                            <ul>
+                                <li>{$vo.equipment_name}
+                                </li>
+                                <if condition="$vo.equipment_protect eq '1'">
+                                    <li class="dark">防坍塌
+                                    </li>
+                                    <else />
+
+                                    <li class="dark">耐久:
+                                        <span>{$vo.equipment_endurance}</span>
+                                    </li>
+                                </if>
+
+                                <li class="dark">挖矿倍数:
+                                    <span>{$vo.equipment_multiple}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cleanfix"></div>
+                    </div>
+
+                    <div class="pbottom ">
+                        <a href="javascript:;" data-id="{$vo.id}" id="sell" class="weui-btn weui-btn_mini weui-btn_warn ">卖出</a>
+                    </div>
+                </li>
+        </volist>
+        </ul>
+    </div>
+     <div class="footheight">
+     </div>
+        <div class="weui-tabbar">
+            <a href="{:U('store/person')}" class="weui-tabbar__item weui-bar__item--on">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-gamepad"></i>
+                </div>
+                <p class="weui-tabbar__label">背包</p>
+            </a>
+            <a href="{:U('store/person')}" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-shopping-bag"></i>
+                </div>
+                <p class="weui-tabbar__label">商城</p>
+            </a>
+            <a href="{:U('putorder/orderList','','')}/commodity_type/1/type/1" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-gavel"></i>
+                </div>
+                <p class="weui-tabbar__label">交易</p>
+            </a>
+            <a href="{:U('bag/userMe')}" class="weui-tabbar__item ">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <p class="weui-tabbar__label">我的</p>
+            </a>
+        </div>
+    </div>
+    <!-- body 最后 -->
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+    <!-- 如果使用了某些拓展插件还需要额外的JS -->
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
+</body>
+<script>
+    $(document).on("click", "#sell", function () {
+        var that = this;
+         var id=$(this).data('id');
+        $.confirm({
+            title: '',
+            text: '出售这件装备?',
+            onOK: function () {
+                //点击确认
+                $.prompt({
+                    title: '请输入在交易中心挂单价格',
+                    input: '',
+                    empty: false, // 是否允许为空
+                    onOK: function (input) {
+                        $.ajax({
+                            url:"{:U('putorder/sellCreationOrder')}",
+                            type:'POST', //GET
+                            async:true,    //或false,是否异步
+                            data:{
+
+                                commodity_type:2,
+                                commodity_id : id,
+                                commodity_price :input
+                            },
+                            timeout:5000,    //超时时间
+                            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                            success:function(result){
+                                if (result.status) {
+                                    alert('挂单成功，若有用户购买则会以短信的方式通知您!');
+                                } else {
+                                    alert(result.msg);
+
+                                }
+
+                            }
+                        })
+
+                    },
+                    onCancel: function () {
+                        //点击取消
+                    }
+                });
+                //$(that).parents("li").remove()
+            },
+            onCancel: function () {
+            }
+        });
+    });//使用道具
+</script>
+</html>

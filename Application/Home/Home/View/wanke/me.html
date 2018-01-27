@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <!-- head 中 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../Public/css/main.css">
+</head>
+
+<body>
+    <div class="page home ">
+        <div class="page__hd">
+            <h1 class="page__title pb0">
+                我的
+            </h1>
+        </div>
+        <div class="page__bd page__bd_spacing ">
+            <div class="sd bgw">
+                <div class="mainflex js_category flex" id="show-actions">
+                    <div class="userphoto ">
+                        <!-- 头像 -->
+                        <img src="http://placehold.it/300x300" alt="">
+                    </div>
+                    <div class="maintext">
+                        <div class="usename">小调12354</div>
+                        <div class="usewkc">余额 2 wkc 冻结 0 wkc</div>
+                        
+                        <div class="uselink">asdasdasdasdasdasdasdqwdasd</div>
+                    </div>
+                    <div class="meicon pull-right">
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                    <div class="cleanfix"></div>
+                </div>
+            </div>
+            <div class="sd bgw mt15 p20">
+                <div class="stitle">游戏统计</div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item text-center">
+                        <div class="lfont">1</div>
+                        <div class="sfont">矿工人数</div>
+                    </div>
+                    <div class="weui-flex__item text-center">
+                        <div class="lfont">29</div>
+                        <div class="sfont">昨日收益</div>
+                    </div>
+                    <div class="weui-flex__item text-center">
+                        <div class="lfont">2989 </div>
+                        <div class="sfont">挖矿数量</div>
+                    </div>
+                    <div class="weui-flex__item text-center">
+                        <div class="lfont">2989 </div>
+                        <div class="sfont">积分</div>
+                    </div>
+                </div>
+            </div>
+            <div class="sd bgw mt15 p20">
+                <div class="stitle">推广链接</div>
+                <div class="weui-flex">
+                    <!-- <div class="weui-flex__item text-center">
+                        
+                    </div> -->
+                    <div class="weui-flex__item text-center" id="copyurl" data-clipboard-text="jhjahsdhaksdkhs">
+                        <div class="alert alert-success" role="alert">
+                            https://v3.bootcss.com/components/#badges
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div  class="sd bgw mt15 p20">
+                <div class="weui-grids">
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <i class="fa fa-desktop cc1"></i>
+                        </div>
+                        <p class="weui-grid__label">
+                            Button
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <i class="fa fa-desktop cc2"></i>
+                        </div>
+                        <p class="weui-grid__label">
+                            Button
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <i class="fa fa-desktop cc3"></i>
+                        </div>
+                        <p class="weui-grid__label">
+                            Button
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <i class="fa fa-desktop cc4"></i>
+                        </div>
+                        <p class="weui-grid__label">
+                            Button
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <i class="fa fa-desktop cc5"></i>
+                        </div>
+                        <p class="weui-grid__label">
+                            Button
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <i class="fa fa-desktop cc6"></i>
+                        </div>
+                        <p class="weui-grid__label">
+                            Button
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <a href="newspage.html">
+                <div class="sd bgw mt15 p20 text-center">
+
+                    <div class="lineb">
+                        系统公告
+                    </div>
+
+                </div>
+            </a>
+            <a href="javascript:;" id="withdraw">
+                <div class="sd bgw mt15 p20 text-center">
+            
+                    <div class="lineb">
+                        提现
+                    </div>
+            
+                </div>
+            </a>
+            <a href="newspage.html">
+                <div class="sd bgw mt15 p20 text-center">
+
+                    <div class="lineb">
+                        帮助中心
+                    </div>
+
+                </div>
+            </a>
+        </div>
+        <div class="footheight"></div>
+        <div class="weui-tabbar">
+            <a href="../Index/index.html" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-gamepad"></i>
+                </div>
+                <p class="weui-tabbar__label">首页</p>
+            </a>
+            <a href="sc.html" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-shopping-bag"></i>
+                </div>
+                <p class="weui-tabbar__label">商城</p>
+            </a>
+            <a href="" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-gavel"></i>
+                </div>
+                <p class="weui-tabbar__label">交易</p>
+            </a>
+            <a href="me.html" class="weui-tabbar__item weui-bar__item--on">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <p class="weui-tabbar__label">我的</p>
+            </a>
+        </div>
+    </div>
+    <!-- body 最后 -->
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+    <!-- 如果使用了某些拓展插件还需要额外的JS -->
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
+    <!-- 复制到剪切板 -->
+    <script src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
+    <script>
+        // 复制链接
+        $(document).ready(function () {
+            var clipboard = new Clipboard('#copyurl');
+            clipboard.on('success', function (e) {
+                $.alert("复制成功");
+            });
+        })
+        //提现
+          $(document).on("click", "#withdraw", function () {
+              $.prompt("自定义的消息内容", function (text) {
+                  //点击确认后的回调函数
+                  //text 是用户输入的内容
+              }, function () {
+                  //点击取消后的回调函数
+              });
+
+              //如果参数过多，建议通过 object 方式传入
+              $.prompt({
+                  title: '标题',
+                  text: '内容文案',
+                  input: '输入框默认值',
+                  empty: false, // 是否允许为空
+                  onOK: function (input) {
+                      //点击确认
+                  },
+                  onCancel: function () {
+                      //点击取消
+                  }
+              });
+            });
+        // 弹出菜单
+        $(document).on("click", "#show-actions", function () {
+            $.actions({
+                title: "选择操作",
+                onClose: function () {
+                    console.log("close");
+                },
+                actions: [
+                    {
+                        text: "修改昵称",
+                        className: "",
+                        onClick: function () {
+                            $.alert("发布成功");
+                        }
+                    },
+                    {
+                        text: "修改密码",
+                        className: "color-danger",
+                        onClick: function () {
+                            $.alert("你选择了“编辑”");
+                        }
+                    },
+                    {
+                        text: "充值",
+                        className: '',
+                        onClick: function () {
+                            $.alert("你选择了“删除”");
+                        }
+                    },
+                    {
+                        text: "提现",
+                        className: '',
+                        onClick: function () {
+                            $.alert("你选择了“删除”");
+                        }
+                    },
+                    {
+                        text: "查看收支记录",
+                        className: '',
+                        onClick: function () {
+                            $.alert("你选择了“删除”");
+                        }
+                    },
+                    {
+                        text: "退出登陆",
+                        className: 'color-danger',
+                        onClick: function () {
+                            $.alert("你选择了“删除”");
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+
+</html>

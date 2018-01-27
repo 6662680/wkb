@@ -23,6 +23,42 @@ class UserController extends PrivilegeController
     	$this->assign('page',$page->show());
         $this->display();
     }
+	/**
+	 * 冻结会员
+	 * @author zh <[<email address>]>
+	 * @return [type] [description]
+	 */
+    public function dongJie()
+    {
+    	$id=I('get.id');
+		$data    = [
+		    'status'     => 2,
+		            
+		];
+		$rst=M('user')->where("id=$id ")->save($data);
+		
+		$this->success( '会员'.$id.'冻结成功!',U('User/index'),2);
+		/*pr($id);die;*/
+        /*$this->display();*/
+    }
+	/**
+	 * 解冻（启用）会员
+	 * @author zh <[<email address>]>
+	 * @return [type] [description]
+	 */
+    public function qiYong()
+    {
+    	$id=I('get.id');
+		$data    = [
+		    'status'     => 1,
+		            
+		];
+		$rst=M('user')->where("id=$id ")->save($data);
+		
+		$this->success( '会员'.$id.'启用成功!',U('User/index'),2);
+		/*pr($id);die;*/
+        /*$this->display();*/
+    }
     
     /**
 	 * 背包详情查看

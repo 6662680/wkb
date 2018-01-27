@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <!-- head 中 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../Public/css/main.css">
+</head>
+
+<body>
+    <div class="page home ">
+        <div class="page__hd">
+            <h1 class="page__title">
+                交易
+                <div class="pull-right stonelink">
+                    <a href="sellout.html">出售</a> /
+                    <a class="onstone" href="want.html">求购</a>
+                </div>
+            </h1>
+
+            <div class="navbar sd">
+                <div class="navbar__item weui_bar__item_on ">
+                    <a href="">人物</a>
+                </div>
+
+                <div class="navbar__item pull-right">
+                    <a href="">
+                        <i class="fa fa-filter mr5" aria-hidden="true"></i>等级</a>
+                </div>
+            </div>
+        </div>
+        <div class="page__bd page__bd_spacing ">
+            <div class="sd bgw p20 mb15">
+                <div>
+                    <a href="javascript:;" class="weui-btn weui-btn_default open-popup" data-target="#want">我要求购</a>
+                </div>
+            </div>
+            <ul class="sd">
+                <li class="pzr">
+                    <div class="mainflex js_category">
+                        <a href="wantlist.html">
+                            <div class="mainphoto c1">
+                                <!-- 头像 -->
+                                <img src="http://placehold.it/300x300" alt="">
+                            </div>
+                            <div class="maintext">
+                                <ul>
+                                    <li>#12121
+                                    </li>
+                                    <li class="dark">等级:
+                                        <span>lv10</span>
+                                    </li>
+                                    <li class="dark">挖矿能力:
+                                        <span>999</span>
+                                    </li>
+                                    <li class="dark">昨日产量:
+                                        <span>1200</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+                        <div class="buy dark f14 text-right">
+                            售价
+                            <p class="red">1200wkc</p>
+
+
+                        </div>
+
+
+                        </a>
+                        <div class="pbottom ">
+                            <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default cancel" >取消</a>
+                        </div>
+
+                        <div class="cleanfix"></div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="weui-tabbar">
+            <a href="../Index/index.html" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-gamepad"></i>
+                </div>
+                <p class="weui-tabbar__label">首页</p>
+            </a>
+            <a href="sc.html" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-shopping-bag"></i>
+                </div>
+                <p class="weui-tabbar__label">商城</p>
+            </a>
+            <a href="want.html" class="weui-tabbar__item weui-bar__item--on">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-gavel"></i>
+                </div>
+                <p class="weui-tabbar__label">交易</p>
+            </a>
+            <a href="me.html" class="weui-tabbar__item ">
+                <div class="weui-tabbar__icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <p class="weui-tabbar__label">我的</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- 求购表单 -->
+    <div id="want" class="weui-popup__container">
+        <div class="weui-popup__overlay"></div>
+        <div class="weui-popup__modal">
+            <div class="bgw m20 p20 maxvh">
+                <div class="modal-header">
+                    <button type="button" class="close close-popup" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title">发布求购</h4>
+                </div>
+
+
+                <div class="weui-cells weui-cells_form">
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">售价</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入售价">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">等级</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="大于该等级">
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_select">
+                        <div class="weui-cell__bd">
+                            <select class="weui-select" name="select1">
+                                <option selected="" value="1">微信号</option>
+                                <option value="2">QQ号</option>
+                                <option value="3">Email</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <div class=" m20  ">
+                <a href="javascript:;" class="weui-btn weui-btn_primary">发布</a>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- body 最后 -->
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+    <!-- 如果使用了某些拓展插件还需要额外的JS -->
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script>
+     <script>
+     $(document).on("click", ".cancel", function () {
+            $.confirm({
+             title: '', text: '是否取消求购', onOK: function () { //点击确认 
+             }, onCancel:
+                 function () { }
+             });
+        })
+        </script>
+</body>
+
+</html>
