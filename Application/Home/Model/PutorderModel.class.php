@@ -260,7 +260,7 @@ class PutorderModel extends Model
             returnajax(false, '', '没有找到您的打款记录,如果您有疑问，请联系客服');
         }
 
-        $add = M('earnings')->add(['user_id' => session('user_id'), 'price' => $officialRst['price'], 'creation_time' => time(), 'order_id' => $officialRst['order_id']]);
+        $add = M('earnings')->add(['user_id' => session('user_id'), 'price' => $officialRst['price'], 'creation_time' => time(), 'order_id' => $officialRst['order_id'], 'type' => 3]);
 
         if (!$add) {
             returnajax(false, '', '打款记录异常,请联系客服');

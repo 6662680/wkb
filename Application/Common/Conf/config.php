@@ -4,19 +4,19 @@ return array(
 
     //'配置项'=>'配置值'
 
-//    //'配置项'=>'配置值'
-    'DB_TYPE' => 'mysql',     // 数据库类型
-    'DB_HOST' => '192.168.2.244', // 服务器地址
-    //'DB_HOST' => '127.0.0.1', // 服务器地址
-    'DB_NAME' => 'wkb',    // 数据库名
-    //'DB_NAME' => 'wankebi',    // 数据库名
-    'DB_USER' => 'root',      // 用户名
-    'DB_PWD' => 'root',          // 密码
-    'DB_PORT' => '3306',        // 端口
-    'DB_PREFIX' =>  '',    //前缀
-    'URL_MODEL' =>2,
-
-
+////    //'配置项'=>'配置值'
+//    'DB_TYPE' => 'mysql',     // 数据库类型
+//    'DB_HOST' => '192.168.2.244', // 服务器地址
+//    //'DB_HOST' => '127.0.0.1', // 服务器地址
+//    'DB_NAME' => 'wkb',    // 数据库名
+//    //'DB_NAME' => 'wankebi',    // 数据库名
+//    'DB_USER' => 'root',      // 用户名
+//    'DB_PWD' => 'root',          // 密码
+//    'DB_PORT' => '3306',        // 端口
+//    'DB_PREFIX' =>  '',    //前缀
+//    'URL_MODEL' =>2,
+//
+//
 
    /* //'配置项'=>'配置值'
 
@@ -33,17 +33,17 @@ return array(
 
 
 //
-//    //'配置项'=>'配置值'
-//    'DB_TYPE' => 'mysql',     // 数据库类型
-//    'DB_HOST' => 'www.qiaojinli.com', // 服务器地址
-//    //'DB_HOST' => '127.0.0.1', // 服务器地址
-//    'DB_NAME' => 'wkb',    // 数据库名
-//    //'DB_NAME' => 'wankebi',    // 数据库名
-//    'DB_USER' => 'root',      // 用户名
-//    'DB_PWD' => 'wenxiang',          // 密码
-//    'DB_PORT' => '3306',        // 端口
-//    'DB_PREFIX' =>  '',    //前缀
-//    'URL_MODEL' =>2,
+    //'配置项'=>'配置值'
+    'DB_TYPE' => 'mysql',     // 数据库类型
+    'DB_HOST' => 'www.qiaojinli.com', // 服务器地址
+    //'DB_HOST' => '127.0.0.1', // 服务器地址
+    'DB_NAME' => 'wkb',    // 数据库名
+    //'DB_NAME' => 'wankebi',    // 数据库名
+    'DB_USER' => 'root',      // 用户名
+    'DB_PWD' => 'wenxiang',          // 密码
+    'DB_PORT' => '3306',        // 端口
+    'DB_PREFIX' =>  '',    //前缀
+    'URL_MODEL' =>2,
 
 
     'URL_CASE_INSENSITIVE' => true,

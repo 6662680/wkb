@@ -26,13 +26,12 @@ class PutorderController extends BaseController
             $level = $value['level'] / 10;
             $img = M('person_img')->where(['person_id' => $value['person_id'], 'level' => floor($level)])->find();
             $value['person_img'] = $img['img'];
-
+            $value['person_capacity'] = $value['person_capacity'] + ($value['person_property'] * $value['level']);
+            $value['pcapacity'] = $value['person_capacity'];
             if ($value['equipment_id'] != 0 ) {
-                $value['capacity'] = $value['person_capacity'] + ($value['person_property'] * $value['level']);
-
                 $equipment = M('equipment_bag')->where(['id' => $value['equipment_id']])->find();
                 $equipment_bag = M('equipment')->where(['id' => $equipment['equipment_id']])->find();
-                $value['person_capacity'] = $value['capacity'] * $equipment_bag['equipment_multiple'];
+                $value['person_capacity'] = $value['person_capacity'] * $equipment_bag['equipment_multiple'];
             }
         }
 

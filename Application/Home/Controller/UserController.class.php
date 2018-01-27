@@ -58,6 +58,7 @@ class UserController extends Controller
                 'create_time' => time(),
                 'last_login_time' => time(),
                 'last_login_ip' => getIp(),
+                'verification_price' => rand(1,10) / 10,
             	];
 			} else {
 				$data = [
@@ -67,6 +68,7 @@ class UserController extends Controller
                 'create_time' => time(),
                 'last_login_time' => time(),
                 'last_login_ip' => getIp(),
+                'verification_price' => rand(1,10) / 10,
             	];
 			}
 
@@ -350,13 +352,13 @@ class UserController extends Controller
 		$time = $user['create_time'];
 
 //		$result = getwkb('0xc92fb1c425e40469de1ce4729a32f49949c39b81',C('SITE'),$time, 0, 23);
-		$result = getwkb($user['sitetemp'],D('log')->getconfig('site'),$time, 0, 1);
+		$result = getwkb($user['sitetemp'],D('log')->getconfig('site'),$time, 0, $user['verification_price']);
 
         if (!$result) {
             returnajax(false, '', '没有找到您的打款记录,如果您有疑问，请联系客服');
         }
 
-        $add = M('earnings')->add(['user_id' => session('user_id'), 'price' => $result['price'], 'creation_time' => time(), 'order_id' => $result['order_id']]);
+        $add = M('earnings')->add(['user_id' => session('user_id'), 'price' => $result['price'], 'creation_time' => time(), 'order_id' => $result['order_id'], 'type' => 1]);
 
         if (!$add) {
             returnajax(false, '', '打款记录异常,请联系客服');

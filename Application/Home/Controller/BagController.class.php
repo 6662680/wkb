@@ -287,11 +287,13 @@ class BagController extends BaseController
 	public function zhifu()
     {
     	$user=M('user')->where(['id' => session('user_id')])->find();
+
 		$sitetemp=$user['sitetemp'];
         $site = D('log')->getconfig('site');
 		/*pr($sitetemp);die;*/
 		$this->assign('sitetemp',$sitetemp);
 		$this->assign('site',$site);
+		$this->assign('price',$user['verification_price']);
         $this->display('zhifu');
     }
 	/*取消支付*/

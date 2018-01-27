@@ -119,7 +119,7 @@ class OrderModel extends Model
             returnajax(false, '', '没有找到您的打款记录,如果您有疑问，请联系客服');
         }
 
-        $add = M('earnings')->add(['user_id' => session('user_id'), 'price' => $result['price'], 'creation_time' => time(), 'order_id' => $result['order_id']]);
+        $add = M('earnings')->add(['user_id' => session('user_id'), 'price' => $result['price'], 'creation_time' => time(), 'order_id' => $result['order_id'], 'type' => 2]);
 
         if (!$add) {
             returnajax(false, '', '打款记录异常,请联系客服');

@@ -16,7 +16,7 @@ class PersonModel extends Model
 
         foreach ($person as &$value) {
             $value['capacity'] = $value['person_capacity'] + ($value['person_property'] * $value['level']);
-
+            $value['basecapacity'] = $value['capacity'];
             if ($value['equipment_id'] != 0) {
                 $value['capacity'] = $value['capacity'] * $this->getPersonCapacity($value['id']);
             }
@@ -49,7 +49,7 @@ class PersonModel extends Model
             ->find();
 
         $person['capacity'] = $person['person_capacity'] + ($person['person_property'] * $person['level']);
-
+        $person['basecapacity'] = $person['capacity'];
         if ($person['equipment_id'] != 0) {
             $person['capacity'] = $person['capacity'] * $this->getPersonCapacity($person['id']);
         }
